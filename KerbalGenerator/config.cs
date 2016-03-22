@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace KerbalGenerator {
-	class config {
-		public string Path { get; set; }
-		public string KspPath;
-		public string[] Saves;
+	class Config {
+		public string KspPath { get; set; }
+		public string[ ] Saves { get; set; }
+		public string name { get; set; }
 	}
 }

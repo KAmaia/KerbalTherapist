@@ -11,17 +11,16 @@ using System.Windows.Forms;
 
 namespace KerbalGenerator {
 	public partial class frm_Krb_Gen : Form {
-		private string kspPath;
-		private string[] savePaths;
-		private string configPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Badwater\\KerbalGen\\config";
-		private List<Kerbal> currentKerbals;
 
+
+		private List<Kerbal> currentKerbals;
+		private Config config;
 
 		public frm_Krb_Gen( ) {
 			InitializeComponent( );
 		}
 
-		
+
 
 		private void btn_gen_One_Kerb_Click( object sender, EventArgs e ) {
 
@@ -41,36 +40,19 @@ namespace KerbalGenerator {
 		}
 
 		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
-			if ( hasRun() ) {
-				//create Config
-			}
-			else {
-				loadConfig( );
-			}
+		
 
 			currentKerbals = new List<Kerbal>( );
 			currentKerbals.Add( new Kerbal( "derp derp", "male", "pilot", "Applicant", "1.0", "1.0", "Yes", "Yes", "Available", "0" ) );
 			currentKerbals.Add( new Kerbal( "Hurdy Durr", "female", "pilot", "crew", "1.0", "1.0", "Yes", "Yes", "Available", "0" ) );
 		}
 
-		private void loadConfig( ) {
+		private Config loadConfig( ) {
 			//load our configuration info.
+			return new Config( );
 		}
 
 		private void CreateConfig( ) {
-
 		}
-
-		private bool hasRun( ) {
-			bool thingimajobber;
-			if( File.Exists( configPath ) ) {
-				return false;
-			}
-			else {
-				CreateConfig( );
-			}
-			return true;
-		}
-
 	}
 }
