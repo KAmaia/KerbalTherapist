@@ -7,8 +7,7 @@ using System.Xml;
 
 namespace KerbalGenerator {
 	public class Config {
-		public Dictionary<string, Kerbal> Kerbals { get; set; }
-		public string KspPath { get; set; }
-		public string name { get; set; }
+		public Dictionary<string, string> SavePaths { get; set; }
+		public string Name { get; set; }
 	}
 }

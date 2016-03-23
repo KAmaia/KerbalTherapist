@@ -17,8 +17,9 @@ namespace KerbalGenerator {
 
 		private Config cfg;
 
-		public frm_Krb_Gen( ) {
+		public frm_Krb_Gen( Config cfg ) {
 			InitializeComponent( );
+			this.cfg = cfg;
 		}
 		private void btn_gen_One_Kerb_Click( object sender, EventArgs e ) {
 
@@ -34,7 +35,7 @@ namespace KerbalGenerator {
 			kerbInfos.Show( );
 		}
 		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
-
+			cmb_AvailSaves.Items.AddRange( cfg.SavePaths.Keys.ToArray() );
 			currentKerbals = new List<Kerbal>( );
 			currentKerbals.Add( new Kerbal( "derp derp", "male", "pilot", "Applicant", "1.0", "1.0", "Yes", "Yes", "Available", "0" ) );
 			currentKerbals.Add( new Kerbal( "Hurdy Durr", "female", "pilot", "crew", "1.0", "1.0", "Yes", "Yes", "Available", "0" ) );
