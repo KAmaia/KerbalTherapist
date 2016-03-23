@@ -66,6 +66,13 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Kerbal.cs" />
+    <Compile Include="KerbalParser.cs" />
+    <Compile Include="Parserdisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parserdisplay.Designer.cs">
+      <DependentUpon>Parserdisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Configurator.resx">
@@ -76,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parserdisplay.resx">
+      <DependentUpon>Parserdisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

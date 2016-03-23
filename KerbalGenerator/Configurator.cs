@@ -70,15 +70,24 @@ namespace KerbalGenerator {
 							ksp.Attributes.Append( name );
 							root.AppendChild( ksp );
 
+							KerbalParser parseTheKerbals = new KerbalParser();
+
 							//child nodes saves
 							foreach ( string s in saves ) {
-								tmp = path + "\\" + s;
+								string save;
+								string persistent;
+								save = path + "\\" + s;
+								persistent = save + "\\persistent.sfs";
+								//validate the path once more...just in case
+								if ( ValidateFile( persistent ) ) {
+									parseTheKerbals.Parse( persistent );
+								}
 								string gutName = s.Replace(' ', '_');
-								XmlNode save = config.CreateElement(gutName);
+								XmlNode xmlSave = config.CreateElement(gutName);
 								XmlAttribute savePath = config.CreateAttribute("path");
 								savePath.Value = tmp;
-								save.Attributes.Append( savePath );
-								ksp.AppendChild( save );
+								xmlSave.Attributes.Append( savePath );
+								ksp.AppendChild( xmlSave );
 							}
 							config.Save( configPath + "\\config.xml" );
 						}
@@ -109,6 +118,9 @@ namespace KerbalGenerator {
 			return retval;
 		}
 
+		private bool ValidateFile( string filePath ) {
+			return File.Exists( filePath );
+		}
 		private bool ValidatePath( string path ) {
 			return Directory.Exists( path );
 		}
@@ -131,14 +143,16 @@ namespace KerbalGenerator {
 		}
 
 		private void txt_ConfigName_TextChanged( object sender, EventArgs e ) {
-			if ( ValidateConfigName( txt_ConfigName.Text ) ) {
+			/*if ( ValidateConfigName( txt_ConfigName.Text ) ) {
 				lbl_ConfigErr.ForeColor = Color.Green;
 				lbl_ConfigErr.Text = "That Config Name Is Valid";
-			}
-			else if ( !ValidateConfigName( txt_ConfigName.Text )){
+				
+		}
+			else if ( !ValidateConfigName( txt_ConfigName.Text ) ) {
 				lbl_ConfigErr.ForeColor = Color.Red;
 				lbl_ConfigErr.Text = "Name is in use.  Please Try again";
 			}
+			*/
 		}
 	}
 }
