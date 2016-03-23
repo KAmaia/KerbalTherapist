@@ -1524,6 +1524,7 @@
 			this.cmb_kerb_list.Name = "cmb_kerb_list";
 			this.cmb_kerb_list.Size = new System.Drawing.Size(239, 21);
 			this.cmb_kerb_list.TabIndex = 0;
+			this.cmb_kerb_list.SelectedIndexChanged += new System.EventHandler(this.cmb_kerb_list_SelectedIndexChanged);
 			// 
 			// pnl_po_options
 			// 

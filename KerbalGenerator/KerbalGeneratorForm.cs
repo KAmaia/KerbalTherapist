@@ -18,9 +18,9 @@ namespace KerbalGenerator {
 		private Config config;
 
 		private Configurator configurator;
-		
 
-		private List<Kerbal> currentKerbals;
+		private Dictionary<string, Kerbal>roster;
+		
 		
 
 		public frm_Krb_Gen( ) {
@@ -48,9 +48,13 @@ namespace KerbalGenerator {
 		}
 
 		private void parseKerbals( ) {
+			cmb_kerb_list.Items.Clear( );
 			KerbalParser parseTheKerbals = new KerbalParser();
 			string persistent = cmb_AvailSaves.SelectedItem.ToString();
 			parseTheKerbals.Parse( config.SavePaths[persistent] );
+			roster = parseTheKerbals.Roster;
+			cmb_kerb_list.Items.AddRange( roster.Keys.ToArray( ) );
+			cmb_kerb_list.SelectedIndex = 0;
 
 		}
 
@@ -81,7 +85,7 @@ namespace KerbalGenerator {
 		}
 
 		private void cmb_AvailSaves_SelectedIndexChanged( object sender, EventArgs e ) {
-
+			parseKerbals( );
 		}
 
 		private void btn_gen_List_Kerb_Click_1( object sender, EventArgs e ) {
@@ -128,6 +132,24 @@ namespace KerbalGenerator {
 		private void btn_po_OpenCfgr_Click( object sender, EventArgs e ) {
 			Form cfgrform = new ConfiguratorForm(ref configurator);
 			cfgrform.Show( );
+		}
+
+		private void cmb_kerb_list_SelectedIndexChanged( object sender, EventArgs e ) {
+			string selectedKerbal = cmb_kerb_list.SelectedItem.ToString();
+			Kerbal k = roster[selectedKerbal];
+			DisplayKerbalStats( k);
+		}
+
+		private void DisplayKerbalStats( Kerbal k ) {
+			lbl_ki_genderdisp.Text = k.Gender;
+			lbl_ki_roledisp.Text = k.Type;
+			lbl_ki_badsdisp.Text = k.Bads;
+			lbl_ki_tourdisp.Text = k.Tour;
+			lbl_ki_bravedisp.Text = k.Brave;
+			lbl_ki_stupiddisp.Text = k.Dumb;
+			lbl_ki_statusdisp.Text = k.Trait;
+			lbl_ki_statedisp.Text = k.State;
+			lbl_ki_flightcountdisp.Text = k.Flights;
 		}
 	}
 }
