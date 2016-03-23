@@ -14,13 +14,16 @@ namespace KerbalGenerator {
 
 
 		private List<Kerbal> currentKerbals;
-		private Config config;
+		
+		private Config cfg;
 
 		public frm_Krb_Gen( ) {
 			InitializeComponent( );
 		}
 
-
+		public frm_Krb_Gen(ref Config cfg ) {
+			this.cfg = cfg;
+		}
 
 		private void btn_gen_One_Kerb_Click( object sender, EventArgs e ) {
 

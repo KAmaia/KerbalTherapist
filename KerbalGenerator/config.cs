@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Xml;
 
 namespace KerbalGenerator {
-	class Config {
+	public class Config {
+		public Dictionary<string, Kerbal> Kerbals { get; set; }
 		public string KspPath { get; set; }
-		public string[ ] Saves { get; set; }
 		public string name { get; set; }
 	}
 }

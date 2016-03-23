@@ -12,14 +12,18 @@ using System.Xml;
 
 namespace KerbalGenerator {
 	public partial class Configurator : Form {
-
-
 		private string configPath;
-		private XmlTextWriter xmlw;
+		private Config config;
 
 		public Configurator( string configPath ) {
 			this.configPath = configPath;
 			InitializeComponent( );
+		}
+
+		public Config LoadConfig( ) {
+			Config cfg = new Config();
+
+			return new Config( );
 		}
 
 
@@ -29,16 +33,12 @@ namespace KerbalGenerator {
 
 			List<string> saves = new List<string>();
 
-			if ( !Directory.Exists( configPath ) ) {
+			if ( !ValidatePath( configPath ) ) {
 				Directory.CreateDirectory( configPath );
 			}
 
-			if ( !Directory.Exists( path ) ) {
-				MessageBox.Show( "Sorry, That Path Does Not Exist.", "KSP Not Found There!" );
-		
-			}
-
 			else {
+
 				path = path + "\\saves";
 				foreach ( string dir in Directory.EnumerateDirectories( path ) ) {
 					string tmp = dir.Substring( dir.LastIndexOf( "\\" ) + 1 );
@@ -49,49 +49,96 @@ namespace KerbalGenerator {
 					}
 					else {
 						saves.Add( tmp );
+						//check to make sure that there actually non-stock saves in the directory
+						if ( saves.Count == 0 ) {
+							lbl_PathErr.ForeColor = Color.Red;
+							lbl_PathErr.Text = "Sorry, there are no valid saves in that directory.  Try A Different Directory.";
+						}
+						//otherwise create the configuration file for the specified KSP install.
+						else {
+							//declare the XML document.
+							XmlDocument config = new XmlDocument();
+							config.CreateXmlDeclaration( "1.0", "", "" );
+							//Root node - Program configuration.
+							XmlNode root = config.CreateElement("configuration");
+							config.AppendChild( root );
+
+							//Child Node - Ksp Install
+							XmlNode ksp = config.CreateElement("ksp");
+							XmlAttribute name = config.CreateAttribute("name");
+							name.Value = txt_ConfigName.Text;
+							ksp.Attributes.Append( name );
+							root.AppendChild( ksp );
+
+							//child nodes saves
+							foreach ( string s in saves ) {
+								tmp = path + "\\" + s;
+								string gutName = s.Replace(' ', '_');
+								XmlNode save = config.CreateElement(gutName);
+								XmlAttribute savePath = config.CreateAttribute("path");
+								savePath.Value = tmp;
+								save.Attributes.Append( savePath );
+								ksp.AppendChild( save );
+							}
+							config.Save( configPath + "\\config.xml" );
+						}
+
+
+						this.Close( );
 					}
 				}
-				//check to make sure that there actually non-stock saves in the directory
-				if ( saves.Count == 0 ) {
-					MessageBox.Show( "Sorry, there are no non-stock saves in that directory.  Try A Different Directory.",
-						"No Saves Detected!" );
-				}
-				//otherwise create the configuration file for the specified KSP install.
-				else {
-					//declare the XML document.
-					XmlDocument config = new XmlDocument();
-					config.CreateXmlDeclaration( "1.0", "", "" );
-					//Root node - Program configuration.
-					XmlNode root = config.CreateElement("configuration");
-					config.AppendChild( root );
-
-					//Child Node - Ksp Install
-					XmlNode ksp = config.CreateElement("ksp");
-					XmlAttribute name = config.CreateAttribute("name");
-					name.Value = txt_ConfigName.Text;
-					ksp.Attributes.Append( name );
-					root.AppendChild( ksp );
-
-					//child nodes saves
-					foreach ( string s in saves ) {
-						string tmp = path + "\\"+s;
-						string gutName = s.Replace(' ', '_');
-						XmlNode save = config.CreateElement(gutName);
-						XmlAttribute savePath = config.CreateAttribute("path");
-						savePath.Value = tmp;
-						save.Attributes.Append( savePath );
-						ksp.AppendChild( save );
-					}
-					config.Save( configPath + "\\config.xml" );
-				}
-
-
-				this.Close( );
 			}
+		}
+
+		private bool ValidateConfigName( string name ) {
+			bool retval = true;
+			//read in the xml file
+			XmlDocument doc = new XmlDocument();
+			doc.Load( configPath + "\\config.xml" );
+			foreach ( XmlElement xe in doc ) {
+				if ( xe.Name == "ksp" ) {
+					foreach ( XmlAttribute xa in xe ) {
+						if ( xa.Name == "name" ) {
+							if ( xa.Value == name ) {
+								retval = false;
+							}
+						}
+					}
+				}
+			}
+			return retval;
+		}
+
+		private bool ValidatePath( string path ) {
+			return Directory.Exists( path );
 		}
 
 		private void btn_Cancel_Click( object sender, EventArgs e ) {
 			Application.Exit( );
+		}
+
+
+
+		private void txt_kspPath_TextChanged( object sender, EventArgs e ) {
+			if ( !ValidatePath( txt_kspPath.Text ) ) {
+				lbl_PathErr.ForeColor = Color.Red;
+				lbl_PathErr.Text = "Sorry, That Path Does Not Exist.";
+			}
+			else if ( ValidatePath( txt_kspPath.Text ) ) {
+				lbl_PathErr.ForeColor = Color.Green;
+				lbl_PathErr.Text = "Valid Path Found!";
+			}
+		}
+
+		private void txt_ConfigName_TextChanged( object sender, EventArgs e ) {
+			if ( ValidateConfigName( txt_ConfigName.Text ) ) {
+				lbl_ConfigErr.ForeColor = Color.Green;
+				lbl_ConfigErr.Text = "That Config Name Is Valid";
+			}
+			else if ( !ValidateConfigName( txt_ConfigName.Text )){
+				lbl_ConfigErr.ForeColor = Color.Red;
+				lbl_ConfigErr.Text = "Name is in use.  Please Try again";
+			}
 		}
 	}
 }

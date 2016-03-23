@@ -14,13 +14,15 @@ namespace KerbalGenerator {
 		[STAThread]
 		static void Main( ) {
 			string configPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Badwater\\KerbalGen";
-
+			
 			Application.EnableVisualStyles( );
 			Application.SetCompatibleTextRenderingDefault( false );
+			Configurator cfgr = new Configurator(configPath);
 			if ( firstRun( configPath ) ) {
-				Application.Run( new Configurator( configPath ) );
+				Application.Run( cfgr );
 			}
-			Application.Run( new frm_Krb_Gen( ) );
+			Config cfg = cfgr.LoadConfig( );
+			Application.Run( new frm_Krb_Gen(ref cfg) );
 			
 		}
 
