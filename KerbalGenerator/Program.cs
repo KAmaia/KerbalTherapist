@@ -22,7 +22,7 @@ namespace KerbalGenerator {
 				Application.Run( cfgr );
 			}
 			Config cfg = cfgr.LoadConfig( );
-			Application.Run( new frm_Krb_Gen(ref cfg) );
+			Application.Run( new frm_Krb_Gen() );
 			
 		}
 

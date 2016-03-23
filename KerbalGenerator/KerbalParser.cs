@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace KerbalGenerator {
 	internal class KerbalParser {
-		private Parserdisplay form;
 		public KerbalParser() {
-			//form = new Parserdisplay( );
 		}
 
 		internal void Parse( string persistent ) {
@@ -14,7 +13,7 @@ namespace KerbalGenerator {
 			string something = "";
 		
 			while ((line = rdr.ReadLine( ) ) != null ) {
-				Console.Write( line );
+				Debug.WriteLine( line );
 			}
 			
 		}
