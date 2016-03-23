@@ -47,11 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
-    <Compile Include="Configurator.cs">
+    <Compile Include="Configurator.cs" />
+    <Compile Include="ConfiguratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configurator.Designer.cs">
-      <DependentUpon>Configurator.cs</DependentUpon>
+    <Compile Include="ConfiguratorForm.Designer.cs">
+      <DependentUpon>ConfiguratorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KerbalGeneratorForm.cs">
       <SubType>Form</SubType>
@@ -63,8 +64,8 @@
     <Compile Include="KerbalParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Configurator.resx">
-      <DependentUpon>Configurator.cs</DependentUpon>
+    <EmbeddedResource Include="ConfiguratorForm.resx">
+      <DependentUpon>ConfiguratorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KerbalGeneratorForm.resx">
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>

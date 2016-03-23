@@ -15,18 +15,8 @@
 		public string State { get; set; }
 		public string Flights { get; set; }
 
-		public Kerbal( string name, string gender, string trait, string type, string brave, string dumb, string bads, string tour, string state, string flights ) {
-			Name = capitalizeStrings( name );
-			Gender = capitalizeStrings( gender );
-			Trait = capitalizeStrings( trait );
-			Type = capitalizeStrings( type );
-			Brave = capitalizeStrings( brave );
-			Dumb = capitalizeStrings( dumb );
-			Bads = capitalizeStrings( bads );
-			Tour = capitalizeStrings( tour );
-			State = capitalizeStrings( state );
-			Flights = capitalizeStrings( flights );
-		}
+		public Kerbal( ) {
+			}
 
 		private string capitalizeStrings( string str ) {
 			//handle splitting the string if it has a space. 

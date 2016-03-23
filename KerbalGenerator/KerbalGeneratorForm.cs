@@ -8,28 +8,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace KerbalGenerator {
 	public partial class frm_Krb_Gen : Form {
 		private readonly string configPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Badwater\\KerbalGen";
+
 		private string kspInstallPath;
+		private Config config;
 
 		private Configurator configurator;
-
-
+		
 
 		private List<Kerbal> currentKerbals;
+		
 
-		private Config cfg;
-
-		public frm_Krb_Gen(  ) {
+		public frm_Krb_Gen( ) {
 			InitializeComponent( );
-			//load our config manager.
 			configurator = new Configurator( configPath );
+			if ( FirstRun( ) ) {
+				//lock all controls except configurator button.
+				lockAllControls( );
+			}
+			else {
+				configurator.LoadConfig( );
+				config = configurator.Configuration;
+			}
+		}
+
+		private void lockAllControls( ) {
+			foreach(Control c in Controls ) {
+				if ( c.Name.ToLower( ).Equals( "pnl_po_options" ) ) {
+					continue;
+				}
+				else {
+					c.Enabled = false;
+				}
+			}
+		}
+
+		private void parseKerbals( ) {
+			KerbalParser parseTheKerbals = new KerbalParser();
+			string persistent = cmb_AvailSaves.SelectedItem.ToString();
+			parseTheKerbals.Parse( config.SavePaths[persistent] );
 
 		}
 
-		private bool firstRun( ) {
+		private bool FirstRun( ) {
 			return !File.Exists( configPath + "\\config.xml" );
 		}
 
@@ -40,14 +65,19 @@ namespace KerbalGenerator {
 		private void btn_gen_List_Kerb_Click( object sender, EventArgs e ) {
 
 		}
-		private void btn_exit_Click( object sender, EventArgs e ) {
+		private void btn_po_exit_Click( object sender, EventArgs e ) {
 			Application.Exit( );
 		}
 		private void btn_view_Kerbals_Click( object sender, EventArgs e ) {
-			
-			
+
+
 		}
 		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
+			
+			this.Text = "Kerbal Generator -- " + config.Name;
+			cmb_AvailSaves.Items.AddRange( config.SavePaths.Keys.ToArray() );
+			cmb_AvailSaves.SelectedIndex = 0;
+			parseKerbals( );
 		}
 
 		private void cmb_AvailSaves_SelectedIndexChanged( object sender, EventArgs e ) {
@@ -78,9 +108,6 @@ namespace KerbalGenerator {
 
 		}
 
-		private void btn_exit_Click_1( object sender, EventArgs e ) {
-			Application.Exit( );
-		}
 
 		private void groupBox6_Enter( object sender, EventArgs e ) {
 
@@ -96,6 +123,11 @@ namespace KerbalGenerator {
 
 		private void groupBox1_Enter( object sender, EventArgs e ) {
 
+		}
+
+		private void btn_po_OpenCfgr_Click( object sender, EventArgs e ) {
+			Form cfgrform = new ConfiguratorForm(ref configurator);
+			cfgrform.Show( );
 		}
 	}
 }

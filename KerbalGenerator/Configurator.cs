@@ -1,35 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Xml;
 
 namespace KerbalGenerator {
-	public partial class Configurator : Form {
+	public partial class Configurator {
 		private string configPath;
+		private Config config;
+
+		public Config Configuration { get { return config; } }
+		public int SaveCount;
 
 		public Configurator( string configPath ) {
 			this.configPath = configPath;
-			InitializeComponent( );
 		}
 
-		public Config LoadConfig( ) {
+		public void LoadConfig( ) {
 			Config cfg = new Config();
 			XmlDocument doc = new XmlDocument();
 			XmlTextReader rdr = new XmlTextReader(configPath + "\\config.xml");
-			String line = "";
-
 			Dictionary<string, string> confDict = new Dictionary<string, string>();
-			while ( ( rdr.Read( ))) {
+			while ( ( rdr.Read( ) ) ) {
 				if ( rdr.NodeType.Equals( XmlNodeType.Element ) ) { }
 				string configName = rdr.Name;
+				if ( rdr.Name.ToLower( ).Equals( "ksp" ) ) {
+					configName = rdr.GetAttribute("name");
+				}
 				cfg.Name = configName;
 				if ( rdr.Name.ToLower( ).Equals( "save" ) ) {
 					if ( !confDict.ContainsKey( rdr.GetAttribute( "name" ) ) ) {
@@ -38,14 +37,12 @@ namespace KerbalGenerator {
 					}
 				}
 			}
-
-			return new Config( );
+			config = cfg;
 		}
 
-
-		private void btn_create_config_Click( object sender, EventArgs e ) {
-			string configName = txt_ConfigName.Text;
-			string path = txt_kspPath.Text;
+		public void create_config( string _configName, string _path ) {
+			string configName = _configName;
+			string path = _path;
 			List<string> saves = new List<string>();
 			if ( !ValidatePath( configPath ) ) {
 				Directory.CreateDirectory( configPath );
@@ -60,9 +57,8 @@ namespace KerbalGenerator {
 				saves.Remove( "scenarios" );
 				saves.Remove( "training" );
 
-				if ( saves.Count == 0 ) {
-					ShowPathError( "Sorry, No Valid Saves In That Directory", false );
-				}
+				SaveCount = saves.Count;
+
 				//declare the XML document.
 				XmlDocument config = new XmlDocument();
 				config.CreateXmlDeclaration( "1.0", "", "" );
@@ -73,7 +69,7 @@ namespace KerbalGenerator {
 
 				XmlAttribute name = config.CreateAttribute("name");
 
-				name.Value = txt_ConfigName.Text;
+				name.Value = configName;
 				xmlKSP.Attributes.Append( name );
 
 				root.AppendChild( xmlKSP );
@@ -89,7 +85,6 @@ namespace KerbalGenerator {
 				}
 				config.Save( configPath + "\\config.xml" );
 			}
-			this.Close( );
 		}
 
 		private List<string> EnumerateDirectory( string path ) {
@@ -100,50 +95,32 @@ namespace KerbalGenerator {
 			return innerFiles;
 		}
 
-
-		private void ShowPathError( string s, bool success ) {
-			lbl_PathErr.ForeColor = success ? Color.Green : Color.Red;
-			lbl_PathErr.Text = s;
-		}
-
 		private bool ValidateConfigName( string name ) {
-			bool retval = true;
-			//read in the xml file
-			XmlDocument doc = new XmlDocument();
-			doc.Load( configPath + "\\config.xml" );
-			foreach ( XmlElement xe in doc ) {
-				if ( xe.Name == "ksp" ) {
-					foreach ( XmlAttribute xa in xe ) {
-						if ( xa.Name == "name" ) {
-							if ( xa.Value == name ) {
-								retval = false;
+			string configPathFinal = configPath + "\\config.xml";
+			bool isValid = false;
+			if ( ValidateFile( configPathFinal ) ) {
+				//read in the xml file
+				XmlDocument doc = new XmlDocument();
+				doc.Load( configPathFinal );
+				foreach ( XmlElement xe in doc ) {
+					if ( xe.Name == "ksp" ) {
+						foreach ( XmlAttribute xa in xe ) {
+							if ( xa.Name == "name" ) {
+								isValid = !( xa.Value.ToLower( ) == name.ToLower( ) );
 							}
 						}
 					}
 				}
 			}
-			return retval;
+			return isValid;
 		}
 
-		private bool ValidateFile( string filePath ) {
+
+		public bool ValidateFile( string filePath ) {
 			return File.Exists( filePath );
 		}
-		private bool ValidatePath( string path ) {
+		public bool ValidatePath( string path ) {
 			return Directory.Exists( path );
-		}
-
-		private void btn_Cancel_Click( object sender, EventArgs e ) {
-			Application.Exit( );
-		}
-
-
-
-		private void txt_kspPath_TextChanged( object sender, EventArgs e ) {
-			bool validPath = ValidatePath(txt_kspPath.Text);
-			ShowPathError( validPath ? "Valid Path Found" : "Sorry, That Path Does Not Exist", validPath );
-		}
-
-		private void txt_ConfigName_TextChanged( object sender, EventArgs e ) {
 		}
 	}
 }
