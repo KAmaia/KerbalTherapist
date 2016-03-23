@@ -11,16 +11,29 @@ using System.Windows.Forms;
 
 namespace KerbalGenerator {
 	public partial class frm_Krb_Gen : Form {
+		private readonly string configPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Badwater\\KerbalGen";
+		private string kspInstallPath;
+
+		private Configurator configurator;
+
 
 
 		private List<Kerbal> currentKerbals;
 
 		private Config cfg;
 
-		public frm_Krb_Gen( Config cfg ) {
+		public frm_Krb_Gen(  ) {
 			InitializeComponent( );
-			this.cfg = cfg;
+			//load our config manager.
+			configurator = new Configurator( configPath );
+
 		}
+
+		private bool firstRun( ) {
+			return !File.Exists( configPath + "\\config.xml" );
+		}
+
+
 		private void btn_gen_One_Kerb_Click( object sender, EventArgs e ) {
 
 		}
@@ -35,7 +48,6 @@ namespace KerbalGenerator {
 			
 		}
 		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
-			cmb_AvailSaves.Items.AddRange( cfg.SavePaths.Keys.ToArray( ) );
 		}
 
 		private void cmb_AvailSaves_SelectedIndexChanged( object sender, EventArgs e ) {
@@ -68,6 +80,22 @@ namespace KerbalGenerator {
 
 		private void btn_exit_Click_1( object sender, EventArgs e ) {
 			Application.Exit( );
+		}
+
+		private void groupBox6_Enter( object sender, EventArgs e ) {
+
+		}
+
+		private void lbl_si_kerbals_Click( object sender, EventArgs e ) {
+
+		}
+
+		private void label31_Click( object sender, EventArgs e ) {
+
+		}
+
+		private void groupBox1_Enter( object sender, EventArgs e ) {
+
 		}
 	}
 }

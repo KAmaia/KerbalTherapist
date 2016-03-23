@@ -39,7 +39,7 @@ namespace KerbalGenerator {
 				}
 			}
 
-			return cfg;
+			return new Config( );
 		}
 
 

@@ -29,162 +29,166 @@
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.lbl_currentSaveLocation = new System.Windows.Forms.Label();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.tbar_MaleToFemale = new System.Windows.Forms.TrackBar();
+			this.tbar_rnd_MaleToFemale = new System.Windows.Forms.TrackBar();
 			this.label1 = new System.Windows.Forms.Label();
-			this.tbar_minStupidity = new System.Windows.Forms.TrackBar();
-			this.trackBar1 = new System.Windows.Forms.TrackBar();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.tbar_MinimumBravery = new System.Windows.Forms.TrackBar();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.tbar_MaximumBravery = new System.Windows.Forms.TrackBar();
+			this.tbar_rnd_minStupidity = new System.Windows.Forms.TrackBar();
+			this.tbar_rnd_maxstupid = new System.Windows.Forms.TrackBar();
+			this.lbl_rnd_minstupid = new System.Windows.Forms.Label();
+			this.lbl_rnd_maxstupid = new System.Windows.Forms.Label();
+			this.tbr_rnd_minbrave = new System.Windows.Forms.TrackBar();
+			this.lbl_rnd_minbrave = new System.Windows.Forms.Label();
+			this.lbl_rnd_maxbrave = new System.Windows.Forms.Label();
+			this.tbar_rnd_maxbrave = new System.Windows.Forms.TrackBar();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.chk_allMale = new System.Windows.Forms.CheckBox();
-			this.chk_allFemale = new System.Windows.Forms.CheckBox();
+			this.chk_rnd_allMale = new System.Windows.Forms.CheckBox();
+			this.chk_rnd_allFemale = new System.Windows.Forms.CheckBox();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.lbl_mfRatio = new System.Windows.Forms.Label();
-			this.lbl_minStupid = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.trackBar2 = new System.Windows.Forms.TrackBar();
-			this.label11 = new System.Windows.Forms.Label();
-			this.label12 = new System.Windows.Forms.Label();
-			this.trackBar3 = new System.Windows.Forms.TrackBar();
+			this.lbl_rnd_mfRatio = new System.Windows.Forms.Label();
+			this.lbl_rnd_minStupidDisp = new System.Windows.Forms.Label();
+			this.lbl_rnd_maxstupiddisp = new System.Windows.Forms.Label();
+			this.lbl_rnd_minbravedisp = new System.Windows.Forms.Label();
+			this.lbl_rnd_maxbravedisp = new System.Windows.Forms.Label();
+			this.lbl_rnd_minbadsdisp = new System.Windows.Forms.Label();
+			this.lbl_rnd_minbads = new System.Windows.Forms.Label();
+			this.tbar_rnd_minbads = new System.Windows.Forms.TrackBar();
+			this.lbl_rnd_maxbadsdisp = new System.Windows.Forms.Label();
+			this.lbl_rnd_maxbads = new System.Windows.Forms.Label();
+			this.tbar_rnd_maxbads = new System.Windows.Forms.TrackBar();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
-			this.trackBar4 = new System.Windows.Forms.TrackBar();
-			this.label13 = new System.Windows.Forms.Label();
-			this.trackBar5 = new System.Windows.Forms.TrackBar();
-			this.label14 = new System.Windows.Forms.Label();
-			this.trackBar6 = new System.Windows.Forms.TrackBar();
-			this.label15 = new System.Windows.Forms.Label();
-			this.label16 = new System.Windows.Forms.Label();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label18 = new System.Windows.Forms.Label();
+			this.tbar_rnd_maxsci = new System.Windows.Forms.TrackBar();
+			this.lbl_rnd_maxsci = new System.Windows.Forms.Label();
+			this.tbar_rnd_maxengi = new System.Windows.Forms.TrackBar();
+			this.lbl_rnd_engi = new System.Windows.Forms.Label();
+			this.tbar_rnd_maxpilots = new System.Windows.Forms.TrackBar();
+			this.lbl_rnd_maxpilots = new System.Windows.Forms.Label();
+			this.tbar_rnd_maxpilotsdisp = new System.Windows.Forms.Label();
+			this.lbl_rnd_maxengidisp = new System.Windows.Forms.Label();
+			this.tbar_rnd_maxscidisp = new System.Windows.Forms.Label();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
 			this.label19 = new System.Windows.Forms.Label();
-			this.dmn_MaxKerbals = new System.Windows.Forms.DomainUpDown();
-			this.trackBar7 = new System.Windows.Forms.TrackBar();
-			this.label20 = new System.Windows.Forms.Label();
-			this.label21 = new System.Windows.Forms.Label();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.checkBox4 = new System.Windows.Forms.CheckBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.dmn_rnd_MaxKerbals = new System.Windows.Forms.DomainUpDown();
+			this.tbar_rnd_maxtour = new System.Windows.Forms.TrackBar();
+			this.lbl_rnd_maxtour = new System.Windows.Forms.Label();
+			this.lbl_rnd_maxtourdisp = new System.Windows.Forms.Label();
+			this.chk_rnd_lockpilots = new System.Windows.Forms.CheckBox();
+			this.chk_rnd_lockengi = new System.Windows.Forms.CheckBox();
+			this.chk_rnd_locksci = new System.Windows.Forms.CheckBox();
+			this.chk_rnd_locktour = new System.Windows.Forms.CheckBox();
+			this.btn_rnd_reset = new System.Windows.Forms.Button();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
-			this.label22 = new System.Windows.Forms.Label();
-			this.label23 = new System.Windows.Forms.Label();
-			this.trackBar8 = new System.Windows.Forms.TrackBar();
+			this.lbl_spe_bravedisp = new System.Windows.Forms.Label();
+			this.lbl_spe_brave = new System.Windows.Forms.Label();
+			this.tbar_spe_brave = new System.Windows.Forms.TrackBar();
 			this.groupBox10 = new System.Windows.Forms.GroupBox();
 			this.label28 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txt_spe_kerbname = new System.Windows.Forms.TextBox();
 			this.groupBox11 = new System.Windows.Forms.GroupBox();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.rd_spe_gendermale = new System.Windows.Forms.RadioButton();
+			this.rd_spe_genderfemale = new System.Windows.Forms.RadioButton();
 			this.groupBox12 = new System.Windows.Forms.GroupBox();
-			this.radioButton3 = new System.Windows.Forms.RadioButton();
-			this.radioButton4 = new System.Windows.Forms.RadioButton();
-			this.radioButton5 = new System.Windows.Forms.RadioButton();
-			this.checkBox5 = new System.Windows.Forms.CheckBox();
+			this.rd_spe_engi = new System.Windows.Forms.RadioButton();
+			this.rd_spe_pilot = new System.Windows.Forms.RadioButton();
+			this.rd_spe_sci = new System.Windows.Forms.RadioButton();
+			this.chk_spe_badass = new System.Windows.Forms.CheckBox();
 			this.groupBox13 = new System.Windows.Forms.GroupBox();
-			this.checkBox6 = new System.Windows.Forms.CheckBox();
+			this.chk_spe_tourist = new System.Windows.Forms.CheckBox();
 			this.groupBox14 = new System.Windows.Forms.GroupBox();
-			this.label29 = new System.Windows.Forms.Label();
-			this.label30 = new System.Windows.Forms.Label();
-			this.trackBar11 = new System.Windows.Forms.TrackBar();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.lbl_spe_stupid = new System.Windows.Forms.Label();
+			this.lbl_spe_stupiddisp = new System.Windows.Forms.Label();
+			this.tbar_spe_stupid = new System.Windows.Forms.TrackBar();
+			this.btn_spe_generate = new System.Windows.Forms.Button();
+			this.btn_spe_reset = new System.Windows.Forms.Button();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.groupBox15 = new System.Windows.Forms.GroupBox();
-			this.gb_stats = new System.Windows.Forms.GroupBox();
-			this.lbl_flights = new System.Windows.Forms.Label();
-			this.label24 = new System.Windows.Forms.Label();
-			this.lbl_state = new System.Windows.Forms.Label();
-			this.label25 = new System.Windows.Forms.Label();
-			this.lbl_stupidity = new System.Windows.Forms.Label();
-			this.label26 = new System.Windows.Forms.Label();
-			this.lbl_bravery = new System.Windows.Forms.Label();
-			this.lbl_tourist = new System.Windows.Forms.Label();
-			this.lbl_BadAss = new System.Windows.Forms.Label();
-			this.lbl_status = new System.Windows.Forms.Label();
-			this.lbl_role = new System.Windows.Forms.Label();
-			this.lbl_gender = new System.Windows.Forms.Label();
-			this.label27 = new System.Windows.Forms.Label();
-			this.label31 = new System.Windows.Forms.Label();
-			this.label32 = new System.Windows.Forms.Label();
-			this.label33 = new System.Windows.Forms.Label();
-			this.label34 = new System.Windows.Forms.Label();
-			this.label35 = new System.Windows.Forms.Label();
-			this.label36 = new System.Windows.Forms.Label();
+			this.gb_ki_stats = new System.Windows.Forms.GroupBox();
+			this.lbl_ki_flightcountdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_stupid = new System.Windows.Forms.Label();
+			this.lbl_ki_statedisp = new System.Windows.Forms.Label();
+			this.lbl_ki_flightcount = new System.Windows.Forms.Label();
+			this.lbl_ki_stupiddisp = new System.Windows.Forms.Label();
+			this.lbl_ki_state = new System.Windows.Forms.Label();
+			this.lbl_ki_bravedisp = new System.Windows.Forms.Label();
+			this.lbl_ki_tourdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_badsdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_statusdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_roledisp = new System.Windows.Forms.Label();
+			this.lbl_ki_genderdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_bads = new System.Windows.Forms.Label();
+			this.lbl_ki_tour = new System.Windows.Forms.Label();
+			this.lbl_ki_brave = new System.Windows.Forms.Label();
+			this.lbl_ki_status = new System.Windows.Forms.Label();
+			this.lbl_ki_role = new System.Windows.Forms.Label();
+			this.lbl_ki_gender = new System.Windows.Forms.Label();
+			this.cmb_ki_selectKerb = new System.Windows.Forms.Label();
 			this.cmb_kerb_list = new System.Windows.Forms.ComboBox();
 			this.groupBox16 = new System.Windows.Forms.GroupBox();
-			this.label37 = new System.Windows.Forms.Label();
-			this.label38 = new System.Windows.Forms.Label();
-			this.label39 = new System.Windows.Forms.Label();
-			this.label40 = new System.Windows.Forms.Label();
-			this.label41 = new System.Windows.Forms.Label();
-			this.label42 = new System.Windows.Forms.Label();
-			this.label43 = new System.Windows.Forms.Label();
-			this.label44 = new System.Windows.Forms.Label();
-			this.label45 = new System.Windows.Forms.Label();
-			this.label46 = new System.Windows.Forms.Label();
-			this.label47 = new System.Windows.Forms.Label();
-			this.label48 = new System.Windows.Forms.Label();
+			this.lbl_si_kerbcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_kerbcount = new System.Windows.Forms.Label();
+			this.lbl_si_gendermcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_gendermcount = new System.Windows.Forms.Label();
+			this.lbl_si_genderfcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_genderfcount = new System.Windows.Forms.Label();
+			this.lbl_si_pilotcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_pilotcount = new System.Windows.Forms.Label();
+			this.lbl_si_engicountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_engicount = new System.Windows.Forms.Label();
+			this.lbl_si_scicountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_scicount = new System.Windows.Forms.Label();
 			this.groupBox17 = new System.Windows.Forms.GroupBox();
 			this.groupBox18 = new System.Windows.Forms.GroupBox();
-			this.label49 = new System.Windows.Forms.Label();
-			this.label50 = new System.Windows.Forms.Label();
-			this.label51 = new System.Windows.Forms.Label();
-			this.label52 = new System.Windows.Forms.Label();
+			this.lbl_si_livingcount = new System.Windows.Forms.Label();
+			this.lbl_si_deadcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_deadcount = new System.Windows.Forms.Label();
+			this.lbl_si_livingcountdisp = new System.Windows.Forms.Label();
 			this.groupBox19 = new System.Windows.Forms.GroupBox();
 			this.groupBox20 = new System.Windows.Forms.GroupBox();
-			this.label53 = new System.Windows.Forms.Label();
-			this.label54 = new System.Windows.Forms.Label();
-			this.label55 = new System.Windows.Forms.Label();
-			this.label56 = new System.Windows.Forms.Label();
+			this.lbl_si_badscount = new System.Windows.Forms.Label();
+			this.lbl_si_tourcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_tourcount = new System.Windows.Forms.Label();
+			this.lbl_si_badscountdisp = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.btn_exit = new System.Windows.Forms.Button();
 			this.panel5 = new System.Windows.Forms.Panel();
-			this.groupBox21 = new System.Windows.Forms.GroupBox();
+			this.grp_save_flag = new System.Windows.Forms.GroupBox();
+			this.label57 = new System.Windows.Forms.Label();
+			this.lbl_kspInstalDir = new System.Windows.Forms.Label();
+			this.label59 = new System.Windows.Forms.Label();
+			this.lbl_CurrentSaveDir = new System.Windows.Forms.Label();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_MaleToFemale)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_minStupidity)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_MinimumBravery)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_MaximumBravery)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_MaleToFemale)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_minStupidity)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxstupid)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbr_rnd_minbrave)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxbrave)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			this.groupBox5.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_minbads)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxbads)).BeginInit();
 			this.groupBox6.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxsci)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxengi)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxpilots)).BeginInit();
 			this.groupBox7.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxtour)).BeginInit();
 			this.groupBox8.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.groupBox9.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar8)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).BeginInit();
 			this.groupBox10.SuspendLayout();
 			this.groupBox11.SuspendLayout();
 			this.groupBox12.SuspendLayout();
 			this.groupBox13.SuspendLayout();
 			this.groupBox14.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar11)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_stupid)).BeginInit();
 			this.panel3.SuspendLayout();
 			this.groupBox15.SuspendLayout();
-			this.gb_stats.SuspendLayout();
+			this.gb_ki_stats.SuspendLayout();
 			this.groupBox16.SuspendLayout();
 			this.groupBox17.SuspendLayout();
 			this.groupBox18.SuspendLayout();
@@ -227,13 +231,17 @@
 			// groupBox2
 			// 
 			this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.groupBox2.Controls.Add(this.lbl_CurrentSaveDir);
+			this.groupBox2.Controls.Add(this.label59);
+			this.groupBox2.Controls.Add(this.lbl_kspInstalDir);
+			this.groupBox2.Controls.Add(this.label57);
 			this.groupBox2.Controls.Add(this.lbl_currentSaveLocation);
 			this.groupBox2.Controls.Add(this.lbl_saveSelect);
 			this.groupBox2.Controls.Add(this.cmb_AvailSaves);
 			this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.groupBox2.Location = new System.Drawing.Point(9, 9);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(330, 91);
+			this.groupBox2.Size = new System.Drawing.Size(1036, 91);
 			this.groupBox2.TabIndex = 5;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Save Selection";
@@ -259,12 +267,12 @@
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Generate Multiple Random Kerbals";
 			// 
-			// tbar_MaleToFemale
+			// tbar_rnd_MaleToFemale
 			// 
-			this.tbar_MaleToFemale.Location = new System.Drawing.Point(123, 16);
-			this.tbar_MaleToFemale.Name = "tbar_MaleToFemale";
-			this.tbar_MaleToFemale.Size = new System.Drawing.Size(110, 45);
-			this.tbar_MaleToFemale.TabIndex = 6;
+			this.tbar_rnd_MaleToFemale.Location = new System.Drawing.Point(123, 16);
+			this.tbar_rnd_MaleToFemale.Name = "tbar_rnd_MaleToFemale";
+			this.tbar_rnd_MaleToFemale.Size = new System.Drawing.Size(110, 45);
+			this.tbar_rnd_MaleToFemale.TabIndex = 6;
 			// 
 			// label1
 			// 
@@ -275,79 +283,83 @@
 			this.label1.TabIndex = 7;
 			this.label1.Text = "Male To Female Ratio";
 			// 
-			// tbar_minStupidity
+			// tbar_rnd_minStupidity
 			// 
-			this.tbar_minStupidity.Location = new System.Drawing.Point(123, 19);
-			this.tbar_minStupidity.Name = "tbar_minStupidity";
-			this.tbar_minStupidity.Size = new System.Drawing.Size(104, 45);
-			this.tbar_minStupidity.TabIndex = 8;
+			this.tbar_rnd_minStupidity.Location = new System.Drawing.Point(123, 19);
+			this.tbar_rnd_minStupidity.Name = "tbar_rnd_minStupidity";
+			this.tbar_rnd_minStupidity.Size = new System.Drawing.Size(104, 45);
+			this.tbar_rnd_minStupidity.TabIndex = 8;
 			// 
-			// trackBar1
+			// tbar_rnd_maxstupid
 			// 
-			this.trackBar1.Location = new System.Drawing.Point(123, 66);
-			this.trackBar1.Name = "trackBar1";
-			this.trackBar1.Size = new System.Drawing.Size(104, 45);
-			this.trackBar1.TabIndex = 8;
+			this.tbar_rnd_maxstupid.Location = new System.Drawing.Point(123, 66);
+			this.tbar_rnd_maxstupid.Name = "tbar_rnd_maxstupid";
+			this.tbar_rnd_maxstupid.Size = new System.Drawing.Size(104, 45);
+			this.tbar_rnd_maxstupid.TabIndex = 8;
 			// 
-			// label2
+			// lbl_rnd_minstupid
 			// 
-			this.label2.AutoSize = true;
-			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label2.Location = new System.Drawing.Point(6, 19);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(93, 15);
-			this.label2.TabIndex = 9;
-			this.label2.Text = "Minimum Stupidity";
+			this.lbl_rnd_minstupid.AutoSize = true;
+			this.lbl_rnd_minstupid.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_minstupid.Location = new System.Drawing.Point(15, 19);
+			this.lbl_rnd_minstupid.Name = "lbl_rnd_minstupid";
+			this.lbl_rnd_minstupid.Size = new System.Drawing.Size(91, 13);
+			this.lbl_rnd_minstupid.TabIndex = 9;
+			this.lbl_rnd_minstupid.Text = "Minimum Stupidity";
+			this.lbl_rnd_minstupid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label3
+			// lbl_rnd_maxstupid
 			// 
-			this.label3.AutoSize = true;
-			this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label3.Location = new System.Drawing.Point(6, 66);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(96, 15);
-			this.label3.TabIndex = 10;
-			this.label3.Text = "Maximum Stupidity";
-			this.label3.Click += new System.EventHandler(this.label3_Click);
+			this.lbl_rnd_maxstupid.AutoSize = true;
+			this.lbl_rnd_maxstupid.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_maxstupid.Location = new System.Drawing.Point(12, 66);
+			this.lbl_rnd_maxstupid.Name = "lbl_rnd_maxstupid";
+			this.lbl_rnd_maxstupid.Size = new System.Drawing.Size(94, 13);
+			this.lbl_rnd_maxstupid.TabIndex = 10;
+			this.lbl_rnd_maxstupid.Text = "Maximum Stupidity";
+			this.lbl_rnd_maxstupid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_rnd_maxstupid.Click += new System.EventHandler(this.label3_Click);
 			// 
-			// tbar_MinimumBravery
+			// tbr_rnd_minbrave
 			// 
-			this.tbar_MinimumBravery.Location = new System.Drawing.Point(123, 113);
-			this.tbar_MinimumBravery.Name = "tbar_MinimumBravery";
-			this.tbar_MinimumBravery.Size = new System.Drawing.Size(104, 45);
-			this.tbar_MinimumBravery.TabIndex = 11;
+			this.tbr_rnd_minbrave.Location = new System.Drawing.Point(123, 113);
+			this.tbr_rnd_minbrave.Name = "tbr_rnd_minbrave";
+			this.tbr_rnd_minbrave.Size = new System.Drawing.Size(104, 45);
+			this.tbr_rnd_minbrave.TabIndex = 11;
 			// 
-			// label4
+			// lbl_rnd_minbrave
 			// 
-			this.label4.AutoSize = true;
-			this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label4.Location = new System.Drawing.Point(6, 113);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(89, 15);
-			this.label4.TabIndex = 12;
-			this.label4.Text = "Minimum Bravery";
+			this.lbl_rnd_minbrave.AutoSize = true;
+			this.lbl_rnd_minbrave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_minbrave.Location = new System.Drawing.Point(19, 113);
+			this.lbl_rnd_minbrave.Name = "lbl_rnd_minbrave";
+			this.lbl_rnd_minbrave.Size = new System.Drawing.Size(87, 13);
+			this.lbl_rnd_minbrave.TabIndex = 12;
+			this.lbl_rnd_minbrave.Text = "Minimum Bravery";
+			this.lbl_rnd_minbrave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label5
+			// lbl_rnd_maxbrave
 			// 
-			this.label5.AutoSize = true;
-			this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label5.Location = new System.Drawing.Point(6, 160);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(92, 15);
-			this.label5.TabIndex = 14;
-			this.label5.Text = "Maximum Bravery";
+			this.lbl_rnd_maxbrave.AutoSize = true;
+			this.lbl_rnd_maxbrave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_maxbrave.Location = new System.Drawing.Point(16, 160);
+			this.lbl_rnd_maxbrave.Name = "lbl_rnd_maxbrave";
+			this.lbl_rnd_maxbrave.Size = new System.Drawing.Size(90, 13);
+			this.lbl_rnd_maxbrave.TabIndex = 14;
+			this.lbl_rnd_maxbrave.Text = "Maximum Bravery";
+			this.lbl_rnd_maxbrave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// tbar_MaximumBravery
+			// tbar_rnd_maxbrave
 			// 
-			this.tbar_MaximumBravery.Location = new System.Drawing.Point(123, 160);
-			this.tbar_MaximumBravery.Name = "tbar_MaximumBravery";
-			this.tbar_MaximumBravery.Size = new System.Drawing.Size(104, 45);
-			this.tbar_MaximumBravery.TabIndex = 13;
+			this.tbar_rnd_maxbrave.Location = new System.Drawing.Point(123, 160);
+			this.tbar_rnd_maxbrave.Name = "tbar_rnd_maxbrave";
+			this.tbar_rnd_maxbrave.Size = new System.Drawing.Size(104, 45);
+			this.tbar_rnd_maxbrave.TabIndex = 13;
 			// 
 			// panel1
 			// 
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel1.Controls.Add(this.button1);
+			this.panel1.Controls.Add(this.btn_rnd_reset);
 			this.panel1.Controls.Add(this.btn_gen_List_Kerb);
 			this.panel1.Controls.Add(this.groupBox3);
 			this.panel1.Location = new System.Drawing.Point(9, 106);
@@ -357,10 +369,10 @@
 			// 
 			// groupBox4
 			// 
-			this.groupBox4.Controls.Add(this.lbl_mfRatio);
-			this.groupBox4.Controls.Add(this.chk_allFemale);
-			this.groupBox4.Controls.Add(this.chk_allMale);
-			this.groupBox4.Controls.Add(this.tbar_MaleToFemale);
+			this.groupBox4.Controls.Add(this.lbl_rnd_mfRatio);
+			this.groupBox4.Controls.Add(this.chk_rnd_allFemale);
+			this.groupBox4.Controls.Add(this.chk_rnd_allMale);
+			this.groupBox4.Controls.Add(this.tbar_rnd_MaleToFemale);
 			this.groupBox4.Controls.Add(this.label1);
 			this.groupBox4.Location = new System.Drawing.Point(7, 78);
 			this.groupBox4.Name = "groupBox4";
@@ -369,46 +381,46 @@
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Gender Settings";
 			// 
-			// chk_allMale
+			// chk_rnd_allMale
 			// 
-			this.chk_allMale.AutoSize = true;
-			this.chk_allMale.Location = new System.Drawing.Point(6, 44);
-			this.chk_allMale.Name = "chk_allMale";
-			this.chk_allMale.Size = new System.Drawing.Size(63, 17);
-			this.chk_allMale.TabIndex = 8;
-			this.chk_allMale.Text = "All Male";
-			this.chk_allMale.UseVisualStyleBackColor = true;
+			this.chk_rnd_allMale.AutoSize = true;
+			this.chk_rnd_allMale.Location = new System.Drawing.Point(6, 44);
+			this.chk_rnd_allMale.Name = "chk_rnd_allMale";
+			this.chk_rnd_allMale.Size = new System.Drawing.Size(63, 17);
+			this.chk_rnd_allMale.TabIndex = 8;
+			this.chk_rnd_allMale.Text = "All Male";
+			this.chk_rnd_allMale.UseVisualStyleBackColor = true;
 			// 
-			// chk_allFemale
+			// chk_rnd_allFemale
 			// 
-			this.chk_allFemale.AutoSize = true;
-			this.chk_allFemale.Location = new System.Drawing.Point(159, 44);
-			this.chk_allFemale.Name = "chk_allFemale";
-			this.chk_allFemale.Size = new System.Drawing.Size(74, 17);
-			this.chk_allFemale.TabIndex = 9;
-			this.chk_allFemale.Text = "All Female";
-			this.chk_allFemale.UseVisualStyleBackColor = true;
+			this.chk_rnd_allFemale.AutoSize = true;
+			this.chk_rnd_allFemale.Location = new System.Drawing.Point(159, 44);
+			this.chk_rnd_allFemale.Name = "chk_rnd_allFemale";
+			this.chk_rnd_allFemale.Size = new System.Drawing.Size(74, 17);
+			this.chk_rnd_allFemale.TabIndex = 9;
+			this.chk_rnd_allFemale.Text = "All Female";
+			this.chk_rnd_allFemale.UseVisualStyleBackColor = true;
 			// 
 			// groupBox5
 			// 
-			this.groupBox5.Controls.Add(this.label11);
-			this.groupBox5.Controls.Add(this.label12);
-			this.groupBox5.Controls.Add(this.trackBar3);
-			this.groupBox5.Controls.Add(this.label9);
-			this.groupBox5.Controls.Add(this.label10);
-			this.groupBox5.Controls.Add(this.trackBar2);
-			this.groupBox5.Controls.Add(this.label8);
-			this.groupBox5.Controls.Add(this.label7);
-			this.groupBox5.Controls.Add(this.label6);
-			this.groupBox5.Controls.Add(this.lbl_minStupid);
-			this.groupBox5.Controls.Add(this.label2);
-			this.groupBox5.Controls.Add(this.label5);
-			this.groupBox5.Controls.Add(this.tbar_MaximumBravery);
-			this.groupBox5.Controls.Add(this.tbar_minStupidity);
-			this.groupBox5.Controls.Add(this.label3);
-			this.groupBox5.Controls.Add(this.trackBar1);
-			this.groupBox5.Controls.Add(this.label4);
-			this.groupBox5.Controls.Add(this.tbar_MinimumBravery);
+			this.groupBox5.Controls.Add(this.lbl_rnd_maxbadsdisp);
+			this.groupBox5.Controls.Add(this.lbl_rnd_maxbads);
+			this.groupBox5.Controls.Add(this.tbar_rnd_maxbads);
+			this.groupBox5.Controls.Add(this.lbl_rnd_minbadsdisp);
+			this.groupBox5.Controls.Add(this.lbl_rnd_minbads);
+			this.groupBox5.Controls.Add(this.tbar_rnd_minbads);
+			this.groupBox5.Controls.Add(this.lbl_rnd_maxbravedisp);
+			this.groupBox5.Controls.Add(this.lbl_rnd_minbravedisp);
+			this.groupBox5.Controls.Add(this.lbl_rnd_maxstupiddisp);
+			this.groupBox5.Controls.Add(this.lbl_rnd_minStupidDisp);
+			this.groupBox5.Controls.Add(this.lbl_rnd_minstupid);
+			this.groupBox5.Controls.Add(this.lbl_rnd_maxbrave);
+			this.groupBox5.Controls.Add(this.tbar_rnd_maxbrave);
+			this.groupBox5.Controls.Add(this.tbar_rnd_minStupidity);
+			this.groupBox5.Controls.Add(this.lbl_rnd_maxstupid);
+			this.groupBox5.Controls.Add(this.tbar_rnd_maxstupid);
+			this.groupBox5.Controls.Add(this.lbl_rnd_minbrave);
+			this.groupBox5.Controls.Add(this.tbr_rnd_minbrave);
 			this.groupBox5.Location = new System.Drawing.Point(7, 152);
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.Size = new System.Drawing.Size(295, 301);
@@ -416,197 +428,196 @@
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "Ability Scores";
 			// 
-			// lbl_mfRatio
+			// lbl_rnd_mfRatio
 			// 
-			this.lbl_mfRatio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_mfRatio.Location = new System.Drawing.Point(239, 16);
-			this.lbl_mfRatio.Name = "lbl_mfRatio";
-			this.lbl_mfRatio.Size = new System.Drawing.Size(52, 30);
-			this.lbl_mfRatio.TabIndex = 10;
+			this.lbl_rnd_mfRatio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_rnd_mfRatio.Location = new System.Drawing.Point(239, 16);
+			this.lbl_rnd_mfRatio.Name = "lbl_rnd_mfRatio";
+			this.lbl_rnd_mfRatio.Size = new System.Drawing.Size(52, 30);
+			this.lbl_rnd_mfRatio.TabIndex = 10;
 			// 
-			// lbl_minStupid
+			// lbl_rnd_minStupidDisp
 			// 
-			this.lbl_minStupid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_minStupid.Location = new System.Drawing.Point(237, 19);
-			this.lbl_minStupid.Name = "lbl_minStupid";
-			this.lbl_minStupid.Size = new System.Drawing.Size(52, 30);
-			this.lbl_minStupid.TabIndex = 11;
+			this.lbl_rnd_minStupidDisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_rnd_minStupidDisp.Location = new System.Drawing.Point(237, 19);
+			this.lbl_rnd_minStupidDisp.Name = "lbl_rnd_minStupidDisp";
+			this.lbl_rnd_minStupidDisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_rnd_minStupidDisp.TabIndex = 11;
 			// 
-			// label6
+			// lbl_rnd_maxstupiddisp
 			// 
-			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label6.Location = new System.Drawing.Point(237, 66);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(52, 30);
-			this.label6.TabIndex = 15;
+			this.lbl_rnd_maxstupiddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_rnd_maxstupiddisp.Location = new System.Drawing.Point(237, 66);
+			this.lbl_rnd_maxstupiddisp.Name = "lbl_rnd_maxstupiddisp";
+			this.lbl_rnd_maxstupiddisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_rnd_maxstupiddisp.TabIndex = 15;
 			// 
-			// label7
+			// lbl_rnd_minbravedisp
 			// 
-			this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label7.Location = new System.Drawing.Point(237, 113);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(52, 30);
-			this.label7.TabIndex = 16;
+			this.lbl_rnd_minbravedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_rnd_minbravedisp.Location = new System.Drawing.Point(237, 113);
+			this.lbl_rnd_minbravedisp.Name = "lbl_rnd_minbravedisp";
+			this.lbl_rnd_minbravedisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_rnd_minbravedisp.TabIndex = 16;
 			// 
-			// label8
+			// lbl_rnd_maxbravedisp
 			// 
-			this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label8.Location = new System.Drawing.Point(237, 160);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(52, 30);
-			this.label8.TabIndex = 17;
+			this.lbl_rnd_maxbravedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_rnd_maxbravedisp.Location = new System.Drawing.Point(237, 160);
+			this.lbl_rnd_maxbravedisp.Name = "lbl_rnd_maxbravedisp";
+			this.lbl_rnd_maxbravedisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_rnd_maxbravedisp.TabIndex = 17;
 			// 
-			// label9
+			// lbl_rnd_minbadsdisp
 			// 
-			this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label9.Location = new System.Drawing.Point(237, 207);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(52, 30);
-			this.label9.TabIndex = 20;
+			this.lbl_rnd_minbadsdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_rnd_minbadsdisp.Location = new System.Drawing.Point(237, 207);
+			this.lbl_rnd_minbadsdisp.Name = "lbl_rnd_minbadsdisp";
+			this.lbl_rnd_minbadsdisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_rnd_minbadsdisp.TabIndex = 20;
 			// 
-			// label10
+			// lbl_rnd_minbads
 			// 
-			this.label10.AutoSize = true;
-			this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label10.Location = new System.Drawing.Point(6, 207);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(99, 15);
-			this.label10.TabIndex = 19;
-			this.label10.Text = "Minimum Badasses";
+			this.lbl_rnd_minbads.AutoSize = true;
+			this.lbl_rnd_minbads.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_minbads.Location = new System.Drawing.Point(9, 207);
+			this.lbl_rnd_minbads.Name = "lbl_rnd_minbads";
+			this.lbl_rnd_minbads.Size = new System.Drawing.Size(97, 13);
+			this.lbl_rnd_minbads.TabIndex = 19;
+			this.lbl_rnd_minbads.Text = "Minimum Badasses";
+			this.lbl_rnd_minbads.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// trackBar2
+			// tbar_rnd_minbads
 			// 
-			this.trackBar2.Location = new System.Drawing.Point(123, 207);
-			this.trackBar2.Name = "trackBar2";
-			this.trackBar2.Size = new System.Drawing.Size(104, 45);
-			this.trackBar2.TabIndex = 18;
+			this.tbar_rnd_minbads.Location = new System.Drawing.Point(123, 207);
+			this.tbar_rnd_minbads.Name = "tbar_rnd_minbads";
+			this.tbar_rnd_minbads.Size = new System.Drawing.Size(104, 45);
+			this.tbar_rnd_minbads.TabIndex = 18;
 			// 
-			// label11
+			// lbl_rnd_maxbadsdisp
 			// 
-			this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label11.Location = new System.Drawing.Point(237, 253);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(52, 30);
-			this.label11.TabIndex = 23;
+			this.lbl_rnd_maxbadsdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_rnd_maxbadsdisp.Location = new System.Drawing.Point(237, 253);
+			this.lbl_rnd_maxbadsdisp.Name = "lbl_rnd_maxbadsdisp";
+			this.lbl_rnd_maxbadsdisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_rnd_maxbadsdisp.TabIndex = 23;
 			// 
-			// label12
+			// lbl_rnd_maxbads
 			// 
-			this.label12.AutoSize = true;
-			this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label12.Location = new System.Drawing.Point(6, 253);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(102, 15);
-			this.label12.TabIndex = 22;
-			this.label12.Text = "Maximum Badasses";
+			this.lbl_rnd_maxbads.AutoSize = true;
+			this.lbl_rnd_maxbads.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_maxbads.Location = new System.Drawing.Point(6, 253);
+			this.lbl_rnd_maxbads.Name = "lbl_rnd_maxbads";
+			this.lbl_rnd_maxbads.Size = new System.Drawing.Size(100, 13);
+			this.lbl_rnd_maxbads.TabIndex = 22;
+			this.lbl_rnd_maxbads.Text = "Maximum Badasses";
+			this.lbl_rnd_maxbads.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// trackBar3
+			// tbar_rnd_maxbads
 			// 
-			this.trackBar3.Location = new System.Drawing.Point(123, 253);
-			this.trackBar3.Name = "trackBar3";
-			this.trackBar3.Size = new System.Drawing.Size(104, 45);
-			this.trackBar3.TabIndex = 21;
+			this.tbar_rnd_maxbads.Location = new System.Drawing.Point(123, 253);
+			this.tbar_rnd_maxbads.Name = "tbar_rnd_maxbads";
+			this.tbar_rnd_maxbads.Size = new System.Drawing.Size(104, 45);
+			this.tbar_rnd_maxbads.TabIndex = 21;
 			// 
 			// groupBox6
 			// 
 			this.groupBox6.Controls.Add(this.groupBox8);
-			this.groupBox6.Controls.Add(this.trackBar7);
-			this.groupBox6.Controls.Add(this.label20);
-			this.groupBox6.Controls.Add(this.label21);
-			this.groupBox6.Controls.Add(this.label15);
-			this.groupBox6.Controls.Add(this.trackBar4);
-			this.groupBox6.Controls.Add(this.label13);
-			this.groupBox6.Controls.Add(this.trackBar5);
-			this.groupBox6.Controls.Add(this.label14);
-			this.groupBox6.Controls.Add(this.trackBar6);
-			this.groupBox6.Controls.Add(this.label16);
-			this.groupBox6.Controls.Add(this.label18);
-			this.groupBox6.Controls.Add(this.label17);
+			this.groupBox6.Controls.Add(this.tbar_rnd_maxtour);
+			this.groupBox6.Controls.Add(this.lbl_rnd_maxtourdisp);
+			this.groupBox6.Controls.Add(this.tbar_rnd_maxsci);
+			this.groupBox6.Controls.Add(this.tbar_rnd_maxengi);
+			this.groupBox6.Controls.Add(this.tbar_rnd_maxpilots);
+			this.groupBox6.Controls.Add(this.tbar_rnd_maxpilotsdisp);
+			this.groupBox6.Controls.Add(this.tbar_rnd_maxscidisp);
+			this.groupBox6.Controls.Add(this.lbl_rnd_maxengidisp);
 			this.groupBox6.Location = new System.Drawing.Point(7, 465);
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.Size = new System.Drawing.Size(295, 217);
 			this.groupBox6.TabIndex = 2;
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Professions";
+			this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
 			// 
-			// trackBar4
+			// tbar_rnd_maxsci
 			// 
-			this.trackBar4.Location = new System.Drawing.Point(123, 120);
-			this.trackBar4.Name = "trackBar4";
-			this.trackBar4.Size = new System.Drawing.Size(104, 45);
-			this.trackBar4.TabIndex = 11;
+			this.tbar_rnd_maxsci.Location = new System.Drawing.Point(123, 120);
+			this.tbar_rnd_maxsci.Name = "tbar_rnd_maxsci";
+			this.tbar_rnd_maxsci.Size = new System.Drawing.Size(104, 45);
+			this.tbar_rnd_maxsci.TabIndex = 11;
 			// 
-			// label13
+			// lbl_rnd_maxsci
 			// 
-			this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label13.Location = new System.Drawing.Point(6, 116);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(54, 22);
-			this.label13.TabIndex = 12;
-			this.label13.Text = "Scientist";
-			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_rnd_maxsci.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_maxsci.Location = new System.Drawing.Point(3, 105);
+			this.lbl_rnd_maxsci.Name = "lbl_rnd_maxsci";
+			this.lbl_rnd_maxsci.Size = new System.Drawing.Size(51, 22);
+			this.lbl_rnd_maxsci.TabIndex = 12;
+			this.lbl_rnd_maxsci.Text = "Scientist";
+			this.lbl_rnd_maxsci.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// trackBar5
+			// tbar_rnd_maxengi
 			// 
-			this.trackBar5.Location = new System.Drawing.Point(123, 73);
-			this.trackBar5.Name = "trackBar5";
-			this.trackBar5.Size = new System.Drawing.Size(104, 45);
-			this.trackBar5.TabIndex = 8;
+			this.tbar_rnd_maxengi.Location = new System.Drawing.Point(123, 73);
+			this.tbar_rnd_maxengi.Name = "tbar_rnd_maxengi";
+			this.tbar_rnd_maxengi.Size = new System.Drawing.Size(104, 45);
+			this.tbar_rnd_maxengi.TabIndex = 8;
 			// 
-			// label14
+			// lbl_rnd_engi
 			// 
-			this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label14.Location = new System.Drawing.Point(6, 71);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(54, 22);
-			this.label14.TabIndex = 10;
-			this.label14.Text = "Engineers";
-			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.label14.Click += new System.EventHandler(this.label3_Click);
+			this.lbl_rnd_engi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_engi.Location = new System.Drawing.Point(3, 60);
+			this.lbl_rnd_engi.Name = "lbl_rnd_engi";
+			this.lbl_rnd_engi.Size = new System.Drawing.Size(51, 22);
+			this.lbl_rnd_engi.TabIndex = 10;
+			this.lbl_rnd_engi.Text = "Engineers";
+			this.lbl_rnd_engi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_rnd_engi.Click += new System.EventHandler(this.label3_Click);
 			// 
-			// trackBar6
+			// tbar_rnd_maxpilots
 			// 
-			this.trackBar6.Location = new System.Drawing.Point(123, 26);
-			this.trackBar6.Name = "trackBar6";
-			this.trackBar6.Size = new System.Drawing.Size(104, 45);
-			this.trackBar6.TabIndex = 8;
+			this.tbar_rnd_maxpilots.Location = new System.Drawing.Point(123, 26);
+			this.tbar_rnd_maxpilots.Name = "tbar_rnd_maxpilots";
+			this.tbar_rnd_maxpilots.Size = new System.Drawing.Size(104, 45);
+			this.tbar_rnd_maxpilots.TabIndex = 8;
 			// 
-			// label15
+			// lbl_rnd_maxpilots
 			// 
-			this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label15.Location = new System.Drawing.Point(6, 26);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(54, 22);
-			this.label15.TabIndex = 9;
-			this.label15.Text = "Pilot";
-			this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_rnd_maxpilots.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_maxpilots.Location = new System.Drawing.Point(9, 15);
+			this.lbl_rnd_maxpilots.Name = "lbl_rnd_maxpilots";
+			this.lbl_rnd_maxpilots.Size = new System.Drawing.Size(45, 22);
+			this.lbl_rnd_maxpilots.TabIndex = 9;
+			this.lbl_rnd_maxpilots.Text = "Pilot";
+			this.lbl_rnd_maxpilots.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label16
+			// tbar_rnd_maxpilotsdisp
 			// 
-			this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label16.Location = new System.Drawing.Point(237, 26);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(52, 30);
-			this.label16.TabIndex = 11;
+			this.tbar_rnd_maxpilotsdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.tbar_rnd_maxpilotsdisp.Location = new System.Drawing.Point(237, 26);
+			this.tbar_rnd_maxpilotsdisp.Name = "tbar_rnd_maxpilotsdisp";
+			this.tbar_rnd_maxpilotsdisp.Size = new System.Drawing.Size(52, 30);
+			this.tbar_rnd_maxpilotsdisp.TabIndex = 11;
 			// 
-			// label17
+			// lbl_rnd_maxengidisp
 			// 
-			this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label17.Location = new System.Drawing.Point(237, 73);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(52, 30);
-			this.label17.TabIndex = 15;
+			this.lbl_rnd_maxengidisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_rnd_maxengidisp.Location = new System.Drawing.Point(237, 73);
+			this.lbl_rnd_maxengidisp.Name = "lbl_rnd_maxengidisp";
+			this.lbl_rnd_maxengidisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_rnd_maxengidisp.TabIndex = 15;
 			// 
-			// label18
+			// tbar_rnd_maxscidisp
 			// 
-			this.label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label18.Location = new System.Drawing.Point(237, 120);
-			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(52, 30);
-			this.label18.TabIndex = 16;
+			this.tbar_rnd_maxscidisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.tbar_rnd_maxscidisp.Location = new System.Drawing.Point(237, 120);
+			this.tbar_rnd_maxscidisp.Name = "tbar_rnd_maxscidisp";
+			this.tbar_rnd_maxscidisp.Size = new System.Drawing.Size(52, 30);
+			this.tbar_rnd_maxscidisp.TabIndex = 16;
 			// 
 			// groupBox7
 			// 
-			this.groupBox7.Controls.Add(this.dmn_MaxKerbals);
+			this.groupBox7.Controls.Add(this.dmn_rnd_MaxKerbals);
 			this.groupBox7.Controls.Add(this.label19);
 			this.groupBox7.Location = new System.Drawing.Point(7, 23);
 			this.groupBox7.Name = "groupBox7";
@@ -625,95 +636,103 @@
 			this.label19.Text = "Number Of Kerbals To Create (Max :  50)";
 			this.label19.Click += new System.EventHandler(this.label19_Click);
 			// 
-			// dmn_MaxKerbals
+			// dmn_rnd_MaxKerbals
 			// 
-			this.dmn_MaxKerbals.Location = new System.Drawing.Point(240, 19);
-			this.dmn_MaxKerbals.Name = "dmn_MaxKerbals";
-			this.dmn_MaxKerbals.Size = new System.Drawing.Size(49, 20);
-			this.dmn_MaxKerbals.TabIndex = 2;
-			this.dmn_MaxKerbals.Text = "1";
-			this.dmn_MaxKerbals.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.dmn_rnd_MaxKerbals.Location = new System.Drawing.Point(240, 19);
+			this.dmn_rnd_MaxKerbals.Name = "dmn_rnd_MaxKerbals";
+			this.dmn_rnd_MaxKerbals.Size = new System.Drawing.Size(49, 20);
+			this.dmn_rnd_MaxKerbals.TabIndex = 2;
+			this.dmn_rnd_MaxKerbals.Text = "1";
+			this.dmn_rnd_MaxKerbals.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
-			// trackBar7
+			// tbar_rnd_maxtour
 			// 
-			this.trackBar7.Location = new System.Drawing.Point(123, 162);
-			this.trackBar7.Name = "trackBar7";
-			this.trackBar7.Size = new System.Drawing.Size(104, 45);
-			this.trackBar7.TabIndex = 17;
+			this.tbar_rnd_maxtour.Location = new System.Drawing.Point(123, 162);
+			this.tbar_rnd_maxtour.Name = "tbar_rnd_maxtour";
+			this.tbar_rnd_maxtour.Size = new System.Drawing.Size(104, 45);
+			this.tbar_rnd_maxtour.TabIndex = 17;
 			// 
-			// label20
+			// lbl_rnd_maxtour
 			// 
-			this.label20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label20.Location = new System.Drawing.Point(6, 161);
-			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(54, 22);
-			this.label20.TabIndex = 18;
-			this.label20.Text = "Tourist";
-			this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_rnd_maxtour.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.lbl_rnd_maxtour.Location = new System.Drawing.Point(9, 150);
+			this.lbl_rnd_maxtour.Name = "lbl_rnd_maxtour";
+			this.lbl_rnd_maxtour.Size = new System.Drawing.Size(45, 22);
+			this.lbl_rnd_maxtour.TabIndex = 18;
+			this.lbl_rnd_maxtour.Text = "Tourist";
+			this.lbl_rnd_maxtour.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label21
+			// lbl_rnd_maxtourdisp
 			// 
-			this.label21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label21.Location = new System.Drawing.Point(237, 162);
-			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(52, 30);
-			this.label21.TabIndex = 19;
+			this.lbl_rnd_maxtourdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_rnd_maxtourdisp.Location = new System.Drawing.Point(237, 162);
+			this.lbl_rnd_maxtourdisp.Name = "lbl_rnd_maxtourdisp";
+			this.lbl_rnd_maxtourdisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_rnd_maxtourdisp.TabIndex = 19;
 			// 
-			// checkBox1
+			// chk_rnd_lockpilots
 			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(18, 16);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(15, 14);
-			this.checkBox1.TabIndex = 20;
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.chk_rnd_lockpilots.AutoSize = true;
+			this.chk_rnd_lockpilots.Location = new System.Drawing.Point(60, 15);
+			this.chk_rnd_lockpilots.Name = "chk_rnd_lockpilots";
+			this.chk_rnd_lockpilots.Size = new System.Drawing.Size(50, 17);
+			this.chk_rnd_lockpilots.TabIndex = 20;
+			this.chk_rnd_lockpilots.Text = "Lock";
+			this.chk_rnd_lockpilots.UseVisualStyleBackColor = true;
 			// 
-			// checkBox2
+			// chk_rnd_lockengi
 			// 
-			this.checkBox2.AutoSize = true;
-			this.checkBox2.Location = new System.Drawing.Point(18, 61);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(15, 14);
-			this.checkBox2.TabIndex = 21;
-			this.checkBox2.UseVisualStyleBackColor = true;
+			this.chk_rnd_lockengi.AutoSize = true;
+			this.chk_rnd_lockengi.Location = new System.Drawing.Point(60, 60);
+			this.chk_rnd_lockengi.Name = "chk_rnd_lockengi";
+			this.chk_rnd_lockengi.Size = new System.Drawing.Size(50, 17);
+			this.chk_rnd_lockengi.TabIndex = 21;
+			this.chk_rnd_lockengi.Text = "Lock";
+			this.chk_rnd_lockengi.UseVisualStyleBackColor = true;
 			// 
-			// checkBox3
+			// chk_rnd_locksci
 			// 
-			this.checkBox3.AutoSize = true;
-			this.checkBox3.Location = new System.Drawing.Point(18, 106);
-			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.Size = new System.Drawing.Size(15, 14);
-			this.checkBox3.TabIndex = 22;
-			this.checkBox3.UseVisualStyleBackColor = true;
+			this.chk_rnd_locksci.AutoSize = true;
+			this.chk_rnd_locksci.Location = new System.Drawing.Point(60, 105);
+			this.chk_rnd_locksci.Name = "chk_rnd_locksci";
+			this.chk_rnd_locksci.Size = new System.Drawing.Size(50, 17);
+			this.chk_rnd_locksci.TabIndex = 22;
+			this.chk_rnd_locksci.Text = "Lock";
+			this.chk_rnd_locksci.UseVisualStyleBackColor = true;
 			// 
-			// checkBox4
+			// chk_rnd_locktour
 			// 
-			this.checkBox4.AutoSize = true;
-			this.checkBox4.Location = new System.Drawing.Point(18, 151);
-			this.checkBox4.Name = "checkBox4";
-			this.checkBox4.Size = new System.Drawing.Size(15, 14);
-			this.checkBox4.TabIndex = 23;
-			this.checkBox4.UseVisualStyleBackColor = true;
+			this.chk_rnd_locktour.AutoSize = true;
+			this.chk_rnd_locktour.Location = new System.Drawing.Point(60, 150);
+			this.chk_rnd_locktour.Name = "chk_rnd_locktour";
+			this.chk_rnd_locktour.Size = new System.Drawing.Size(50, 17);
+			this.chk_rnd_locktour.TabIndex = 23;
+			this.chk_rnd_locktour.Text = "Lock";
+			this.chk_rnd_locktour.UseVisualStyleBackColor = true;
 			// 
-			// button1
+			// btn_rnd_reset
 			// 
-			this.button1.AutoSize = true;
-			this.button1.Location = new System.Drawing.Point(182, 706);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(138, 23);
-			this.button1.TabIndex = 7;
-			this.button1.Text = "Reset";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btn_rnd_reset.AutoSize = true;
+			this.btn_rnd_reset.Location = new System.Drawing.Point(182, 706);
+			this.btn_rnd_reset.Name = "btn_rnd_reset";
+			this.btn_rnd_reset.Size = new System.Drawing.Size(138, 23);
+			this.btn_rnd_reset.TabIndex = 7;
+			this.btn_rnd_reset.Text = "Reset";
+			this.btn_rnd_reset.UseVisualStyleBackColor = true;
 			// 
 			// groupBox8
 			// 
-			this.groupBox8.Controls.Add(this.checkBox4);
-			this.groupBox8.Controls.Add(this.checkBox1);
-			this.groupBox8.Controls.Add(this.checkBox2);
-			this.groupBox8.Controls.Add(this.checkBox3);
-			this.groupBox8.Location = new System.Drawing.Point(66, 15);
+			this.groupBox8.Controls.Add(this.lbl_rnd_maxpilots);
+			this.groupBox8.Controls.Add(this.lbl_rnd_engi);
+			this.groupBox8.Controls.Add(this.chk_rnd_locktour);
+			this.groupBox8.Controls.Add(this.lbl_rnd_maxtour);
+			this.groupBox8.Controls.Add(this.chk_rnd_lockpilots);
+			this.groupBox8.Controls.Add(this.lbl_rnd_maxsci);
+			this.groupBox8.Controls.Add(this.chk_rnd_lockengi);
+			this.groupBox8.Controls.Add(this.chk_rnd_locksci);
+			this.groupBox8.Location = new System.Drawing.Point(6, 15);
 			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(51, 192);
+			this.groupBox8.Size = new System.Drawing.Size(111, 192);
 			this.groupBox8.TabIndex = 20;
 			this.groupBox8.TabStop = false;
 			this.groupBox8.Text = "Lock";
@@ -729,8 +748,8 @@
 			// 
 			// groupBox9
 			// 
-			this.groupBox9.Controls.Add(this.button3);
-			this.groupBox9.Controls.Add(this.button2);
+			this.groupBox9.Controls.Add(this.btn_spe_reset);
+			this.groupBox9.Controls.Add(this.btn_spe_generate);
 			this.groupBox9.Controls.Add(this.groupBox10);
 			this.groupBox9.Location = new System.Drawing.Point(8, 3);
 			this.groupBox9.Name = "groupBox9";
@@ -739,33 +758,32 @@
 			this.groupBox9.TabStop = false;
 			this.groupBox9.Text = "Generate A Specific Kerbal";
 			// 
-			// label22
+			// lbl_spe_bravedisp
 			// 
-			this.label22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label22.Location = new System.Drawing.Point(215, 15);
-			this.label22.Name = "label22";
-			this.label22.Size = new System.Drawing.Size(52, 30);
-			this.label22.TabIndex = 26;
-			this.label22.Click += new System.EventHandler(this.label22_Click);
+			this.lbl_spe_bravedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_spe_bravedisp.Location = new System.Drawing.Point(215, 15);
+			this.lbl_spe_bravedisp.Name = "lbl_spe_bravedisp";
+			this.lbl_spe_bravedisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_spe_bravedisp.TabIndex = 26;
+			this.lbl_spe_bravedisp.Click += new System.EventHandler(this.label22_Click);
 			// 
-			// label23
+			// lbl_spe_brave
 			// 
-			this.label23.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label23.Location = new System.Drawing.Point(6, 16);
-			this.label23.Name = "label23";
-			this.label23.Size = new System.Drawing.Size(93, 15);
-			this.label23.TabIndex = 25;
-			this.label23.Text = "Bravery";
-			this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.label23.Click += new System.EventHandler(this.label23_Click);
+			this.lbl_spe_brave.Location = new System.Drawing.Point(6, 16);
+			this.lbl_spe_brave.Name = "lbl_spe_brave";
+			this.lbl_spe_brave.Size = new System.Drawing.Size(93, 15);
+			this.lbl_spe_brave.TabIndex = 25;
+			this.lbl_spe_brave.Text = "Bravery";
+			this.lbl_spe_brave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_spe_brave.Click += new System.EventHandler(this.label23_Click);
 			// 
-			// trackBar8
+			// tbar_spe_brave
 			// 
-			this.trackBar8.Location = new System.Drawing.Point(105, 15);
-			this.trackBar8.Name = "trackBar8";
-			this.trackBar8.Size = new System.Drawing.Size(104, 45);
-			this.trackBar8.TabIndex = 24;
-			this.trackBar8.Scroll += new System.EventHandler(this.trackBar8_Scroll);
+			this.tbar_spe_brave.Location = new System.Drawing.Point(105, 15);
+			this.tbar_spe_brave.Name = "tbar_spe_brave";
+			this.tbar_spe_brave.Size = new System.Drawing.Size(104, 45);
+			this.tbar_spe_brave.TabIndex = 24;
+			this.tbar_spe_brave.Scroll += new System.EventHandler(this.trackBar8_Scroll);
 			// 
 			// groupBox10
 			// 
@@ -773,7 +791,7 @@
 			this.groupBox10.Controls.Add(this.groupBox13);
 			this.groupBox10.Controls.Add(this.groupBox12);
 			this.groupBox10.Controls.Add(this.groupBox11);
-			this.groupBox10.Controls.Add(this.textBox1);
+			this.groupBox10.Controls.Add(this.txt_spe_kerbname);
 			this.groupBox10.Controls.Add(this.label28);
 			this.groupBox10.Location = new System.Drawing.Point(11, 19);
 			this.groupBox10.Name = "groupBox10";
@@ -791,17 +809,18 @@
 			this.label28.TabIndex = 0;
 			this.label28.Text = "Name";
 			// 
-			// textBox1
+			// txt_spe_kerbname
 			// 
-			this.textBox1.Location = new System.Drawing.Point(47, 18);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(252, 20);
-			this.textBox1.TabIndex = 1;
+			this.txt_spe_kerbname.Location = new System.Drawing.Point(47, 18);
+			this.txt_spe_kerbname.MaxLength = 18;
+			this.txt_spe_kerbname.Name = "txt_spe_kerbname";
+			this.txt_spe_kerbname.Size = new System.Drawing.Size(252, 20);
+			this.txt_spe_kerbname.TabIndex = 1;
 			// 
 			// groupBox11
 			// 
-			this.groupBox11.Controls.Add(this.radioButton2);
-			this.groupBox11.Controls.Add(this.radioButton1);
+			this.groupBox11.Controls.Add(this.rd_spe_genderfemale);
+			this.groupBox11.Controls.Add(this.rd_spe_gendermale);
 			this.groupBox11.Location = new System.Drawing.Point(9, 43);
 			this.groupBox11.Name = "groupBox11";
 			this.groupBox11.Size = new System.Drawing.Size(134, 45);
@@ -809,33 +828,33 @@
 			this.groupBox11.TabStop = false;
 			this.groupBox11.Text = "Gender";
 			// 
-			// radioButton1
+			// rd_spe_gendermale
 			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(6, 19);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(48, 17);
-			this.radioButton1.TabIndex = 0;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "Male";
-			this.radioButton1.UseVisualStyleBackColor = true;
+			this.rd_spe_gendermale.AutoSize = true;
+			this.rd_spe_gendermale.Location = new System.Drawing.Point(6, 19);
+			this.rd_spe_gendermale.Name = "rd_spe_gendermale";
+			this.rd_spe_gendermale.Size = new System.Drawing.Size(48, 17);
+			this.rd_spe_gendermale.TabIndex = 0;
+			this.rd_spe_gendermale.TabStop = true;
+			this.rd_spe_gendermale.Text = "Male";
+			this.rd_spe_gendermale.UseVisualStyleBackColor = true;
 			// 
-			// radioButton2
+			// rd_spe_genderfemale
 			// 
-			this.radioButton2.AutoSize = true;
-			this.radioButton2.Location = new System.Drawing.Point(69, 19);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(59, 17);
-			this.radioButton2.TabIndex = 1;
-			this.radioButton2.TabStop = true;
-			this.radioButton2.Text = "Female";
-			this.radioButton2.UseVisualStyleBackColor = true;
+			this.rd_spe_genderfemale.AutoSize = true;
+			this.rd_spe_genderfemale.Location = new System.Drawing.Point(69, 19);
+			this.rd_spe_genderfemale.Name = "rd_spe_genderfemale";
+			this.rd_spe_genderfemale.Size = new System.Drawing.Size(59, 17);
+			this.rd_spe_genderfemale.TabIndex = 1;
+			this.rd_spe_genderfemale.TabStop = true;
+			this.rd_spe_genderfemale.Text = "Female";
+			this.rd_spe_genderfemale.UseVisualStyleBackColor = true;
 			// 
 			// groupBox12
 			// 
-			this.groupBox12.Controls.Add(this.radioButton5);
-			this.groupBox12.Controls.Add(this.radioButton3);
-			this.groupBox12.Controls.Add(this.radioButton4);
+			this.groupBox12.Controls.Add(this.rd_spe_sci);
+			this.groupBox12.Controls.Add(this.rd_spe_engi);
+			this.groupBox12.Controls.Add(this.rd_spe_pilot);
 			this.groupBox12.Location = new System.Drawing.Point(34, 94);
 			this.groupBox12.Name = "groupBox12";
 			this.groupBox12.Size = new System.Drawing.Size(235, 45);
@@ -843,53 +862,53 @@
 			this.groupBox12.TabStop = false;
 			this.groupBox12.Text = "Profession";
 			// 
-			// radioButton3
+			// rd_spe_engi
 			// 
-			this.radioButton3.AutoSize = true;
-			this.radioButton3.Location = new System.Drawing.Point(69, 19);
-			this.radioButton3.Name = "radioButton3";
-			this.radioButton3.Size = new System.Drawing.Size(67, 17);
-			this.radioButton3.TabIndex = 1;
-			this.radioButton3.TabStop = true;
-			this.radioButton3.Text = "Engineer";
-			this.radioButton3.UseVisualStyleBackColor = true;
+			this.rd_spe_engi.AutoSize = true;
+			this.rd_spe_engi.Location = new System.Drawing.Point(69, 19);
+			this.rd_spe_engi.Name = "rd_spe_engi";
+			this.rd_spe_engi.Size = new System.Drawing.Size(67, 17);
+			this.rd_spe_engi.TabIndex = 1;
+			this.rd_spe_engi.TabStop = true;
+			this.rd_spe_engi.Text = "Engineer";
+			this.rd_spe_engi.UseVisualStyleBackColor = true;
 			// 
-			// radioButton4
+			// rd_spe_pilot
 			// 
-			this.radioButton4.AutoSize = true;
-			this.radioButton4.Location = new System.Drawing.Point(6, 19);
-			this.radioButton4.Name = "radioButton4";
-			this.radioButton4.Size = new System.Drawing.Size(45, 17);
-			this.radioButton4.TabIndex = 0;
-			this.radioButton4.TabStop = true;
-			this.radioButton4.Text = "Pilot";
-			this.radioButton4.UseVisualStyleBackColor = true;
+			this.rd_spe_pilot.AutoSize = true;
+			this.rd_spe_pilot.Location = new System.Drawing.Point(6, 19);
+			this.rd_spe_pilot.Name = "rd_spe_pilot";
+			this.rd_spe_pilot.Size = new System.Drawing.Size(45, 17);
+			this.rd_spe_pilot.TabIndex = 0;
+			this.rd_spe_pilot.TabStop = true;
+			this.rd_spe_pilot.Text = "Pilot";
+			this.rd_spe_pilot.UseVisualStyleBackColor = true;
 			// 
-			// radioButton5
+			// rd_spe_sci
 			// 
-			this.radioButton5.AutoSize = true;
-			this.radioButton5.Location = new System.Drawing.Point(142, 19);
-			this.radioButton5.Name = "radioButton5";
-			this.radioButton5.Size = new System.Drawing.Size(65, 17);
-			this.radioButton5.TabIndex = 2;
-			this.radioButton5.TabStop = true;
-			this.radioButton5.Text = "Scientist";
-			this.radioButton5.UseVisualStyleBackColor = true;
+			this.rd_spe_sci.AutoSize = true;
+			this.rd_spe_sci.Location = new System.Drawing.Point(142, 19);
+			this.rd_spe_sci.Name = "rd_spe_sci";
+			this.rd_spe_sci.Size = new System.Drawing.Size(65, 17);
+			this.rd_spe_sci.TabIndex = 2;
+			this.rd_spe_sci.TabStop = true;
+			this.rd_spe_sci.Text = "Scientist";
+			this.rd_spe_sci.UseVisualStyleBackColor = true;
 			// 
-			// checkBox5
+			// chk_spe_badass
 			// 
-			this.checkBox5.AutoSize = true;
-			this.checkBox5.Location = new System.Drawing.Point(6, 18);
-			this.checkBox5.Name = "checkBox5";
-			this.checkBox5.Size = new System.Drawing.Size(61, 17);
-			this.checkBox5.TabIndex = 4;
-			this.checkBox5.Text = "Badass";
-			this.checkBox5.UseVisualStyleBackColor = true;
+			this.chk_spe_badass.AutoSize = true;
+			this.chk_spe_badass.Location = new System.Drawing.Point(6, 18);
+			this.chk_spe_badass.Name = "chk_spe_badass";
+			this.chk_spe_badass.Size = new System.Drawing.Size(61, 17);
+			this.chk_spe_badass.TabIndex = 4;
+			this.chk_spe_badass.Text = "Badass";
+			this.chk_spe_badass.UseVisualStyleBackColor = true;
 			// 
 			// groupBox13
 			// 
-			this.groupBox13.Controls.Add(this.checkBox6);
-			this.groupBox13.Controls.Add(this.checkBox5);
+			this.groupBox13.Controls.Add(this.chk_spe_tourist);
+			this.groupBox13.Controls.Add(this.chk_spe_badass);
 			this.groupBox13.Location = new System.Drawing.Point(165, 44);
 			this.groupBox13.Name = "groupBox13";
 			this.groupBox13.Size = new System.Drawing.Size(134, 45);
@@ -897,24 +916,24 @@
 			this.groupBox13.TabStop = false;
 			this.groupBox13.Text = "Badass";
 			// 
-			// checkBox6
+			// chk_spe_tourist
 			// 
-			this.checkBox6.AutoSize = true;
-			this.checkBox6.Location = new System.Drawing.Point(70, 18);
-			this.checkBox6.Name = "checkBox6";
-			this.checkBox6.Size = new System.Drawing.Size(58, 17);
-			this.checkBox6.TabIndex = 5;
-			this.checkBox6.Text = "Tourist";
-			this.checkBox6.UseVisualStyleBackColor = true;
+			this.chk_spe_tourist.AutoSize = true;
+			this.chk_spe_tourist.Location = new System.Drawing.Point(70, 18);
+			this.chk_spe_tourist.Name = "chk_spe_tourist";
+			this.chk_spe_tourist.Size = new System.Drawing.Size(58, 17);
+			this.chk_spe_tourist.TabIndex = 5;
+			this.chk_spe_tourist.Text = "Tourist";
+			this.chk_spe_tourist.UseVisualStyleBackColor = true;
 			// 
 			// groupBox14
 			// 
-			this.groupBox14.Controls.Add(this.label29);
-			this.groupBox14.Controls.Add(this.label30);
-			this.groupBox14.Controls.Add(this.trackBar11);
-			this.groupBox14.Controls.Add(this.label23);
-			this.groupBox14.Controls.Add(this.label22);
-			this.groupBox14.Controls.Add(this.trackBar8);
+			this.groupBox14.Controls.Add(this.lbl_spe_stupid);
+			this.groupBox14.Controls.Add(this.lbl_spe_stupiddisp);
+			this.groupBox14.Controls.Add(this.tbar_spe_stupid);
+			this.groupBox14.Controls.Add(this.lbl_spe_brave);
+			this.groupBox14.Controls.Add(this.lbl_spe_bravedisp);
+			this.groupBox14.Controls.Add(this.tbar_spe_brave);
 			this.groupBox14.Location = new System.Drawing.Point(15, 154);
 			this.groupBox14.Name = "groupBox14";
 			this.groupBox14.Size = new System.Drawing.Size(277, 107);
@@ -922,50 +941,49 @@
 			this.groupBox14.TabStop = false;
 			this.groupBox14.Text = "Ability Scores";
 			// 
-			// label29
+			// lbl_spe_stupid
 			// 
-			this.label29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label29.Location = new System.Drawing.Point(6, 60);
-			this.label29.Name = "label29";
-			this.label29.Size = new System.Drawing.Size(93, 15);
-			this.label29.TabIndex = 28;
-			this.label29.Text = "Stupidity";
-			this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_spe_stupid.Location = new System.Drawing.Point(6, 60);
+			this.lbl_spe_stupid.Name = "lbl_spe_stupid";
+			this.lbl_spe_stupid.Size = new System.Drawing.Size(93, 15);
+			this.lbl_spe_stupid.TabIndex = 28;
+			this.lbl_spe_stupid.Text = "Stupidity";
+			this.lbl_spe_stupid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label30
+			// lbl_spe_stupiddisp
 			// 
-			this.label30.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label30.Location = new System.Drawing.Point(215, 59);
-			this.label30.Name = "label30";
-			this.label30.Size = new System.Drawing.Size(52, 30);
-			this.label30.TabIndex = 29;
+			this.lbl_spe_stupiddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_spe_stupiddisp.Location = new System.Drawing.Point(215, 59);
+			this.lbl_spe_stupiddisp.Name = "lbl_spe_stupiddisp";
+			this.lbl_spe_stupiddisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_spe_stupiddisp.TabIndex = 29;
 			// 
-			// trackBar11
+			// tbar_spe_stupid
 			// 
-			this.trackBar11.Location = new System.Drawing.Point(105, 59);
-			this.trackBar11.Name = "trackBar11";
-			this.trackBar11.Size = new System.Drawing.Size(104, 45);
-			this.trackBar11.TabIndex = 27;
+			this.tbar_spe_stupid.Location = new System.Drawing.Point(105, 59);
+			this.tbar_spe_stupid.Name = "tbar_spe_stupid";
+			this.tbar_spe_stupid.Size = new System.Drawing.Size(104, 45);
+			this.tbar_spe_stupid.TabIndex = 27;
 			// 
-			// button2
+			// btn_spe_generate
 			// 
-			this.button2.AutoSize = true;
-			this.button2.Location = new System.Drawing.Point(11, 319);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(138, 23);
-			this.button2.TabIndex = 8;
-			this.button2.Text = "Generate";
-			this.button2.UseVisualStyleBackColor = true;
+			this.btn_spe_generate.AutoSize = true;
+			this.btn_spe_generate.Location = new System.Drawing.Point(11, 319);
+			this.btn_spe_generate.Name = "btn_spe_generate";
+			this.btn_spe_generate.Size = new System.Drawing.Size(138, 23);
+			this.btn_spe_generate.TabIndex = 8;
+			this.btn_spe_generate.Text = "Generate";
+			this.btn_spe_generate.UseVisualStyleBackColor = true;
 			// 
-			// button3
+			// btn_spe_reset
 			// 
-			this.button3.AutoSize = true;
-			this.button3.Location = new System.Drawing.Point(178, 319);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(138, 23);
-			this.button3.TabIndex = 8;
-			this.button3.Text = "Reset";
-			this.button3.UseVisualStyleBackColor = true;
+			this.btn_spe_reset.AutoSize = true;
+			this.btn_spe_reset.Location = new System.Drawing.Point(178, 319);
+			this.btn_spe_reset.Name = "btn_spe_reset";
+			this.btn_spe_reset.Size = new System.Drawing.Size(138, 23);
+			this.btn_spe_reset.TabIndex = 8;
+			this.btn_spe_reset.Text = "Reset";
+			this.btn_spe_reset.UseVisualStyleBackColor = true;
 			// 
 			// panel3
 			// 
@@ -979,8 +997,8 @@
 			// 
 			// groupBox15
 			// 
-			this.groupBox15.Controls.Add(this.gb_stats);
-			this.groupBox15.Controls.Add(this.label36);
+			this.groupBox15.Controls.Add(this.gb_ki_stats);
+			this.groupBox15.Controls.Add(this.cmb_ki_selectKerb);
 			this.groupBox15.Controls.Add(this.cmb_kerb_list);
 			this.groupBox15.Location = new System.Drawing.Point(3, 271);
 			this.groupBox15.Name = "groupBox15";
@@ -989,202 +1007,203 @@
 			this.groupBox15.TabStop = false;
 			this.groupBox15.Text = "View Kerbal Info";
 			// 
-			// gb_stats
+			// gb_ki_stats
 			// 
-			this.gb_stats.Controls.Add(this.lbl_flights);
-			this.gb_stats.Controls.Add(this.label24);
-			this.gb_stats.Controls.Add(this.lbl_state);
-			this.gb_stats.Controls.Add(this.label25);
-			this.gb_stats.Controls.Add(this.lbl_stupidity);
-			this.gb_stats.Controls.Add(this.label26);
-			this.gb_stats.Controls.Add(this.lbl_bravery);
-			this.gb_stats.Controls.Add(this.lbl_tourist);
-			this.gb_stats.Controls.Add(this.lbl_BadAss);
-			this.gb_stats.Controls.Add(this.lbl_status);
-			this.gb_stats.Controls.Add(this.lbl_role);
-			this.gb_stats.Controls.Add(this.lbl_gender);
-			this.gb_stats.Controls.Add(this.label27);
-			this.gb_stats.Controls.Add(this.label31);
-			this.gb_stats.Controls.Add(this.label32);
-			this.gb_stats.Controls.Add(this.label33);
-			this.gb_stats.Controls.Add(this.label34);
-			this.gb_stats.Controls.Add(this.label35);
-			this.gb_stats.Location = new System.Drawing.Point(8, 47);
-			this.gb_stats.Name = "gb_stats";
-			this.gb_stats.Size = new System.Drawing.Size(323, 131);
-			this.gb_stats.TabIndex = 2;
-			this.gb_stats.TabStop = false;
-			this.gb_stats.Text = "Stats for: ";
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_flightcountdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_stupid);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_statedisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_flightcount);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_stupiddisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_state);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_bravedisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_tourdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_badsdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_statusdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_roledisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_genderdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_bads);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_tour);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_brave);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_status);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_role);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_gender);
+			this.gb_ki_stats.Location = new System.Drawing.Point(8, 47);
+			this.gb_ki_stats.Name = "gb_ki_stats";
+			this.gb_ki_stats.Size = new System.Drawing.Size(323, 131);
+			this.gb_ki_stats.TabIndex = 2;
+			this.gb_ki_stats.TabStop = false;
+			this.gb_ki_stats.Text = "Stats for: ";
 			// 
-			// lbl_flights
+			// lbl_ki_flightcountdisp
 			// 
-			this.lbl_flights.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_flights.Location = new System.Drawing.Point(254, 80);
-			this.lbl_flights.Name = "lbl_flights";
-			this.lbl_flights.Size = new System.Drawing.Size(63, 23);
-			this.lbl_flights.TabIndex = 17;
+			this.lbl_ki_flightcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_flightcountdisp.Location = new System.Drawing.Point(254, 80);
+			this.lbl_ki_flightcountdisp.Name = "lbl_ki_flightcountdisp";
+			this.lbl_ki_flightcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_flightcountdisp.TabIndex = 17;
 			// 
-			// label24
+			// lbl_ki_stupid
 			// 
-			this.label24.AutoSize = true;
-			this.label24.Location = new System.Drawing.Point(201, 40);
-			this.label24.Name = "label24";
-			this.label24.Size = new System.Drawing.Size(47, 13);
-			this.label24.TabIndex = 4;
-			this.label24.Text = "Stupidity";
-			this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_stupid.AutoSize = true;
+			this.lbl_ki_stupid.Location = new System.Drawing.Point(201, 40);
+			this.lbl_ki_stupid.Name = "lbl_ki_stupid";
+			this.lbl_ki_stupid.Size = new System.Drawing.Size(47, 13);
+			this.lbl_ki_stupid.TabIndex = 4;
+			this.lbl_ki_stupid.Text = "Stupidity";
+			this.lbl_ki_stupid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// lbl_state
+			// lbl_ki_statedisp
 			// 
-			this.lbl_state.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_state.Location = new System.Drawing.Point(254, 59);
-			this.lbl_state.Name = "lbl_state";
-			this.lbl_state.Size = new System.Drawing.Size(63, 23);
-			this.lbl_state.TabIndex = 16;
+			this.lbl_ki_statedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_statedisp.Location = new System.Drawing.Point(254, 59);
+			this.lbl_ki_statedisp.Name = "lbl_ki_statedisp";
+			this.lbl_ki_statedisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_statedisp.TabIndex = 16;
 			// 
-			// label25
+			// lbl_ki_flightcount
 			// 
-			this.label25.AutoSize = true;
-			this.label25.Location = new System.Drawing.Point(211, 85);
-			this.label25.Name = "label25";
-			this.label25.Size = new System.Drawing.Size(37, 13);
-			this.label25.TabIndex = 5;
-			this.label25.Text = "Flights";
-			this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_flightcount.AutoSize = true;
+			this.lbl_ki_flightcount.Location = new System.Drawing.Point(211, 85);
+			this.lbl_ki_flightcount.Name = "lbl_ki_flightcount";
+			this.lbl_ki_flightcount.Size = new System.Drawing.Size(37, 13);
+			this.lbl_ki_flightcount.TabIndex = 5;
+			this.lbl_ki_flightcount.Text = "Flights";
+			this.lbl_ki_flightcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// lbl_stupidity
+			// lbl_ki_stupiddisp
 			// 
-			this.lbl_stupidity.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_stupidity.Location = new System.Drawing.Point(254, 35);
-			this.lbl_stupidity.Name = "lbl_stupidity";
-			this.lbl_stupidity.Size = new System.Drawing.Size(63, 23);
-			this.lbl_stupidity.TabIndex = 15;
+			this.lbl_ki_stupiddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_stupiddisp.Location = new System.Drawing.Point(254, 35);
+			this.lbl_ki_stupiddisp.Name = "lbl_ki_stupiddisp";
+			this.lbl_ki_stupiddisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_stupiddisp.TabIndex = 15;
 			// 
-			// label26
+			// lbl_ki_state
 			// 
-			this.label26.AutoSize = true;
-			this.label26.Location = new System.Drawing.Point(216, 64);
-			this.label26.Name = "label26";
-			this.label26.Size = new System.Drawing.Size(32, 13);
-			this.label26.TabIndex = 6;
-			this.label26.Text = "State";
-			this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_state.AutoSize = true;
+			this.lbl_ki_state.Location = new System.Drawing.Point(216, 64);
+			this.lbl_ki_state.Name = "lbl_ki_state";
+			this.lbl_ki_state.Size = new System.Drawing.Size(32, 13);
+			this.lbl_ki_state.TabIndex = 6;
+			this.lbl_ki_state.Text = "State";
+			this.lbl_ki_state.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// lbl_bravery
+			// lbl_ki_bravedisp
 			// 
-			this.lbl_bravery.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_bravery.Location = new System.Drawing.Point(254, 15);
-			this.lbl_bravery.Name = "lbl_bravery";
-			this.lbl_bravery.Size = new System.Drawing.Size(63, 23);
-			this.lbl_bravery.TabIndex = 14;
+			this.lbl_ki_bravedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_bravedisp.Location = new System.Drawing.Point(254, 15);
+			this.lbl_ki_bravedisp.Name = "lbl_ki_bravedisp";
+			this.lbl_ki_bravedisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_bravedisp.TabIndex = 14;
 			// 
-			// lbl_tourist
+			// lbl_ki_tourdisp
 			// 
-			this.lbl_tourist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_tourist.Location = new System.Drawing.Point(74, 104);
-			this.lbl_tourist.Name = "lbl_tourist";
-			this.lbl_tourist.Size = new System.Drawing.Size(63, 23);
-			this.lbl_tourist.TabIndex = 13;
+			this.lbl_ki_tourdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_tourdisp.Location = new System.Drawing.Point(74, 104);
+			this.lbl_ki_tourdisp.Name = "lbl_ki_tourdisp";
+			this.lbl_ki_tourdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_tourdisp.TabIndex = 13;
 			// 
-			// lbl_BadAss
+			// lbl_ki_badsdisp
 			// 
-			this.lbl_BadAss.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_BadAss.Location = new System.Drawing.Point(74, 80);
-			this.lbl_BadAss.Name = "lbl_BadAss";
-			this.lbl_BadAss.Size = new System.Drawing.Size(63, 23);
-			this.lbl_BadAss.TabIndex = 12;
+			this.lbl_ki_badsdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_badsdisp.Location = new System.Drawing.Point(74, 80);
+			this.lbl_ki_badsdisp.Name = "lbl_ki_badsdisp";
+			this.lbl_ki_badsdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_badsdisp.TabIndex = 12;
 			// 
-			// lbl_status
+			// lbl_ki_statusdisp
 			// 
-			this.lbl_status.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_status.Location = new System.Drawing.Point(74, 59);
-			this.lbl_status.Name = "lbl_status";
-			this.lbl_status.Size = new System.Drawing.Size(63, 23);
-			this.lbl_status.TabIndex = 11;
+			this.lbl_ki_statusdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_statusdisp.Location = new System.Drawing.Point(74, 59);
+			this.lbl_ki_statusdisp.Name = "lbl_ki_statusdisp";
+			this.lbl_ki_statusdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_statusdisp.TabIndex = 11;
 			// 
-			// lbl_role
+			// lbl_ki_roledisp
 			// 
-			this.lbl_role.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_role.Location = new System.Drawing.Point(74, 35);
-			this.lbl_role.Name = "lbl_role";
-			this.lbl_role.Size = new System.Drawing.Size(63, 23);
-			this.lbl_role.TabIndex = 10;
+			this.lbl_ki_roledisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_roledisp.Location = new System.Drawing.Point(74, 35);
+			this.lbl_ki_roledisp.Name = "lbl_ki_roledisp";
+			this.lbl_ki_roledisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_roledisp.TabIndex = 10;
 			// 
-			// lbl_gender
+			// lbl_ki_genderdisp
 			// 
-			this.lbl_gender.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_gender.Location = new System.Drawing.Point(74, 15);
-			this.lbl_gender.Name = "lbl_gender";
-			this.lbl_gender.Size = new System.Drawing.Size(63, 23);
-			this.lbl_gender.TabIndex = 9;
+			this.lbl_ki_genderdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_genderdisp.Location = new System.Drawing.Point(74, 15);
+			this.lbl_ki_genderdisp.Name = "lbl_ki_genderdisp";
+			this.lbl_ki_genderdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_genderdisp.TabIndex = 9;
 			// 
-			// label27
+			// lbl_ki_bads
 			// 
-			this.label27.AutoSize = true;
-			this.label27.Location = new System.Drawing.Point(25, 85);
-			this.label27.Name = "label27";
-			this.label27.Size = new System.Drawing.Size(43, 13);
-			this.label27.TabIndex = 8;
-			this.label27.Text = "BadAss";
-			this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_bads.AutoSize = true;
+			this.lbl_ki_bads.Location = new System.Drawing.Point(25, 85);
+			this.lbl_ki_bads.Name = "lbl_ki_bads";
+			this.lbl_ki_bads.Size = new System.Drawing.Size(43, 13);
+			this.lbl_ki_bads.TabIndex = 8;
+			this.lbl_ki_bads.Text = "BadAss";
+			this.lbl_ki_bads.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label31
+			// lbl_ki_tour
 			// 
-			this.label31.AutoSize = true;
-			this.label31.Location = new System.Drawing.Point(29, 109);
-			this.label31.Name = "label31";
-			this.label31.Size = new System.Drawing.Size(39, 13);
-			this.label31.TabIndex = 7;
-			this.label31.Text = "Tourist";
-			this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_tour.AutoSize = true;
+			this.lbl_ki_tour.Location = new System.Drawing.Point(29, 109);
+			this.lbl_ki_tour.Name = "lbl_ki_tour";
+			this.lbl_ki_tour.Size = new System.Drawing.Size(39, 13);
+			this.lbl_ki_tour.TabIndex = 7;
+			this.lbl_ki_tour.Text = "Tourist";
+			this.lbl_ki_tour.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_tour.Click += new System.EventHandler(this.label31_Click);
 			// 
-			// label32
+			// lbl_ki_brave
 			// 
-			this.label32.AutoSize = true;
-			this.label32.Location = new System.Drawing.Point(205, 17);
-			this.label32.Name = "label32";
-			this.label32.Size = new System.Drawing.Size(43, 13);
-			this.label32.TabIndex = 3;
-			this.label32.Text = "Bravery";
-			this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_brave.AutoSize = true;
+			this.lbl_ki_brave.Location = new System.Drawing.Point(205, 17);
+			this.lbl_ki_brave.Name = "lbl_ki_brave";
+			this.lbl_ki_brave.Size = new System.Drawing.Size(43, 13);
+			this.lbl_ki_brave.TabIndex = 3;
+			this.lbl_ki_brave.Text = "Bravery";
+			this.lbl_ki_brave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label33
+			// lbl_ki_status
 			// 
-			this.label33.AutoSize = true;
-			this.label33.Location = new System.Drawing.Point(31, 64);
-			this.label33.Name = "label33";
-			this.label33.Size = new System.Drawing.Size(37, 13);
-			this.label33.TabIndex = 2;
-			this.label33.Text = "Status";
-			this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_status.AutoSize = true;
+			this.lbl_ki_status.Location = new System.Drawing.Point(31, 64);
+			this.lbl_ki_status.Name = "lbl_ki_status";
+			this.lbl_ki_status.Size = new System.Drawing.Size(37, 13);
+			this.lbl_ki_status.TabIndex = 2;
+			this.lbl_ki_status.Text = "Status";
+			this.lbl_ki_status.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label34
+			// lbl_ki_role
 			// 
-			this.label34.AutoSize = true;
-			this.label34.Location = new System.Drawing.Point(39, 40);
-			this.label34.Name = "label34";
-			this.label34.Size = new System.Drawing.Size(29, 13);
-			this.label34.TabIndex = 1;
-			this.label34.Text = "Role";
-			this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_role.AutoSize = true;
+			this.lbl_ki_role.Location = new System.Drawing.Point(39, 40);
+			this.lbl_ki_role.Name = "lbl_ki_role";
+			this.lbl_ki_role.Size = new System.Drawing.Size(29, 13);
+			this.lbl_ki_role.TabIndex = 1;
+			this.lbl_ki_role.Text = "Role";
+			this.lbl_ki_role.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label35
+			// lbl_ki_gender
 			// 
-			this.label35.Location = new System.Drawing.Point(6, 20);
-			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(62, 13);
-			this.label35.TabIndex = 0;
-			this.label35.Text = "Gender";
-			this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_ki_gender.Location = new System.Drawing.Point(6, 20);
+			this.lbl_ki_gender.Name = "lbl_ki_gender";
+			this.lbl_ki_gender.Size = new System.Drawing.Size(62, 13);
+			this.lbl_ki_gender.TabIndex = 0;
+			this.lbl_ki_gender.Text = "Gender";
+			this.lbl_ki_gender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label36
+			// cmb_ki_selectKerb
 			// 
-			this.label36.AutoSize = true;
-			this.label36.Location = new System.Drawing.Point(6, 22);
-			this.label36.Name = "label36";
-			this.label36.Size = new System.Drawing.Size(80, 13);
-			this.label36.TabIndex = 1;
-			this.label36.Text = "Select A Kerbal";
+			this.cmb_ki_selectKerb.AutoSize = true;
+			this.cmb_ki_selectKerb.Location = new System.Drawing.Point(6, 22);
+			this.cmb_ki_selectKerb.Name = "cmb_ki_selectKerb";
+			this.cmb_ki_selectKerb.Size = new System.Drawing.Size(80, 13);
+			this.cmb_ki_selectKerb.TabIndex = 1;
+			this.cmb_ki_selectKerb.Text = "Select A Kerbal";
 			// 
 			// cmb_kerb_list
 			// 
@@ -1207,114 +1226,115 @@
 			this.groupBox16.TabStop = false;
 			this.groupBox16.Text = "Save Info";
 			// 
-			// label37
+			// lbl_si_kerbcountdisp
 			// 
-			this.label37.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label37.Location = new System.Drawing.Point(74, 16);
-			this.label37.Name = "label37";
-			this.label37.Size = new System.Drawing.Size(63, 23);
-			this.label37.TabIndex = 19;
+			this.lbl_si_kerbcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_kerbcountdisp.Location = new System.Drawing.Point(74, 16);
+			this.lbl_si_kerbcountdisp.Name = "lbl_si_kerbcountdisp";
+			this.lbl_si_kerbcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_kerbcountdisp.TabIndex = 19;
 			// 
-			// label38
+			// lbl_si_kerbcount
 			// 
-			this.label38.Location = new System.Drawing.Point(6, 21);
-			this.label38.Name = "label38";
-			this.label38.Size = new System.Drawing.Size(62, 13);
-			this.label38.TabIndex = 18;
-			this.label38.Text = "Kerbals";
-			this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_kerbcount.Location = new System.Drawing.Point(6, 21);
+			this.lbl_si_kerbcount.Name = "lbl_si_kerbcount";
+			this.lbl_si_kerbcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_kerbcount.TabIndex = 18;
+			this.lbl_si_kerbcount.Text = "Kerbals";
+			this.lbl_si_kerbcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_kerbcount.Click += new System.EventHandler(this.lbl_si_kerbals_Click);
 			// 
-			// label39
+			// lbl_si_gendermcountdisp
 			// 
-			this.label39.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label39.Location = new System.Drawing.Point(74, 18);
-			this.label39.Name = "label39";
-			this.label39.Size = new System.Drawing.Size(63, 23);
-			this.label39.TabIndex = 11;
+			this.lbl_si_gendermcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_gendermcountdisp.Location = new System.Drawing.Point(74, 18);
+			this.lbl_si_gendermcountdisp.Name = "lbl_si_gendermcountdisp";
+			this.lbl_si_gendermcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_gendermcountdisp.TabIndex = 11;
 			// 
-			// label40
+			// lbl_si_gendermcount
 			// 
-			this.label40.Location = new System.Drawing.Point(6, 23);
-			this.label40.Name = "label40";
-			this.label40.Size = new System.Drawing.Size(62, 13);
-			this.label40.TabIndex = 10;
-			this.label40.Text = "Males";
-			this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_gendermcount.Location = new System.Drawing.Point(6, 23);
+			this.lbl_si_gendermcount.Name = "lbl_si_gendermcount";
+			this.lbl_si_gendermcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_gendermcount.TabIndex = 10;
+			this.lbl_si_gendermcount.Text = "Males";
+			this.lbl_si_gendermcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label41
+			// lbl_si_genderfcountdisp
 			// 
-			this.label41.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label41.Location = new System.Drawing.Point(74, 46);
-			this.label41.Name = "label41";
-			this.label41.Size = new System.Drawing.Size(63, 23);
-			this.label41.TabIndex = 11;
+			this.lbl_si_genderfcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_genderfcountdisp.Location = new System.Drawing.Point(74, 46);
+			this.lbl_si_genderfcountdisp.Name = "lbl_si_genderfcountdisp";
+			this.lbl_si_genderfcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_genderfcountdisp.TabIndex = 11;
 			// 
-			// label42
+			// lbl_si_genderfcount
 			// 
-			this.label42.Location = new System.Drawing.Point(6, 51);
-			this.label42.Name = "label42";
-			this.label42.Size = new System.Drawing.Size(62, 13);
-			this.label42.TabIndex = 10;
-			this.label42.Text = "Females";
-			this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_genderfcount.Location = new System.Drawing.Point(6, 51);
+			this.lbl_si_genderfcount.Name = "lbl_si_genderfcount";
+			this.lbl_si_genderfcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_genderfcount.TabIndex = 10;
+			this.lbl_si_genderfcount.Text = "Females";
+			this.lbl_si_genderfcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label43
+			// lbl_si_pilotcountdisp
 			// 
-			this.label43.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label43.Location = new System.Drawing.Point(74, 14);
-			this.label43.Name = "label43";
-			this.label43.Size = new System.Drawing.Size(63, 23);
-			this.label43.TabIndex = 11;
+			this.lbl_si_pilotcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_pilotcountdisp.Location = new System.Drawing.Point(74, 14);
+			this.lbl_si_pilotcountdisp.Name = "lbl_si_pilotcountdisp";
+			this.lbl_si_pilotcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_pilotcountdisp.TabIndex = 11;
 			// 
-			// label44
+			// lbl_si_pilotcount
 			// 
-			this.label44.Location = new System.Drawing.Point(6, 19);
-			this.label44.Name = "label44";
-			this.label44.Size = new System.Drawing.Size(62, 13);
-			this.label44.TabIndex = 10;
-			this.label44.Text = "Pilots";
-			this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_pilotcount.Location = new System.Drawing.Point(6, 19);
+			this.lbl_si_pilotcount.Name = "lbl_si_pilotcount";
+			this.lbl_si_pilotcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_pilotcount.TabIndex = 10;
+			this.lbl_si_pilotcount.Text = "Pilots";
+			this.lbl_si_pilotcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label45
+			// lbl_si_engicountdisp
 			// 
-			this.label45.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label45.Location = new System.Drawing.Point(74, 41);
-			this.label45.Name = "label45";
-			this.label45.Size = new System.Drawing.Size(63, 23);
-			this.label45.TabIndex = 21;
+			this.lbl_si_engicountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_engicountdisp.Location = new System.Drawing.Point(74, 41);
+			this.lbl_si_engicountdisp.Name = "lbl_si_engicountdisp";
+			this.lbl_si_engicountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_engicountdisp.TabIndex = 21;
 			// 
-			// label46
+			// lbl_si_engicount
 			// 
-			this.label46.Location = new System.Drawing.Point(6, 46);
-			this.label46.Name = "label46";
-			this.label46.Size = new System.Drawing.Size(62, 13);
-			this.label46.TabIndex = 20;
-			this.label46.Text = "Engineers";
-			this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_engicount.Location = new System.Drawing.Point(6, 46);
+			this.lbl_si_engicount.Name = "lbl_si_engicount";
+			this.lbl_si_engicount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_engicount.TabIndex = 20;
+			this.lbl_si_engicount.Text = "Engineers";
+			this.lbl_si_engicount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label47
+			// lbl_si_scicountdisp
 			// 
-			this.label47.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label47.Location = new System.Drawing.Point(74, 69);
-			this.label47.Name = "label47";
-			this.label47.Size = new System.Drawing.Size(63, 23);
-			this.label47.TabIndex = 11;
+			this.lbl_si_scicountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_scicountdisp.Location = new System.Drawing.Point(74, 69);
+			this.lbl_si_scicountdisp.Name = "lbl_si_scicountdisp";
+			this.lbl_si_scicountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_scicountdisp.TabIndex = 11;
 			// 
-			// label48
+			// lbl_si_scicount
 			// 
-			this.label48.Location = new System.Drawing.Point(6, 74);
-			this.label48.Name = "label48";
-			this.label48.Size = new System.Drawing.Size(62, 13);
-			this.label48.TabIndex = 10;
-			this.label48.Text = "Scientists";
-			this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_scicount.Location = new System.Drawing.Point(6, 74);
+			this.lbl_si_scicount.Name = "lbl_si_scicount";
+			this.lbl_si_scicount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_scicount.TabIndex = 10;
+			this.lbl_si_scicount.Text = "Scientists";
+			this.lbl_si_scicount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// groupBox17
 			// 
-			this.groupBox17.Controls.Add(this.label40);
-			this.groupBox17.Controls.Add(this.label41);
-			this.groupBox17.Controls.Add(this.label42);
-			this.groupBox17.Controls.Add(this.label39);
+			this.groupBox17.Controls.Add(this.lbl_si_gendermcount);
+			this.groupBox17.Controls.Add(this.lbl_si_genderfcountdisp);
+			this.groupBox17.Controls.Add(this.lbl_si_genderfcount);
+			this.groupBox17.Controls.Add(this.lbl_si_gendermcountdisp);
 			this.groupBox17.Location = new System.Drawing.Point(6, 164);
 			this.groupBox17.Name = "groupBox17";
 			this.groupBox17.Size = new System.Drawing.Size(149, 79);
@@ -1324,12 +1344,12 @@
 			// 
 			// groupBox18
 			// 
-			this.groupBox18.Controls.Add(this.label49);
-			this.groupBox18.Controls.Add(this.label37);
-			this.groupBox18.Controls.Add(this.label50);
-			this.groupBox18.Controls.Add(this.label51);
-			this.groupBox18.Controls.Add(this.label38);
-			this.groupBox18.Controls.Add(this.label52);
+			this.groupBox18.Controls.Add(this.lbl_si_livingcount);
+			this.groupBox18.Controls.Add(this.lbl_si_kerbcountdisp);
+			this.groupBox18.Controls.Add(this.lbl_si_deadcountdisp);
+			this.groupBox18.Controls.Add(this.lbl_si_deadcount);
+			this.groupBox18.Controls.Add(this.lbl_si_kerbcount);
+			this.groupBox18.Controls.Add(this.lbl_si_livingcountdisp);
 			this.groupBox18.Location = new System.Drawing.Point(6, 19);
 			this.groupBox18.Name = "groupBox18";
 			this.groupBox18.Size = new System.Drawing.Size(149, 139);
@@ -1337,101 +1357,101 @@
 			this.groupBox18.TabStop = false;
 			this.groupBox18.Text = "General Info";
 			// 
-			// label49
+			// lbl_si_livingcount
 			// 
-			this.label49.Location = new System.Drawing.Point(6, 59);
-			this.label49.Name = "label49";
-			this.label49.Size = new System.Drawing.Size(62, 13);
-			this.label49.TabIndex = 10;
-			this.label49.Text = "Living";
-			this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_livingcount.Location = new System.Drawing.Point(6, 59);
+			this.lbl_si_livingcount.Name = "lbl_si_livingcount";
+			this.lbl_si_livingcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_livingcount.TabIndex = 10;
+			this.lbl_si_livingcount.Text = "Living";
+			this.lbl_si_livingcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label50
+			// lbl_si_deadcountdisp
 			// 
-			this.label50.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label50.Location = new System.Drawing.Point(74, 87);
-			this.label50.Name = "label50";
-			this.label50.Size = new System.Drawing.Size(63, 23);
-			this.label50.TabIndex = 11;
+			this.lbl_si_deadcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_deadcountdisp.Location = new System.Drawing.Point(74, 87);
+			this.lbl_si_deadcountdisp.Name = "lbl_si_deadcountdisp";
+			this.lbl_si_deadcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_deadcountdisp.TabIndex = 11;
 			// 
-			// label51
+			// lbl_si_deadcount
 			// 
-			this.label51.Location = new System.Drawing.Point(6, 92);
-			this.label51.Name = "label51";
-			this.label51.Size = new System.Drawing.Size(62, 13);
-			this.label51.TabIndex = 10;
-			this.label51.Text = "Dead";
-			this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_deadcount.Location = new System.Drawing.Point(6, 92);
+			this.lbl_si_deadcount.Name = "lbl_si_deadcount";
+			this.lbl_si_deadcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_deadcount.TabIndex = 10;
+			this.lbl_si_deadcount.Text = "Dead";
+			this.lbl_si_deadcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label52
+			// lbl_si_livingcountdisp
 			// 
-			this.label52.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label52.Location = new System.Drawing.Point(74, 52);
-			this.label52.Name = "label52";
-			this.label52.Size = new System.Drawing.Size(63, 23);
-			this.label52.TabIndex = 11;
+			this.lbl_si_livingcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_livingcountdisp.Location = new System.Drawing.Point(74, 52);
+			this.lbl_si_livingcountdisp.Name = "lbl_si_livingcountdisp";
+			this.lbl_si_livingcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_livingcountdisp.TabIndex = 11;
 			// 
 			// groupBox19
 			// 
-			this.groupBox19.Controls.Add(this.label47);
-			this.groupBox19.Controls.Add(this.label44);
-			this.groupBox19.Controls.Add(this.label43);
-			this.groupBox19.Controls.Add(this.label48);
-			this.groupBox19.Controls.Add(this.label46);
-			this.groupBox19.Controls.Add(this.label45);
+			this.groupBox19.Controls.Add(this.lbl_si_scicountdisp);
+			this.groupBox19.Controls.Add(this.lbl_si_pilotcount);
+			this.groupBox19.Controls.Add(this.lbl_si_pilotcountdisp);
+			this.groupBox19.Controls.Add(this.lbl_si_scicount);
+			this.groupBox19.Controls.Add(this.lbl_si_engicount);
+			this.groupBox19.Controls.Add(this.lbl_si_engicountdisp);
 			this.groupBox19.Location = new System.Drawing.Point(161, 23);
 			this.groupBox19.Name = "groupBox19";
-			this.groupBox19.Size = new System.Drawing.Size(149, 139);
+			this.groupBox19.Size = new System.Drawing.Size(149, 135);
 			this.groupBox19.TabIndex = 22;
 			this.groupBox19.TabStop = false;
 			this.groupBox19.Text = "Profession Breakdown";
 			// 
 			// groupBox20
 			// 
-			this.groupBox20.Controls.Add(this.label53);
-			this.groupBox20.Controls.Add(this.label54);
-			this.groupBox20.Controls.Add(this.label55);
-			this.groupBox20.Controls.Add(this.label56);
-			this.groupBox20.Location = new System.Drawing.Point(161, 171);
+			this.groupBox20.Controls.Add(this.lbl_si_badscount);
+			this.groupBox20.Controls.Add(this.lbl_si_tourcountdisp);
+			this.groupBox20.Controls.Add(this.lbl_si_tourcount);
+			this.groupBox20.Controls.Add(this.lbl_si_badscountdisp);
+			this.groupBox20.Location = new System.Drawing.Point(161, 164);
 			this.groupBox20.Name = "groupBox20";
 			this.groupBox20.Size = new System.Drawing.Size(149, 79);
 			this.groupBox20.TabIndex = 21;
 			this.groupBox20.TabStop = false;
 			this.groupBox20.Text = "Trait Breakdown";
 			// 
-			// label53
+			// lbl_si_badscount
 			// 
-			this.label53.Location = new System.Drawing.Point(6, 23);
-			this.label53.Name = "label53";
-			this.label53.Size = new System.Drawing.Size(62, 13);
-			this.label53.TabIndex = 10;
-			this.label53.Text = "Badass";
-			this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_badscount.Location = new System.Drawing.Point(6, 23);
+			this.lbl_si_badscount.Name = "lbl_si_badscount";
+			this.lbl_si_badscount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_badscount.TabIndex = 10;
+			this.lbl_si_badscount.Text = "Badass";
+			this.lbl_si_badscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label54
+			// lbl_si_tourcountdisp
 			// 
-			this.label54.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label54.Location = new System.Drawing.Point(74, 46);
-			this.label54.Name = "label54";
-			this.label54.Size = new System.Drawing.Size(63, 23);
-			this.label54.TabIndex = 11;
+			this.lbl_si_tourcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_tourcountdisp.Location = new System.Drawing.Point(74, 46);
+			this.lbl_si_tourcountdisp.Name = "lbl_si_tourcountdisp";
+			this.lbl_si_tourcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_tourcountdisp.TabIndex = 11;
 			// 
-			// label55
+			// lbl_si_tourcount
 			// 
-			this.label55.Location = new System.Drawing.Point(6, 51);
-			this.label55.Name = "label55";
-			this.label55.Size = new System.Drawing.Size(62, 13);
-			this.label55.TabIndex = 10;
-			this.label55.Text = "Tourist";
-			this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lbl_si_tourcount.Location = new System.Drawing.Point(6, 51);
+			this.lbl_si_tourcount.Name = "lbl_si_tourcount";
+			this.lbl_si_tourcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_tourcount.TabIndex = 10;
+			this.lbl_si_tourcount.Text = "Tourist";
+			this.lbl_si_tourcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// label56
+			// lbl_si_badscountdisp
 			// 
-			this.label56.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label56.Location = new System.Drawing.Point(74, 18);
-			this.label56.Name = "label56";
-			this.label56.Size = new System.Drawing.Size(63, 23);
-			this.label56.TabIndex = 11;
+			this.lbl_si_badscountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_badscountdisp.Location = new System.Drawing.Point(74, 18);
+			this.lbl_si_badscountdisp.Name = "lbl_si_badscountdisp";
+			this.lbl_si_badscountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_badscountdisp.TabIndex = 11;
 			// 
 			// panel4
 			// 
@@ -1447,16 +1467,17 @@
 			this.groupBox1.AutoSize = true;
 			this.groupBox1.Controls.Add(this.btn_exit);
 			this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.groupBox1.Location = new System.Drawing.Point(3, 4);
+			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(329, 160);
+			this.groupBox1.Size = new System.Drawing.Size(329, 143);
 			this.groupBox1.TabIndex = 5;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Program Options";
+			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
 			// 
 			// btn_exit
 			// 
-			this.btn_exit.Location = new System.Drawing.Point(248, 118);
+			this.btn_exit.Location = new System.Drawing.Point(248, 92);
 			this.btn_exit.Name = "btn_exit";
 			this.btn_exit.Size = new System.Drawing.Size(75, 23);
 			this.btn_exit.TabIndex = 6;
@@ -1467,20 +1488,54 @@
 			// panel5
 			// 
 			this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel5.Controls.Add(this.groupBox21);
+			this.panel5.Controls.Add(this.grp_save_flag);
 			this.panel5.Location = new System.Drawing.Point(345, 496);
 			this.panel5.Name = "panel5";
 			this.panel5.Size = new System.Drawing.Size(347, 246);
 			this.panel5.TabIndex = 11;
 			// 
-			// groupBox21
+			// grp_save_flag
 			// 
-			this.groupBox21.Location = new System.Drawing.Point(3, 2);
-			this.groupBox21.Name = "groupBox21";
-			this.groupBox21.Size = new System.Drawing.Size(334, 237);
-			this.groupBox21.TabIndex = 5;
-			this.groupBox21.TabStop = false;
-			this.groupBox21.Text = "Save Flag";
+			this.grp_save_flag.Location = new System.Drawing.Point(3, 2);
+			this.grp_save_flag.Name = "grp_save_flag";
+			this.grp_save_flag.Size = new System.Drawing.Size(334, 237);
+			this.grp_save_flag.TabIndex = 5;
+			this.grp_save_flag.TabStop = false;
+			this.grp_save_flag.Text = "Save Flag";
+			// 
+			// label57
+			// 
+			this.label57.AutoSize = true;
+			this.label57.Location = new System.Drawing.Point(339, 32);
+			this.label57.Name = "label57";
+			this.label57.Size = new System.Drawing.Size(103, 13);
+			this.label57.TabIndex = 11;
+			this.label57.Text = "KSP Install Directory";
+			// 
+			// lbl_kspInstalDir
+			// 
+			this.lbl_kspInstalDir.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_kspInstalDir.Location = new System.Drawing.Point(448, 26);
+			this.lbl_kspInstalDir.Name = "lbl_kspInstalDir";
+			this.lbl_kspInstalDir.Size = new System.Drawing.Size(578, 19);
+			this.lbl_kspInstalDir.TabIndex = 12;
+			// 
+			// label59
+			// 
+			this.label59.AutoSize = true;
+			this.label59.Location = new System.Drawing.Point(328, 56);
+			this.label59.Name = "label59";
+			this.label59.Size = new System.Drawing.Size(114, 13);
+			this.label59.TabIndex = 13;
+			this.label59.Text = "Current Save Directory";
+			// 
+			// lbl_CurrentSaveDir
+			// 
+			this.lbl_CurrentSaveDir.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_CurrentSaveDir.Location = new System.Drawing.Point(448, 50);
+			this.lbl_CurrentSaveDir.Name = "lbl_CurrentSaveDir";
+			this.lbl_CurrentSaveDir.Size = new System.Drawing.Size(578, 19);
+			this.lbl_CurrentSaveDir.TabIndex = 14;
 			// 
 			// frm_Krb_Gen
 			// 
@@ -1501,33 +1556,33 @@
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.tbar_MaleToFemale)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_minStupidity)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_MinimumBravery)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_MaximumBravery)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_MaleToFemale)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_minStupidity)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxstupid)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbr_rnd_minbrave)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxbrave)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox5.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_minbads)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxbads)).EndInit();
 			this.groupBox6.ResumeLayout(false);
 			this.groupBox6.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxsci)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxengi)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxpilots)).EndInit();
 			this.groupBox7.ResumeLayout(false);
 			this.groupBox7.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxtour)).EndInit();
 			this.groupBox8.ResumeLayout(false);
 			this.groupBox8.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.groupBox9.ResumeLayout(false);
 			this.groupBox9.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar8)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).EndInit();
 			this.groupBox10.ResumeLayout(false);
 			this.groupBox10.PerformLayout();
 			this.groupBox11.ResumeLayout(false);
@@ -1538,12 +1593,12 @@
 			this.groupBox13.PerformLayout();
 			this.groupBox14.ResumeLayout(false);
 			this.groupBox14.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar11)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_stupid)).EndInit();
 			this.panel3.ResumeLayout(false);
 			this.groupBox15.ResumeLayout(false);
 			this.groupBox15.PerformLayout();
-			this.gb_stats.ResumeLayout(false);
-			this.gb_stats.PerformLayout();
+			this.gb_ki_stats.ResumeLayout(false);
+			this.gb_ki_stats.PerformLayout();
 			this.groupBox16.ResumeLayout(false);
 			this.groupBox17.ResumeLayout(false);
 			this.groupBox18.ResumeLayout(false);
@@ -1564,131 +1619,135 @@
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.Label lbl_currentSaveLocation;
 		private System.Windows.Forms.GroupBox groupBox3;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TrackBar trackBar1;
-		private System.Windows.Forms.TrackBar tbar_minStupidity;
+		private System.Windows.Forms.Label lbl_rnd_maxstupid;
+		private System.Windows.Forms.Label lbl_rnd_minstupid;
+		private System.Windows.Forms.TrackBar tbar_rnd_maxstupid;
+		private System.Windows.Forms.TrackBar tbar_rnd_minStupidity;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TrackBar tbar_MaleToFemale;
+		private System.Windows.Forms.TrackBar tbar_rnd_MaleToFemale;
 		private System.Windows.Forms.GroupBox groupBox7;
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.GroupBox groupBox6;
-		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.TrackBar trackBar4;
-		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.TrackBar trackBar5;
-		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.TrackBar trackBar6;
-		private System.Windows.Forms.Label label16;
-		private System.Windows.Forms.Label label18;
-		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.Label lbl_rnd_maxpilots;
+		private System.Windows.Forms.TrackBar tbar_rnd_maxsci;
+		private System.Windows.Forms.Label lbl_rnd_maxsci;
+		private System.Windows.Forms.TrackBar tbar_rnd_maxengi;
+		private System.Windows.Forms.Label lbl_rnd_engi;
+		private System.Windows.Forms.TrackBar tbar_rnd_maxpilots;
+		private System.Windows.Forms.Label tbar_rnd_maxpilotsdisp;
+		private System.Windows.Forms.Label tbar_rnd_maxscidisp;
+		private System.Windows.Forms.Label lbl_rnd_maxengidisp;
 		private System.Windows.Forms.GroupBox groupBox5;
-		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.TrackBar trackBar3;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.TrackBar trackBar2;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label lbl_minStupid;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TrackBar tbar_MaximumBravery;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TrackBar tbar_MinimumBravery;
+		private System.Windows.Forms.Label lbl_rnd_maxbadsdisp;
+		private System.Windows.Forms.Label lbl_rnd_maxbads;
+		private System.Windows.Forms.TrackBar tbar_rnd_maxbads;
+		private System.Windows.Forms.Label lbl_rnd_minbadsdisp;
+		private System.Windows.Forms.Label lbl_rnd_minbads;
+		private System.Windows.Forms.TrackBar tbar_rnd_minbads;
+		private System.Windows.Forms.Label lbl_rnd_maxbravedisp;
+		private System.Windows.Forms.Label lbl_rnd_minbravedisp;
+		private System.Windows.Forms.Label lbl_rnd_maxstupiddisp;
+		private System.Windows.Forms.Label lbl_rnd_minStupidDisp;
+		private System.Windows.Forms.Label lbl_rnd_maxbrave;
+		private System.Windows.Forms.TrackBar tbar_rnd_maxbrave;
+		private System.Windows.Forms.Label lbl_rnd_minbrave;
+		private System.Windows.Forms.TrackBar tbr_rnd_minbrave;
 		private System.Windows.Forms.GroupBox groupBox4;
-		private System.Windows.Forms.Label lbl_mfRatio;
-		private System.Windows.Forms.CheckBox chk_allFemale;
-		private System.Windows.Forms.CheckBox chk_allMale;
+		private System.Windows.Forms.Label lbl_rnd_mfRatio;
+		private System.Windows.Forms.CheckBox chk_rnd_allFemale;
+		private System.Windows.Forms.CheckBox chk_rnd_allMale;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.DomainUpDown dmn_MaxKerbals;
-		private System.Windows.Forms.CheckBox checkBox4;
-		private System.Windows.Forms.CheckBox checkBox3;
-		private System.Windows.Forms.CheckBox checkBox2;
-		private System.Windows.Forms.CheckBox checkBox1;
-		private System.Windows.Forms.TrackBar trackBar7;
-		private System.Windows.Forms.Label label20;
-		private System.Windows.Forms.Label label21;
+		private System.Windows.Forms.DomainUpDown dmn_rnd_MaxKerbals;
+		private System.Windows.Forms.CheckBox chk_rnd_locktour;
+		private System.Windows.Forms.CheckBox chk_rnd_locksci;
+		private System.Windows.Forms.CheckBox chk_rnd_lockengi;
+		private System.Windows.Forms.CheckBox chk_rnd_lockpilots;
+		private System.Windows.Forms.TrackBar tbar_rnd_maxtour;
+		private System.Windows.Forms.Label lbl_rnd_maxtour;
+		private System.Windows.Forms.Label lbl_rnd_maxtourdisp;
 		private System.Windows.Forms.GroupBox groupBox8;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btn_rnd_reset;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.GroupBox groupBox9;
 		private System.Windows.Forms.GroupBox groupBox10;
 		private System.Windows.Forms.GroupBox groupBox14;
-		private System.Windows.Forms.Label label23;
-		private System.Windows.Forms.Label label22;
-		private System.Windows.Forms.TrackBar trackBar8;
+		private System.Windows.Forms.Label lbl_spe_brave;
+		private System.Windows.Forms.Label lbl_spe_bravedisp;
+		private System.Windows.Forms.TrackBar tbar_spe_brave;
 		private System.Windows.Forms.GroupBox groupBox13;
-		private System.Windows.Forms.CheckBox checkBox6;
-		private System.Windows.Forms.CheckBox checkBox5;
+		private System.Windows.Forms.CheckBox chk_spe_tourist;
+		private System.Windows.Forms.CheckBox chk_spe_badass;
 		private System.Windows.Forms.GroupBox groupBox12;
-		private System.Windows.Forms.RadioButton radioButton5;
-		private System.Windows.Forms.RadioButton radioButton3;
-		private System.Windows.Forms.RadioButton radioButton4;
+		private System.Windows.Forms.RadioButton rd_spe_sci;
+		private System.Windows.Forms.RadioButton rd_spe_engi;
+		private System.Windows.Forms.RadioButton rd_spe_pilot;
 		private System.Windows.Forms.GroupBox groupBox11;
-		private System.Windows.Forms.RadioButton radioButton2;
-		private System.Windows.Forms.RadioButton radioButton1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.RadioButton rd_spe_genderfemale;
+		private System.Windows.Forms.RadioButton rd_spe_gendermale;
+		private System.Windows.Forms.TextBox txt_spe_kerbname;
 		private System.Windows.Forms.Label label28;
-		private System.Windows.Forms.Label label29;
-		private System.Windows.Forms.Label label30;
-		private System.Windows.Forms.TrackBar trackBar11;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Label lbl_spe_stupid;
+		private System.Windows.Forms.Label lbl_spe_stupiddisp;
+		private System.Windows.Forms.TrackBar tbar_spe_stupid;
+		private System.Windows.Forms.Button btn_spe_reset;
+		private System.Windows.Forms.Button btn_spe_generate;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.GroupBox groupBox16;
-		private System.Windows.Forms.Label label47;
-		private System.Windows.Forms.Label label48;
-		private System.Windows.Forms.Label label45;
-		private System.Windows.Forms.Label label46;
-		private System.Windows.Forms.Label label43;
-		private System.Windows.Forms.Label label44;
-		private System.Windows.Forms.Label label41;
-		private System.Windows.Forms.Label label39;
-		private System.Windows.Forms.Label label42;
-		private System.Windows.Forms.Label label37;
-		private System.Windows.Forms.Label label40;
-		private System.Windows.Forms.Label label38;
+		private System.Windows.Forms.Label lbl_si_scicountdisp;
+		private System.Windows.Forms.Label lbl_si_scicount;
+		private System.Windows.Forms.Label lbl_si_engicountdisp;
+		private System.Windows.Forms.Label lbl_si_engicount;
+		private System.Windows.Forms.Label lbl_si_pilotcountdisp;
+		private System.Windows.Forms.Label lbl_si_pilotcount;
+		private System.Windows.Forms.Label lbl_si_genderfcountdisp;
+		private System.Windows.Forms.Label lbl_si_gendermcountdisp;
+		private System.Windows.Forms.Label lbl_si_genderfcount;
+		private System.Windows.Forms.Label lbl_si_kerbcountdisp;
+		private System.Windows.Forms.Label lbl_si_gendermcount;
+		private System.Windows.Forms.Label lbl_si_kerbcount;
 		private System.Windows.Forms.GroupBox groupBox15;
-		private System.Windows.Forms.GroupBox gb_stats;
-		private System.Windows.Forms.Label lbl_flights;
-		private System.Windows.Forms.Label label24;
-		private System.Windows.Forms.Label lbl_state;
-		private System.Windows.Forms.Label label25;
-		private System.Windows.Forms.Label lbl_stupidity;
-		private System.Windows.Forms.Label label26;
-		private System.Windows.Forms.Label lbl_bravery;
-		private System.Windows.Forms.Label lbl_tourist;
-		private System.Windows.Forms.Label lbl_BadAss;
-		private System.Windows.Forms.Label lbl_status;
-		private System.Windows.Forms.Label lbl_role;
-		private System.Windows.Forms.Label lbl_gender;
-		private System.Windows.Forms.Label label27;
-		private System.Windows.Forms.Label label31;
-		private System.Windows.Forms.Label label32;
-		private System.Windows.Forms.Label label33;
-		private System.Windows.Forms.Label label34;
-		private System.Windows.Forms.Label label35;
-		private System.Windows.Forms.Label label36;
+		private System.Windows.Forms.GroupBox gb_ki_stats;
+		private System.Windows.Forms.Label lbl_ki_flightcountdisp;
+		private System.Windows.Forms.Label lbl_ki_stupid;
+		private System.Windows.Forms.Label lbl_ki_statedisp;
+		private System.Windows.Forms.Label lbl_ki_flightcount;
+		private System.Windows.Forms.Label lbl_ki_stupiddisp;
+		private System.Windows.Forms.Label lbl_ki_state;
+		private System.Windows.Forms.Label lbl_ki_bravedisp;
+		private System.Windows.Forms.Label lbl_ki_tourdisp;
+		private System.Windows.Forms.Label lbl_ki_badsdisp;
+		private System.Windows.Forms.Label lbl_ki_statusdisp;
+		private System.Windows.Forms.Label lbl_ki_roledisp;
+		private System.Windows.Forms.Label lbl_ki_genderdisp;
+		private System.Windows.Forms.Label lbl_ki_bads;
+		private System.Windows.Forms.Label lbl_ki_tour;
+		private System.Windows.Forms.Label lbl_ki_brave;
+		private System.Windows.Forms.Label lbl_ki_status;
+		private System.Windows.Forms.Label lbl_ki_role;
+		private System.Windows.Forms.Label lbl_ki_gender;
+		private System.Windows.Forms.Label cmb_ki_selectKerb;
 		private System.Windows.Forms.ComboBox cmb_kerb_list;
 		private System.Windows.Forms.GroupBox groupBox20;
-		private System.Windows.Forms.Label label53;
-		private System.Windows.Forms.Label label54;
-		private System.Windows.Forms.Label label55;
-		private System.Windows.Forms.Label label56;
+		private System.Windows.Forms.Label lbl_si_badscount;
+		private System.Windows.Forms.Label lbl_si_tourcountdisp;
+		private System.Windows.Forms.Label lbl_si_tourcount;
+		private System.Windows.Forms.Label lbl_si_badscountdisp;
 		private System.Windows.Forms.GroupBox groupBox19;
 		private System.Windows.Forms.GroupBox groupBox18;
-		private System.Windows.Forms.Label label49;
-		private System.Windows.Forms.Label label50;
-		private System.Windows.Forms.Label label51;
-		private System.Windows.Forms.Label label52;
+		private System.Windows.Forms.Label lbl_si_livingcount;
+		private System.Windows.Forms.Label lbl_si_deadcountdisp;
+		private System.Windows.Forms.Label lbl_si_deadcount;
+		private System.Windows.Forms.Label lbl_si_livingcountdisp;
 		private System.Windows.Forms.GroupBox groupBox17;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Button btn_exit;
 		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.GroupBox groupBox21;
+		private System.Windows.Forms.GroupBox grp_save_flag;
+		private System.Windows.Forms.Label lbl_CurrentSaveDir;
+		private System.Windows.Forms.Label label59;
+		private System.Windows.Forms.Label lbl_kspInstalDir;
+		private System.Windows.Forms.Label label57;
 	}
 }
 
