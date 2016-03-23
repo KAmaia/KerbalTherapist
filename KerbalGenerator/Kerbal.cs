@@ -30,7 +30,7 @@ namespace KerbalGenerator {
 			State = state;
 			ToD = tod;
 			Flights = flights;
-			printValues( );
+			
 		}
 
 		private string capitalizeStrings( string str ) {

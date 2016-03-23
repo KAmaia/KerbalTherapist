@@ -28,11 +28,13 @@ namespace KerbalGenerator {
 				string configName = rdr.Name;
 				if ( rdr.Name.ToLower( ).Equals( "ksp" ) ) {
 					configName = rdr.GetAttribute("name");
+					
 				}
 				cfg.Name = configName;
 				if ( rdr.Name.ToLower( ).Equals( "save" ) ) {
 					if ( !confDict.ContainsKey( rdr.GetAttribute( "name" ) ) ) {
 						confDict.Add( rdr.GetAttribute( "name" ), rdr.GetAttribute( "path" ) );
+						cfg.KSPPath = rdr.GetAttribute( "path" ).Remove( rdr.GetAttribute( "path" ).LastIndexOf( "\\saves" ) );
 						cfg.SavePaths = confDict;
 					}
 				}

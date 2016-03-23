@@ -56,7 +56,7 @@ namespace KerbalGenerator {
 						//if our name is not blank, generate a new kerbal.
 						//(Since our names our defined only after a Kerbal section is opened, we can
 						//probably safely assume that when s = Kerbal again, we're clear to create a new kerbal.
-						Debug.WriteLine( "Ding! Fries are done!" );
+						
 						if ( !( name == "" ) &&
 							!( gender == "" ) && 
 							!( type == "" ) && 
@@ -68,18 +68,6 @@ namespace KerbalGenerator {
 							!( state == "" ) && 
 							!( tod == "" ) && 
 							!( flights == "" ) ) {
-							Debug.WriteLine( "Creating new Kerbal with Values: " +
-								name + " " +
-								gender + " " +
-								type + " " +
-								trait + " " +
-								brave + " " +
-								dumb + " " +
-								bads + " " +
-								tour + " " +
-								state + " " +
-								tod + " " +
-								flights );
 							Kerbal k = new Kerbal(name, gender, type, trait, brave, dumb, bads, tour, state, tod, flights);
 							Roster.Add( k.Name, k );
 							name = "";
