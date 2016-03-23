@@ -31,16 +31,43 @@ namespace KerbalGenerator {
 			Application.Exit( );
 		}
 		private void btn_view_Kerbals_Click( object sender, EventArgs e ) {
-			frm_Kerb_Info kerbInfos = new frm_Kerb_Info(currentKerbals);
-			kerbInfos.Show( );
+			
+			
 		}
 		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
-			cmb_AvailSaves.Items.AddRange( cfg.SavePaths.Keys.ToArray() );
-			currentKerbals = new List<Kerbal>( );
-			currentKerbals.Add( new Kerbal( "derp derp", "male", "pilot", "Applicant", "1.0", "1.0", "Yes", "Yes", "Available", "0" ) );
-			currentKerbals.Add( new Kerbal( "Hurdy Durr", "female", "pilot", "crew", "1.0", "1.0", "Yes", "Yes", "Available", "0" ) );
+			cmb_AvailSaves.Items.AddRange( cfg.SavePaths.Keys.ToArray( ) );
 		}
 
-		
+		private void cmb_AvailSaves_SelectedIndexChanged( object sender, EventArgs e ) {
+
+		}
+
+		private void btn_gen_List_Kerb_Click_1( object sender, EventArgs e ) {
+
+		}
+
+		private void label3_Click( object sender, EventArgs e ) {
+
+		}
+
+		private void label19_Click( object sender, EventArgs e ) {
+
+		}
+
+		private void label22_Click( object sender, EventArgs e ) {
+
+		}
+
+		private void label23_Click( object sender, EventArgs e ) {
+
+		}
+
+		private void trackBar8_Scroll( object sender, EventArgs e ) {
+
+		}
+
+		private void btn_exit_Click_1( object sender, EventArgs e ) {
+			Application.Exit( );
+		}
 	}
 }

@@ -59,12 +59,6 @@
     <Compile Include="KerbalGeneratorForm.Designer.cs">
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Kerbal.cs" />
     <Compile Include="KerbalParser.cs" />
     <Compile Include="Program.cs" />
@@ -74,9 +68,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KerbalGeneratorForm.resx">
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
