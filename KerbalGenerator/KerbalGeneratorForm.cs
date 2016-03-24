@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace KerbalGenerator {
 	public partial class frm_Krb_Gen : Form {
-		private readonly string configPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Badwater\\KerbalGen";
+		private readonly string configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Path.Combine("Badwater", "KerbalGen"));
 
 		private Config config;
 
@@ -60,7 +60,7 @@ namespace KerbalGenerator {
 		}
 
 		private bool FirstRun( ) {
-			return !File.Exists( configPath + "\\config.xml" );
+			return !File.Exists( Path.Combine(configPath, "config.xml") );
 		}
 
 
