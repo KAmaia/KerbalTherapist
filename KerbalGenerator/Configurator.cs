@@ -90,7 +90,7 @@ namespace KerbalGenerator {
 
 		private List<string> EnumerateDirectory( string path ) {
 			List<string> innerFiles = new List<string>();
-			foreach ( string dir in Directory.GetDirectories( path ) ) {
+			foreach ( string dir in Directory.EnumerateDirectories( path ) ) {
 				innerFiles.Add( dir.Substring( dir.LastIndexOf( "\\" ) + 1 ) );
 			}
 			return innerFiles;
