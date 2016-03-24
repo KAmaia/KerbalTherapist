@@ -33,5 +33,9 @@ namespace KerbalGenerator {
 			formattedText += newLineIndent + "State: " + k.State;
 			return formattedText;
           }
+
+		private void btn_yes_Click( object sender, EventArgs e ) {
+			this.Close( );
+		}
 	}
 }

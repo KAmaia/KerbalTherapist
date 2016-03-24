@@ -11,17 +11,27 @@ namespace KerbalGenerator {
 			kerbals = new Dictionary<string, Kerbal>( );
 		}
 
-		public bool ValidateKerbal(Kerbal k ) {
-			bool validKerbal;
-			foreach (string kerb in kerbals.Keys ) {
-				if ( kerb.ToLower( ).Equals( k.Name.ToLower( ) )){
-					validKerbal = false;
+		public bool ValidateKerbal(string name ) {
+			foreach ( Kerbal k in kerbals.Values ) {
+				if ( k.Name.ToLower( ).Equals( name.ToLower() ) ) {
+					return false;
 				}
 			}
-			validKerbal = true;
-			return validKerbal;
+			return true;
+		}
+
+		public bool ValidateKerbal(Kerbal k ) {
+			foreach (string kerb in kerbals.Keys ) {
+				if ( kerb.ToLower( ).Equals( k.Name.ToLower( ) )){
+					return false;
+				}
+			}
+			return true;
 		}
 		public void AddKerbal(Kerbal k ) {
+			if ( kerbals.Keys.Contains( k.Name )){
+				kerbals.Remove( k.Name );
+			}
 			kerbals.Add( k.Name, k );
 		}
 		public List<string> GetNames( ) {

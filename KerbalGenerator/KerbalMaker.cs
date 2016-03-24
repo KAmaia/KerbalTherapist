@@ -9,29 +9,32 @@ namespace KerbalGenerator {
 		KerbalPreviewWindow kpw;
 
 		public Kerbal generateSpecific( string name, bool kerman, string gender,
-									string trait, float brave, float dumb, 
-									string bads, string tour ) {
-			Kerbal k;
+									string trait, float brave, float dumb,
+									bool badass, bool tourist ) {
 
+			string bads = badass.ToString();
+			string tour = tourist.ToString();
 			if ( kerman ) {
 				name += " Kerman";
 			}
-			k = new Kerbal( name, gender, trait, "crew", brave.ToString(), dumb.ToString(), bads, tour, "Available", "0", "0" );
-			showPreviewWindow( k );
+
+			Kerbal k = new Kerbal( name, gender, trait,
+							"crew", brave.ToString( ),
+							dumb.ToString( ), bads,
+							tour, "Available", "0", "0" );
 			return k;
 		}
 
-		private void showPreviewWindow( Kerbal k ) {
-			kpw = new KerbalPreviewWindow( k );
-			kpw.Show( );
-		}
-
-		public Kerbal generateSpecific( bool randomName, bool kerman, string gender, 
-									string trait, float brave, float dumb, 
-									string bads, string tour) {
-			Kerbal k;
+		public Kerbal generateSpecific(bool randomName, bool kerman, string gender,
+									string trait, float brave, float dumb,
+									bool badass, bool tourist ) {
 			string name = "";
 			bool female = gender.ToLower().Equals("female");
+			string bads = badass.ToString();
+			string tour = tourist.ToString();
+
+
+
 			if ( randomName ) {
 				if ( kerman ) {
 					name += genFirst( female );
@@ -41,20 +44,13 @@ namespace KerbalGenerator {
 				}
 			}
 
-			k= new Kerbal( name, gender, trait, "crew", brave.ToString(), dumb.ToString(), bads, tour, "Available", "0", "0" );
-			showPreviewWindow( k );
+			Kerbal k = new Kerbal( name, gender, trait, "crew", brave.ToString( ), dumb.ToString( ), bads, tour, "Available", "0", "0" );
 			return k;
 		}
 
 		private string genFirst( bool female ) {
-			if ( female ) {
-				return "Hurdy Durr Kerman";
-			}
-			else {
-				return "Derp Derp Kerman";
-			}
+			return female ? "Hurdy Durr Kerman" : "Derp Derp Kerman";
 		}
-
 		private string genFirstAndLast( bool female ) {
 			if ( female ) {
 				return "Hurdy Durr";

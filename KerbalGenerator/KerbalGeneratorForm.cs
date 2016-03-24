@@ -15,7 +15,7 @@ namespace KerbalGenerator {
 
 		public frm_Krb_Gen( ) {
 			InitializeComponent( );
-			generator = new KerbalGenerator(this);	
+			generator = new KerbalGenerator( this );
 		}
 
 		public void SetAllControls( bool active ) {
@@ -29,17 +29,24 @@ namespace KerbalGenerator {
 			}
 		}
 
+		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
+			Text = "Kerbal Generator -- " + generator.Cfg.Name;
+			cmb_AvailSaves.Items.AddRange( generator.GetSaves( ) );
+			cmb_AvailSaves.SelectedIndex = 0;
+		}
+
+		#region Stats Panel
 		private void displaySaveStats( ) {
-			lbl_si_badscountdisp.Text = generator.GetKerbalCounts("badasskerbals");
-			lbl_si_tourcountdisp.Text = generator.GetKerbalCounts("touristkerbals");
-			lbl_si_kerbcountdisp.Text = generator.GetKerbalCounts("totalkerbals");
-			lbl_si_livingcountdisp.Text = generator.GetKerbalCounts("livingkerbals");
-			lbl_si_deadcountdisp.Text = generator.GetKerbalCounts("deadkerbals");
-			lbl_si_genderfcountdisp.Text = generator.GetKerbalCounts("femalekerbals");
-			lbl_si_gendermcountdisp.Text = generator.GetKerbalCounts("malekerbals");
-			lbl_si_engicountdisp.Text = generator.GetKerbalCounts("engineerkerbals");
-			lbl_si_scicountdisp.Text = generator.GetKerbalCounts("scientistkerbals");
-			lbl_si_pilotcountdisp.Text = generator.GetKerbalCounts("pilotkerbals");
+			lbl_si_badscountdisp.Text = generator.GetKerbalCounts( "badasskerbals" );
+			lbl_si_tourcountdisp.Text = generator.GetKerbalCounts( "touristkerbals" );
+			lbl_si_kerbcountdisp.Text = generator.GetKerbalCounts( "totalkerbals" );
+			lbl_si_livingcountdisp.Text = generator.GetKerbalCounts( "livingkerbals" );
+			lbl_si_deadcountdisp.Text = generator.GetKerbalCounts( "deadkerbals" );
+			lbl_si_genderfcountdisp.Text = generator.GetKerbalCounts( "femalekerbals" );
+			lbl_si_gendermcountdisp.Text = generator.GetKerbalCounts( "malekerbals" );
+			lbl_si_engicountdisp.Text = generator.GetKerbalCounts( "engineerkerbals" );
+			lbl_si_scicountdisp.Text = generator.GetKerbalCounts( "scientistkerbals" );
+			lbl_si_pilotcountdisp.Text = generator.GetKerbalCounts( "pilotkerbals" );
 		}
 
 		private void DisplayKerbalStats( Kerbal k ) {
@@ -53,21 +60,12 @@ namespace KerbalGenerator {
 			lbl_ki_statedisp.Text = k.State;
 			lbl_ki_flightcountdisp.Text = k.Flights;
 		}
-
-		private void btn_gen_List_Kerb_Click( object sender, EventArgs e ) {
-
-		}
-
-		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
-			Text = "Kerbal Generator -- " + generator.Cfg.Name;
-			cmb_AvailSaves.Items.AddRange( generator.GetSaves() );
-			cmb_AvailSaves.SelectedIndex = 0;
-		}
+		#endregion
 
 		#region Available Saves Panel
 		private void cmb_AvailSaves_SelectedIndexChanged( object sender, EventArgs e ) {
 			string path = cmb_AvailSaves.SelectedItem.ToString();
-			Debug.WriteLine( "==" +generator.Cfg.SavePaths[path] );
+			Debug.WriteLine( "==" + generator.Cfg.SavePaths[path] );
 			generator.ParseKerbals( path );
 			lbl_currentSaveLocation.Text = generator.Cfg.SavePaths[path];
 			cmb_kerb_list.Items.Clear( );
@@ -100,7 +98,9 @@ namespace KerbalGenerator {
 		#endregion
 
 		#region Random Kerbal Generation
+		private void btn_gen_List_Kerb_Click( object sender, EventArgs e ) {
 
+		}
 		#endregion
 
 		#region Specific Kerbal Generation
@@ -148,21 +148,28 @@ namespace KerbalGenerator {
 		}
 		private void btn_spe_generate_Click( object sender, EventArgs e ) {
 			//Get all frickin' values.  (There has to be an easier way)
-			string name, gender, trait,  badass, tourist;
+			string name, gender, trait;
 			float brave, dumb;
 			bool genName = chk_spe_rndName.Checked;
 			bool isKerman = chk_spe_lastNameKerman.Checked;
+			bool badass = chk_spe_badass.Checked;
+			bool tourist = chk_spe_tourist.Checked;
 
 			gender = rd_spe_genderfemale.Checked ? "female" : "male";
 			trait = DetermineSpecificTrait( );
 			brave = ( (float) tbar_spe_brave.Value / 100 );
 			dumb = ( (float) tbar_spe_stupid.Value / 100 );
-			badass = chk_spe_badass.Checked.ToString( ).ToLower( );
-			tourist = chk_spe_tourist.Checked.ToString( ).ToLower( );
-
-			
+			if ( !genName ) {
+				name = txt_spe_kerbname.Text;
+				generator.KreateKerbal( name, isKerman, gender, trait, brave, dumb, badass, tourist );
+			}
+			else {
+				generator.KreateKerbal( genName, isKerman, gender, trait, brave, dumb, badass, tourist );
+			}
+			cmb_kerb_list.Items.Clear( );
+			cmb_kerb_list.Items.AddRange( generator.Rstr.GetNames( ).ToArray( ) );
+			cmb_kerb_list.SelectedIndex = 0;
 		}
-		
 
 		private string DetermineSpecificTrait( ) {
 			if ( rd_spe_pilot.Checked ) {
@@ -178,11 +185,9 @@ namespace KerbalGenerator {
 				return "pilot";
 
 			}
-
-			#endregion
-
-
 		}
+		#endregion
+
 
 		private void checkBox1_CheckedChanged( object sender, EventArgs e ) {
 

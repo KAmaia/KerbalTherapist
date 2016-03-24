@@ -18,6 +18,9 @@ namespace KerbalGenerator {
 		public string ToD { get; set; }
 		public string Flights { get; set; }
 
+		public Kerbal( ) {
+		}
+
 		public Kerbal(string name, string gender, string trait, 
 					string type, string brave, string dumb, 
 					string bads, string tour, string state,  

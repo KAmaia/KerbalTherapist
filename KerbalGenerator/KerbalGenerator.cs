@@ -18,7 +18,7 @@ namespace KerbalGenerator {
 		private frm_Krb_Gen MainForm;
 
 		public Roster Rstr { get { return roster; } }
-		public Config Cfg {get{ return config; } }
+		public Config Cfg { get { return config; } }
 
 		public bool IsFirstRun { get; }
 
@@ -38,11 +38,11 @@ namespace KerbalGenerator {
 			}
 		}
 
-		public String[] GetSaves( ) {
+		public String[ ] GetSaves( ) {
 			return config.SavePaths.Keys.ToArray( );
 		}
 
-		public void ParseKerbals(string persistent ) {
+		public void ParseKerbals( string persistent ) {
 			kp = new KerbalParser( );
 			roster = kp.Parse( config.SavePaths[persistent] );
 		}
@@ -53,12 +53,44 @@ namespace KerbalGenerator {
 			return retval;
 		}
 
-		public string GetKerbalCounts( string s) {
-			return roster.GetCounts( )[s].ToString();
+		public string GetKerbalCounts( string s ) {
+			return roster.GetCounts( )[s].ToString( );
 		}
 
-		internal Form GetCfgrForm( ) {
+		public Form GetCfgrForm( ) {
 			return new ConfiguratorForm( ref cfgr );
+		}
+
+		public void KreateKerbal( string name, bool isKerman, string gender, string trait, float brave, float dumb, bool badass, bool tourist ) {
+			km = new KerbalMaker( );
+			Kerbal k = km.generateSpecific(name, isKerman, gender,trait,brave,dumb,badass,tourist);
+			if ( PreviewKerbal( k ).Equals( DialogResult.Yes ) ) {
+				if ( !roster.ValidateKerbal( k ) ) {
+					var result = MessageBox.Show("Error! Kerbal: " + k.Name + "Already Exists!  Overwrite?", "Kerbal Exists!", MessageBoxButtons.YesNo);
+					if ( result.Equals( DialogResult.Yes ) ) {
+						roster.AddKerbal( k );
+					}
+				}
+			}
+		}
+
+		public void KreateKerbal( bool genName, bool isKerman, string gender, string trait, float brave, float dumb, bool badass, bool tourist ) {
+			km = new KerbalMaker( );
+			bool validKerbal = false;
+			Kerbal k = new Kerbal();;
+			while ( !validKerbal ) {
+				k = km.generateSpecific(genName, isKerman,gender,trait,brave,dumb,badass,tourist);
+				validKerbal = roster.ValidateKerbal( k ); 
+			}
+			PreviewKerbal( k );
+		}
+	
+		private DialogResult PreviewKerbal( Kerbal k ) {
+			return new KerbalPreviewWindow( k ).ShowDialog( );
+			
+		}
+		internal bool ValidateKerbalName( string name ) {
+			return ( roster.ValidateKerbal( name ) );
 		}
 	}
 }
