@@ -1546,12 +1546,14 @@
 			// 
 			// grp_save_flag
 			// 
+			this.grp_save_flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.grp_save_flag.Location = new System.Drawing.Point(3, 2);
 			this.grp_save_flag.Name = "grp_save_flag";
 			this.grp_save_flag.Size = new System.Drawing.Size(334, 237);
 			this.grp_save_flag.TabIndex = 5;
 			this.grp_save_flag.TabStop = false;
 			this.grp_save_flag.Text = "Save Flag";
+			this.grp_save_flag.Enter += new System.EventHandler(this.grp_save_flag_Enter);
 			// 
 			// panel6
 			// 

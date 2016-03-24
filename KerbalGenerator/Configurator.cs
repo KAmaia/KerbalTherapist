@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace KerbalGenerator {
@@ -91,7 +90,7 @@ namespace KerbalGenerator {
 
 		private List<string> EnumerateDirectory( string path ) {
 			List<string> innerFiles = new List<string>();
-			foreach ( string dir in Directory.EnumerateDirectories( path ) ) {
+			foreach ( string dir in Directory.GetDirectories( path ) ) {
 				innerFiles.Add( dir.Substring( dir.LastIndexOf( "\\" ) + 1 ) );
 			}
 			return innerFiles;
