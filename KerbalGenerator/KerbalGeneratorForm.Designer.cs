@@ -28,7 +28,7 @@
 			this.btn_po_exit = new System.Windows.Forms.Button();
 			this.lbl_saveSelect = new System.Windows.Forms.Label();
 			this.cmb_AvailSaves = new System.Windows.Forms.ComboBox();
-			this.btn_gen_List_Kerb = new System.Windows.Forms.Button();
+			this.btn_rnd_gen_Kerb = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.lbl_CurrentSaveDir = new System.Windows.Forms.Label();
 			this.label59 = new System.Windows.Forms.Label();
@@ -38,7 +38,7 @@
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
 			this.dmn_rnd_MaxKerbals = new System.Windows.Forms.DomainUpDown();
-			this.label19 = new System.Windows.Forms.Label();
+			this.lbl_rnd_MaxKerbs = new System.Windows.Forms.Label();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
 			this.lbl_rnd_maxpilots = new System.Windows.Forms.Label();
@@ -81,21 +81,22 @@
 			this.chk_rnd_allFemale = new System.Windows.Forms.CheckBox();
 			this.chk_rnd_allMale = new System.Windows.Forms.CheckBox();
 			this.tbar_rnd_MaleToFemale = new System.Windows.Forms.TrackBar();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lbl_rnd_genderSettings = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btn_rnd_reset = new System.Windows.Forms.Button();
-			this.panel2 = new System.Windows.Forms.Panel();
+			this.pnl_spe_gen = new System.Windows.Forms.Panel();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
 			this.btn_spe_reset = new System.Windows.Forms.Button();
 			this.btn_spe_generate = new System.Windows.Forms.Button();
-			this.groupBox10 = new System.Windows.Forms.GroupBox();
+			this.gb_spe_gen = new System.Windows.Forms.GroupBox();
+			this.chk_spe_rndName = new System.Windows.Forms.CheckBox();
+			this.chk_spe_lastNameKerman = new System.Windows.Forms.CheckBox();
 			this.groupBox14 = new System.Windows.Forms.GroupBox();
 			this.lbl_spe_stupid = new System.Windows.Forms.Label();
 			this.lbl_spe_stupiddisp = new System.Windows.Forms.Label();
 			this.tbar_spe_stupid = new System.Windows.Forms.TrackBar();
 			this.lbl_spe_brave = new System.Windows.Forms.Label();
 			this.lbl_spe_bravedisp = new System.Windows.Forms.Label();
-			this.tbar_spe_brave = new System.Windows.Forms.TrackBar();
 			this.groupBox13 = new System.Windows.Forms.GroupBox();
 			this.chk_spe_tourist = new System.Windows.Forms.CheckBox();
 			this.chk_spe_badass = new System.Windows.Forms.CheckBox();
@@ -160,6 +161,9 @@
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.grp_save_flag = new System.Windows.Forms.GroupBox();
 			this.panel6 = new System.Windows.Forms.Panel();
+			this.chk_spe_rndBrave = new System.Windows.Forms.CheckBox();
+			this.chk_spe_rndStupid = new System.Windows.Forms.CheckBox();
+			this.tbar_spe_brave = new System.Windows.Forms.TrackBar();
 			gb_po_options = new System.Windows.Forms.GroupBox();
 			gb_po_options.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -181,12 +185,11 @@
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_MaleToFemale)).BeginInit();
 			this.panel1.SuspendLayout();
-			this.panel2.SuspendLayout();
+			this.pnl_spe_gen.SuspendLayout();
 			this.groupBox9.SuspendLayout();
-			this.groupBox10.SuspendLayout();
+			this.gb_spe_gen.SuspendLayout();
 			this.groupBox14.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_stupid)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).BeginInit();
 			this.groupBox13.SuspendLayout();
 			this.groupBox12.SuspendLayout();
 			this.groupBox11.SuspendLayout();
@@ -201,6 +204,7 @@
 			this.pnl_po_options.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel6.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gb_po_options
@@ -215,7 +219,6 @@
 			gb_po_options.TabIndex = 5;
 			gb_po_options.TabStop = false;
 			gb_po_options.Text = "Program Options";
-			gb_po_options.Enter += new System.EventHandler(this.groupBox1_Enter);
 			// 
 			// btn_po_OpenCfgr
 			// 
@@ -255,16 +258,15 @@
 			this.cmb_AvailSaves.TabIndex = 8;
 			this.cmb_AvailSaves.SelectedIndexChanged += new System.EventHandler(this.cmb_AvailSaves_SelectedIndexChanged);
 			// 
-			// btn_gen_List_Kerb
+			// btn_rnd_gen_Kerb
 			// 
-			this.btn_gen_List_Kerb.AutoSize = true;
-			this.btn_gen_List_Kerb.Location = new System.Drawing.Point(7, 706);
-			this.btn_gen_List_Kerb.Name = "btn_gen_List_Kerb";
-			this.btn_gen_List_Kerb.Size = new System.Drawing.Size(138, 23);
-			this.btn_gen_List_Kerb.TabIndex = 5;
-			this.btn_gen_List_Kerb.Text = "Generate Kerbals";
-			this.btn_gen_List_Kerb.UseVisualStyleBackColor = true;
-			this.btn_gen_List_Kerb.Click += new System.EventHandler(this.btn_gen_List_Kerb_Click_1);
+			this.btn_rnd_gen_Kerb.AutoSize = true;
+			this.btn_rnd_gen_Kerb.Location = new System.Drawing.Point(7, 706);
+			this.btn_rnd_gen_Kerb.Name = "btn_rnd_gen_Kerb";
+			this.btn_rnd_gen_Kerb.Size = new System.Drawing.Size(138, 23);
+			this.btn_rnd_gen_Kerb.TabIndex = 5;
+			this.btn_rnd_gen_Kerb.Text = "Generate Kerbals";
+			this.btn_rnd_gen_Kerb.UseVisualStyleBackColor = true;
 			// 
 			// groupBox2
 			// 
@@ -342,7 +344,7 @@
 			// groupBox7
 			// 
 			this.groupBox7.Controls.Add(this.dmn_rnd_MaxKerbals);
-			this.groupBox7.Controls.Add(this.label19);
+			this.groupBox7.Controls.Add(this.lbl_rnd_MaxKerbs);
 			this.groupBox7.Location = new System.Drawing.Point(7, 23);
 			this.groupBox7.Name = "groupBox7";
 			this.groupBox7.Size = new System.Drawing.Size(294, 49);
@@ -359,15 +361,14 @@
 			this.dmn_rnd_MaxKerbals.Text = "1";
 			this.dmn_rnd_MaxKerbals.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
-			// label19
+			// lbl_rnd_MaxKerbs
 			// 
-			this.label19.AutoSize = true;
-			this.label19.Location = new System.Drawing.Point(19, 22);
-			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(199, 13);
-			this.label19.TabIndex = 1;
-			this.label19.Text = "Number Of Kerbals To Create (Max :  50)";
-			this.label19.Click += new System.EventHandler(this.label19_Click);
+			this.lbl_rnd_MaxKerbs.AutoSize = true;
+			this.lbl_rnd_MaxKerbs.Location = new System.Drawing.Point(19, 22);
+			this.lbl_rnd_MaxKerbs.Name = "lbl_rnd_MaxKerbs";
+			this.lbl_rnd_MaxKerbs.Size = new System.Drawing.Size(199, 13);
+			this.lbl_rnd_MaxKerbs.TabIndex = 1;
+			this.lbl_rnd_MaxKerbs.Text = "Number Of Kerbals To Create (Max :  50)";
 			// 
 			// groupBox6
 			// 
@@ -386,7 +387,6 @@
 			this.groupBox6.TabIndex = 2;
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Professions";
-			this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
 			// 
 			// groupBox8
 			// 
@@ -424,7 +424,6 @@
 			this.lbl_rnd_engi.TabIndex = 10;
 			this.lbl_rnd_engi.Text = "Engineers";
 			this.lbl_rnd_engi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.lbl_rnd_engi.Click += new System.EventHandler(this.label3_Click);
 			// 
 			// chk_rnd_locktour
 			// 
@@ -703,7 +702,6 @@
 			this.lbl_rnd_maxstupid.TabIndex = 10;
 			this.lbl_rnd_maxstupid.Text = "Maximum Stupidity";
 			this.lbl_rnd_maxstupid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.lbl_rnd_maxstupid.Click += new System.EventHandler(this.label3_Click);
 			// 
 			// tbar_rnd_maxstupid
 			// 
@@ -736,7 +734,7 @@
 			this.groupBox4.Controls.Add(this.chk_rnd_allFemale);
 			this.groupBox4.Controls.Add(this.chk_rnd_allMale);
 			this.groupBox4.Controls.Add(this.tbar_rnd_MaleToFemale);
-			this.groupBox4.Controls.Add(this.label1);
+			this.groupBox4.Controls.Add(this.lbl_rnd_genderSettings);
 			this.groupBox4.Location = new System.Drawing.Point(7, 78);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(295, 67);
@@ -779,20 +777,20 @@
 			this.tbar_rnd_MaleToFemale.Size = new System.Drawing.Size(110, 45);
 			this.tbar_rnd_MaleToFemale.TabIndex = 6;
 			// 
-			// label1
+			// lbl_rnd_genderSettings
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 16);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(111, 13);
-			this.label1.TabIndex = 7;
-			this.label1.Text = "Male To Female Ratio";
+			this.lbl_rnd_genderSettings.AutoSize = true;
+			this.lbl_rnd_genderSettings.Location = new System.Drawing.Point(6, 16);
+			this.lbl_rnd_genderSettings.Name = "lbl_rnd_genderSettings";
+			this.lbl_rnd_genderSettings.Size = new System.Drawing.Size(111, 13);
+			this.lbl_rnd_genderSettings.TabIndex = 7;
+			this.lbl_rnd_genderSettings.Text = "Male To Female Ratio";
 			// 
 			// panel1
 			// 
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.panel1.Controls.Add(this.btn_rnd_reset);
-			this.panel1.Controls.Add(this.btn_gen_List_Kerb);
+			this.panel1.Controls.Add(this.btn_rnd_gen_Kerb);
 			this.panel1.Controls.Add(this.groupBox3);
 			this.panel1.Location = new System.Drawing.Point(9, 106);
 			this.panel1.Name = "panel1";
@@ -809,20 +807,20 @@
 			this.btn_rnd_reset.Text = "Reset";
 			this.btn_rnd_reset.UseVisualStyleBackColor = true;
 			// 
-			// panel2
+			// pnl_spe_gen
 			// 
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel2.Controls.Add(this.groupBox9);
-			this.panel2.Location = new System.Drawing.Point(345, 106);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(348, 379);
-			this.panel2.TabIndex = 8;
+			this.pnl_spe_gen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.pnl_spe_gen.Controls.Add(this.groupBox9);
+			this.pnl_spe_gen.Location = new System.Drawing.Point(345, 106);
+			this.pnl_spe_gen.Name = "pnl_spe_gen";
+			this.pnl_spe_gen.Size = new System.Drawing.Size(348, 379);
+			this.pnl_spe_gen.TabIndex = 8;
 			// 
 			// groupBox9
 			// 
 			this.groupBox9.Controls.Add(this.btn_spe_reset);
 			this.groupBox9.Controls.Add(this.btn_spe_generate);
-			this.groupBox9.Controls.Add(this.groupBox10);
+			this.groupBox9.Controls.Add(this.gb_spe_gen);
 			this.groupBox9.Location = new System.Drawing.Point(8, 3);
 			this.groupBox9.Name = "groupBox9";
 			this.groupBox9.Size = new System.Drawing.Size(329, 357);
@@ -839,6 +837,7 @@
 			this.btn_spe_reset.TabIndex = 8;
 			this.btn_spe_reset.Text = "Reset";
 			this.btn_spe_reset.UseVisualStyleBackColor = true;
+			this.btn_spe_reset.Click += new System.EventHandler(this.btn_spe_reset_Click);
 			// 
 			// btn_spe_generate
 			// 
@@ -849,31 +848,58 @@
 			this.btn_spe_generate.TabIndex = 8;
 			this.btn_spe_generate.Text = "Generate";
 			this.btn_spe_generate.UseVisualStyleBackColor = true;
+			this.btn_spe_generate.Click += new System.EventHandler(this.btn_spe_generate_Click);
 			// 
-			// groupBox10
+			// gb_spe_gen
 			// 
-			this.groupBox10.Controls.Add(this.groupBox14);
-			this.groupBox10.Controls.Add(this.groupBox13);
-			this.groupBox10.Controls.Add(this.groupBox12);
-			this.groupBox10.Controls.Add(this.groupBox11);
-			this.groupBox10.Controls.Add(this.txt_spe_kerbname);
-			this.groupBox10.Controls.Add(this.label28);
-			this.groupBox10.Location = new System.Drawing.Point(11, 19);
-			this.groupBox10.Name = "groupBox10";
-			this.groupBox10.Size = new System.Drawing.Size(305, 276);
-			this.groupBox10.TabIndex = 0;
-			this.groupBox10.TabStop = false;
-			this.groupBox10.Text = "Basic Info";
+			this.gb_spe_gen.Controls.Add(this.chk_spe_rndName);
+			this.gb_spe_gen.Controls.Add(this.chk_spe_lastNameKerman);
+			this.gb_spe_gen.Controls.Add(this.groupBox14);
+			this.gb_spe_gen.Controls.Add(this.groupBox13);
+			this.gb_spe_gen.Controls.Add(this.groupBox12);
+			this.gb_spe_gen.Controls.Add(this.groupBox11);
+			this.gb_spe_gen.Controls.Add(this.txt_spe_kerbname);
+			this.gb_spe_gen.Controls.Add(this.label28);
+			this.gb_spe_gen.Location = new System.Drawing.Point(11, 19);
+			this.gb_spe_gen.Name = "gb_spe_gen";
+			this.gb_spe_gen.Size = new System.Drawing.Size(305, 294);
+			this.gb_spe_gen.TabIndex = 0;
+			this.gb_spe_gen.TabStop = false;
+			this.gb_spe_gen.Text = "Basic Info";
+			// 
+			// chk_spe_rndName
+			// 
+			this.chk_spe_rndName.AutoSize = true;
+			this.chk_spe_rndName.Location = new System.Drawing.Point(9, 44);
+			this.chk_spe_rndName.Name = "chk_spe_rndName";
+			this.chk_spe_rndName.Size = new System.Drawing.Size(97, 17);
+			this.chk_spe_rndName.TabIndex = 6;
+			this.chk_spe_rndName.Text = "Random Name";
+			this.chk_spe_rndName.UseVisualStyleBackColor = true;
+			this.chk_spe_rndName.CheckedChanged += new System.EventHandler(this.chk_spe_rndName_CheckedChanged);
+			// 
+			// chk_spe_lastNameKerman
+			// 
+			this.chk_spe_lastNameKerman.AutoSize = true;
+			this.chk_spe_lastNameKerman.Location = new System.Drawing.Point(136, 44);
+			this.chk_spe_lastNameKerman.Name = "chk_spe_lastNameKerman";
+			this.chk_spe_lastNameKerman.Size = new System.Drawing.Size(156, 17);
+			this.chk_spe_lastNameKerman.TabIndex = 5;
+			this.chk_spe_lastNameKerman.Text = "Use Kerman For Last Name";
+			this.chk_spe_lastNameKerman.UseVisualStyleBackColor = true;
+			this.chk_spe_lastNameKerman.CheckedChanged += new System.EventHandler(this.chk_spe_lastNameKerman_CheckedChanged);
 			// 
 			// groupBox14
 			// 
+			this.groupBox14.Controls.Add(this.chk_spe_rndStupid);
+			this.groupBox14.Controls.Add(this.chk_spe_rndBrave);
 			this.groupBox14.Controls.Add(this.lbl_spe_stupid);
 			this.groupBox14.Controls.Add(this.lbl_spe_stupiddisp);
 			this.groupBox14.Controls.Add(this.tbar_spe_stupid);
 			this.groupBox14.Controls.Add(this.lbl_spe_brave);
 			this.groupBox14.Controls.Add(this.lbl_spe_bravedisp);
 			this.groupBox14.Controls.Add(this.tbar_spe_brave);
-			this.groupBox14.Location = new System.Drawing.Point(15, 154);
+			this.groupBox14.Location = new System.Drawing.Point(15, 171);
 			this.groupBox14.Name = "groupBox14";
 			this.groupBox14.Size = new System.Drawing.Size(277, 107);
 			this.groupBox14.TabIndex = 4;
@@ -882,9 +908,10 @@
 			// 
 			// lbl_spe_stupid
 			// 
-			this.lbl_spe_stupid.Location = new System.Drawing.Point(6, 60);
+			this.lbl_spe_stupid.AutoSize = true;
+			this.lbl_spe_stupid.Location = new System.Drawing.Point(5, 60);
 			this.lbl_spe_stupid.Name = "lbl_spe_stupid";
-			this.lbl_spe_stupid.Size = new System.Drawing.Size(93, 15);
+			this.lbl_spe_stupid.Size = new System.Drawing.Size(47, 13);
 			this.lbl_spe_stupid.TabIndex = 28;
 			this.lbl_spe_stupid.Text = "Stupidity";
 			this.lbl_spe_stupid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -892,50 +919,43 @@
 			// lbl_spe_stupiddisp
 			// 
 			this.lbl_spe_stupiddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_spe_stupiddisp.Location = new System.Drawing.Point(215, 59);
+			this.lbl_spe_stupiddisp.Location = new System.Drawing.Point(158, 59);
 			this.lbl_spe_stupiddisp.Name = "lbl_spe_stupiddisp";
-			this.lbl_spe_stupiddisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_spe_stupiddisp.Size = new System.Drawing.Size(41, 30);
 			this.lbl_spe_stupiddisp.TabIndex = 29;
 			// 
 			// tbar_spe_stupid
 			// 
-			this.tbar_spe_stupid.Location = new System.Drawing.Point(105, 59);
+			this.tbar_spe_stupid.Location = new System.Drawing.Point(58, 56);
+			this.tbar_spe_stupid.Maximum = 100;
 			this.tbar_spe_stupid.Name = "tbar_spe_stupid";
 			this.tbar_spe_stupid.Size = new System.Drawing.Size(104, 45);
 			this.tbar_spe_stupid.TabIndex = 27;
+			this.tbar_spe_stupid.Scroll += new System.EventHandler(this.tbar_spe_stupid_Scroll);
 			// 
 			// lbl_spe_brave
 			// 
-			this.lbl_spe_brave.Location = new System.Drawing.Point(6, 16);
+			this.lbl_spe_brave.AutoSize = true;
+			this.lbl_spe_brave.Location = new System.Drawing.Point(9, 21);
 			this.lbl_spe_brave.Name = "lbl_spe_brave";
-			this.lbl_spe_brave.Size = new System.Drawing.Size(93, 15);
+			this.lbl_spe_brave.Size = new System.Drawing.Size(43, 13);
 			this.lbl_spe_brave.TabIndex = 25;
 			this.lbl_spe_brave.Text = "Bravery";
 			this.lbl_spe_brave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.lbl_spe_brave.Click += new System.EventHandler(this.label23_Click);
 			// 
 			// lbl_spe_bravedisp
 			// 
 			this.lbl_spe_bravedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_spe_bravedisp.Location = new System.Drawing.Point(215, 15);
+			this.lbl_spe_bravedisp.Location = new System.Drawing.Point(158, 15);
 			this.lbl_spe_bravedisp.Name = "lbl_spe_bravedisp";
-			this.lbl_spe_bravedisp.Size = new System.Drawing.Size(52, 30);
+			this.lbl_spe_bravedisp.Size = new System.Drawing.Size(41, 30);
 			this.lbl_spe_bravedisp.TabIndex = 26;
-			this.lbl_spe_bravedisp.Click += new System.EventHandler(this.label22_Click);
-			// 
-			// tbar_spe_brave
-			// 
-			this.tbar_spe_brave.Location = new System.Drawing.Point(105, 15);
-			this.tbar_spe_brave.Name = "tbar_spe_brave";
-			this.tbar_spe_brave.Size = new System.Drawing.Size(104, 45);
-			this.tbar_spe_brave.TabIndex = 24;
-			this.tbar_spe_brave.Scroll += new System.EventHandler(this.trackBar8_Scroll);
 			// 
 			// groupBox13
 			// 
 			this.groupBox13.Controls.Add(this.chk_spe_tourist);
 			this.groupBox13.Controls.Add(this.chk_spe_badass);
-			this.groupBox13.Location = new System.Drawing.Point(165, 44);
+			this.groupBox13.Location = new System.Drawing.Point(155, 69);
 			this.groupBox13.Name = "groupBox13";
 			this.groupBox13.Size = new System.Drawing.Size(134, 45);
 			this.groupBox13.TabIndex = 3;
@@ -967,9 +987,9 @@
 			this.groupBox12.Controls.Add(this.rd_spe_sci);
 			this.groupBox12.Controls.Add(this.rd_spe_engi);
 			this.groupBox12.Controls.Add(this.rd_spe_pilot);
-			this.groupBox12.Location = new System.Drawing.Point(34, 94);
+			this.groupBox12.Location = new System.Drawing.Point(15, 120);
 			this.groupBox12.Name = "groupBox12";
-			this.groupBox12.Size = new System.Drawing.Size(235, 45);
+			this.groupBox12.Size = new System.Drawing.Size(274, 45);
 			this.groupBox12.TabIndex = 3;
 			this.groupBox12.TabStop = false;
 			this.groupBox12.Text = "Profession";
@@ -977,28 +997,27 @@
 			// rd_spe_sci
 			// 
 			this.rd_spe_sci.AutoSize = true;
-			this.rd_spe_sci.Location = new System.Drawing.Point(142, 19);
+			this.rd_spe_sci.Location = new System.Drawing.Point(203, 19);
 			this.rd_spe_sci.Name = "rd_spe_sci";
 			this.rd_spe_sci.Size = new System.Drawing.Size(65, 17);
 			this.rd_spe_sci.TabIndex = 2;
-			this.rd_spe_sci.TabStop = true;
 			this.rd_spe_sci.Text = "Scientist";
 			this.rd_spe_sci.UseVisualStyleBackColor = true;
 			// 
 			// rd_spe_engi
 			// 
 			this.rd_spe_engi.AutoSize = true;
-			this.rd_spe_engi.Location = new System.Drawing.Point(69, 19);
+			this.rd_spe_engi.Location = new System.Drawing.Point(105, 19);
 			this.rd_spe_engi.Name = "rd_spe_engi";
 			this.rd_spe_engi.Size = new System.Drawing.Size(67, 17);
 			this.rd_spe_engi.TabIndex = 1;
-			this.rd_spe_engi.TabStop = true;
 			this.rd_spe_engi.Text = "Engineer";
 			this.rd_spe_engi.UseVisualStyleBackColor = true;
 			// 
 			// rd_spe_pilot
 			// 
 			this.rd_spe_pilot.AutoSize = true;
+			this.rd_spe_pilot.Checked = true;
 			this.rd_spe_pilot.Location = new System.Drawing.Point(6, 19);
 			this.rd_spe_pilot.Name = "rd_spe_pilot";
 			this.rd_spe_pilot.Size = new System.Drawing.Size(45, 17);
@@ -1011,7 +1030,7 @@
 			// 
 			this.groupBox11.Controls.Add(this.rd_spe_genderfemale);
 			this.groupBox11.Controls.Add(this.rd_spe_gendermale);
-			this.groupBox11.Location = new System.Drawing.Point(9, 43);
+			this.groupBox11.Location = new System.Drawing.Point(15, 69);
 			this.groupBox11.Name = "groupBox11";
 			this.groupBox11.Size = new System.Drawing.Size(134, 45);
 			this.groupBox11.TabIndex = 2;
@@ -1021,6 +1040,7 @@
 			// rd_spe_genderfemale
 			// 
 			this.rd_spe_genderfemale.AutoSize = true;
+			this.rd_spe_genderfemale.Checked = true;
 			this.rd_spe_genderfemale.Location = new System.Drawing.Point(69, 19);
 			this.rd_spe_genderfemale.Name = "rd_spe_genderfemale";
 			this.rd_spe_genderfemale.Size = new System.Drawing.Size(59, 17);
@@ -1036,7 +1056,6 @@
 			this.rd_spe_gendermale.Name = "rd_spe_gendermale";
 			this.rd_spe_gendermale.Size = new System.Drawing.Size(48, 17);
 			this.rd_spe_gendermale.TabIndex = 0;
-			this.rd_spe_gendermale.TabStop = true;
 			this.rd_spe_gendermale.Text = "Male";
 			this.rd_spe_gendermale.UseVisualStyleBackColor = true;
 			// 
@@ -1047,6 +1066,7 @@
 			this.txt_spe_kerbname.Name = "txt_spe_kerbname";
 			this.txt_spe_kerbname.Size = new System.Drawing.Size(252, 20);
 			this.txt_spe_kerbname.TabIndex = 1;
+			this.txt_spe_kerbname.TextChanged += new System.EventHandler(this.txt_spe_kerbname_TextChanged);
 			// 
 			// label28
 			// 
@@ -1250,7 +1270,6 @@
 			this.lbl_si_kerbcount.TabIndex = 18;
 			this.lbl_si_kerbcount.Text = "Kerbals";
 			this.lbl_si_kerbcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.lbl_si_kerbcount.Click += new System.EventHandler(this.lbl_si_kerbals_Click);
 			// 
 			// lbl_si_livingcountdisp
 			// 
@@ -1467,7 +1486,6 @@
 			this.lbl_ki_tour.TabIndex = 7;
 			this.lbl_ki_tour.Text = "Tourist";
 			this.lbl_ki_tour.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.lbl_ki_tour.Click += new System.EventHandler(this.label31_Click);
 			// 
 			// lbl_ki_brave
 			// 
@@ -1553,7 +1571,6 @@
 			this.grp_save_flag.TabIndex = 5;
 			this.grp_save_flag.TabStop = false;
 			this.grp_save_flag.Text = "Save Flag";
-			this.grp_save_flag.Enter += new System.EventHandler(this.grp_save_flag_Enter);
 			// 
 			// panel6
 			// 
@@ -1564,6 +1581,36 @@
 			this.panel6.Size = new System.Drawing.Size(1036, 87);
 			this.panel6.TabIndex = 12;
 			// 
+			// chk_spe_rndBrave
+			// 
+			this.chk_spe_rndBrave.AutoSize = true;
+			this.chk_spe_rndBrave.Location = new System.Drawing.Point(205, 21);
+			this.chk_spe_rndBrave.Name = "chk_spe_rndBrave";
+			this.chk_spe_rndBrave.Size = new System.Drawing.Size(66, 17);
+			this.chk_spe_rndBrave.TabIndex = 30;
+			this.chk_spe_rndBrave.Text = "Random";
+			this.chk_spe_rndBrave.UseVisualStyleBackColor = true;
+			this.chk_spe_rndBrave.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+			// 
+			// chk_spe_rndStupid
+			// 
+			this.chk_spe_rndStupid.AutoSize = true;
+			this.chk_spe_rndStupid.Location = new System.Drawing.Point(205, 60);
+			this.chk_spe_rndStupid.Name = "chk_spe_rndStupid";
+			this.chk_spe_rndStupid.Size = new System.Drawing.Size(66, 17);
+			this.chk_spe_rndStupid.TabIndex = 31;
+			this.chk_spe_rndStupid.Text = "Random";
+			this.chk_spe_rndStupid.UseVisualStyleBackColor = true;
+			// 
+			// tbar_spe_brave
+			// 
+			this.tbar_spe_brave.Location = new System.Drawing.Point(58, 15);
+			this.tbar_spe_brave.Maximum = 100;
+			this.tbar_spe_brave.Name = "tbar_spe_brave";
+			this.tbar_spe_brave.Size = new System.Drawing.Size(104, 45);
+			this.tbar_spe_brave.TabIndex = 24;
+			this.tbar_spe_brave.Scroll += new System.EventHandler(this.tbar_spe_brave_Scroll);
+			// 
 			// frm_Krb_Gen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1573,7 +1620,7 @@
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.pnl_po_options);
 			this.Controls.Add(this.panel3);
-			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.pnl_spe_gen);
 			this.Controls.Add(this.panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
@@ -1607,15 +1654,14 @@
 			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_MaleToFemale)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			this.panel2.ResumeLayout(false);
+			this.pnl_spe_gen.ResumeLayout(false);
 			this.groupBox9.ResumeLayout(false);
 			this.groupBox9.PerformLayout();
-			this.groupBox10.ResumeLayout(false);
-			this.groupBox10.PerformLayout();
+			this.gb_spe_gen.ResumeLayout(false);
+			this.gb_spe_gen.PerformLayout();
 			this.groupBox14.ResumeLayout(false);
 			this.groupBox14.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_stupid)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).EndInit();
 			this.groupBox13.ResumeLayout(false);
 			this.groupBox13.PerformLayout();
 			this.groupBox12.ResumeLayout(false);
@@ -1636,12 +1682,13 @@
 			this.pnl_po_options.PerformLayout();
 			this.panel5.ResumeLayout(false);
 			this.panel6.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-		private System.Windows.Forms.Button btn_gen_List_Kerb;
+		private System.Windows.Forms.Button btn_rnd_gen_Kerb;
 		private System.Windows.Forms.Label lbl_saveSelect;
 		private System.Windows.Forms.ComboBox cmb_AvailSaves;
 		private System.Windows.Forms.GroupBox groupBox2;
@@ -1651,10 +1698,10 @@
 		private System.Windows.Forms.Label lbl_rnd_minstupid;
 		private System.Windows.Forms.TrackBar tbar_rnd_maxstupid;
 		private System.Windows.Forms.TrackBar tbar_rnd_minStupidity;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lbl_rnd_genderSettings;
 		private System.Windows.Forms.TrackBar tbar_rnd_MaleToFemale;
 		private System.Windows.Forms.GroupBox groupBox7;
-		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.Label lbl_rnd_MaxKerbs;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.Label lbl_rnd_maxpilots;
 		private System.Windows.Forms.TrackBar tbar_rnd_maxsci;
@@ -1695,17 +1742,15 @@
 		private System.Windows.Forms.Label lbl_rnd_maxtourdisp;
 		private System.Windows.Forms.GroupBox groupBox8;
 		private System.Windows.Forms.Button btn_rnd_reset;
-		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel pnl_spe_gen;
 		private System.Windows.Forms.GroupBox groupBox9;
-		private System.Windows.Forms.GroupBox groupBox10;
+		private System.Windows.Forms.GroupBox gb_spe_gen;
 		private System.Windows.Forms.GroupBox groupBox14;
 		private System.Windows.Forms.Label lbl_spe_brave;
 		private System.Windows.Forms.Label lbl_spe_bravedisp;
-		private System.Windows.Forms.TrackBar tbar_spe_brave;
 		private System.Windows.Forms.GroupBox groupBox13;
 		private System.Windows.Forms.CheckBox chk_spe_tourist;
 		private System.Windows.Forms.CheckBox chk_spe_badass;
-		private System.Windows.Forms.GroupBox groupBox12;
 		private System.Windows.Forms.RadioButton rd_spe_sci;
 		private System.Windows.Forms.RadioButton rd_spe_engi;
 		private System.Windows.Forms.RadioButton rd_spe_pilot;
@@ -1777,6 +1822,12 @@
 		private System.Windows.Forms.Label label57;
 		private System.Windows.Forms.Button btn_po_OpenCfgr;
 		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.CheckBox chk_spe_lastNameKerman;
+		private System.Windows.Forms.GroupBox groupBox12;
+		private System.Windows.Forms.CheckBox chk_spe_rndName;
+		private System.Windows.Forms.CheckBox chk_spe_rndStupid;
+		private System.Windows.Forms.CheckBox chk_spe_rndBrave;
+		private System.Windows.Forms.TrackBar tbar_spe_brave;
 	}
 }
 

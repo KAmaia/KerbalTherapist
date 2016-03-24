@@ -10,20 +10,20 @@ using System.Windows.Forms;
 namespace KerbalGenerator {
 	public partial class ConfiguratorForm : Form {
 		Configurator cfgr;
-		public ConfiguratorForm(ref Configurator cfgr ) {
+		public ConfiguratorForm( ref Configurator cfgr ) {
 			InitializeComponent( );
 			this.cfgr = cfgr;
 		}
 
 		private void btn_Cancel_Click( object sender, EventArgs e ) {
-
+			
 		}
 
 		private void btn_create_config_Click( object sender, EventArgs e ) {
-			if ( cfgr.SaveCount == 0 ) {
-				ShowPathError( "Sorry, No Valid Saves In That Directory", false );
-			}
+			cfgr.CreateConfig( txt_ConfigName.Text, txt_kspPath.Text );
+			this.Close( );
 		}
+
 
 
 
@@ -35,7 +35,14 @@ namespace KerbalGenerator {
 		private void txt_kspPath_TextChanged( object sender, EventArgs e ) {
 			bool validPath = cfgr.ValidatePath(txt_kspPath.Text);
 			ShowPathError( validPath ? "Valid Path Found" : "Sorry, That Path Does Not Exist", validPath );
+			if ( validPath ) {
+				validPath = cfgr.countSavesInPath(txt_kspPath.Text) > 0;
+				ShowPathError( validPath ? "Valid Saves Found.  Click Create Config to Continue" : "Sorry, no Valid Saves in that directory", validPath );
+			}
 		}
 
+		private void txt_kspPath_TextChanged_1( object sender, EventArgs e ) {
+
+		}
 	}
 }

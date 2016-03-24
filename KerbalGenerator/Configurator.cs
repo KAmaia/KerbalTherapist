@@ -26,8 +26,8 @@ namespace KerbalGenerator {
 				if ( rdr.NodeType.Equals( XmlNodeType.Element ) ) { }
 				string configName = rdr.Name;
 				if ( rdr.Name.ToLower( ).Equals( "ksp" ) ) {
-					configName = rdr.GetAttribute("name");
-					
+					configName = rdr.GetAttribute( "name" );
+
 				}
 				cfg.Name = configName;
 				if ( rdr.Name.ToLower( ).Equals( "save" ) ) {
@@ -40,19 +40,30 @@ namespace KerbalGenerator {
 			}
 			config = cfg;
 		}
-
-		public void create_config( string _configName, string _path ) {
+		/// <summary>
+		/// Creates an XML Formatted configuration file.
+		/// </summary>
+		/// <param name="_configName">
+		/// This text is passed in from ConfiguratorForm.lbl_configName.Text.
+		/// it is not the name of the configuration file, but of the config within it.  
+		/// this is to allow for multiple configurations to be managed in the future.
+		/// </param>
+		/// <param name="_kspPath">
+		/// This is the path to your Kerbal Space Program Install.  It is passed in from ConfiguratorForm.
+		/// </param>
+		public void CreateConfig( string _configName, string _kspPath ) {
 			string configName = _configName;
-			string path = _path;
+			string kspPath = _kspPath;
 			List<string> saves = new List<string>();
 			if ( !ValidatePath( configPath ) ) {
 				Directory.CreateDirectory( configPath );
 			}
 
 			else {
+				//append config.xml to path, so that way things are pretty...
 				//get our save directory and enumerate it.
-				path = path + "\\saves";
-				saves = EnumerateDirectory( path );
+				kspPath = Path.Combine( kspPath + "saves" );
+				saves = EnumerateDirectory( kspPath );
 
 				//Remove Scenarios && Training from Saves;
 				saves.Remove( "scenarios" );
@@ -62,29 +73,57 @@ namespace KerbalGenerator {
 
 				//declare the XML document.
 				XmlDocument config = new XmlDocument();
-				config.CreateXmlDeclaration( "1.0", "", "" );
+				XmlDeclaration xmlDec = config.CreateXmlDeclaration( "1.0", "", "" );
+				
 				//Root node - Program configuration.
 				XmlNode root = config.CreateElement("configuration");
 				//Child Node - Ksp Install
-				XmlNode xmlKSP = config.CreateElement("ksp");
+				XmlNode xmlNodeKSP = config.CreateElement("ksp");
+				XmlAttribute xmlAttrConfigName = config.CreateAttribute("name");
 
-				XmlAttribute name = config.CreateAttribute("name");
+				//assign the name of our config to the attribute for ksp;
+				//should be blah or hurdydurr for testing.
+				xmlAttrConfigName.Value = configName;
+				xmlNodeKSP.Attributes.Append( xmlAttrConfigName );
 
-				name.Value = configName;
-				xmlKSP.Attributes.Append( name );
-
-				root.AppendChild( xmlKSP );
-				config.AppendChild( root );
 				//child nodes saves
 				foreach ( string s in saves ) {
-					string gutName = s.Replace(' ', '_');
-					XmlNode xmlSave = config.CreateElement(gutName);
+					//generate a save node to track where our ksp saves are.
+					XmlNode xmlNodeKspSaveLocation = config.CreateElement("save");
+					//create an attribute to track our ksp save name.
+					XmlAttribute xmlKspSaveName = config.CreateAttribute("name");
+					xmlKspSaveName.Value = s;
+
+					//Combine s & persistent.sfs to append later on.
+					string gutName = Path.Combine(s,"persistent.sfs");
+
+					//create an attribute to track our save path.
 					XmlAttribute savePath = config.CreateAttribute("path");
-					savePath.Value = path + "\\" + s;
-					xmlSave.Attributes.Append( savePath );
-					xmlKSP.AppendChild( xmlSave );
+					savePath.Value = Path.Combine( kspPath, gutName );
+
+					xmlNodeKspSaveLocation.Attributes.Append( xmlKspSaveName );
+					xmlNodeKspSaveLocation.Attributes.Append( savePath );
+					xmlNodeKSP.AppendChild( xmlNodeKspSaveLocation );
 				}
+
+				//append our nodes.  KspNode to root, root to config.
+				root.AppendChild( xmlNodeKSP );
+				config.AppendChild( root );
+				config.InsertBefore( xmlDec, root );
 				config.Save( configPath + "\\config.xml" );
+			}
+		}
+
+		public int countSavesInPath( string path ) {
+			//first validate the path.
+			if ( ValidatePath( path ) ) {
+				List<string> saves = EnumerateDirectory(path);
+				saves.Remove( "scenarios" );
+				saves.Remove( "training" );
+				return saves.Count;
+			}
+			else {
+				return 0;
 			}
 		}
 
@@ -97,7 +136,7 @@ namespace KerbalGenerator {
 		}
 
 		private bool ValidateConfigName( string name ) {
-			string configPathFinal = configPath + "\\config.xml";
+			string configPathFinal = Path.Combine(configPath, "config.xml");
 			bool isValid = false;
 			if ( ValidateFile( configPathFinal ) ) {
 				//read in the xml file

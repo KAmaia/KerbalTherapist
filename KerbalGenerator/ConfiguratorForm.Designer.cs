@@ -98,6 +98,7 @@
 			this.txt_kspPath.Name = "txt_kspPath";
 			this.txt_kspPath.Size = new System.Drawing.Size(273, 20);
 			this.txt_kspPath.TabIndex = 4;
+			this.txt_kspPath.TextChanged += new System.EventHandler(this.txt_kspPath_TextChanged_1);
 			// 
 			// label3
 			// 

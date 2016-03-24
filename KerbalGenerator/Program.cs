@@ -14,8 +14,6 @@ namespace KerbalGenerator {
 		static void Main( ) {
 			Application.EnableVisualStyles( );
 			Application.SetCompatibleTextRenderingDefault( false );
-
-
 			Application.Run( new frm_Krb_Gen( ) );
 
 		}

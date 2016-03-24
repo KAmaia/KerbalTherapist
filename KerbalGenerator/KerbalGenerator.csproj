@@ -62,8 +62,14 @@
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Kerbal.cs" />
+    <Compile Include="Kerbalmaker.cs" />
     <Compile Include="KerbalParser.cs" />
-    <Compile Include="persistentfile.cs" />
+    <Compile Include="kerbalPreviewWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kerbalPreviewWindow.Designer.cs">
+      <DependentUpon>kerbalPreviewWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConfiguratorForm.resx">
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KerbalGeneratorForm.resx">
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kerbalPreviewWindow.resx">
+      <DependentUpon>kerbalPreviewWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
