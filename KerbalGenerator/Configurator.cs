@@ -20,7 +20,7 @@ namespace KerbalGenerator {
 		public void LoadConfig( ) {
 			Config cfg = new Config();
 			XmlDocument doc = new XmlDocument();
-			XmlTextReader rdr = new XmlTextReader(configPath + "\\config.xml");
+			XmlTextReader rdr = new XmlTextReader(Path.Combine(configPath, "config.xml"));
 			Dictionary<string, string> confDict = new Dictionary<string, string>();
 			while ( ( rdr.Read( ) ) ) {
 				if ( rdr.NodeType.Equals( XmlNodeType.Element ) ) { }
@@ -33,7 +33,7 @@ namespace KerbalGenerator {
 				if ( rdr.Name.ToLower( ).Equals( "save" ) ) {
 					if ( !confDict.ContainsKey( rdr.GetAttribute( "name" ) ) ) {
 						confDict.Add( rdr.GetAttribute( "name" ), rdr.GetAttribute( "path" ) );
-						cfg.KSPPath = rdr.GetAttribute( "path" ).Remove( rdr.GetAttribute( "path" ).LastIndexOf( "\\saves" ) );
+						cfg.KSPPath = rdr.GetAttribute( "path" ).Remove( rdr.GetAttribute( "path" ).LastIndexOf( "saves" ) );
 						cfg.SavePaths = confDict;
 					}
 				}
@@ -51,7 +51,7 @@ namespace KerbalGenerator {
 
 			else {
 				//get our save directory and enumerate it.
-				path = path + "\\saves";
+				path = Path.Combine(path, "saves");
 				saves = EnumerateDirectory( path );
 
 				//Remove Scenarios && Training from Saves;
@@ -80,24 +80,24 @@ namespace KerbalGenerator {
 					string gutName = s.Replace(' ', '_');
 					XmlNode xmlSave = config.CreateElement(gutName);
 					XmlAttribute savePath = config.CreateAttribute("path");
-					savePath.Value = path + "\\" + s;
+					savePath.Value = Path.Combine(path, s);
 					xmlSave.Attributes.Append( savePath );
 					xmlKSP.AppendChild( xmlSave );
 				}
-				config.Save( configPath + "\\config.xml" );
+				config.Save( Path.Combine(configPath, "config.xml") );
 			}
 		}
 
 		private List<string> EnumerateDirectory( string path ) {
 			List<string> innerFiles = new List<string>();
 			foreach ( string dir in Directory.EnumerateDirectories( path ) ) {
-				innerFiles.Add( dir.Substring( dir.LastIndexOf( "\\" ) + 1 ) );
+				innerFiles.Add( dir.Substring( dir.LastIndexOf( Path.PathSeparator ) + 1 ) );
 			}
 			return innerFiles;
 		}
 
 		private bool ValidateConfigName( string name ) {
-			string configPathFinal = configPath + "\\config.xml";
+			string configPathFinal = Path.Combine(configPath, "config.xml");
 			bool isValid = false;
 			if ( ValidateFile( configPathFinal ) ) {
 				//read in the xml file
