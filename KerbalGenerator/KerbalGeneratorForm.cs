@@ -222,6 +222,18 @@ namespace KerbalGenerator {
 			}
 			tbar_spe_stupid.Enabled = !chk_spe_rndStupid.Checked;
 		}
+
+		private void menuStrip1_ItemClicked( object sender, ToolStripItemClickedEventArgs e ) {
+
+		}
+
+		private void fileToolStripMenuItem_Click( object sender, EventArgs e ) {
+
+		}
+
+		private void exitToolStripMenuItem_Click( object sender, EventArgs e ) {
+			Application.Exit( );
+		}
 	}
 
 }

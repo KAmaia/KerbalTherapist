@@ -164,6 +164,10 @@
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.grp_save_flag = new System.Windows.Forms.GroupBox();
 			this.panel6 = new System.Windows.Forms.Panel();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			gb_po_options = new System.Windows.Forms.GroupBox();
 			gb_po_options.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -205,6 +209,7 @@
 			this.pnl_po_options.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel6.SuspendLayout();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// gb_po_options
@@ -792,7 +797,7 @@
 			this.panel1.Controls.Add(this.btn_rnd_reset);
 			this.panel1.Controls.Add(this.btn_rnd_gen_Kerb);
 			this.panel1.Controls.Add(this.groupBox3);
-			this.panel1.Location = new System.Drawing.Point(9, 106);
+			this.panel1.Location = new System.Drawing.Point(6, 120);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(330, 740);
 			this.panel1.TabIndex = 7;
@@ -811,7 +816,7 @@
 			// 
 			this.pnl_spe_gen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.pnl_spe_gen.Controls.Add(this.groupBox9);
-			this.pnl_spe_gen.Location = new System.Drawing.Point(345, 106);
+			this.pnl_spe_gen.Location = new System.Drawing.Point(342, 120);
 			this.pnl_spe_gen.Name = "pnl_spe_gen";
 			this.pnl_spe_gen.Size = new System.Drawing.Size(348, 379);
 			this.pnl_spe_gen.TabIndex = 8;
@@ -1113,7 +1118,7 @@
 			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.panel3.Controls.Add(this.groupBox16);
 			this.panel3.Controls.Add(this.groupBox15);
-			this.panel3.Location = new System.Drawing.Point(699, 106);
+			this.panel3.Location = new System.Drawing.Point(696, 120);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(346, 471);
 			this.panel3.TabIndex = 9;
@@ -1579,7 +1584,7 @@
 			// 
 			this.pnl_po_options.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.pnl_po_options.Controls.Add(gb_po_options);
-			this.pnl_po_options.Location = new System.Drawing.Point(701, 584);
+			this.pnl_po_options.Location = new System.Drawing.Point(698, 598);
 			this.pnl_po_options.Name = "pnl_po_options";
 			this.pnl_po_options.Size = new System.Drawing.Size(343, 158);
 			this.pnl_po_options.TabIndex = 10;
@@ -1588,7 +1593,7 @@
 			// 
 			this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.panel5.Controls.Add(this.grp_save_flag);
-			this.panel5.Location = new System.Drawing.Point(345, 496);
+			this.panel5.Location = new System.Drawing.Point(342, 510);
 			this.panel5.Name = "panel5";
 			this.panel5.Size = new System.Drawing.Size(347, 246);
 			this.panel5.TabIndex = 11;
@@ -1607,23 +1612,59 @@
 			// 
 			this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.panel6.Controls.Add(this.groupBox2);
-			this.panel6.Location = new System.Drawing.Point(9, 13);
+			this.panel6.Location = new System.Drawing.Point(6, 27);
 			this.panel6.Name = "panel6";
 			this.panel6.Size = new System.Drawing.Size(1036, 87);
 			this.panel6.TabIndex = 12;
+			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+			this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(1054, 23);
+			this.menuStrip1.TabIndex = 13;
+			this.menuStrip1.Text = "menuStrip1";
+			this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+			// 
+			// fileToolStripMenuItem
+			// 
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.exitToolStripMenuItem});
+			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.fileToolStripMenuItem.Text = "File";
+			this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+			// 
+			// exitToolStripMenuItem
+			// 
+			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.exitToolStripMenuItem.Text = "Exit";
+			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
 			// frm_Krb_Gen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1054, 916);
+			this.ClientSize = new System.Drawing.Size(1054, 926);
 			this.Controls.Add(this.panel6);
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.pnl_po_options);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.pnl_spe_gen);
 			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.menuStrip1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.MainMenuStrip = this.menuStrip1;
 			this.MaximizeBox = false;
 			this.Name = "frm_Krb_Gen";
 			this.Text = "Kerbal Generator";
@@ -1684,7 +1725,10 @@
 			this.pnl_po_options.PerformLayout();
 			this.panel5.ResumeLayout(false);
 			this.panel6.ResumeLayout(false);
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -1829,6 +1873,10 @@
 		private System.Windows.Forms.CheckBox chk_spe_rndStupid;
 		private System.Windows.Forms.CheckBox chk_spe_rndBrave;
 		private System.Windows.Forms.TrackBar tbar_spe_brave;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 	}
 }
 
