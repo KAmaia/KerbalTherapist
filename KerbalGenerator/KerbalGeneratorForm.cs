@@ -12,30 +12,16 @@ using System.Diagnostics;
 namespace KerbalGenerator {
 	public partial class frm_Krb_Gen : Form {
 		private readonly string configPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Badwater\\KerbalGen";
-
-		private Config config;
-
 		private Configurator configurator;
-		private Kerbalmaker km;
-		private Dictionary<string, Kerbal>roster;
-
-
+		private KerbalMaker km;
+		private KerbalGenerator generator;
 
 		public frm_Krb_Gen( ) {
 			InitializeComponent( );
-			configurator = new Configurator( configPath );
-			if ( FirstRun( ) ) {
-				//lock all controls except configurator button.
-				ConfiguratorForm cfgrForm = new ConfiguratorForm(ref configurator);
-				cfgrForm.ShowDialog( );
-				setAllControls( false );
-			}
-			setAllControls( true );
-			configurator.LoadConfig( );
-			config = configurator.Configuration;
+			generator = new KerbalGenerator(this);	
 		}
 
-		private void setAllControls( bool active ) {
+		public void SetAllControls( bool active ) {
 			foreach ( Control c in Controls ) {
 				if ( c.Name.ToLower( ).Equals( "pnl_po_options" ) ) {
 					continue;
@@ -46,39 +32,17 @@ namespace KerbalGenerator {
 			}
 		}
 
-		private void parseKerbals( ) {
-			cmb_kerb_list.Items.Clear( );
-			KerbalParser parseTheKerbals = new KerbalParser();
-			string persistent = cmb_AvailSaves.SelectedItem.ToString();
-			parseTheKerbals.Parse( config.SavePaths[persistent] );
-			roster = parseTheKerbals.Roster;
-			cmb_kerb_list.Items.AddRange( roster.Keys.ToArray( ) );
-			cmb_kerb_list.SelectedIndex = 0;
-
-		}
-
-		private bool FirstRun( ) {
-			Debug.WriteLine( Path.Combine( configPath, "config.xml" ) );
-			string path = Path.Combine(configPath, "config.xml");
-			bool retval = !File.Exists(path);
-			return retval;
-		}
-
-
 		private void displaySaveStats( ) {
-			Dictionary<string, int> tmp = countKerbals();
-			lbl_si_badscountdisp.Text = tmp["badasskerbals"].ToString( );
-			lbl_si_tourcountdisp.Text = tmp["touristkerbals"].ToString( );
-			lbl_si_kerbcountdisp.Text = tmp["totalkerbals"].ToString( );
-			lbl_si_livingcountdisp.Text = tmp["livingkerbals"].ToString( );
-			lbl_si_deadcountdisp.Text = tmp["deadkerbals"].ToString( );
-			lbl_si_genderfcountdisp.Text = tmp["femalekerbals"].ToString( );
-			lbl_si_gendermcountdisp.Text = tmp["malekerbals"].ToString( );
-			lbl_si_engicountdisp.Text = tmp["engineerkerbals"].ToString( );
-			lbl_si_scicountdisp.Text = tmp["scientistkerbals"].ToString( );
-			lbl_si_pilotcountdisp.Text = tmp["pilotkerbals"].ToString( );
-
-
+			lbl_si_badscountdisp.Text = generator.GetKerbalCounts("badasskerbals");
+			lbl_si_tourcountdisp.Text = generator.GetKerbalCounts("touristkerbals");
+			lbl_si_kerbcountdisp.Text = generator.GetKerbalCounts("totalkerbals");
+			lbl_si_livingcountdisp.Text = generator.GetKerbalCounts("livingkerbals");
+			lbl_si_deadcountdisp.Text = generator.GetKerbalCounts("deadkerbals");
+			lbl_si_genderfcountdisp.Text = generator.GetKerbalCounts("femalekerbals");
+			lbl_si_gendermcountdisp.Text = generator.GetKerbalCounts("malekerbals");
+			lbl_si_engicountdisp.Text = generator.GetKerbalCounts("engineerkerbals");
+			lbl_si_scicountdisp.Text = generator.GetKerbalCounts("scientistkerbals");
+			lbl_si_pilotcountdisp.Text = generator.GetKerbalCounts("pilotkerbals");
 		}
 
 		private void DisplayKerbalStats( Kerbal k ) {
@@ -93,92 +57,34 @@ namespace KerbalGenerator {
 			lbl_ki_flightcountdisp.Text = k.Flights;
 		}
 
-		private Dictionary<string, int> countKerbals( ) {
-			Dictionary<string, int>saveStatsDict = new Dictionary<string, int>();
-			saveStatsDict.Add( "totalkerbals", 0 );
-			saveStatsDict.Add( "malekerbals", 0 );
-			saveStatsDict.Add( "femalekerbals", 0 );
-			saveStatsDict.Add( "livingkerbals", 0 );
-			saveStatsDict.Add( "deadkerbals", 0 );
-			saveStatsDict.Add( "touristkerbals", 0 );
-			saveStatsDict.Add( "engineerkerbals", 0 );
-			saveStatsDict.Add( "scientistkerbals", 0 );
-			saveStatsDict.Add( "pilotkerbals", 0 );
-			saveStatsDict.Add( "badasskerbals", 0 );
-
-			foreach ( string s in roster.Keys ) {
-				saveStatsDict["totalkerbals"] += 1;
-				if ( roster[s].Gender.ToLower( ).Equals( "male" ) ) {
-					saveStatsDict["malekerbals"] += 1;
-				}
-				if ( roster[s].Gender.ToLower( ).Equals( "female" ) ) {
-					saveStatsDict["femalekerbals"] += 1;
-				}
-				if ( ( roster[s].State.ToLower( ).Equals( "available" ) ) || roster[s].State.ToLower( ).Equals( "assigned" ) ) {
-					saveStatsDict["livingkerbals"] += 1;
-				}
-				if ( roster[s].State.ToLower( ).Equals( "dead" ) ) {
-					saveStatsDict["deadkerbals"] += 1;
-				}
-				if ( roster[s].Trait.ToLower( ).Equals( "engineer" ) ) {
-					saveStatsDict["engineerkerbals"] += 1;
-				}
-				if ( roster[s].Trait.ToLower( ).Equals( "pilot" ) ) {
-					saveStatsDict["pilotkerbals"] += 1;
-				}
-				if ( roster[s].Trait.ToLower( ).Equals( "scientist" ) ) {
-					saveStatsDict["scientistkerbals"] += 1;
-				}
-				if ( roster[s].Tour.ToLower( ).Equals( "true" ) ) {
-					saveStatsDict["touristkerbals"] += 1;
-				}
-				if ( roster[s].Bads.ToLower( ).Equals( "true" ) ) {
-					saveStatsDict["badasskerbals"] += 1;
-				}
-			}
-			return saveStatsDict;
-		}
-
-
-
 		private void btn_gen_List_Kerb_Click( object sender, EventArgs e ) {
 
 		}
 
-
 		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
-
-			this.Text = "Kerbal Generator -- " + config.Name;
-			cmb_AvailSaves.Items.AddRange( config.SavePaths.Keys.ToArray( ) );
+			Text = "Kerbal Generator -- " + generator.Cfg.Name;
+			cmb_AvailSaves.Items.AddRange( generator.GetSaves() );
 			cmb_AvailSaves.SelectedIndex = 0;
-			parseKerbals( );
 		}
 
 		#region Available Saves Panel
 		private void cmb_AvailSaves_SelectedIndexChanged( object sender, EventArgs e ) {
-
 			string path = cmb_AvailSaves.SelectedItem.ToString();
-			Debug.WriteLine( path );
-			string debug = config.SavePaths[path];
-			Debug.WriteLine( "+++" + debug );
-			Debug.WriteLine( "==" + config.SavePaths[path] );
-			lbl_currentSaveLocation.Text = config.SavePaths[path];
-			parseKerbals( );
+			Debug.WriteLine( "==" +generator.Cfg.SavePaths[path] );
+			generator.ParseKerbals( path );
+			lbl_currentSaveLocation.Text = generator.Cfg.SavePaths[path];
+			cmb_kerb_list.Items.Clear( );
+			cmb_kerb_list.Items.AddRange( generator.Rstr.GetNames( ).ToArray( ) );
+			cmb_kerb_list.SelectedIndex = 0;
 			displaySaveStats( );
 		}
 
 		#endregion
 
-
-
-
-
-
-
 		#region program options panel
 
 		private void btn_po_OpenCfgr_Click( object sender, EventArgs e ) {
-			Form cfgrform = new ConfiguratorForm(ref configurator);
+			Form cfgrform = generator.GetCfgrForm();
 			cfgrform.Show( );
 		}
 
@@ -190,7 +96,7 @@ namespace KerbalGenerator {
 		#region kerbalinfopanel
 		private void cmb_kerb_list_SelectedIndexChanged( object sender, EventArgs e ) {
 			string selectedKerbal = cmb_kerb_list.SelectedItem.ToString();
-			Kerbal k = roster[selectedKerbal];
+			Kerbal k = generator.Rstr.GetKerbal(selectedKerbal);
 			DisplayKerbalStats( k );
 		}
 
@@ -244,7 +150,7 @@ namespace KerbalGenerator {
 			btn_spe_generate.Enabled = true;
 		}
 		private void btn_spe_generate_Click( object sender, EventArgs e ) {
-			km = new Kerbalmaker( );
+			km = new KerbalMaker( );
 			//Get all frickin' values.  (There has to be an easier way)
 			string name, gender, trait,  badass, tourist;
 			float brave, dumb;
@@ -258,33 +164,9 @@ namespace KerbalGenerator {
 			badass = chk_spe_badass.Checked.ToString( ).ToLower( );
 			tourist = chk_spe_tourist.Checked.ToString( ).ToLower( );
 
-			Kerbal k;
-			if ( chk_spe_rndName.Checked ) {
-				km.generateSpecific( true, isKerman, gender, trait, brave, dumb, badass, tourist );
-			}
-			else {
-				name = txt_spe_kerbname.Text;
-				if (isKerman) {
-					if(ValidateKerbal( name + " Kerman" ) ) {
-						km.generateSpecific( name, isKerman, gender, trait, brave, dumb, badass, tourist );
-					}
-					else {
-						MessageBox.Show( "Error: Kerbal: " + name +" Already Exists In The Roster!");
-					}
-				}
-				else {
-					if ( ValidateKerbal( name ) ) {
-						km.generateSpecific( name, isKerman, gender, trait, brave, dumb, badass, tourist );
-					}
-					else {
-						MessageBox.Show( "Error! Kerbal: " + name + " Already Exists In The Roster!" );
-					}
-				}
-			}
+			
 		}
-		private bool ValidateKerbal(string name ) {
-			return !roster.ContainsKey( name );
-		}
+		
 
 		private string DetermineSpecificTrait( ) {
 			if ( rd_spe_pilot.Checked ) {

@@ -5,15 +5,11 @@ using System.IO;
 
 namespace KerbalGenerator {
 	internal class KerbalParser {
-
-
-		public Dictionary<string, Kerbal> Roster { get; set; }
-
-
 		public KerbalParser( ) {
 		}
 
-		public void Parse( string savepath ) {
+		public Roster Parse( string savepath ) {
+			Roster roster = new Roster();
 			StreamReader rdr = new StreamReader(savepath);
 			string line ="";
 			//read down, throwing away everything until we hit "roster"
@@ -41,7 +37,6 @@ namespace KerbalGenerator {
 				string s = line;
 
 				if ( s.Trim( ).Equals( "ROSTER" ) ) {
-					Roster = new Dictionary<string, Kerbal>( );
 					inRoster = true;
 				}
 				//Found the better way.  No more worries!
@@ -69,7 +64,9 @@ namespace KerbalGenerator {
 							!( tod == "" ) && 
 							!( flights == "" ) ) {
 							Kerbal k = new Kerbal(name, gender, type, trait, brave, dumb, bads, tour, state, tod, flights);
-							Roster.Add( k.Name, k );
+							roster.AddKerbal( k);
+							
+							//reset strings
 							name = "";
 							gender = "";
 							type = "";
@@ -128,6 +125,7 @@ namespace KerbalGenerator {
 					}
 				}
 			}
+			return roster;
 		}
 		private string[ ] ParseValues( string toParse ) {
 			string[] parsed = toParse.Split('=');

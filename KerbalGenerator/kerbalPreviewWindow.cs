@@ -14,10 +14,11 @@ namespace KerbalGenerator {
 			InitializeComponent( );
 			txt_preview.Text = FormatKerbalText( k );
 		}
-
+		
 		private void btn_preview_close_Click( object sender, EventArgs e ) {
 			this.Close( );
 		}
+		
 		private string FormatKerbalText(Kerbal k ) {
 			string formattedText = "";
 			string newLineIndent = Environment.NewLine +"\t";

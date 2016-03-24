@@ -55,6 +55,7 @@
     <Compile Include="ConfiguratorForm.Designer.cs">
       <DependentUpon>ConfiguratorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="KerbalGenerator.cs" />
     <Compile Include="KerbalGeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,7 +63,7 @@
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Kerbal.cs" />
-    <Compile Include="Kerbalmaker.cs" />
+    <Compile Include="KerbalMaker.cs" />
     <Compile Include="KerbalParser.cs" />
     <Compile Include="kerbalPreviewWindow.cs">
       <SubType>Form</SubType>
@@ -72,6 +73,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roster.cs" />
     <EmbeddedResource Include="ConfiguratorForm.resx">
       <DependentUpon>ConfiguratorForm.cs</DependentUpon>
     </EmbeddedResource>
