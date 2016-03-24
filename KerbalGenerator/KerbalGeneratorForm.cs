@@ -11,9 +11,6 @@ using System.Diagnostics;
 
 namespace KerbalGenerator {
 	public partial class frm_Krb_Gen : Form {
-		private readonly string configPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Badwater\\KerbalGen";
-		private Configurator configurator;
-		private KerbalMaker km;
 		private KerbalGenerator generator;
 
 		public frm_Krb_Gen( ) {
@@ -150,7 +147,6 @@ namespace KerbalGenerator {
 			btn_spe_generate.Enabled = true;
 		}
 		private void btn_spe_generate_Click( object sender, EventArgs e ) {
-			km = new KerbalMaker( );
 			//Get all frickin' values.  (There has to be an easier way)
 			string name, gender, trait,  badass, tourist;
 			float brave, dumb;
