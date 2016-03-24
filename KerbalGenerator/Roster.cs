@@ -28,12 +28,14 @@ namespace KerbalGenerator {
 			}
 			return true;
 		}
+
 		public void AddKerbal(Kerbal k ) {
 			if ( kerbals.Keys.Contains( k.Name )){
 				kerbals.Remove( k.Name );
 			}
 			kerbals.Add( k.Name, k );
 		}
+
 		public List<string> GetNames( ) {
 			return kerbals.Keys.ToList();
 		}

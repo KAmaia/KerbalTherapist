@@ -97,29 +97,3 @@ namespace KerbalGenerator {
 
 
 
-/*
-Kerbal k;
-			if ( chk_spe_rndName.Checked ) {
-				km.generateSpecific( true, isKerman, gender, trait, brave, dumb, badass, tourist );
-			}
-			else {
-				name = txt_spe_kerbname.Text;
-				if (isKerman) {
-					if(ValidateKerbal( name + " Kerman" ) ) {
-						km.generateSpecific( name, isKerman, gender, trait, brave, dumb, badass, tourist );
-					}
-					else {
-						MessageBox.Show( "Error: Kerbal: " + name +" Already Exists In The Roster!");
-					}
-				}
-				else {
-					if ( ValidateKerbal( name ) ) {
-						km.generateSpecific( name, isKerman, gender, trait, brave, dumb, badass, tourist );
-					}
-					else {
-						MessageBox.Show( "Error! Kerbal: " + name + " Already Exists In The Roster!" );
-					}
-				}
-			}
-
-	*/

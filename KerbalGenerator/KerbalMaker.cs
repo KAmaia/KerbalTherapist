@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace KerbalGenerator {
 	class KerbalMaker {
-		KerbalPreviewWindow kpw;
 
 		public Kerbal generateSpecific( string name, bool kerman, string gender,
 									string trait, float brave, float dumb,

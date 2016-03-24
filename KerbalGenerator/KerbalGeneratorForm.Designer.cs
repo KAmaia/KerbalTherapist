@@ -92,11 +92,14 @@
 			this.chk_spe_rndName = new System.Windows.Forms.CheckBox();
 			this.chk_spe_lastNameKerman = new System.Windows.Forms.CheckBox();
 			this.groupBox14 = new System.Windows.Forms.GroupBox();
+			this.chk_spe_rndStupid = new System.Windows.Forms.CheckBox();
+			this.chk_spe_rndBrave = new System.Windows.Forms.CheckBox();
 			this.lbl_spe_stupid = new System.Windows.Forms.Label();
 			this.lbl_spe_stupiddisp = new System.Windows.Forms.Label();
 			this.tbar_spe_stupid = new System.Windows.Forms.TrackBar();
 			this.lbl_spe_brave = new System.Windows.Forms.Label();
 			this.lbl_spe_bravedisp = new System.Windows.Forms.Label();
+			this.tbar_spe_brave = new System.Windows.Forms.TrackBar();
 			this.groupBox13 = new System.Windows.Forms.GroupBox();
 			this.chk_spe_tourist = new System.Windows.Forms.CheckBox();
 			this.chk_spe_badass = new System.Windows.Forms.CheckBox();
@@ -161,9 +164,6 @@
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.grp_save_flag = new System.Windows.Forms.GroupBox();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.chk_spe_rndBrave = new System.Windows.Forms.CheckBox();
-			this.chk_spe_rndStupid = new System.Windows.Forms.CheckBox();
-			this.tbar_spe_brave = new System.Windows.Forms.TrackBar();
 			gb_po_options = new System.Windows.Forms.GroupBox();
 			gb_po_options.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -190,6 +190,7 @@
 			this.gb_spe_gen.SuspendLayout();
 			this.groupBox14.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_stupid)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).BeginInit();
 			this.groupBox13.SuspendLayout();
 			this.groupBox12.SuspendLayout();
 			this.groupBox11.SuspendLayout();
@@ -204,7 +205,6 @@
 			this.pnl_po_options.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel6.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gb_po_options
@@ -906,6 +906,28 @@
 			this.groupBox14.TabStop = false;
 			this.groupBox14.Text = "Ability Scores";
 			// 
+			// chk_spe_rndStupid
+			// 
+			this.chk_spe_rndStupid.AutoSize = true;
+			this.chk_spe_rndStupid.Location = new System.Drawing.Point(205, 60);
+			this.chk_spe_rndStupid.Name = "chk_spe_rndStupid";
+			this.chk_spe_rndStupid.Size = new System.Drawing.Size(66, 17);
+			this.chk_spe_rndStupid.TabIndex = 31;
+			this.chk_spe_rndStupid.Text = "Random";
+			this.chk_spe_rndStupid.UseVisualStyleBackColor = true;
+			this.chk_spe_rndStupid.CheckedChanged += new System.EventHandler(this.chk_spe_rndStupid_CheckedChanged);
+			// 
+			// chk_spe_rndBrave
+			// 
+			this.chk_spe_rndBrave.AutoSize = true;
+			this.chk_spe_rndBrave.Location = new System.Drawing.Point(205, 21);
+			this.chk_spe_rndBrave.Name = "chk_spe_rndBrave";
+			this.chk_spe_rndBrave.Size = new System.Drawing.Size(66, 17);
+			this.chk_spe_rndBrave.TabIndex = 30;
+			this.chk_spe_rndBrave.Text = "Random";
+			this.chk_spe_rndBrave.UseVisualStyleBackColor = true;
+			this.chk_spe_rndBrave.CheckedChanged += new System.EventHandler(this.chk_spe_rndBrave_CheckedChanged);
+			// 
 			// lbl_spe_stupid
 			// 
 			this.lbl_spe_stupid.AutoSize = true;
@@ -950,6 +972,15 @@
 			this.lbl_spe_bravedisp.Name = "lbl_spe_bravedisp";
 			this.lbl_spe_bravedisp.Size = new System.Drawing.Size(41, 30);
 			this.lbl_spe_bravedisp.TabIndex = 26;
+			// 
+			// tbar_spe_brave
+			// 
+			this.tbar_spe_brave.Location = new System.Drawing.Point(58, 15);
+			this.tbar_spe_brave.Maximum = 100;
+			this.tbar_spe_brave.Name = "tbar_spe_brave";
+			this.tbar_spe_brave.Size = new System.Drawing.Size(104, 45);
+			this.tbar_spe_brave.TabIndex = 24;
+			this.tbar_spe_brave.Scroll += new System.EventHandler(this.tbar_spe_brave_Scroll);
 			// 
 			// groupBox13
 			// 
@@ -1581,36 +1612,6 @@
 			this.panel6.Size = new System.Drawing.Size(1036, 87);
 			this.panel6.TabIndex = 12;
 			// 
-			// chk_spe_rndBrave
-			// 
-			this.chk_spe_rndBrave.AutoSize = true;
-			this.chk_spe_rndBrave.Location = new System.Drawing.Point(205, 21);
-			this.chk_spe_rndBrave.Name = "chk_spe_rndBrave";
-			this.chk_spe_rndBrave.Size = new System.Drawing.Size(66, 17);
-			this.chk_spe_rndBrave.TabIndex = 30;
-			this.chk_spe_rndBrave.Text = "Random";
-			this.chk_spe_rndBrave.UseVisualStyleBackColor = true;
-			this.chk_spe_rndBrave.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-			// 
-			// chk_spe_rndStupid
-			// 
-			this.chk_spe_rndStupid.AutoSize = true;
-			this.chk_spe_rndStupid.Location = new System.Drawing.Point(205, 60);
-			this.chk_spe_rndStupid.Name = "chk_spe_rndStupid";
-			this.chk_spe_rndStupid.Size = new System.Drawing.Size(66, 17);
-			this.chk_spe_rndStupid.TabIndex = 31;
-			this.chk_spe_rndStupid.Text = "Random";
-			this.chk_spe_rndStupid.UseVisualStyleBackColor = true;
-			// 
-			// tbar_spe_brave
-			// 
-			this.tbar_spe_brave.Location = new System.Drawing.Point(58, 15);
-			this.tbar_spe_brave.Maximum = 100;
-			this.tbar_spe_brave.Name = "tbar_spe_brave";
-			this.tbar_spe_brave.Size = new System.Drawing.Size(104, 45);
-			this.tbar_spe_brave.TabIndex = 24;
-			this.tbar_spe_brave.Scroll += new System.EventHandler(this.tbar_spe_brave_Scroll);
-			// 
 			// frm_Krb_Gen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1662,6 +1663,7 @@
 			this.groupBox14.ResumeLayout(false);
 			this.groupBox14.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_stupid)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).EndInit();
 			this.groupBox13.ResumeLayout(false);
 			this.groupBox13.PerformLayout();
 			this.groupBox12.ResumeLayout(false);
@@ -1682,7 +1684,6 @@
 			this.pnl_po_options.PerformLayout();
 			this.panel5.ResumeLayout(false);
 			this.panel6.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.tbar_spe_brave)).EndInit();
 			this.ResumeLayout(false);
 
 		}

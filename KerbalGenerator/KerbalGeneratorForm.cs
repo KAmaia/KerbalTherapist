@@ -121,6 +121,9 @@ namespace KerbalGenerator {
 			lbl_spe_stupiddisp.Text = "0";
 			lbl_spe_bravedisp.Text = "0";
 
+			chk_spe_rndBrave.Checked = false;
+			chk_spe_rndStupid.Checked = false;
+
 		}
 
 		private void tbar_spe_stupid_Scroll( object sender, EventArgs e ) {
@@ -147,6 +150,7 @@ namespace KerbalGenerator {
 			btn_spe_generate.Enabled = true;
 		}
 		private void btn_spe_generate_Click( object sender, EventArgs e ) {
+			Random rnd = new Random();
 			//Get all frickin' values.  (There has to be an easier way)
 			string name, gender, trait;
 			float brave, dumb;
@@ -155,10 +159,24 @@ namespace KerbalGenerator {
 			bool badass = chk_spe_badass.Checked;
 			bool tourist = chk_spe_tourist.Checked;
 
+			bool rndDumb = chk_spe_rndStupid.Checked;
+			bool rndBrave = chk_spe_rndBrave.Checked;
+
 			gender = rd_spe_genderfemale.Checked ? "female" : "male";
 			trait = DetermineSpecificTrait( );
-			brave = ( (float) tbar_spe_brave.Value / 100 );
-			dumb = ( (float) tbar_spe_stupid.Value / 100 );
+			if ( rndBrave ) {
+				brave = Util.getRandFloat( );
+
+			}
+			else {
+				brave = ( (float) tbar_spe_brave.Value / 100 );
+			}
+			if ( rndDumb ) {
+				dumb = Util.getRandFloat( );
+			}
+			else {
+				dumb = ( (float) tbar_spe_stupid.Value / 100 );
+			}
 			if ( !genName ) {
 				name = txt_spe_kerbname.Text;
 				generator.KreateKerbal( name, isKerman, gender, trait, brave, dumb, badass, tourist );
@@ -186,11 +204,23 @@ namespace KerbalGenerator {
 
 			}
 		}
+
 		#endregion
 
+		private void chk_spe_rndBrave_CheckedChanged( object sender, EventArgs e ) {
+			if ( chk_spe_rndBrave.Checked ) {
+				tbar_spe_brave.Value = 0;
+				lbl_spe_bravedisp.Text = "";
+			}
+			tbar_spe_brave.Enabled = !chk_spe_rndBrave.Checked;
+		}
 
-		private void checkBox1_CheckedChanged( object sender, EventArgs e ) {
-
+		private void chk_spe_rndStupid_CheckedChanged( object sender, EventArgs e ) {
+			if ( chk_spe_rndStupid.Checked ) {
+				tbar_spe_stupid.Value = 0;
+				lbl_spe_stupiddisp.Text = "";
+			}
+			tbar_spe_stupid.Enabled = !chk_spe_rndStupid.Checked;
 		}
 	}
 
