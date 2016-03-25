@@ -9,6 +9,7 @@ namespace KerbalGenerator {
 		private static Random rnd = new Random();
 		public static float getRandFloat() {
 			return (float) rnd.NextDouble( );
+			
 		} 
 	}
 }

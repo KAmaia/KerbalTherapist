@@ -31,11 +31,11 @@ namespace KerbalGenerator {
 				ConfiguratorForm cfgrForm = new ConfiguratorForm(ref cfgr);
 				cfgrForm.ShowDialog( );
 			}
-			else {
+			
 				cfgr.LoadConfig( );
 				config = cfgr.Configuration;
 				MainForm.SetAllControls( true );
-			}
+			
 		}
 
 		public String[ ] GetSaves( ) {

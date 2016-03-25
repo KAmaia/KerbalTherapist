@@ -8,6 +8,7 @@ using System.Xml;
 namespace KerbalGenerator {
 	public partial class Configurator {
 		private string configPath;
+		private string configurationFilePath;
 		private Config config;
 
 		public Config Configuration { get { return config; } }
@@ -15,12 +16,14 @@ namespace KerbalGenerator {
 
 		public Configurator( string configPath ) {
 			this.configPath = configPath;
+			configurationFilePath = Path.Combine( configPath, "config.xml" );
 		}
 
 		public void LoadConfig( ) {
 			Config cfg = new Config();
+		
 			XmlDocument doc = new XmlDocument();
-			XmlTextReader rdr = new XmlTextReader(configPath + "\\config.xml");
+			XmlTextReader rdr = new XmlTextReader(configurationFilePath);
 			Dictionary<string, string> confDict = new Dictionary<string, string>();
 			while ( ( rdr.Read( ) ) ) {
 				if ( rdr.NodeType.Equals( XmlNodeType.Element ) ) { }
@@ -62,7 +65,7 @@ namespace KerbalGenerator {
 			else {
 				//append config.xml to path, so that way things are pretty...
 				//get our save directory and enumerate it.
-				kspPath = Path.Combine( kspPath + "saves" );
+				kspPath = Path.Combine( kspPath,  "saves" );
 				saves = EnumerateDirectory( kspPath );
 
 				//Remove Scenarios && Training from Saves;
@@ -110,7 +113,7 @@ namespace KerbalGenerator {
 				root.AppendChild( xmlNodeKSP );
 				config.AppendChild( root );
 				config.InsertBefore( xmlDec, root );
-				config.Save( configPath + "\\config.xml" );
+				config.Save( configurationFilePath);
 			}
 		}
 
@@ -136,12 +139,11 @@ namespace KerbalGenerator {
 		}
 
 		private bool ValidateConfigName( string name ) {
-			string configPathFinal = Path.Combine(configPath, "config.xml");
 			bool isValid = false;
-			if ( ValidateFile( configPathFinal ) ) {
+			if ( ValidateFile( configurationFilePath ) ) {
 				//read in the xml file
 				XmlDocument doc = new XmlDocument();
-				doc.Load( configPathFinal );
+				doc.Load( configurationFilePath );
 				foreach ( XmlElement xe in doc ) {
 					if ( xe.Name == "ksp" ) {
 						foreach ( XmlAttribute xa in xe ) {
