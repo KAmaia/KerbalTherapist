@@ -16,7 +16,7 @@ namespace KerbalGenerator {
 		}
 
 		private void btn_Cancel_Click( object sender, EventArgs e ) {
-			this.Close( );
+			Application.Exit( );
 		}
 
 		private void btn_create_config_Click( object sender, EventArgs e ) {

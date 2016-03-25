@@ -36,7 +36,8 @@ namespace KerbalGenerator {
 				if ( rdr.Name.ToLower( ).Equals( "save" ) ) {
 					if ( !confDict.ContainsKey( rdr.GetAttribute( "name" ) ) ) {
 						confDict.Add( rdr.GetAttribute( "name" ), rdr.GetAttribute( "path" ) );
-						cfg.KSPPath = rdr.GetAttribute( "path" ).Remove( rdr.GetAttribute( "path" ).LastIndexOf( "\\saves" ) );
+						string kspPath = rdr.GetAttribute("path");
+						cfg.KSPPath = rdr.GetAttribute( "path" ).Remove( rdr.GetAttribute( "path" ).LastIndexOf(Path.DirectorySeparatorChar + "saves") );
 						cfg.SavePaths = confDict;
 					}
 				}
