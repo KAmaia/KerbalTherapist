@@ -71,6 +71,8 @@
     <Compile Include="kerbalPreviewWindow.Designer.cs">
       <DependentUpon>kerbalPreviewWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersistentParser.cs" />
+    <Compile Include="PersistentNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roster.cs" />
