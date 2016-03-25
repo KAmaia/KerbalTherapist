@@ -190,13 +190,11 @@ namespace KerbalGenerator {
 		}
 
 		private string DetermineSpecificTrait( ) {
-			if ( rd_spe_pilot.Checked ) {
-				return "pilot";
-			}
-			else if ( rd_spe_engi.Checked ) {
+			
+			if ( rd_spe_engi.Checked ) {
 				return "engineer";
 			}
-			else if ( rd_spe_sci.Checked ) {
+			if ( rd_spe_sci.Checked ) {
 				return "scientist";
 			}
 			else {

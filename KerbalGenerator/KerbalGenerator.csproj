@@ -48,42 +48,43 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="ConfigNode\ConfigNode.cs" />
+    <Compile Include="ConfigNode\ConfigNodeReader.cs" />
+    <Compile Include="ConfigNode\ConfigNodeWriter.cs" />
     <Compile Include="Configurator.cs" />
-    <Compile Include="ConfiguratorForm.cs">
+    <Compile Include="Forms\ConfiguratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfiguratorForm.Designer.cs">
+    <Compile Include="Forms\ConfiguratorForm.Designer.cs">
       <DependentUpon>ConfiguratorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KerbalGenerator.cs" />
-    <Compile Include="KerbalGeneratorForm.cs">
+    <Compile Include="Forms\KerbalGeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KerbalGeneratorForm.Designer.cs">
+    <Compile Include="Forms\KerbalGeneratorForm.Designer.cs">
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Kerbal.cs" />
     <Compile Include="KerbalMaker.cs" />
     <Compile Include="KerbalParser.cs" />
-    <Compile Include="KerbalPreviewWindow.cs">
+    <Compile Include="Forms\KerbalPreviewWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KerbalPreviewWindow.Designer.cs">
+    <Compile Include="Forms\KerbalPreviewWindow.Designer.cs">
       <DependentUpon>KerbalPreviewWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersistentParser.cs" />
-    <Compile Include="PersistentNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roster.cs" />
     <Compile Include="Util.cs" />
-    <EmbeddedResource Include="ConfiguratorForm.resx">
+    <EmbeddedResource Include="Forms\ConfiguratorForm.resx">
       <DependentUpon>ConfiguratorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KerbalGeneratorForm.resx">
+    <EmbeddedResource Include="Forms\KerbalGeneratorForm.resx">
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KerbalPreviewWindow.resx">
+    <EmbeddedResource Include="Forms\KerbalPreviewWindow.resx">
       <DependentUpon>KerbalPreviewWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
