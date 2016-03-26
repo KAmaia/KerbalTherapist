@@ -11,5 +11,16 @@ namespace KerbalGenerator {
 			return (float) rnd.NextDouble( );
 			
 		} 
+		public static string CapitalizeString(string str ) {
+			//handle splitting the string if it has a space. 
+			string[ ] tmp = str.Split(' ');
+			string retVal = "";
+			foreach ( string s in tmp ) {
+				char[] c =s.ToCharArray();
+				c[0] = char.ToUpper( c[0] );
+				retVal = retVal + " " + new string( c );
+			}
+			return retVal.Trim( );
+		}
 	}
 }

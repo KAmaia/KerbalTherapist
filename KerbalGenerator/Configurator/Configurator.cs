@@ -6,10 +6,11 @@ using System.Linq;
 using System.Xml;
 
 namespace KerbalGenerator {
-	public partial class Configurator {
+	public class Configurator {
 		private string configPath;
 		private string configurationFilePath;
 		private Config config;
+		private ConfiguratorForm cfgrForm;
 
 		public Config Configuration { get { return config; } }
 		public int SaveCount;
@@ -44,6 +45,16 @@ namespace KerbalGenerator {
 			}
 			config = cfg;
 		}
+
+		internal void FirstRun( ) {
+			cfgrForm = new ConfiguratorForm( this );
+			cfgrForm.ShowDialog( );
+		}
+
+		internal void ShowForm( ) {
+			cfgrForm.Show( );
+		}
+
 		/// <summary>
 		/// Creates an XML Formatted configuration file.
 		/// </summary>

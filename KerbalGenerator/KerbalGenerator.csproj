@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accumulators\SpecificAccumulator.cs" />
     <Compile Include="Configurator\Config.cs" />
     <Compile Include="ConfigNode\ConfigNode.cs" />
     <Compile Include="ConfigNode\ConfigNodeReader.cs" />
@@ -66,6 +67,7 @@
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Kerbals\Kerbal.cs" />
+    <Compile Include="Kerbals\KerbalKounter.cs" />
     <Compile Include="Kerbals\KerbalMaker.cs" />
     <Compile Include="Forms\KerbalPreviewWindow.cs">
       <SubType>Form</SubType>
@@ -73,6 +75,7 @@
     <Compile Include="Forms\KerbalPreviewWindow.Designer.cs">
       <DependentUpon>KerbalPreviewWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kerbals\RosterParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Kerbals\Roster.cs" />

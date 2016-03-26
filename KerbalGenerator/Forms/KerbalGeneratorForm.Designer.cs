@@ -1,4 +1,7 @@
-﻿namespace KerbalGenerator {
+﻿using System;
+using System.Collections.Generic;
+
+namespace KerbalGenerator {
 	partial class frm_Krb_Gen {
 		/// <summary>
 		/// Required designer variable.
@@ -24,6 +27,8 @@
 		/// </summary>
 		private void InitializeComponent( ) {
 			System.Windows.Forms.GroupBox gb_po_options;
+			System.Windows.Forms.Panel panel3;
+			this.btn_po_Save = new System.Windows.Forms.Button();
 			this.btn_po_OpenCfgr = new System.Windows.Forms.Button();
 			this.btn_po_exit = new System.Windows.Forms.Button();
 			this.lbl_saveSelect = new System.Windows.Forms.Label();
@@ -112,7 +117,6 @@
 			this.rd_spe_gendermale = new System.Windows.Forms.RadioButton();
 			this.txt_spe_kerbname = new System.Windows.Forms.TextBox();
 			this.label28 = new System.Windows.Forms.Label();
-			this.panel3 = new System.Windows.Forms.Panel();
 			this.groupBox16 = new System.Windows.Forms.GroupBox();
 			this.groupBox20 = new System.Windows.Forms.GroupBox();
 			this.lbl_si_badscount = new System.Windows.Forms.Label();
@@ -168,7 +172,18 @@
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.gb_si_CrewBkdwn = new System.Windows.Forms.GroupBox();
+			this.lbl_si_hired = new System.Windows.Forms.Label();
+			this.lbl_si_applcntdisp = new System.Windows.Forms.Label();
+			this.lbl_si_applicants = new System.Windows.Forms.Label();
+			this.lbl_si_hireddisp = new System.Windows.Forms.Label();
+			this.gb_si_statusBkdwn = new System.Windows.Forms.GroupBox();
+			this.lbl_si_assigned = new System.Windows.Forms.Label();
+			this.lbl_si_availdisp = new System.Windows.Forms.Label();
+			this.lbl_si_assigneddisp = new System.Windows.Forms.Label();
+			this.lbl_si_avail = new System.Windows.Forms.Label();
 			gb_po_options = new System.Windows.Forms.GroupBox();
+			panel3 = new System.Windows.Forms.Panel();
 			gb_po_options.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -198,7 +213,7 @@
 			this.groupBox13.SuspendLayout();
 			this.groupBox12.SuspendLayout();
 			this.groupBox11.SuspendLayout();
-			this.panel3.SuspendLayout();
+			panel3.SuspendLayout();
 			this.groupBox16.SuspendLayout();
 			this.groupBox20.SuspendLayout();
 			this.groupBox19.SuspendLayout();
@@ -210,24 +225,39 @@
 			this.panel5.SuspendLayout();
 			this.panel6.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
+			this.gb_si_CrewBkdwn.SuspendLayout();
+			this.gb_si_statusBkdwn.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// gb_po_options
 			// 
 			gb_po_options.AutoSize = true;
-			gb_po_options.Controls.Add(this.btn_po_OpenCfgr);
 			gb_po_options.Controls.Add(this.btn_po_exit);
+			gb_po_options.Controls.Add(this.btn_po_Save);
+			gb_po_options.Controls.Add(this.btn_po_OpenCfgr);
 			gb_po_options.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			gb_po_options.Location = new System.Drawing.Point(3, 3);
 			gb_po_options.Name = "gb_po_options";
-			gb_po_options.Size = new System.Drawing.Size(329, 143);
+			gb_po_options.Size = new System.Drawing.Size(685, 88);
 			gb_po_options.TabIndex = 5;
 			gb_po_options.TabStop = false;
 			gb_po_options.Text = "Program Options";
 			// 
+			// btn_po_Save
+			// 
+			this.btn_po_Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btn_po_Save.Location = new System.Drawing.Point(261, 29);
+			this.btn_po_Save.Name = "btn_po_Save";
+			this.btn_po_Save.Size = new System.Drawing.Size(161, 23);
+			this.btn_po_Save.TabIndex = 8;
+			this.btn_po_Save.Text = "Save";
+			this.btn_po_Save.UseVisualStyleBackColor = true;
+			this.btn_po_Save.Click += new System.EventHandler(this.btn_po_Save_Click);
+			// 
 			// btn_po_OpenCfgr
 			// 
-			this.btn_po_OpenCfgr.Location = new System.Drawing.Point(81, 45);
+			this.btn_po_OpenCfgr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btn_po_OpenCfgr.Location = new System.Drawing.Point(90, 29);
 			this.btn_po_OpenCfgr.Name = "btn_po_OpenCfgr";
 			this.btn_po_OpenCfgr.Size = new System.Drawing.Size(161, 23);
 			this.btn_po_OpenCfgr.TabIndex = 7;
@@ -237,7 +267,8 @@
 			// 
 			// btn_po_exit
 			// 
-			this.btn_po_exit.Location = new System.Drawing.Point(81, 82);
+			this.btn_po_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btn_po_exit.Location = new System.Drawing.Point(433, 29);
 			this.btn_po_exit.Name = "btn_po_exit";
 			this.btn_po_exit.Size = new System.Drawing.Size(161, 23);
 			this.btn_po_exit.TabIndex = 6;
@@ -266,6 +297,7 @@
 			// btn_rnd_gen_Kerb
 			// 
 			this.btn_rnd_gen_Kerb.AutoSize = true;
+			this.btn_rnd_gen_Kerb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btn_rnd_gen_Kerb.Location = new System.Drawing.Point(7, 706);
 			this.btn_rnd_gen_Kerb.Name = "btn_rnd_gen_Kerb";
 			this.btn_rnd_gen_Kerb.Size = new System.Drawing.Size(138, 23);
@@ -805,6 +837,7 @@
 			// btn_rnd_reset
 			// 
 			this.btn_rnd_reset.AutoSize = true;
+			this.btn_rnd_reset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btn_rnd_reset.Location = new System.Drawing.Point(182, 706);
 			this.btn_rnd_reset.Name = "btn_rnd_reset";
 			this.btn_rnd_reset.Size = new System.Drawing.Size(138, 23);
@@ -836,6 +869,7 @@
 			// btn_spe_reset
 			// 
 			this.btn_spe_reset.AutoSize = true;
+			this.btn_spe_reset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btn_spe_reset.Location = new System.Drawing.Point(178, 319);
 			this.btn_spe_reset.Name = "btn_spe_reset";
 			this.btn_spe_reset.Size = new System.Drawing.Size(138, 23);
@@ -847,6 +881,7 @@
 			// btn_spe_generate
 			// 
 			this.btn_spe_generate.AutoSize = true;
+			this.btn_spe_generate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btn_spe_generate.Location = new System.Drawing.Point(11, 319);
 			this.btn_spe_generate.Name = "btn_spe_generate";
 			this.btn_spe_generate.Size = new System.Drawing.Size(138, 23);
@@ -1115,23 +1150,25 @@
 			// 
 			// panel3
 			// 
-			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel3.Controls.Add(this.groupBox16);
-			this.panel3.Controls.Add(this.groupBox15);
-			this.panel3.Location = new System.Drawing.Point(696, 120);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(346, 471);
-			this.panel3.TabIndex = 9;
+			panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			panel3.Controls.Add(this.groupBox16);
+			panel3.Controls.Add(this.groupBox15);
+			panel3.Location = new System.Drawing.Point(696, 120);
+			panel3.Name = "panel3";
+			panel3.Size = new System.Drawing.Size(346, 636);
+			panel3.TabIndex = 9;
 			// 
 			// groupBox16
 			// 
+			this.groupBox16.Controls.Add(this.gb_si_statusBkdwn);
+			this.groupBox16.Controls.Add(this.gb_si_CrewBkdwn);
 			this.groupBox16.Controls.Add(this.groupBox20);
 			this.groupBox16.Controls.Add(this.groupBox19);
 			this.groupBox16.Controls.Add(this.groupBox18);
 			this.groupBox16.Controls.Add(this.groupBox17);
 			this.groupBox16.Location = new System.Drawing.Point(6, 3);
 			this.groupBox16.Name = "groupBox16";
-			this.groupBox16.Size = new System.Drawing.Size(328, 262);
+			this.groupBox16.Size = new System.Drawing.Size(328, 357);
 			this.groupBox16.TabIndex = 3;
 			this.groupBox16.TabStop = false;
 			this.groupBox16.Text = "Save Info";
@@ -1191,9 +1228,9 @@
 			this.groupBox19.Controls.Add(this.lbl_si_scicount);
 			this.groupBox19.Controls.Add(this.lbl_si_engicount);
 			this.groupBox19.Controls.Add(this.lbl_si_engicountdisp);
-			this.groupBox19.Location = new System.Drawing.Point(161, 23);
+			this.groupBox19.Location = new System.Drawing.Point(161, 19);
 			this.groupBox19.Name = "groupBox19";
-			this.groupBox19.Size = new System.Drawing.Size(149, 135);
+			this.groupBox19.Size = new System.Drawing.Size(149, 139);
 			this.groupBox19.TabIndex = 22;
 			this.groupBox19.TabStop = false;
 			this.groupBox19.Text = "Profession Breakdown";
@@ -1201,14 +1238,14 @@
 			// lbl_si_scicountdisp
 			// 
 			this.lbl_si_scicountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_scicountdisp.Location = new System.Drawing.Point(74, 69);
+			this.lbl_si_scicountdisp.Location = new System.Drawing.Point(74, 87);
 			this.lbl_si_scicountdisp.Name = "lbl_si_scicountdisp";
 			this.lbl_si_scicountdisp.Size = new System.Drawing.Size(63, 23);
 			this.lbl_si_scicountdisp.TabIndex = 11;
 			// 
 			// lbl_si_pilotcount
 			// 
-			this.lbl_si_pilotcount.Location = new System.Drawing.Point(6, 19);
+			this.lbl_si_pilotcount.Location = new System.Drawing.Point(6, 21);
 			this.lbl_si_pilotcount.Name = "lbl_si_pilotcount";
 			this.lbl_si_pilotcount.Size = new System.Drawing.Size(62, 13);
 			this.lbl_si_pilotcount.TabIndex = 10;
@@ -1218,14 +1255,14 @@
 			// lbl_si_pilotcountdisp
 			// 
 			this.lbl_si_pilotcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_pilotcountdisp.Location = new System.Drawing.Point(74, 14);
+			this.lbl_si_pilotcountdisp.Location = new System.Drawing.Point(74, 16);
 			this.lbl_si_pilotcountdisp.Name = "lbl_si_pilotcountdisp";
 			this.lbl_si_pilotcountdisp.Size = new System.Drawing.Size(63, 23);
 			this.lbl_si_pilotcountdisp.TabIndex = 11;
 			// 
 			// lbl_si_scicount
 			// 
-			this.lbl_si_scicount.Location = new System.Drawing.Point(6, 74);
+			this.lbl_si_scicount.Location = new System.Drawing.Point(6, 92);
 			this.lbl_si_scicount.Name = "lbl_si_scicount";
 			this.lbl_si_scicount.Size = new System.Drawing.Size(62, 13);
 			this.lbl_si_scicount.TabIndex = 10;
@@ -1234,7 +1271,7 @@
 			// 
 			// lbl_si_engicount
 			// 
-			this.lbl_si_engicount.Location = new System.Drawing.Point(6, 46);
+			this.lbl_si_engicount.Location = new System.Drawing.Point(6, 59);
 			this.lbl_si_engicount.Name = "lbl_si_engicount";
 			this.lbl_si_engicount.Size = new System.Drawing.Size(62, 13);
 			this.lbl_si_engicount.TabIndex = 20;
@@ -1244,7 +1281,7 @@
 			// lbl_si_engicountdisp
 			// 
 			this.lbl_si_engicountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_engicountdisp.Location = new System.Drawing.Point(74, 41);
+			this.lbl_si_engicountdisp.Location = new System.Drawing.Point(74, 54);
 			this.lbl_si_engicountdisp.Name = "lbl_si_engicountdisp";
 			this.lbl_si_engicountdisp.Size = new System.Drawing.Size(63, 23);
 			this.lbl_si_engicountdisp.TabIndex = 21;
@@ -1310,7 +1347,7 @@
 			// lbl_si_livingcountdisp
 			// 
 			this.lbl_si_livingcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_livingcountdisp.Location = new System.Drawing.Point(74, 52);
+			this.lbl_si_livingcountdisp.Location = new System.Drawing.Point(74, 54);
 			this.lbl_si_livingcountdisp.Name = "lbl_si_livingcountdisp";
 			this.lbl_si_livingcountdisp.Size = new System.Drawing.Size(63, 23);
 			this.lbl_si_livingcountdisp.TabIndex = 11;
@@ -1367,7 +1404,7 @@
 			this.groupBox15.Controls.Add(this.gb_ki_stats);
 			this.groupBox15.Controls.Add(this.cmb_ki_selectKerb);
 			this.groupBox15.Controls.Add(this.cmb_kerb_list);
-			this.groupBox15.Location = new System.Drawing.Point(3, 271);
+			this.groupBox15.Location = new System.Drawing.Point(6, 374);
 			this.groupBox15.Name = "groupBox15";
 			this.groupBox15.Size = new System.Drawing.Size(337, 186);
 			this.groupBox15.TabIndex = 2;
@@ -1584,9 +1621,9 @@
 			// 
 			this.pnl_po_options.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.pnl_po_options.Controls.Add(gb_po_options);
-			this.pnl_po_options.Location = new System.Drawing.Point(698, 598);
+			this.pnl_po_options.Location = new System.Drawing.Point(342, 762);
 			this.pnl_po_options.Name = "pnl_po_options";
-			this.pnl_po_options.Size = new System.Drawing.Size(343, 158);
+			this.pnl_po_options.Size = new System.Drawing.Size(700, 98);
 			this.pnl_po_options.TabIndex = 10;
 			// 
 			// panel5
@@ -1635,21 +1672,115 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
 			this.fileToolStripMenuItem.Text = "File";
 			this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(89, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+			// 
+			// gb_si_CrewBkdwn
+			// 
+			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_hired);
+			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_applcntdisp);
+			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_hireddisp);
+			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_applicants);
+			this.gb_si_CrewBkdwn.Location = new System.Drawing.Point(6, 247);
+			this.gb_si_CrewBkdwn.Name = "gb_si_CrewBkdwn";
+			this.gb_si_CrewBkdwn.Size = new System.Drawing.Size(149, 94);
+			this.gb_si_CrewBkdwn.TabIndex = 23;
+			this.gb_si_CrewBkdwn.TabStop = false;
+			this.gb_si_CrewBkdwn.Text = "Crew BreakDown";
+			// 
+			// lbl_si_hired
+			// 
+			this.lbl_si_hired.Location = new System.Drawing.Point(5, 31);
+			this.lbl_si_hired.Name = "lbl_si_hired";
+			this.lbl_si_hired.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_hired.TabIndex = 12;
+			this.lbl_si_hired.Text = "Hired";
+			this.lbl_si_hired.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_applcntdisp
+			// 
+			this.lbl_si_applcntdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_applcntdisp.Location = new System.Drawing.Point(73, 54);
+			this.lbl_si_applcntdisp.Name = "lbl_si_applcntdisp";
+			this.lbl_si_applcntdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_applcntdisp.TabIndex = 14;
+			// 
+			// lbl_si_applicants
+			// 
+			this.lbl_si_applicants.Location = new System.Drawing.Point(5, 59);
+			this.lbl_si_applicants.Name = "lbl_si_applicants";
+			this.lbl_si_applicants.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_applicants.TabIndex = 13;
+			this.lbl_si_applicants.Text = "Applicants";
+			this.lbl_si_applicants.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_hireddisp
+			// 
+			this.lbl_si_hireddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_hireddisp.Location = new System.Drawing.Point(73, 26);
+			this.lbl_si_hireddisp.Name = "lbl_si_hireddisp";
+			this.lbl_si_hireddisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_hireddisp.TabIndex = 15;
+			// 
+			// gb_si_statusBkdwn
+			// 
+			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_assigned);
+			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_availdisp);
+			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_assigneddisp);
+			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_avail);
+			this.gb_si_statusBkdwn.Location = new System.Drawing.Point(161, 247);
+			this.gb_si_statusBkdwn.Name = "gb_si_statusBkdwn";
+			this.gb_si_statusBkdwn.Size = new System.Drawing.Size(149, 94);
+			this.gb_si_statusBkdwn.TabIndex = 24;
+			this.gb_si_statusBkdwn.TabStop = false;
+			this.gb_si_statusBkdwn.Text = "Status BreakDown";
+			// 
+			// lbl_si_assigned
+			// 
+			this.lbl_si_assigned.Location = new System.Drawing.Point(5, 31);
+			this.lbl_si_assigned.Name = "lbl_si_assigned";
+			this.lbl_si_assigned.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_assigned.TabIndex = 12;
+			this.lbl_si_assigned.Text = "Assigned";
+			this.lbl_si_assigned.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_availdisp
+			// 
+			this.lbl_si_availdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_availdisp.Location = new System.Drawing.Point(73, 54);
+			this.lbl_si_availdisp.Name = "lbl_si_availdisp";
+			this.lbl_si_availdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_availdisp.TabIndex = 14;
+			// 
+			// lbl_si_assigneddisp
+			// 
+			this.lbl_si_assigneddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_assigneddisp.Location = new System.Drawing.Point(73, 26);
+			this.lbl_si_assigneddisp.Name = "lbl_si_assigneddisp";
+			this.lbl_si_assigneddisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_assigneddisp.TabIndex = 15;
+			// 
+			// lbl_si_avail
+			// 
+			this.lbl_si_avail.Location = new System.Drawing.Point(5, 59);
+			this.lbl_si_avail.Name = "lbl_si_avail";
+			this.lbl_si_avail.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_avail.TabIndex = 13;
+			this.lbl_si_avail.Text = "Available";
+			this.lbl_si_avail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// frm_Krb_Gen
 			// 
@@ -1657,9 +1788,9 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1054, 926);
 			this.Controls.Add(this.panel6);
-			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.pnl_po_options);
-			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panel5);
+			this.Controls.Add(panel3);
 			this.Controls.Add(this.pnl_spe_gen);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.menuStrip1);
@@ -1711,7 +1842,7 @@
 			this.groupBox12.PerformLayout();
 			this.groupBox11.ResumeLayout(false);
 			this.groupBox11.PerformLayout();
-			this.panel3.ResumeLayout(false);
+			panel3.ResumeLayout(false);
 			this.groupBox16.ResumeLayout(false);
 			this.groupBox20.ResumeLayout(false);
 			this.groupBox19.ResumeLayout(false);
@@ -1727,10 +1858,16 @@
 			this.panel6.ResumeLayout(false);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			this.gb_si_CrewBkdwn.ResumeLayout(false);
+			this.gb_si_statusBkdwn.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
+
+		
+
+
 
 		#endregion
 		private System.Windows.Forms.Button btn_rnd_gen_Kerb;
@@ -1809,7 +1946,6 @@
 		private System.Windows.Forms.TrackBar tbar_spe_stupid;
 		private System.Windows.Forms.Button btn_spe_reset;
 		private System.Windows.Forms.Button btn_spe_generate;
-		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.GroupBox groupBox16;
 		private System.Windows.Forms.Label lbl_si_scicountdisp;
 		private System.Windows.Forms.Label lbl_si_scicount;
@@ -1877,6 +2013,17 @@
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+		private System.Windows.Forms.Button btn_po_Save;
+		private System.Windows.Forms.GroupBox gb_si_statusBkdwn;
+		private System.Windows.Forms.Label lbl_si_assigned;
+		private System.Windows.Forms.Label lbl_si_availdisp;
+		private System.Windows.Forms.Label lbl_si_assigneddisp;
+		private System.Windows.Forms.Label lbl_si_avail;
+		private System.Windows.Forms.GroupBox gb_si_CrewBkdwn;
+		private System.Windows.Forms.Label lbl_si_hired;
+		private System.Windows.Forms.Label lbl_si_applcntdisp;
+		private System.Windows.Forms.Label lbl_si_hireddisp;
+		private System.Windows.Forms.Label lbl_si_applicants;
 	}
 }
 

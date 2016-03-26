@@ -18,7 +18,11 @@ namespace KerbalGenerator {
 			generator = new KerbalGenerator( this );
 		}
 
-		public void SetAllControls( bool active ) {
+		/// <summary>
+		/// Sets all controls except program options to active
+		/// </summary>
+		/// <param name="active"></param>
+		internal void SetAllControls( bool active ) {
 			foreach ( Control c in Controls ) {
 				if ( c.Name.ToLower( ).Equals( "pnl_po_options" ) ) {
 					continue;
@@ -29,6 +33,7 @@ namespace KerbalGenerator {
 			}
 		}
 
+
 		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
 			Text = "Kerbal Generator -- " + generator.Cfg.Name;
 			cmb_AvailSaves.Items.AddRange( generator.GetSaves( ) );
@@ -36,42 +41,41 @@ namespace KerbalGenerator {
 		}
 
 		#region Stats Panel
-		private void displaySaveStats( ) {
-			lbl_si_badscountdisp.Text = generator.GetKerbalCounts( "badasskerbals" );
-			lbl_si_tourcountdisp.Text = generator.GetKerbalCounts( "touristkerbals" );
-			lbl_si_kerbcountdisp.Text = generator.GetKerbalCounts( "totalkerbals" );
-			lbl_si_livingcountdisp.Text = generator.GetKerbalCounts( "livingkerbals" );
-			lbl_si_deadcountdisp.Text = generator.GetKerbalCounts( "deadkerbals" );
-			lbl_si_genderfcountdisp.Text = generator.GetKerbalCounts( "femalekerbals" );
-			lbl_si_gendermcountdisp.Text = generator.GetKerbalCounts( "malekerbals" );
-			lbl_si_engicountdisp.Text = generator.GetKerbalCounts( "engineerkerbals" );
-			lbl_si_scicountdisp.Text = generator.GetKerbalCounts( "scientistkerbals" );
-			lbl_si_pilotcountdisp.Text = generator.GetKerbalCounts( "pilotkerbals" );
+
+		internal void UpdateSaveStats( string currentSavePath, Dictionary<string, int> countedKerbals ) {
+			//Update Our Current Save Path
+			lbl_currentSaveLocation.Text = currentSavePath;
+			//Update Our Current Kerbal counts
+			lbl_si_kerbcountdisp.Text = countedKerbals["Total"].ToString();
+			lbl_si_livingcountdisp.Text = countedKerbals["Living"].ToString( );
+			lbl_si_deadcountdisp.Text = countedKerbals["Dead"].ToString( );
+			lbl_si_pilotcountdisp.Text = countedKerbals["Pilot"].ToString( );
+			lbl_si_engicountdisp.Text = countedKerbals["Engineer"].ToString( );
+			lbl_si_scicountdisp.Text = countedKerbals["Scientist"].ToString( );
+			lbl_si_gendermcountdisp.Text = countedKerbals["Male"].ToString( );
+			lbl_si_genderfcountdisp.Text = countedKerbals["Female"].ToString( );
+			lbl_si_badscountdisp.Text = countedKerbals["Badass"].ToString( );
+			lbl_si_tourcountdisp.Text = countedKerbals["Tourist"].ToString( );
+			lbl_si_hireddisp.Text = countedKerbals["Crew"].ToString( );
+			lbl_si_applcntdisp.Text = countedKerbals["Applicant"].ToString( );
+			lbl_si_assigneddisp.Text = countedKerbals["Assigned"].ToString( );
+			lbl_si_availdisp.Text = countedKerbals["Available"].ToString( );
 		}
 
-		private void DisplayKerbalStats( Kerbal k ) {
-			lbl_ki_genderdisp.Text = k.Gender;
-			lbl_ki_roledisp.Text = k.Type;
-			lbl_ki_badsdisp.Text = k.Bads;
-			lbl_ki_tourdisp.Text = k.Tour;
-			lbl_ki_bravedisp.Text = k.Brave;
-			lbl_ki_stupiddisp.Text = k.Dumb;
-			lbl_ki_statusdisp.Text = k.Trait;
-			lbl_ki_statedisp.Text = k.State;
-			lbl_ki_flightcountdisp.Text = k.Flights;
-		}
+		
+
 		#endregion
 
 		#region Available Saves Panel
 		private void cmb_AvailSaves_SelectedIndexChanged( object sender, EventArgs e ) {
-			string path = cmb_AvailSaves.SelectedItem.ToString();
-			Debug.WriteLine( "==" + generator.Cfg.SavePaths[path] );
-			generator.ParseKerbals( path );
-			lbl_currentSaveLocation.Text = generator.Cfg.SavePaths[path];
+			string saveName = cmb_AvailSaves.SelectedItem.ToString();
+			generator.SelectSave( saveName );
+			generator.UpdateSaveStats( );
 			cmb_kerb_list.Items.Clear( );
-			cmb_kerb_list.Items.AddRange( generator.Rstr.GetNames( ).ToArray( ) );
+			cmb_kerb_list.Items.AddRange( generator.GetRosterNames() );
 			cmb_kerb_list.SelectedIndex = 0;
-			displaySaveStats( );
+			generator.SelectKerbal( cmb_kerb_list.SelectedItem.ToString( ) );
+			generator.UpdateKerbalStats( );
 		}
 
 		#endregion
@@ -89,10 +93,49 @@ namespace KerbalGenerator {
 		#endregion
 
 		#region kerbalinfopanel
+		internal void UpdateKerbalStats( Kerbal currentKerbal ) {
+
+			lbl_ki_genderdisp.Text = currentKerbal.GetStat( "gender" );
+			lbl_ki_roledisp.Text = currentKerbal.GetStat( "trait" );
+			lbl_ki_statusdisp.Text = currentKerbal.GetStat( "type" );
+			lbl_ki_badsdisp.Text = currentKerbal.GetStat( "badS" );
+			lbl_ki_tourdisp.Text = currentKerbal.GetStat( "tour" );
+			lbl_ki_bravedisp.Text = currentKerbal.GetStat( "brave" );
+			lbl_ki_stupiddisp.Text = currentKerbal.GetStat( "dumb" );
+			lbl_ki_statedisp.Text = currentKerbal.GetStat( "state" );
+
+			foreach (KeyValuePair<string, string> stat in currentKerbal.Stats ) {
+				
+				if ( stat.Key == "gender" ) {
+					lbl_ki_genderdisp.Text = stat.Value;
+				}
+				if ( stat.Key == "trait" ) {
+					lbl_ki_roledisp.Text = stat.Value;
+				}
+				if(stat.Key == "type" ) {
+					lbl_ki_statusdisp.Text = stat.Value;
+				}
+				if ( stat.Key == "badS" ) {
+					lbl_ki_badsdisp.Text = stat.Value;
+				}
+				if ( stat.Key == "tour" ) {
+					lbl_ki_tourdisp.Text = stat.Value;
+				}
+				if(stat.Key == "brave" ) {
+					lbl_ki_bravedisp.Text = stat.Value;
+				}
+				if(stat.Key == "dumb" ) {
+					lbl_ki_stupiddisp.Text = stat.Value;
+				}
+				if(stat.Key == "state" ) {
+					lbl_ki_statedisp.Text = stat.Value;
+				}
+
+			}
+		}
 		private void cmb_kerb_list_SelectedIndexChanged( object sender, EventArgs e ) {
-			string selectedKerbal = cmb_kerb_list.SelectedItem.ToString();
-			Kerbal k = generator.Rstr.GetKerbal(selectedKerbal);
-			DisplayKerbalStats( k );
+			generator.SelectKerbal( cmb_kerb_list.SelectedItem.ToString());
+
 		}
 
 		#endregion
@@ -102,6 +145,8 @@ namespace KerbalGenerator {
 
 		}
 		#endregion
+
+		
 
 		#region Specific Kerbal Generation
 		private void btn_spe_reset_Click( object sender, EventArgs e ) {
@@ -149,44 +194,9 @@ namespace KerbalGenerator {
 			txt_spe_kerbname.Enabled = !chk_spe_rndName.Checked;
 			btn_spe_generate.Enabled = true;
 		}
+
 		private void btn_spe_generate_Click( object sender, EventArgs e ) {
-			Random rnd = new Random();
-			//Get all frickin' values.  (There has to be an easier way)
-			string name, gender, trait;
-			float brave, dumb;
-			bool genName = chk_spe_rndName.Checked;
-			bool isKerman = chk_spe_lastNameKerman.Checked;
-			bool badass = chk_spe_badass.Checked;
-			bool tourist = chk_spe_tourist.Checked;
 
-			bool rndDumb = chk_spe_rndStupid.Checked;
-			bool rndBrave = chk_spe_rndBrave.Checked;
-
-			gender = rd_spe_genderfemale.Checked ? "female" : "male";
-			trait = DetermineSpecificTrait( );
-			if ( rndBrave ) {
-				brave = Util.getRandFloat( );
-
-			}
-			else {
-				brave = ( (float) tbar_spe_brave.Value / 100 );
-			}
-			if ( rndDumb ) {
-				dumb = Util.getRandFloat( );
-			}
-			else {
-				dumb = ( (float) tbar_spe_stupid.Value / 100 );
-			}
-			if ( !genName ) {
-				name = txt_spe_kerbname.Text;
-				generator.KreateKerbal( name, isKerman, gender, trait, brave, dumb, badass, tourist );
-			}
-			else {
-				generator.KreateKerbal( genName, isKerman, gender, trait, brave, dumb, badass, tourist );
-			}
-			cmb_kerb_list.Items.Clear( );
-			cmb_kerb_list.Items.AddRange( generator.Rstr.GetNames( ).ToArray( ) );
-			cmb_kerb_list.SelectedIndex = 0;
 		}
 
 		private string DetermineSpecificTrait( ) {
@@ -231,6 +241,10 @@ namespace KerbalGenerator {
 
 		private void exitToolStripMenuItem_Click( object sender, EventArgs e ) {
 			Application.Exit( );
+		}
+
+		private void btn_po_Save_Click( object sender, EventArgs e ) {
+			generator.Save( cmb_AvailSaves.SelectedItem.ToString( ) );
 		}
 	}
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace KerbalGenerator {
 	public partial class ConfiguratorForm : Form {
 		Configurator cfgr;
-		public ConfiguratorForm( ref Configurator cfgr ) {
+		public ConfiguratorForm(Configurator cfgr ) {
 			InitializeComponent( );
 			this.cfgr = cfgr;
 		}

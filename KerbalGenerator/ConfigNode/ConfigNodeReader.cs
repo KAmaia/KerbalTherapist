@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * All ConfigNode Related Code is thanks to: darklight in #kspmodders on the esper.net IRC network.  
+ * This source code is public domain'd, and any section of ConfigNode related code found in this project,
+ * with this header is released freely into the public domain with no regard to any other license applied to this
+ * project.  
+ */
+
+using System;
 using System.IO;
 using System.Text;
 
