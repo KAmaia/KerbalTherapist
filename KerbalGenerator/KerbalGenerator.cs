@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ConfigNodeParser;
+
 namespace KerbalGenerator {
 	class KerbalGenerator {
 		private readonly string configPath = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BadWater"),"KerbalGen");
@@ -16,6 +18,7 @@ namespace KerbalGenerator {
 		private KerbalParser kp;
 		private KerbalMaker km;
 		private frm_Krb_Gen MainForm;
+		private ConfigNode persistent;
 
 		public Roster Rstr { get { return roster; } }
 		public Config Cfg { get { return config; } }
@@ -42,9 +45,25 @@ namespace KerbalGenerator {
 			return config.SavePaths.Keys.ToArray( );
 		}
 
-		public void ParseKerbals( string persistent ) {
-			kp = new KerbalParser( );
-			roster = kp.Parse( config.SavePaths[persistent] );
+		public void ParseKerbals( string saveFile ) {
+			persistent = ConfigNode.Load( config.SavePaths[saveFile] );
+			roster = new Roster( );
+			ConfigNode rosterNode = persistent.GetNode("GAME").GetNode("ROSTER");
+			foreach(ConfigNode kerbalNode in rosterNode.GetNodes("KERBAL")) {
+				Kerbal k = new Kerbal();
+				k.Name = kerbalNode.GetValue( "name" );
+				k.Gender = kerbalNode.GetValue( "gender" );
+				k.Type = kerbalNode.GetValue( "type" );
+				k.Trait = kerbalNode.GetValue( "trait" );
+				k.Brave = kerbalNode.GetValue( "brave" );
+				k.Dumb = kerbalNode.GetValue( "dumb" );
+				k.Bads = kerbalNode.GetValue( "badS" );
+				k.Tour = kerbalNode.GetValue( "tour" );
+				k.State = kerbalNode.GetValue( "state" );
+				k.ToD = kerbalNode.GetValue( "ToD" );
+				k.Flights = kerbalNode.GetNode( "CAREER_LOG" ).GetValue( "flight" );
+				roster.AddKerbal( k );
+			}
 		}
 
 		public bool FirstRun( ) {

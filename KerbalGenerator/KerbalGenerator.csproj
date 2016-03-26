@@ -67,7 +67,6 @@
     </Compile>
     <Compile Include="Kerbals\Kerbal.cs" />
     <Compile Include="Kerbals\KerbalMaker.cs" />
-    <Compile Include="KerbalParser.cs" />
     <Compile Include="Forms\KerbalPreviewWindow.cs">
       <SubType>Form</SubType>
     </Compile>
