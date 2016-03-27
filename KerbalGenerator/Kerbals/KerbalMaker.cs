@@ -1,14 +1,61 @@
 ﻿using KerbalGenerator.Accumulators;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using KerbalGenerator.NameGenerator;
 namespace KerbalGenerator {
-	class KerbalMaker {
-		public KerbalMaker(SpecificAccumulator sa ) {
+	public class KerbalMaker {
 
+		public static Kerbal KreateKerbal( SpecificAccumulator sa ) {
+			return new Kerbal(GenerateList(sa) );
 		}
-	}		
+		private static List<KeyValuePair<string, string>> GenerateList(SpecificAccumulator sa ) {
+			List<KeyValuePair<string,string>> list = new List<KeyValuePair<string, string>>();
+			list.Add( GenerateNamePair( sa ) );
+			list.Add( GenerateGenderPair( sa ) );
+			list.Add( GenerateTypePair( sa ) );
+			list.Add( GenerateTraitPair( sa ) );
+			list.Add( GenerateBravePair( sa ) );
+			list.Add( GenerateDumbPair( sa ) );
+			list.Add( GenerateBadsPair( sa ) );
+			list.Add( GenerateTourPair( sa ) );
+			return list;
+		}
+		private static KeyValuePair<string, string> GenerateNamePair( SpecificAccumulator sa ) {
+			return new KeyValuePair<string, string>( "name", NameGenerator.NameGenerator.GenerateName( sa.Name, sa.RndName, sa.Female, sa.IsKerman ) );
+		}
+		private static KeyValuePair<string, string> GenerateGenderPair( SpecificAccumulator sa ) {
+			string female = sa.Female ? "Female" : "Male";
+			return new KeyValuePair<string, string>( "gender", female );
+		}
+		//for right now, all created kerbals are automagically hired.
+		//TODO: allow kerbals to be applicants too!
+		private static KeyValuePair<string, string> GenerateTypePair( SpecificAccumulator sa ) {
+			return new KeyValuePair<string, string>( "type", "crew" );
+		}
+		private static KeyValuePair<string, string> GenerateTraitPair( SpecificAccumulator sa ) {
+			return new KeyValuePair<string, string>( "trait", sa.Trait );
+		}
+		private static KeyValuePair<string, string> GenerateBravePair( SpecificAccumulator sa ) {
+			return CreateFloatPair( "brave", sa.RndBrave, sa.brave );
+		}
+		private static KeyValuePair<string, string> GenerateDumbPair( SpecificAccumulator sa ) {
+			return CreateFloatPair( "dumb", sa.RndDumb, sa.dumb );
+		}
+		private static KeyValuePair<string, string>GenerateBadsPair(SpecificAccumulator sa) {
+			return new KeyValuePair<string, string>( "badS", sa.Badass.ToString() );
+		}
+		private static KeyValuePair<string, string> GenerateTourPair( SpecificAccumulator sa ) {
+			return new KeyValuePair<string, string>( "tour", sa.Tourist.ToString( ) );
+		}
+		private static KeyValuePair<string, string> CreateFloatPair(string key, bool random, float value ) {
+			float thinger = 0.0f;
+			if ( random ) {
+				thinger = Util.GetRandFloat( );
+			}
+			else {
+				thinger = (float) value / 100;
+			}
+			return new KeyValuePair<string, string>( key, thinger.ToString( ) );
+		}
+
+	}
 }

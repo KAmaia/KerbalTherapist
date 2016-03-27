@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 using ConfigNodeParser;
 using KerbalGenerator.Kerbals;
+using KerbalGenerator.Accumulators;
 
 namespace KerbalGenerator {
 	class KerbalGenerator {
@@ -69,16 +70,7 @@ namespace KerbalGenerator {
 			persistent = ConfigNode.Load( currentSavePath );
 			ParseRoster( );
 		}
-
-		private void selectKerbal( int index ) {
-			currentKerbal = roster.GetKerbal( 0 );
-			UpdateKerbalStats( );
-		}
-		public void SelectKerbal(string kerbalName ) {
-			currentKerbal = roster.GetKerbal( kerbalName );
-			UpdateKerbalStats( );
-		}
-
+		
 		/// <summary>
 		/// Select Save by Name.  
 		/// </summary>
@@ -88,7 +80,25 @@ namespace KerbalGenerator {
 			persistent = ConfigNode.Load( currentSavePath );
 			ParseRoster( );
 		}
-
+		
+		/// <summary>
+		/// Selects Kerbal By Index.  Should only ever be used on initialization.
+		/// </summary>
+		/// <param name="index"></param>
+		private void selectKerbal( int index ) {
+			currentKerbal = roster.GetKerbal( 0 );
+			UpdateKerbalStats( );
+		}
+		
+		/// <summary>
+		/// Selects Kerbal based on a String Value.
+		/// </summary>
+		/// <param name="kerbalName"></param>
+		public void SelectKerbal(string kerbalName ) {
+			currentKerbal = roster.GetKerbal( kerbalName );
+			UpdateKerbalStats( );
+		}
+		
 		/// <summary>
 		/// Return A String Array Of All Save Keys.
 		/// </summary>
@@ -105,16 +115,21 @@ namespace KerbalGenerator {
 			return roster.GetNames( ).ToArray( );
 		}
 
+		/// <summary>
+		/// Send stats back to mainform to be displayed.
+		/// </summary>
 		internal void UpdateKerbalStats( ) {
 			MainForm.UpdateKerbalStats( currentKerbal );
 			
 		}
-
+		
+		/// <summary>
+		/// Updates The MainForm's Save Path Label and Kerbal Count.
+		/// </summary>
 		internal void UpdateSaveStats( ) {
 			MainForm.UpdateSaveStats( currentSavePath, new KerbalKounter( ).KountKerbals( roster ) );
-
 		}
-
+		
 		/// <summary>
 		/// Parses the Roster Node Into A Roster Object
 		/// </summary>
@@ -123,24 +138,46 @@ namespace KerbalGenerator {
 			roster = RosterParser.GetRoster( currentGame );
 		}
 
+		/// <summary>
+		/// Save Our Updated Roster To File
+		/// </summary>
+		/// <param name="saveFile">No longer used.  There because I'm afraid Removing It Will break Something.</param>
 		public void Save( string saveFile ) {
 			RosterParser.InsertRoster( roster, persistent );
 			persistent.Save( currentSavePath );
 		}
 
+		public void KreateKerbal(SpecificAccumulator sa ) {
 
+		}
+
+		/// <summary>
+		/// Return the Configurator Form/
+		/// </summary>
+		/// <returns></returns>
 		public Form GetCfgrForm( ) {
 			return new ConfiguratorForm( cfgr );
 		}
 
-
+		/// <summary>
+		/// Preview the Just Created Kerbal
+		/// </summary>
+		/// <param name="k">The Kerbal We Just Created.</param>
+		/// <returns></returns>
 		private DialogResult PreviewKerbal( Kerbal k ) {
 			return new KerbalPreviewWindow( k ).ShowDialog( );
 
 		}
+
+		private DialogResult PreviewRoster(Roster r ) {
+			return new KerbalPreviewWindow( r ).ShowDialog();
+		}
+
 		public bool ValidateKerbalName( string name ) {
 			return ( roster.ValidateKerbal( name ) );
 		}
+
+		
 	}
 }
 

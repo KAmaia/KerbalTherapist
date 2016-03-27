@@ -28,9 +28,66 @@ namespace KerbalGenerator {
 		private void InitializeComponent( ) {
 			System.Windows.Forms.GroupBox gb_po_options;
 			System.Windows.Forms.Panel panel3;
+			this.btn_po_exit = new System.Windows.Forms.Button();
 			this.btn_po_Save = new System.Windows.Forms.Button();
 			this.btn_po_OpenCfgr = new System.Windows.Forms.Button();
-			this.btn_po_exit = new System.Windows.Forms.Button();
+			this.groupBox16 = new System.Windows.Forms.GroupBox();
+			this.gb_si_statusBkdwn = new System.Windows.Forms.GroupBox();
+			this.lbl_si_assigned = new System.Windows.Forms.Label();
+			this.lbl_si_availdisp = new System.Windows.Forms.Label();
+			this.lbl_si_assigneddisp = new System.Windows.Forms.Label();
+			this.lbl_si_avail = new System.Windows.Forms.Label();
+			this.gb_si_CrewBkdwn = new System.Windows.Forms.GroupBox();
+			this.lbl_si_hired = new System.Windows.Forms.Label();
+			this.lbl_si_applcntdisp = new System.Windows.Forms.Label();
+			this.lbl_si_hireddisp = new System.Windows.Forms.Label();
+			this.lbl_si_applicants = new System.Windows.Forms.Label();
+			this.groupBox20 = new System.Windows.Forms.GroupBox();
+			this.lbl_si_badscount = new System.Windows.Forms.Label();
+			this.lbl_si_tourcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_tourcount = new System.Windows.Forms.Label();
+			this.lbl_si_badscountdisp = new System.Windows.Forms.Label();
+			this.groupBox19 = new System.Windows.Forms.GroupBox();
+			this.lbl_si_scicountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_pilotcount = new System.Windows.Forms.Label();
+			this.lbl_si_pilotcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_scicount = new System.Windows.Forms.Label();
+			this.lbl_si_engicount = new System.Windows.Forms.Label();
+			this.lbl_si_engicountdisp = new System.Windows.Forms.Label();
+			this.groupBox18 = new System.Windows.Forms.GroupBox();
+			this.lbl_si_livingcount = new System.Windows.Forms.Label();
+			this.lbl_si_kerbcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_deadcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_deadcount = new System.Windows.Forms.Label();
+			this.lbl_si_kerbcount = new System.Windows.Forms.Label();
+			this.lbl_si_livingcountdisp = new System.Windows.Forms.Label();
+			this.groupBox17 = new System.Windows.Forms.GroupBox();
+			this.lbl_si_gendermcount = new System.Windows.Forms.Label();
+			this.lbl_si_genderfcountdisp = new System.Windows.Forms.Label();
+			this.lbl_si_genderfcount = new System.Windows.Forms.Label();
+			this.lbl_si_gendermcountdisp = new System.Windows.Forms.Label();
+			this.groupBox15 = new System.Windows.Forms.GroupBox();
+			this.gb_ki_stats = new System.Windows.Forms.GroupBox();
+			this.lbl_ki_flightcountdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_stupid = new System.Windows.Forms.Label();
+			this.lbl_ki_statedisp = new System.Windows.Forms.Label();
+			this.lbl_ki_flightcount = new System.Windows.Forms.Label();
+			this.lbl_ki_stupiddisp = new System.Windows.Forms.Label();
+			this.lbl_ki_state = new System.Windows.Forms.Label();
+			this.lbl_ki_bravedisp = new System.Windows.Forms.Label();
+			this.lbl_ki_tourdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_badsdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_statusdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_roledisp = new System.Windows.Forms.Label();
+			this.lbl_ki_genderdisp = new System.Windows.Forms.Label();
+			this.lbl_ki_bads = new System.Windows.Forms.Label();
+			this.lbl_ki_tour = new System.Windows.Forms.Label();
+			this.lbl_ki_brave = new System.Windows.Forms.Label();
+			this.lbl_ki_status = new System.Windows.Forms.Label();
+			this.lbl_ki_role = new System.Windows.Forms.Label();
+			this.lbl_ki_gender = new System.Windows.Forms.Label();
+			this.cmb_ki_selectKerb = new System.Windows.Forms.Label();
+			this.cmb_kerb_list = new System.Windows.Forms.ComboBox();
 			this.lbl_saveSelect = new System.Windows.Forms.Label();
 			this.cmb_AvailSaves = new System.Windows.Forms.ComboBox();
 			this.btn_rnd_gen_Kerb = new System.Windows.Forms.Button();
@@ -117,53 +174,6 @@ namespace KerbalGenerator {
 			this.rd_spe_gendermale = new System.Windows.Forms.RadioButton();
 			this.txt_spe_kerbname = new System.Windows.Forms.TextBox();
 			this.label28 = new System.Windows.Forms.Label();
-			this.groupBox16 = new System.Windows.Forms.GroupBox();
-			this.groupBox20 = new System.Windows.Forms.GroupBox();
-			this.lbl_si_badscount = new System.Windows.Forms.Label();
-			this.lbl_si_tourcountdisp = new System.Windows.Forms.Label();
-			this.lbl_si_tourcount = new System.Windows.Forms.Label();
-			this.lbl_si_badscountdisp = new System.Windows.Forms.Label();
-			this.groupBox19 = new System.Windows.Forms.GroupBox();
-			this.lbl_si_scicountdisp = new System.Windows.Forms.Label();
-			this.lbl_si_pilotcount = new System.Windows.Forms.Label();
-			this.lbl_si_pilotcountdisp = new System.Windows.Forms.Label();
-			this.lbl_si_scicount = new System.Windows.Forms.Label();
-			this.lbl_si_engicount = new System.Windows.Forms.Label();
-			this.lbl_si_engicountdisp = new System.Windows.Forms.Label();
-			this.groupBox18 = new System.Windows.Forms.GroupBox();
-			this.lbl_si_livingcount = new System.Windows.Forms.Label();
-			this.lbl_si_kerbcountdisp = new System.Windows.Forms.Label();
-			this.lbl_si_deadcountdisp = new System.Windows.Forms.Label();
-			this.lbl_si_deadcount = new System.Windows.Forms.Label();
-			this.lbl_si_kerbcount = new System.Windows.Forms.Label();
-			this.lbl_si_livingcountdisp = new System.Windows.Forms.Label();
-			this.groupBox17 = new System.Windows.Forms.GroupBox();
-			this.lbl_si_gendermcount = new System.Windows.Forms.Label();
-			this.lbl_si_genderfcountdisp = new System.Windows.Forms.Label();
-			this.lbl_si_genderfcount = new System.Windows.Forms.Label();
-			this.lbl_si_gendermcountdisp = new System.Windows.Forms.Label();
-			this.groupBox15 = new System.Windows.Forms.GroupBox();
-			this.gb_ki_stats = new System.Windows.Forms.GroupBox();
-			this.lbl_ki_flightcountdisp = new System.Windows.Forms.Label();
-			this.lbl_ki_stupid = new System.Windows.Forms.Label();
-			this.lbl_ki_statedisp = new System.Windows.Forms.Label();
-			this.lbl_ki_flightcount = new System.Windows.Forms.Label();
-			this.lbl_ki_stupiddisp = new System.Windows.Forms.Label();
-			this.lbl_ki_state = new System.Windows.Forms.Label();
-			this.lbl_ki_bravedisp = new System.Windows.Forms.Label();
-			this.lbl_ki_tourdisp = new System.Windows.Forms.Label();
-			this.lbl_ki_badsdisp = new System.Windows.Forms.Label();
-			this.lbl_ki_statusdisp = new System.Windows.Forms.Label();
-			this.lbl_ki_roledisp = new System.Windows.Forms.Label();
-			this.lbl_ki_genderdisp = new System.Windows.Forms.Label();
-			this.lbl_ki_bads = new System.Windows.Forms.Label();
-			this.lbl_ki_tour = new System.Windows.Forms.Label();
-			this.lbl_ki_brave = new System.Windows.Forms.Label();
-			this.lbl_ki_status = new System.Windows.Forms.Label();
-			this.lbl_ki_role = new System.Windows.Forms.Label();
-			this.lbl_ki_gender = new System.Windows.Forms.Label();
-			this.cmb_ki_selectKerb = new System.Windows.Forms.Label();
-			this.cmb_kerb_list = new System.Windows.Forms.ComboBox();
 			this.pnl_po_options = new System.Windows.Forms.Panel();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.grp_save_flag = new System.Windows.Forms.GroupBox();
@@ -172,19 +182,19 @@ namespace KerbalGenerator {
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.gb_si_CrewBkdwn = new System.Windows.Forms.GroupBox();
-			this.lbl_si_hired = new System.Windows.Forms.Label();
-			this.lbl_si_applcntdisp = new System.Windows.Forms.Label();
-			this.lbl_si_applicants = new System.Windows.Forms.Label();
-			this.lbl_si_hireddisp = new System.Windows.Forms.Label();
-			this.gb_si_statusBkdwn = new System.Windows.Forms.GroupBox();
-			this.lbl_si_assigned = new System.Windows.Forms.Label();
-			this.lbl_si_availdisp = new System.Windows.Forms.Label();
-			this.lbl_si_assigneddisp = new System.Windows.Forms.Label();
-			this.lbl_si_avail = new System.Windows.Forms.Label();
 			gb_po_options = new System.Windows.Forms.GroupBox();
 			panel3 = new System.Windows.Forms.Panel();
 			gb_po_options.SuspendLayout();
+			panel3.SuspendLayout();
+			this.groupBox16.SuspendLayout();
+			this.gb_si_statusBkdwn.SuspendLayout();
+			this.gb_si_CrewBkdwn.SuspendLayout();
+			this.groupBox20.SuspendLayout();
+			this.groupBox19.SuspendLayout();
+			this.groupBox18.SuspendLayout();
+			this.groupBox17.SuspendLayout();
+			this.groupBox15.SuspendLayout();
+			this.gb_ki_stats.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox7.SuspendLayout();
@@ -213,20 +223,10 @@ namespace KerbalGenerator {
 			this.groupBox13.SuspendLayout();
 			this.groupBox12.SuspendLayout();
 			this.groupBox11.SuspendLayout();
-			panel3.SuspendLayout();
-			this.groupBox16.SuspendLayout();
-			this.groupBox20.SuspendLayout();
-			this.groupBox19.SuspendLayout();
-			this.groupBox18.SuspendLayout();
-			this.groupBox17.SuspendLayout();
-			this.groupBox15.SuspendLayout();
-			this.gb_ki_stats.SuspendLayout();
 			this.pnl_po_options.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel6.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
-			this.gb_si_CrewBkdwn.SuspendLayout();
-			this.gb_si_statusBkdwn.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// gb_po_options
@@ -242,6 +242,17 @@ namespace KerbalGenerator {
 			gb_po_options.TabIndex = 5;
 			gb_po_options.TabStop = false;
 			gb_po_options.Text = "Program Options";
+			// 
+			// btn_po_exit
+			// 
+			this.btn_po_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btn_po_exit.Location = new System.Drawing.Point(433, 29);
+			this.btn_po_exit.Name = "btn_po_exit";
+			this.btn_po_exit.Size = new System.Drawing.Size(161, 23);
+			this.btn_po_exit.TabIndex = 6;
+			this.btn_po_exit.Text = "Exit";
+			this.btn_po_exit.UseVisualStyleBackColor = true;
+			this.btn_po_exit.Click += new System.EventHandler(this.btn_po_exit_Click);
 			// 
 			// btn_po_Save
 			// 
@@ -265,16 +276,568 @@ namespace KerbalGenerator {
 			this.btn_po_OpenCfgr.UseVisualStyleBackColor = true;
 			this.btn_po_OpenCfgr.Click += new System.EventHandler(this.btn_po_OpenCfgr_Click);
 			// 
-			// btn_po_exit
+			// panel3
 			// 
-			this.btn_po_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btn_po_exit.Location = new System.Drawing.Point(433, 29);
-			this.btn_po_exit.Name = "btn_po_exit";
-			this.btn_po_exit.Size = new System.Drawing.Size(161, 23);
-			this.btn_po_exit.TabIndex = 6;
-			this.btn_po_exit.Text = "Exit";
-			this.btn_po_exit.UseVisualStyleBackColor = true;
-			this.btn_po_exit.Click += new System.EventHandler(this.btn_po_exit_Click);
+			panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			panel3.Controls.Add(this.groupBox16);
+			panel3.Controls.Add(this.groupBox15);
+			panel3.Location = new System.Drawing.Point(696, 120);
+			panel3.Name = "panel3";
+			panel3.Size = new System.Drawing.Size(346, 636);
+			panel3.TabIndex = 9;
+			// 
+			// groupBox16
+			// 
+			this.groupBox16.Controls.Add(this.gb_si_statusBkdwn);
+			this.groupBox16.Controls.Add(this.gb_si_CrewBkdwn);
+			this.groupBox16.Controls.Add(this.groupBox20);
+			this.groupBox16.Controls.Add(this.groupBox19);
+			this.groupBox16.Controls.Add(this.groupBox18);
+			this.groupBox16.Controls.Add(this.groupBox17);
+			this.groupBox16.Location = new System.Drawing.Point(6, 3);
+			this.groupBox16.Name = "groupBox16";
+			this.groupBox16.Size = new System.Drawing.Size(328, 357);
+			this.groupBox16.TabIndex = 3;
+			this.groupBox16.TabStop = false;
+			this.groupBox16.Text = "Save Info";
+			// 
+			// gb_si_statusBkdwn
+			// 
+			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_assigned);
+			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_availdisp);
+			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_assigneddisp);
+			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_avail);
+			this.gb_si_statusBkdwn.Location = new System.Drawing.Point(161, 247);
+			this.gb_si_statusBkdwn.Name = "gb_si_statusBkdwn";
+			this.gb_si_statusBkdwn.Size = new System.Drawing.Size(149, 94);
+			this.gb_si_statusBkdwn.TabIndex = 24;
+			this.gb_si_statusBkdwn.TabStop = false;
+			this.gb_si_statusBkdwn.Text = "Status BreakDown";
+			// 
+			// lbl_si_assigned
+			// 
+			this.lbl_si_assigned.Location = new System.Drawing.Point(5, 31);
+			this.lbl_si_assigned.Name = "lbl_si_assigned";
+			this.lbl_si_assigned.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_assigned.TabIndex = 12;
+			this.lbl_si_assigned.Text = "Assigned";
+			this.lbl_si_assigned.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_availdisp
+			// 
+			this.lbl_si_availdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_availdisp.Location = new System.Drawing.Point(73, 54);
+			this.lbl_si_availdisp.Name = "lbl_si_availdisp";
+			this.lbl_si_availdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_availdisp.TabIndex = 14;
+			// 
+			// lbl_si_assigneddisp
+			// 
+			this.lbl_si_assigneddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_assigneddisp.Location = new System.Drawing.Point(73, 26);
+			this.lbl_si_assigneddisp.Name = "lbl_si_assigneddisp";
+			this.lbl_si_assigneddisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_assigneddisp.TabIndex = 15;
+			// 
+			// lbl_si_avail
+			// 
+			this.lbl_si_avail.Location = new System.Drawing.Point(5, 59);
+			this.lbl_si_avail.Name = "lbl_si_avail";
+			this.lbl_si_avail.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_avail.TabIndex = 13;
+			this.lbl_si_avail.Text = "Available";
+			this.lbl_si_avail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// gb_si_CrewBkdwn
+			// 
+			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_hired);
+			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_applcntdisp);
+			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_hireddisp);
+			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_applicants);
+			this.gb_si_CrewBkdwn.Location = new System.Drawing.Point(6, 247);
+			this.gb_si_CrewBkdwn.Name = "gb_si_CrewBkdwn";
+			this.gb_si_CrewBkdwn.Size = new System.Drawing.Size(149, 94);
+			this.gb_si_CrewBkdwn.TabIndex = 23;
+			this.gb_si_CrewBkdwn.TabStop = false;
+			this.gb_si_CrewBkdwn.Text = "Crew BreakDown";
+			// 
+			// lbl_si_hired
+			// 
+			this.lbl_si_hired.Location = new System.Drawing.Point(5, 31);
+			this.lbl_si_hired.Name = "lbl_si_hired";
+			this.lbl_si_hired.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_hired.TabIndex = 12;
+			this.lbl_si_hired.Text = "Hired";
+			this.lbl_si_hired.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_applcntdisp
+			// 
+			this.lbl_si_applcntdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_applcntdisp.Location = new System.Drawing.Point(73, 54);
+			this.lbl_si_applcntdisp.Name = "lbl_si_applcntdisp";
+			this.lbl_si_applcntdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_applcntdisp.TabIndex = 14;
+			// 
+			// lbl_si_hireddisp
+			// 
+			this.lbl_si_hireddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_hireddisp.Location = new System.Drawing.Point(73, 26);
+			this.lbl_si_hireddisp.Name = "lbl_si_hireddisp";
+			this.lbl_si_hireddisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_hireddisp.TabIndex = 15;
+			// 
+			// lbl_si_applicants
+			// 
+			this.lbl_si_applicants.Location = new System.Drawing.Point(5, 59);
+			this.lbl_si_applicants.Name = "lbl_si_applicants";
+			this.lbl_si_applicants.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_applicants.TabIndex = 13;
+			this.lbl_si_applicants.Text = "Applicants";
+			this.lbl_si_applicants.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// groupBox20
+			// 
+			this.groupBox20.Controls.Add(this.lbl_si_badscount);
+			this.groupBox20.Controls.Add(this.lbl_si_tourcountdisp);
+			this.groupBox20.Controls.Add(this.lbl_si_tourcount);
+			this.groupBox20.Controls.Add(this.lbl_si_badscountdisp);
+			this.groupBox20.Location = new System.Drawing.Point(161, 164);
+			this.groupBox20.Name = "groupBox20";
+			this.groupBox20.Size = new System.Drawing.Size(149, 79);
+			this.groupBox20.TabIndex = 21;
+			this.groupBox20.TabStop = false;
+			this.groupBox20.Text = "Trait Breakdown";
+			// 
+			// lbl_si_badscount
+			// 
+			this.lbl_si_badscount.Location = new System.Drawing.Point(6, 23);
+			this.lbl_si_badscount.Name = "lbl_si_badscount";
+			this.lbl_si_badscount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_badscount.TabIndex = 10;
+			this.lbl_si_badscount.Text = "Badass";
+			this.lbl_si_badscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_tourcountdisp
+			// 
+			this.lbl_si_tourcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_tourcountdisp.Location = new System.Drawing.Point(74, 46);
+			this.lbl_si_tourcountdisp.Name = "lbl_si_tourcountdisp";
+			this.lbl_si_tourcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_tourcountdisp.TabIndex = 11;
+			// 
+			// lbl_si_tourcount
+			// 
+			this.lbl_si_tourcount.Location = new System.Drawing.Point(6, 51);
+			this.lbl_si_tourcount.Name = "lbl_si_tourcount";
+			this.lbl_si_tourcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_tourcount.TabIndex = 10;
+			this.lbl_si_tourcount.Text = "Tourist";
+			this.lbl_si_tourcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_badscountdisp
+			// 
+			this.lbl_si_badscountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_badscountdisp.Location = new System.Drawing.Point(74, 18);
+			this.lbl_si_badscountdisp.Name = "lbl_si_badscountdisp";
+			this.lbl_si_badscountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_badscountdisp.TabIndex = 11;
+			// 
+			// groupBox19
+			// 
+			this.groupBox19.Controls.Add(this.lbl_si_scicountdisp);
+			this.groupBox19.Controls.Add(this.lbl_si_pilotcount);
+			this.groupBox19.Controls.Add(this.lbl_si_pilotcountdisp);
+			this.groupBox19.Controls.Add(this.lbl_si_scicount);
+			this.groupBox19.Controls.Add(this.lbl_si_engicount);
+			this.groupBox19.Controls.Add(this.lbl_si_engicountdisp);
+			this.groupBox19.Location = new System.Drawing.Point(161, 19);
+			this.groupBox19.Name = "groupBox19";
+			this.groupBox19.Size = new System.Drawing.Size(149, 139);
+			this.groupBox19.TabIndex = 22;
+			this.groupBox19.TabStop = false;
+			this.groupBox19.Text = "Profession Breakdown";
+			// 
+			// lbl_si_scicountdisp
+			// 
+			this.lbl_si_scicountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_scicountdisp.Location = new System.Drawing.Point(74, 87);
+			this.lbl_si_scicountdisp.Name = "lbl_si_scicountdisp";
+			this.lbl_si_scicountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_scicountdisp.TabIndex = 11;
+			// 
+			// lbl_si_pilotcount
+			// 
+			this.lbl_si_pilotcount.Location = new System.Drawing.Point(6, 21);
+			this.lbl_si_pilotcount.Name = "lbl_si_pilotcount";
+			this.lbl_si_pilotcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_pilotcount.TabIndex = 10;
+			this.lbl_si_pilotcount.Text = "Pilots";
+			this.lbl_si_pilotcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_pilotcountdisp
+			// 
+			this.lbl_si_pilotcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_pilotcountdisp.Location = new System.Drawing.Point(74, 16);
+			this.lbl_si_pilotcountdisp.Name = "lbl_si_pilotcountdisp";
+			this.lbl_si_pilotcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_pilotcountdisp.TabIndex = 11;
+			// 
+			// lbl_si_scicount
+			// 
+			this.lbl_si_scicount.Location = new System.Drawing.Point(6, 92);
+			this.lbl_si_scicount.Name = "lbl_si_scicount";
+			this.lbl_si_scicount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_scicount.TabIndex = 10;
+			this.lbl_si_scicount.Text = "Scientists";
+			this.lbl_si_scicount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_engicount
+			// 
+			this.lbl_si_engicount.Location = new System.Drawing.Point(6, 59);
+			this.lbl_si_engicount.Name = "lbl_si_engicount";
+			this.lbl_si_engicount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_engicount.TabIndex = 20;
+			this.lbl_si_engicount.Text = "Engineers";
+			this.lbl_si_engicount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_engicountdisp
+			// 
+			this.lbl_si_engicountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_engicountdisp.Location = new System.Drawing.Point(74, 54);
+			this.lbl_si_engicountdisp.Name = "lbl_si_engicountdisp";
+			this.lbl_si_engicountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_engicountdisp.TabIndex = 21;
+			// 
+			// groupBox18
+			// 
+			this.groupBox18.Controls.Add(this.lbl_si_livingcount);
+			this.groupBox18.Controls.Add(this.lbl_si_kerbcountdisp);
+			this.groupBox18.Controls.Add(this.lbl_si_deadcountdisp);
+			this.groupBox18.Controls.Add(this.lbl_si_deadcount);
+			this.groupBox18.Controls.Add(this.lbl_si_kerbcount);
+			this.groupBox18.Controls.Add(this.lbl_si_livingcountdisp);
+			this.groupBox18.Location = new System.Drawing.Point(6, 19);
+			this.groupBox18.Name = "groupBox18";
+			this.groupBox18.Size = new System.Drawing.Size(149, 139);
+			this.groupBox18.TabIndex = 21;
+			this.groupBox18.TabStop = false;
+			this.groupBox18.Text = "General Info";
+			// 
+			// lbl_si_livingcount
+			// 
+			this.lbl_si_livingcount.Location = new System.Drawing.Point(6, 59);
+			this.lbl_si_livingcount.Name = "lbl_si_livingcount";
+			this.lbl_si_livingcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_livingcount.TabIndex = 10;
+			this.lbl_si_livingcount.Text = "Living";
+			this.lbl_si_livingcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_kerbcountdisp
+			// 
+			this.lbl_si_kerbcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_kerbcountdisp.Location = new System.Drawing.Point(74, 16);
+			this.lbl_si_kerbcountdisp.Name = "lbl_si_kerbcountdisp";
+			this.lbl_si_kerbcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_kerbcountdisp.TabIndex = 19;
+			// 
+			// lbl_si_deadcountdisp
+			// 
+			this.lbl_si_deadcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_deadcountdisp.Location = new System.Drawing.Point(74, 87);
+			this.lbl_si_deadcountdisp.Name = "lbl_si_deadcountdisp";
+			this.lbl_si_deadcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_deadcountdisp.TabIndex = 11;
+			// 
+			// lbl_si_deadcount
+			// 
+			this.lbl_si_deadcount.Location = new System.Drawing.Point(6, 92);
+			this.lbl_si_deadcount.Name = "lbl_si_deadcount";
+			this.lbl_si_deadcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_deadcount.TabIndex = 10;
+			this.lbl_si_deadcount.Text = "Dead";
+			this.lbl_si_deadcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_kerbcount
+			// 
+			this.lbl_si_kerbcount.Location = new System.Drawing.Point(6, 21);
+			this.lbl_si_kerbcount.Name = "lbl_si_kerbcount";
+			this.lbl_si_kerbcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_kerbcount.TabIndex = 18;
+			this.lbl_si_kerbcount.Text = "Kerbals";
+			this.lbl_si_kerbcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_livingcountdisp
+			// 
+			this.lbl_si_livingcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_livingcountdisp.Location = new System.Drawing.Point(74, 54);
+			this.lbl_si_livingcountdisp.Name = "lbl_si_livingcountdisp";
+			this.lbl_si_livingcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_livingcountdisp.TabIndex = 11;
+			// 
+			// groupBox17
+			// 
+			this.groupBox17.Controls.Add(this.lbl_si_gendermcount);
+			this.groupBox17.Controls.Add(this.lbl_si_genderfcountdisp);
+			this.groupBox17.Controls.Add(this.lbl_si_genderfcount);
+			this.groupBox17.Controls.Add(this.lbl_si_gendermcountdisp);
+			this.groupBox17.Location = new System.Drawing.Point(6, 164);
+			this.groupBox17.Name = "groupBox17";
+			this.groupBox17.Size = new System.Drawing.Size(149, 79);
+			this.groupBox17.TabIndex = 20;
+			this.groupBox17.TabStop = false;
+			this.groupBox17.Text = "Gender Breakdown";
+			// 
+			// lbl_si_gendermcount
+			// 
+			this.lbl_si_gendermcount.Location = new System.Drawing.Point(6, 23);
+			this.lbl_si_gendermcount.Name = "lbl_si_gendermcount";
+			this.lbl_si_gendermcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_gendermcount.TabIndex = 10;
+			this.lbl_si_gendermcount.Text = "Males";
+			this.lbl_si_gendermcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_genderfcountdisp
+			// 
+			this.lbl_si_genderfcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_genderfcountdisp.Location = new System.Drawing.Point(74, 46);
+			this.lbl_si_genderfcountdisp.Name = "lbl_si_genderfcountdisp";
+			this.lbl_si_genderfcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_genderfcountdisp.TabIndex = 11;
+			// 
+			// lbl_si_genderfcount
+			// 
+			this.lbl_si_genderfcount.Location = new System.Drawing.Point(6, 51);
+			this.lbl_si_genderfcount.Name = "lbl_si_genderfcount";
+			this.lbl_si_genderfcount.Size = new System.Drawing.Size(62, 13);
+			this.lbl_si_genderfcount.TabIndex = 10;
+			this.lbl_si_genderfcount.Text = "Females";
+			this.lbl_si_genderfcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_si_gendermcountdisp
+			// 
+			this.lbl_si_gendermcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_si_gendermcountdisp.Location = new System.Drawing.Point(74, 18);
+			this.lbl_si_gendermcountdisp.Name = "lbl_si_gendermcountdisp";
+			this.lbl_si_gendermcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_si_gendermcountdisp.TabIndex = 11;
+			// 
+			// groupBox15
+			// 
+			this.groupBox15.Controls.Add(this.gb_ki_stats);
+			this.groupBox15.Controls.Add(this.cmb_ki_selectKerb);
+			this.groupBox15.Controls.Add(this.cmb_kerb_list);
+			this.groupBox15.Location = new System.Drawing.Point(6, 374);
+			this.groupBox15.Name = "groupBox15";
+			this.groupBox15.Size = new System.Drawing.Size(337, 186);
+			this.groupBox15.TabIndex = 2;
+			this.groupBox15.TabStop = false;
+			this.groupBox15.Text = "View Kerbal Info";
+			// 
+			// gb_ki_stats
+			// 
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_flightcountdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_stupid);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_statedisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_flightcount);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_stupiddisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_state);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_bravedisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_tourdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_badsdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_statusdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_roledisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_genderdisp);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_bads);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_tour);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_brave);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_status);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_role);
+			this.gb_ki_stats.Controls.Add(this.lbl_ki_gender);
+			this.gb_ki_stats.Location = new System.Drawing.Point(8, 47);
+			this.gb_ki_stats.Name = "gb_ki_stats";
+			this.gb_ki_stats.Size = new System.Drawing.Size(323, 131);
+			this.gb_ki_stats.TabIndex = 2;
+			this.gb_ki_stats.TabStop = false;
+			this.gb_ki_stats.Text = "Stats for: ";
+			// 
+			// lbl_ki_flightcountdisp
+			// 
+			this.lbl_ki_flightcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_flightcountdisp.Location = new System.Drawing.Point(254, 80);
+			this.lbl_ki_flightcountdisp.Name = "lbl_ki_flightcountdisp";
+			this.lbl_ki_flightcountdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_flightcountdisp.TabIndex = 17;
+			// 
+			// lbl_ki_stupid
+			// 
+			this.lbl_ki_stupid.AutoSize = true;
+			this.lbl_ki_stupid.Location = new System.Drawing.Point(201, 40);
+			this.lbl_ki_stupid.Name = "lbl_ki_stupid";
+			this.lbl_ki_stupid.Size = new System.Drawing.Size(47, 13);
+			this.lbl_ki_stupid.TabIndex = 4;
+			this.lbl_ki_stupid.Text = "Stupidity";
+			this.lbl_ki_stupid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_ki_statedisp
+			// 
+			this.lbl_ki_statedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_statedisp.Location = new System.Drawing.Point(254, 59);
+			this.lbl_ki_statedisp.Name = "lbl_ki_statedisp";
+			this.lbl_ki_statedisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_statedisp.TabIndex = 16;
+			// 
+			// lbl_ki_flightcount
+			// 
+			this.lbl_ki_flightcount.AutoSize = true;
+			this.lbl_ki_flightcount.Location = new System.Drawing.Point(211, 85);
+			this.lbl_ki_flightcount.Name = "lbl_ki_flightcount";
+			this.lbl_ki_flightcount.Size = new System.Drawing.Size(37, 13);
+			this.lbl_ki_flightcount.TabIndex = 5;
+			this.lbl_ki_flightcount.Text = "Flights";
+			this.lbl_ki_flightcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_ki_stupiddisp
+			// 
+			this.lbl_ki_stupiddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_stupiddisp.Location = new System.Drawing.Point(254, 35);
+			this.lbl_ki_stupiddisp.Name = "lbl_ki_stupiddisp";
+			this.lbl_ki_stupiddisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_stupiddisp.TabIndex = 15;
+			// 
+			// lbl_ki_state
+			// 
+			this.lbl_ki_state.AutoSize = true;
+			this.lbl_ki_state.Location = new System.Drawing.Point(216, 64);
+			this.lbl_ki_state.Name = "lbl_ki_state";
+			this.lbl_ki_state.Size = new System.Drawing.Size(32, 13);
+			this.lbl_ki_state.TabIndex = 6;
+			this.lbl_ki_state.Text = "State";
+			this.lbl_ki_state.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_ki_bravedisp
+			// 
+			this.lbl_ki_bravedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_bravedisp.Location = new System.Drawing.Point(254, 15);
+			this.lbl_ki_bravedisp.Name = "lbl_ki_bravedisp";
+			this.lbl_ki_bravedisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_bravedisp.TabIndex = 14;
+			// 
+			// lbl_ki_tourdisp
+			// 
+			this.lbl_ki_tourdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_tourdisp.Location = new System.Drawing.Point(74, 104);
+			this.lbl_ki_tourdisp.Name = "lbl_ki_tourdisp";
+			this.lbl_ki_tourdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_tourdisp.TabIndex = 13;
+			// 
+			// lbl_ki_badsdisp
+			// 
+			this.lbl_ki_badsdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_badsdisp.Location = new System.Drawing.Point(74, 80);
+			this.lbl_ki_badsdisp.Name = "lbl_ki_badsdisp";
+			this.lbl_ki_badsdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_badsdisp.TabIndex = 12;
+			// 
+			// lbl_ki_statusdisp
+			// 
+			this.lbl_ki_statusdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_statusdisp.Location = new System.Drawing.Point(74, 59);
+			this.lbl_ki_statusdisp.Name = "lbl_ki_statusdisp";
+			this.lbl_ki_statusdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_statusdisp.TabIndex = 11;
+			// 
+			// lbl_ki_roledisp
+			// 
+			this.lbl_ki_roledisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_roledisp.Location = new System.Drawing.Point(74, 35);
+			this.lbl_ki_roledisp.Name = "lbl_ki_roledisp";
+			this.lbl_ki_roledisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_roledisp.TabIndex = 10;
+			// 
+			// lbl_ki_genderdisp
+			// 
+			this.lbl_ki_genderdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbl_ki_genderdisp.Location = new System.Drawing.Point(74, 15);
+			this.lbl_ki_genderdisp.Name = "lbl_ki_genderdisp";
+			this.lbl_ki_genderdisp.Size = new System.Drawing.Size(63, 23);
+			this.lbl_ki_genderdisp.TabIndex = 9;
+			// 
+			// lbl_ki_bads
+			// 
+			this.lbl_ki_bads.AutoSize = true;
+			this.lbl_ki_bads.Location = new System.Drawing.Point(25, 85);
+			this.lbl_ki_bads.Name = "lbl_ki_bads";
+			this.lbl_ki_bads.Size = new System.Drawing.Size(43, 13);
+			this.lbl_ki_bads.TabIndex = 8;
+			this.lbl_ki_bads.Text = "BadAss";
+			this.lbl_ki_bads.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_ki_tour
+			// 
+			this.lbl_ki_tour.AutoSize = true;
+			this.lbl_ki_tour.Location = new System.Drawing.Point(29, 109);
+			this.lbl_ki_tour.Name = "lbl_ki_tour";
+			this.lbl_ki_tour.Size = new System.Drawing.Size(39, 13);
+			this.lbl_ki_tour.TabIndex = 7;
+			this.lbl_ki_tour.Text = "Tourist";
+			this.lbl_ki_tour.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_ki_brave
+			// 
+			this.lbl_ki_brave.AutoSize = true;
+			this.lbl_ki_brave.Location = new System.Drawing.Point(205, 17);
+			this.lbl_ki_brave.Name = "lbl_ki_brave";
+			this.lbl_ki_brave.Size = new System.Drawing.Size(43, 13);
+			this.lbl_ki_brave.TabIndex = 3;
+			this.lbl_ki_brave.Text = "Bravery";
+			this.lbl_ki_brave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_ki_status
+			// 
+			this.lbl_ki_status.AutoSize = true;
+			this.lbl_ki_status.Location = new System.Drawing.Point(31, 64);
+			this.lbl_ki_status.Name = "lbl_ki_status";
+			this.lbl_ki_status.Size = new System.Drawing.Size(37, 13);
+			this.lbl_ki_status.TabIndex = 2;
+			this.lbl_ki_status.Text = "Status";
+			this.lbl_ki_status.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_ki_role
+			// 
+			this.lbl_ki_role.AutoSize = true;
+			this.lbl_ki_role.Location = new System.Drawing.Point(39, 40);
+			this.lbl_ki_role.Name = "lbl_ki_role";
+			this.lbl_ki_role.Size = new System.Drawing.Size(29, 13);
+			this.lbl_ki_role.TabIndex = 1;
+			this.lbl_ki_role.Text = "Role";
+			this.lbl_ki_role.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lbl_ki_gender
+			// 
+			this.lbl_ki_gender.Location = new System.Drawing.Point(6, 20);
+			this.lbl_ki_gender.Name = "lbl_ki_gender";
+			this.lbl_ki_gender.Size = new System.Drawing.Size(62, 13);
+			this.lbl_ki_gender.TabIndex = 0;
+			this.lbl_ki_gender.Text = "Gender";
+			this.lbl_ki_gender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// cmb_ki_selectKerb
+			// 
+			this.cmb_ki_selectKerb.AutoSize = true;
+			this.cmb_ki_selectKerb.Location = new System.Drawing.Point(6, 22);
+			this.cmb_ki_selectKerb.Name = "cmb_ki_selectKerb";
+			this.cmb_ki_selectKerb.Size = new System.Drawing.Size(80, 13);
+			this.cmb_ki_selectKerb.TabIndex = 1;
+			this.cmb_ki_selectKerb.Text = "Select A Kerbal";
+			// 
+			// cmb_kerb_list
+			// 
+			this.cmb_kerb_list.FormattingEnabled = true;
+			this.cmb_kerb_list.Location = new System.Drawing.Point(92, 19);
+			this.cmb_kerb_list.Name = "cmb_kerb_list";
+			this.cmb_kerb_list.Size = new System.Drawing.Size(239, 21);
+			this.cmb_kerb_list.TabIndex = 0;
+			this.cmb_kerb_list.SelectedIndexChanged += new System.EventHandler(this.cmb_kerb_list_SelectedIndexChanged);
 			// 
 			// lbl_saveSelect
 			// 
@@ -1042,6 +1605,7 @@ namespace KerbalGenerator {
 			this.chk_spe_tourist.TabIndex = 5;
 			this.chk_spe_tourist.Text = "Tourist";
 			this.chk_spe_tourist.UseVisualStyleBackColor = true;
+			this.chk_spe_tourist.CheckedChanged += new System.EventHandler(this.chk_spe_tourist_CheckedChanged);
 			// 
 			// chk_spe_badass
 			// 
@@ -1052,6 +1616,7 @@ namespace KerbalGenerator {
 			this.chk_spe_badass.TabIndex = 4;
 			this.chk_spe_badass.Text = "Badass";
 			this.chk_spe_badass.UseVisualStyleBackColor = true;
+			this.chk_spe_badass.CheckedChanged += new System.EventHandler(this.chk_spe_badass_CheckedChanged);
 			// 
 			// groupBox12
 			// 
@@ -1074,6 +1639,7 @@ namespace KerbalGenerator {
 			this.rd_spe_sci.TabIndex = 2;
 			this.rd_spe_sci.Text = "Scientist";
 			this.rd_spe_sci.UseVisualStyleBackColor = true;
+			this.rd_spe_sci.CheckedChanged += new System.EventHandler(this.rd_spe_sci_CheckedChanged);
 			// 
 			// rd_spe_engi
 			// 
@@ -1084,6 +1650,7 @@ namespace KerbalGenerator {
 			this.rd_spe_engi.TabIndex = 1;
 			this.rd_spe_engi.Text = "Engineer";
 			this.rd_spe_engi.UseVisualStyleBackColor = true;
+			this.rd_spe_engi.CheckedChanged += new System.EventHandler(this.rd_spe_engi_CheckedChanged);
 			// 
 			// rd_spe_pilot
 			// 
@@ -1096,6 +1663,7 @@ namespace KerbalGenerator {
 			this.rd_spe_pilot.TabStop = true;
 			this.rd_spe_pilot.Text = "Pilot";
 			this.rd_spe_pilot.UseVisualStyleBackColor = true;
+			this.rd_spe_pilot.CheckedChanged += new System.EventHandler(this.rd_spe_pilot_CheckedChanged);
 			// 
 			// groupBox11
 			// 
@@ -1119,6 +1687,7 @@ namespace KerbalGenerator {
 			this.rd_spe_genderfemale.TabStop = true;
 			this.rd_spe_genderfemale.Text = "Female";
 			this.rd_spe_genderfemale.UseVisualStyleBackColor = true;
+			this.rd_spe_genderfemale.CheckedChanged += new System.EventHandler(this.rd_spe_genderfemale_CheckedChanged);
 			// 
 			// rd_spe_gendermale
 			// 
@@ -1129,6 +1698,7 @@ namespace KerbalGenerator {
 			this.rd_spe_gendermale.TabIndex = 0;
 			this.rd_spe_gendermale.Text = "Male";
 			this.rd_spe_gendermale.UseVisualStyleBackColor = true;
+			this.rd_spe_gendermale.CheckedChanged += new System.EventHandler(this.rd_spe_gendermale_CheckedChanged);
 			// 
 			// txt_spe_kerbname
 			// 
@@ -1147,475 +1717,6 @@ namespace KerbalGenerator {
 			this.label28.Size = new System.Drawing.Size(35, 13);
 			this.label28.TabIndex = 0;
 			this.label28.Text = "Name";
-			// 
-			// panel3
-			// 
-			panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			panel3.Controls.Add(this.groupBox16);
-			panel3.Controls.Add(this.groupBox15);
-			panel3.Location = new System.Drawing.Point(696, 120);
-			panel3.Name = "panel3";
-			panel3.Size = new System.Drawing.Size(346, 636);
-			panel3.TabIndex = 9;
-			// 
-			// groupBox16
-			// 
-			this.groupBox16.Controls.Add(this.gb_si_statusBkdwn);
-			this.groupBox16.Controls.Add(this.gb_si_CrewBkdwn);
-			this.groupBox16.Controls.Add(this.groupBox20);
-			this.groupBox16.Controls.Add(this.groupBox19);
-			this.groupBox16.Controls.Add(this.groupBox18);
-			this.groupBox16.Controls.Add(this.groupBox17);
-			this.groupBox16.Location = new System.Drawing.Point(6, 3);
-			this.groupBox16.Name = "groupBox16";
-			this.groupBox16.Size = new System.Drawing.Size(328, 357);
-			this.groupBox16.TabIndex = 3;
-			this.groupBox16.TabStop = false;
-			this.groupBox16.Text = "Save Info";
-			// 
-			// groupBox20
-			// 
-			this.groupBox20.Controls.Add(this.lbl_si_badscount);
-			this.groupBox20.Controls.Add(this.lbl_si_tourcountdisp);
-			this.groupBox20.Controls.Add(this.lbl_si_tourcount);
-			this.groupBox20.Controls.Add(this.lbl_si_badscountdisp);
-			this.groupBox20.Location = new System.Drawing.Point(161, 164);
-			this.groupBox20.Name = "groupBox20";
-			this.groupBox20.Size = new System.Drawing.Size(149, 79);
-			this.groupBox20.TabIndex = 21;
-			this.groupBox20.TabStop = false;
-			this.groupBox20.Text = "Trait Breakdown";
-			// 
-			// lbl_si_badscount
-			// 
-			this.lbl_si_badscount.Location = new System.Drawing.Point(6, 23);
-			this.lbl_si_badscount.Name = "lbl_si_badscount";
-			this.lbl_si_badscount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_badscount.TabIndex = 10;
-			this.lbl_si_badscount.Text = "Badass";
-			this.lbl_si_badscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_tourcountdisp
-			// 
-			this.lbl_si_tourcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_tourcountdisp.Location = new System.Drawing.Point(74, 46);
-			this.lbl_si_tourcountdisp.Name = "lbl_si_tourcountdisp";
-			this.lbl_si_tourcountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_tourcountdisp.TabIndex = 11;
-			// 
-			// lbl_si_tourcount
-			// 
-			this.lbl_si_tourcount.Location = new System.Drawing.Point(6, 51);
-			this.lbl_si_tourcount.Name = "lbl_si_tourcount";
-			this.lbl_si_tourcount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_tourcount.TabIndex = 10;
-			this.lbl_si_tourcount.Text = "Tourist";
-			this.lbl_si_tourcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_badscountdisp
-			// 
-			this.lbl_si_badscountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_badscountdisp.Location = new System.Drawing.Point(74, 18);
-			this.lbl_si_badscountdisp.Name = "lbl_si_badscountdisp";
-			this.lbl_si_badscountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_badscountdisp.TabIndex = 11;
-			// 
-			// groupBox19
-			// 
-			this.groupBox19.Controls.Add(this.lbl_si_scicountdisp);
-			this.groupBox19.Controls.Add(this.lbl_si_pilotcount);
-			this.groupBox19.Controls.Add(this.lbl_si_pilotcountdisp);
-			this.groupBox19.Controls.Add(this.lbl_si_scicount);
-			this.groupBox19.Controls.Add(this.lbl_si_engicount);
-			this.groupBox19.Controls.Add(this.lbl_si_engicountdisp);
-			this.groupBox19.Location = new System.Drawing.Point(161, 19);
-			this.groupBox19.Name = "groupBox19";
-			this.groupBox19.Size = new System.Drawing.Size(149, 139);
-			this.groupBox19.TabIndex = 22;
-			this.groupBox19.TabStop = false;
-			this.groupBox19.Text = "Profession Breakdown";
-			// 
-			// lbl_si_scicountdisp
-			// 
-			this.lbl_si_scicountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_scicountdisp.Location = new System.Drawing.Point(74, 87);
-			this.lbl_si_scicountdisp.Name = "lbl_si_scicountdisp";
-			this.lbl_si_scicountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_scicountdisp.TabIndex = 11;
-			// 
-			// lbl_si_pilotcount
-			// 
-			this.lbl_si_pilotcount.Location = new System.Drawing.Point(6, 21);
-			this.lbl_si_pilotcount.Name = "lbl_si_pilotcount";
-			this.lbl_si_pilotcount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_pilotcount.TabIndex = 10;
-			this.lbl_si_pilotcount.Text = "Pilots";
-			this.lbl_si_pilotcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_pilotcountdisp
-			// 
-			this.lbl_si_pilotcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_pilotcountdisp.Location = new System.Drawing.Point(74, 16);
-			this.lbl_si_pilotcountdisp.Name = "lbl_si_pilotcountdisp";
-			this.lbl_si_pilotcountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_pilotcountdisp.TabIndex = 11;
-			// 
-			// lbl_si_scicount
-			// 
-			this.lbl_si_scicount.Location = new System.Drawing.Point(6, 92);
-			this.lbl_si_scicount.Name = "lbl_si_scicount";
-			this.lbl_si_scicount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_scicount.TabIndex = 10;
-			this.lbl_si_scicount.Text = "Scientists";
-			this.lbl_si_scicount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_engicount
-			// 
-			this.lbl_si_engicount.Location = new System.Drawing.Point(6, 59);
-			this.lbl_si_engicount.Name = "lbl_si_engicount";
-			this.lbl_si_engicount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_engicount.TabIndex = 20;
-			this.lbl_si_engicount.Text = "Engineers";
-			this.lbl_si_engicount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_engicountdisp
-			// 
-			this.lbl_si_engicountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_engicountdisp.Location = new System.Drawing.Point(74, 54);
-			this.lbl_si_engicountdisp.Name = "lbl_si_engicountdisp";
-			this.lbl_si_engicountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_engicountdisp.TabIndex = 21;
-			// 
-			// groupBox18
-			// 
-			this.groupBox18.Controls.Add(this.lbl_si_livingcount);
-			this.groupBox18.Controls.Add(this.lbl_si_kerbcountdisp);
-			this.groupBox18.Controls.Add(this.lbl_si_deadcountdisp);
-			this.groupBox18.Controls.Add(this.lbl_si_deadcount);
-			this.groupBox18.Controls.Add(this.lbl_si_kerbcount);
-			this.groupBox18.Controls.Add(this.lbl_si_livingcountdisp);
-			this.groupBox18.Location = new System.Drawing.Point(6, 19);
-			this.groupBox18.Name = "groupBox18";
-			this.groupBox18.Size = new System.Drawing.Size(149, 139);
-			this.groupBox18.TabIndex = 21;
-			this.groupBox18.TabStop = false;
-			this.groupBox18.Text = "General Info";
-			// 
-			// lbl_si_livingcount
-			// 
-			this.lbl_si_livingcount.Location = new System.Drawing.Point(6, 59);
-			this.lbl_si_livingcount.Name = "lbl_si_livingcount";
-			this.lbl_si_livingcount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_livingcount.TabIndex = 10;
-			this.lbl_si_livingcount.Text = "Living";
-			this.lbl_si_livingcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_kerbcountdisp
-			// 
-			this.lbl_si_kerbcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_kerbcountdisp.Location = new System.Drawing.Point(74, 16);
-			this.lbl_si_kerbcountdisp.Name = "lbl_si_kerbcountdisp";
-			this.lbl_si_kerbcountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_kerbcountdisp.TabIndex = 19;
-			// 
-			// lbl_si_deadcountdisp
-			// 
-			this.lbl_si_deadcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_deadcountdisp.Location = new System.Drawing.Point(74, 87);
-			this.lbl_si_deadcountdisp.Name = "lbl_si_deadcountdisp";
-			this.lbl_si_deadcountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_deadcountdisp.TabIndex = 11;
-			// 
-			// lbl_si_deadcount
-			// 
-			this.lbl_si_deadcount.Location = new System.Drawing.Point(6, 92);
-			this.lbl_si_deadcount.Name = "lbl_si_deadcount";
-			this.lbl_si_deadcount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_deadcount.TabIndex = 10;
-			this.lbl_si_deadcount.Text = "Dead";
-			this.lbl_si_deadcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_kerbcount
-			// 
-			this.lbl_si_kerbcount.Location = new System.Drawing.Point(6, 21);
-			this.lbl_si_kerbcount.Name = "lbl_si_kerbcount";
-			this.lbl_si_kerbcount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_kerbcount.TabIndex = 18;
-			this.lbl_si_kerbcount.Text = "Kerbals";
-			this.lbl_si_kerbcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_livingcountdisp
-			// 
-			this.lbl_si_livingcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_livingcountdisp.Location = new System.Drawing.Point(74, 54);
-			this.lbl_si_livingcountdisp.Name = "lbl_si_livingcountdisp";
-			this.lbl_si_livingcountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_livingcountdisp.TabIndex = 11;
-			// 
-			// groupBox17
-			// 
-			this.groupBox17.Controls.Add(this.lbl_si_gendermcount);
-			this.groupBox17.Controls.Add(this.lbl_si_genderfcountdisp);
-			this.groupBox17.Controls.Add(this.lbl_si_genderfcount);
-			this.groupBox17.Controls.Add(this.lbl_si_gendermcountdisp);
-			this.groupBox17.Location = new System.Drawing.Point(6, 164);
-			this.groupBox17.Name = "groupBox17";
-			this.groupBox17.Size = new System.Drawing.Size(149, 79);
-			this.groupBox17.TabIndex = 20;
-			this.groupBox17.TabStop = false;
-			this.groupBox17.Text = "Gender Breakdown";
-			// 
-			// lbl_si_gendermcount
-			// 
-			this.lbl_si_gendermcount.Location = new System.Drawing.Point(6, 23);
-			this.lbl_si_gendermcount.Name = "lbl_si_gendermcount";
-			this.lbl_si_gendermcount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_gendermcount.TabIndex = 10;
-			this.lbl_si_gendermcount.Text = "Males";
-			this.lbl_si_gendermcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_genderfcountdisp
-			// 
-			this.lbl_si_genderfcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_genderfcountdisp.Location = new System.Drawing.Point(74, 46);
-			this.lbl_si_genderfcountdisp.Name = "lbl_si_genderfcountdisp";
-			this.lbl_si_genderfcountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_genderfcountdisp.TabIndex = 11;
-			// 
-			// lbl_si_genderfcount
-			// 
-			this.lbl_si_genderfcount.Location = new System.Drawing.Point(6, 51);
-			this.lbl_si_genderfcount.Name = "lbl_si_genderfcount";
-			this.lbl_si_genderfcount.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_genderfcount.TabIndex = 10;
-			this.lbl_si_genderfcount.Text = "Females";
-			this.lbl_si_genderfcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_gendermcountdisp
-			// 
-			this.lbl_si_gendermcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_gendermcountdisp.Location = new System.Drawing.Point(74, 18);
-			this.lbl_si_gendermcountdisp.Name = "lbl_si_gendermcountdisp";
-			this.lbl_si_gendermcountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_gendermcountdisp.TabIndex = 11;
-			// 
-			// groupBox15
-			// 
-			this.groupBox15.Controls.Add(this.gb_ki_stats);
-			this.groupBox15.Controls.Add(this.cmb_ki_selectKerb);
-			this.groupBox15.Controls.Add(this.cmb_kerb_list);
-			this.groupBox15.Location = new System.Drawing.Point(6, 374);
-			this.groupBox15.Name = "groupBox15";
-			this.groupBox15.Size = new System.Drawing.Size(337, 186);
-			this.groupBox15.TabIndex = 2;
-			this.groupBox15.TabStop = false;
-			this.groupBox15.Text = "View Kerbal Info";
-			// 
-			// gb_ki_stats
-			// 
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_flightcountdisp);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_stupid);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_statedisp);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_flightcount);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_stupiddisp);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_state);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_bravedisp);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_tourdisp);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_badsdisp);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_statusdisp);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_roledisp);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_genderdisp);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_bads);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_tour);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_brave);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_status);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_role);
-			this.gb_ki_stats.Controls.Add(this.lbl_ki_gender);
-			this.gb_ki_stats.Location = new System.Drawing.Point(8, 47);
-			this.gb_ki_stats.Name = "gb_ki_stats";
-			this.gb_ki_stats.Size = new System.Drawing.Size(323, 131);
-			this.gb_ki_stats.TabIndex = 2;
-			this.gb_ki_stats.TabStop = false;
-			this.gb_ki_stats.Text = "Stats for: ";
-			// 
-			// lbl_ki_flightcountdisp
-			// 
-			this.lbl_ki_flightcountdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_ki_flightcountdisp.Location = new System.Drawing.Point(254, 80);
-			this.lbl_ki_flightcountdisp.Name = "lbl_ki_flightcountdisp";
-			this.lbl_ki_flightcountdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_ki_flightcountdisp.TabIndex = 17;
-			// 
-			// lbl_ki_stupid
-			// 
-			this.lbl_ki_stupid.AutoSize = true;
-			this.lbl_ki_stupid.Location = new System.Drawing.Point(201, 40);
-			this.lbl_ki_stupid.Name = "lbl_ki_stupid";
-			this.lbl_ki_stupid.Size = new System.Drawing.Size(47, 13);
-			this.lbl_ki_stupid.TabIndex = 4;
-			this.lbl_ki_stupid.Text = "Stupidity";
-			this.lbl_ki_stupid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_ki_statedisp
-			// 
-			this.lbl_ki_statedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_ki_statedisp.Location = new System.Drawing.Point(254, 59);
-			this.lbl_ki_statedisp.Name = "lbl_ki_statedisp";
-			this.lbl_ki_statedisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_ki_statedisp.TabIndex = 16;
-			// 
-			// lbl_ki_flightcount
-			// 
-			this.lbl_ki_flightcount.AutoSize = true;
-			this.lbl_ki_flightcount.Location = new System.Drawing.Point(211, 85);
-			this.lbl_ki_flightcount.Name = "lbl_ki_flightcount";
-			this.lbl_ki_flightcount.Size = new System.Drawing.Size(37, 13);
-			this.lbl_ki_flightcount.TabIndex = 5;
-			this.lbl_ki_flightcount.Text = "Flights";
-			this.lbl_ki_flightcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_ki_stupiddisp
-			// 
-			this.lbl_ki_stupiddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_ki_stupiddisp.Location = new System.Drawing.Point(254, 35);
-			this.lbl_ki_stupiddisp.Name = "lbl_ki_stupiddisp";
-			this.lbl_ki_stupiddisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_ki_stupiddisp.TabIndex = 15;
-			// 
-			// lbl_ki_state
-			// 
-			this.lbl_ki_state.AutoSize = true;
-			this.lbl_ki_state.Location = new System.Drawing.Point(216, 64);
-			this.lbl_ki_state.Name = "lbl_ki_state";
-			this.lbl_ki_state.Size = new System.Drawing.Size(32, 13);
-			this.lbl_ki_state.TabIndex = 6;
-			this.lbl_ki_state.Text = "State";
-			this.lbl_ki_state.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_ki_bravedisp
-			// 
-			this.lbl_ki_bravedisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_ki_bravedisp.Location = new System.Drawing.Point(254, 15);
-			this.lbl_ki_bravedisp.Name = "lbl_ki_bravedisp";
-			this.lbl_ki_bravedisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_ki_bravedisp.TabIndex = 14;
-			// 
-			// lbl_ki_tourdisp
-			// 
-			this.lbl_ki_tourdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_ki_tourdisp.Location = new System.Drawing.Point(74, 104);
-			this.lbl_ki_tourdisp.Name = "lbl_ki_tourdisp";
-			this.lbl_ki_tourdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_ki_tourdisp.TabIndex = 13;
-			// 
-			// lbl_ki_badsdisp
-			// 
-			this.lbl_ki_badsdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_ki_badsdisp.Location = new System.Drawing.Point(74, 80);
-			this.lbl_ki_badsdisp.Name = "lbl_ki_badsdisp";
-			this.lbl_ki_badsdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_ki_badsdisp.TabIndex = 12;
-			// 
-			// lbl_ki_statusdisp
-			// 
-			this.lbl_ki_statusdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_ki_statusdisp.Location = new System.Drawing.Point(74, 59);
-			this.lbl_ki_statusdisp.Name = "lbl_ki_statusdisp";
-			this.lbl_ki_statusdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_ki_statusdisp.TabIndex = 11;
-			// 
-			// lbl_ki_roledisp
-			// 
-			this.lbl_ki_roledisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_ki_roledisp.Location = new System.Drawing.Point(74, 35);
-			this.lbl_ki_roledisp.Name = "lbl_ki_roledisp";
-			this.lbl_ki_roledisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_ki_roledisp.TabIndex = 10;
-			// 
-			// lbl_ki_genderdisp
-			// 
-			this.lbl_ki_genderdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_ki_genderdisp.Location = new System.Drawing.Point(74, 15);
-			this.lbl_ki_genderdisp.Name = "lbl_ki_genderdisp";
-			this.lbl_ki_genderdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_ki_genderdisp.TabIndex = 9;
-			// 
-			// lbl_ki_bads
-			// 
-			this.lbl_ki_bads.AutoSize = true;
-			this.lbl_ki_bads.Location = new System.Drawing.Point(25, 85);
-			this.lbl_ki_bads.Name = "lbl_ki_bads";
-			this.lbl_ki_bads.Size = new System.Drawing.Size(43, 13);
-			this.lbl_ki_bads.TabIndex = 8;
-			this.lbl_ki_bads.Text = "BadAss";
-			this.lbl_ki_bads.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_ki_tour
-			// 
-			this.lbl_ki_tour.AutoSize = true;
-			this.lbl_ki_tour.Location = new System.Drawing.Point(29, 109);
-			this.lbl_ki_tour.Name = "lbl_ki_tour";
-			this.lbl_ki_tour.Size = new System.Drawing.Size(39, 13);
-			this.lbl_ki_tour.TabIndex = 7;
-			this.lbl_ki_tour.Text = "Tourist";
-			this.lbl_ki_tour.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_ki_brave
-			// 
-			this.lbl_ki_brave.AutoSize = true;
-			this.lbl_ki_brave.Location = new System.Drawing.Point(205, 17);
-			this.lbl_ki_brave.Name = "lbl_ki_brave";
-			this.lbl_ki_brave.Size = new System.Drawing.Size(43, 13);
-			this.lbl_ki_brave.TabIndex = 3;
-			this.lbl_ki_brave.Text = "Bravery";
-			this.lbl_ki_brave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_ki_status
-			// 
-			this.lbl_ki_status.AutoSize = true;
-			this.lbl_ki_status.Location = new System.Drawing.Point(31, 64);
-			this.lbl_ki_status.Name = "lbl_ki_status";
-			this.lbl_ki_status.Size = new System.Drawing.Size(37, 13);
-			this.lbl_ki_status.TabIndex = 2;
-			this.lbl_ki_status.Text = "Status";
-			this.lbl_ki_status.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_ki_role
-			// 
-			this.lbl_ki_role.AutoSize = true;
-			this.lbl_ki_role.Location = new System.Drawing.Point(39, 40);
-			this.lbl_ki_role.Name = "lbl_ki_role";
-			this.lbl_ki_role.Size = new System.Drawing.Size(29, 13);
-			this.lbl_ki_role.TabIndex = 1;
-			this.lbl_ki_role.Text = "Role";
-			this.lbl_ki_role.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_ki_gender
-			// 
-			this.lbl_ki_gender.Location = new System.Drawing.Point(6, 20);
-			this.lbl_ki_gender.Name = "lbl_ki_gender";
-			this.lbl_ki_gender.Size = new System.Drawing.Size(62, 13);
-			this.lbl_ki_gender.TabIndex = 0;
-			this.lbl_ki_gender.Text = "Gender";
-			this.lbl_ki_gender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// cmb_ki_selectKerb
-			// 
-			this.cmb_ki_selectKerb.AutoSize = true;
-			this.cmb_ki_selectKerb.Location = new System.Drawing.Point(6, 22);
-			this.cmb_ki_selectKerb.Name = "cmb_ki_selectKerb";
-			this.cmb_ki_selectKerb.Size = new System.Drawing.Size(80, 13);
-			this.cmb_ki_selectKerb.TabIndex = 1;
-			this.cmb_ki_selectKerb.Text = "Select A Kerbal";
-			// 
-			// cmb_kerb_list
-			// 
-			this.cmb_kerb_list.FormattingEnabled = true;
-			this.cmb_kerb_list.Location = new System.Drawing.Point(92, 19);
-			this.cmb_kerb_list.Name = "cmb_kerb_list";
-			this.cmb_kerb_list.Size = new System.Drawing.Size(239, 21);
-			this.cmb_kerb_list.TabIndex = 0;
-			this.cmb_kerb_list.SelectedIndexChanged += new System.EventHandler(this.cmb_kerb_list_SelectedIndexChanged);
 			// 
 			// pnl_po_options
 			// 
@@ -1688,100 +1789,6 @@ namespace KerbalGenerator {
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
-			// gb_si_CrewBkdwn
-			// 
-			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_hired);
-			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_applcntdisp);
-			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_hireddisp);
-			this.gb_si_CrewBkdwn.Controls.Add(this.lbl_si_applicants);
-			this.gb_si_CrewBkdwn.Location = new System.Drawing.Point(6, 247);
-			this.gb_si_CrewBkdwn.Name = "gb_si_CrewBkdwn";
-			this.gb_si_CrewBkdwn.Size = new System.Drawing.Size(149, 94);
-			this.gb_si_CrewBkdwn.TabIndex = 23;
-			this.gb_si_CrewBkdwn.TabStop = false;
-			this.gb_si_CrewBkdwn.Text = "Crew BreakDown";
-			// 
-			// lbl_si_hired
-			// 
-			this.lbl_si_hired.Location = new System.Drawing.Point(5, 31);
-			this.lbl_si_hired.Name = "lbl_si_hired";
-			this.lbl_si_hired.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_hired.TabIndex = 12;
-			this.lbl_si_hired.Text = "Hired";
-			this.lbl_si_hired.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_applcntdisp
-			// 
-			this.lbl_si_applcntdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_applcntdisp.Location = new System.Drawing.Point(73, 54);
-			this.lbl_si_applcntdisp.Name = "lbl_si_applcntdisp";
-			this.lbl_si_applcntdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_applcntdisp.TabIndex = 14;
-			// 
-			// lbl_si_applicants
-			// 
-			this.lbl_si_applicants.Location = new System.Drawing.Point(5, 59);
-			this.lbl_si_applicants.Name = "lbl_si_applicants";
-			this.lbl_si_applicants.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_applicants.TabIndex = 13;
-			this.lbl_si_applicants.Text = "Applicants";
-			this.lbl_si_applicants.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_hireddisp
-			// 
-			this.lbl_si_hireddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_hireddisp.Location = new System.Drawing.Point(73, 26);
-			this.lbl_si_hireddisp.Name = "lbl_si_hireddisp";
-			this.lbl_si_hireddisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_hireddisp.TabIndex = 15;
-			// 
-			// gb_si_statusBkdwn
-			// 
-			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_assigned);
-			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_availdisp);
-			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_assigneddisp);
-			this.gb_si_statusBkdwn.Controls.Add(this.lbl_si_avail);
-			this.gb_si_statusBkdwn.Location = new System.Drawing.Point(161, 247);
-			this.gb_si_statusBkdwn.Name = "gb_si_statusBkdwn";
-			this.gb_si_statusBkdwn.Size = new System.Drawing.Size(149, 94);
-			this.gb_si_statusBkdwn.TabIndex = 24;
-			this.gb_si_statusBkdwn.TabStop = false;
-			this.gb_si_statusBkdwn.Text = "Status BreakDown";
-			// 
-			// lbl_si_assigned
-			// 
-			this.lbl_si_assigned.Location = new System.Drawing.Point(5, 31);
-			this.lbl_si_assigned.Name = "lbl_si_assigned";
-			this.lbl_si_assigned.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_assigned.TabIndex = 12;
-			this.lbl_si_assigned.Text = "Assigned";
-			this.lbl_si_assigned.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// lbl_si_availdisp
-			// 
-			this.lbl_si_availdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_availdisp.Location = new System.Drawing.Point(73, 54);
-			this.lbl_si_availdisp.Name = "lbl_si_availdisp";
-			this.lbl_si_availdisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_availdisp.TabIndex = 14;
-			// 
-			// lbl_si_assigneddisp
-			// 
-			this.lbl_si_assigneddisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_si_assigneddisp.Location = new System.Drawing.Point(73, 26);
-			this.lbl_si_assigneddisp.Name = "lbl_si_assigneddisp";
-			this.lbl_si_assigneddisp.Size = new System.Drawing.Size(63, 23);
-			this.lbl_si_assigneddisp.TabIndex = 15;
-			// 
-			// lbl_si_avail
-			// 
-			this.lbl_si_avail.Location = new System.Drawing.Point(5, 59);
-			this.lbl_si_avail.Name = "lbl_si_avail";
-			this.lbl_si_avail.Size = new System.Drawing.Size(62, 13);
-			this.lbl_si_avail.TabIndex = 13;
-			this.lbl_si_avail.Text = "Available";
-			this.lbl_si_avail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
 			// frm_Krb_Gen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1801,6 +1808,18 @@ namespace KerbalGenerator {
 			this.Text = "Kerbal Generator";
 			this.Load += new System.EventHandler(this.frm_Krb_Gen_Load);
 			gb_po_options.ResumeLayout(false);
+			panel3.ResumeLayout(false);
+			this.groupBox16.ResumeLayout(false);
+			this.gb_si_statusBkdwn.ResumeLayout(false);
+			this.gb_si_CrewBkdwn.ResumeLayout(false);
+			this.groupBox20.ResumeLayout(false);
+			this.groupBox19.ResumeLayout(false);
+			this.groupBox18.ResumeLayout(false);
+			this.groupBox17.ResumeLayout(false);
+			this.groupBox15.ResumeLayout(false);
+			this.groupBox15.PerformLayout();
+			this.gb_ki_stats.ResumeLayout(false);
+			this.gb_ki_stats.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
@@ -1842,24 +1861,12 @@ namespace KerbalGenerator {
 			this.groupBox12.PerformLayout();
 			this.groupBox11.ResumeLayout(false);
 			this.groupBox11.PerformLayout();
-			panel3.ResumeLayout(false);
-			this.groupBox16.ResumeLayout(false);
-			this.groupBox20.ResumeLayout(false);
-			this.groupBox19.ResumeLayout(false);
-			this.groupBox18.ResumeLayout(false);
-			this.groupBox17.ResumeLayout(false);
-			this.groupBox15.ResumeLayout(false);
-			this.groupBox15.PerformLayout();
-			this.gb_ki_stats.ResumeLayout(false);
-			this.gb_ki_stats.PerformLayout();
 			this.pnl_po_options.ResumeLayout(false);
 			this.pnl_po_options.PerformLayout();
 			this.panel5.ResumeLayout(false);
 			this.panel6.ResumeLayout(false);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
-			this.gb_si_CrewBkdwn.ResumeLayout(false);
-			this.gb_si_statusBkdwn.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

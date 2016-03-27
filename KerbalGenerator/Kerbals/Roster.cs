@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace KerbalGenerator {
-	class Roster {
+	public class Roster {
 		private Dictionary<string, Kerbal>kerbals;
+
 		public Roster( ) {
 			kerbals = new Dictionary<string, Kerbal>( );
 		}

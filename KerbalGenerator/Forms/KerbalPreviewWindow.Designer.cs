@@ -114,5 +114,8 @@ namespace KerbalGenerator {
 		private System.Windows.Forms.Button btn_no;
 		private System.Windows.Forms.Button btn_yes;
 		private Label label1;
+		private Roster r;
+
+
 	}
 }

@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace KerbalGenerator {
 	public partial class KerbalPreviewWindow : Form {
+
 		public KerbalPreviewWindow( Kerbal k ) {
 			InitializeComponent( );
 			txt_preview.Text = FormatKerbalText( k );
 		}
-
+		
+		public KerbalPreviewWindow( Roster r ) {
+			
+			InitializeComponent( );
+			foreach(Kerbal k in r.getKerbals() ) {
+				txt_preview.Text += FormatKerbalText( k );
+			}
+		}
+		
 		private void btn_preview_close_Click( object sender, EventArgs e ) {
 			this.Close( );
 		}
