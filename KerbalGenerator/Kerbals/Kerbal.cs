@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System;
 
+using KerbalGenerator.Logging;
+
 namespace KerbalGenerator {
 	/// <summary>
 	/// Data class to hold kerbal information
@@ -17,15 +19,28 @@ namespace KerbalGenerator {
 			List<KeyValuePair<string, string>> careerLog,
 			List<KeyValuePair<string, string>> flightLog ) {
 			Stats = stats;
+
 			CareerLog = careerLog;
 			FlightLog = flightLog;
+
+			Logger.LogEvent( "Read New Kerbal Created With Stats: " );
+			LogStats( Stats );
+			LogStats( CareerLog );
+			LogStats( FlightLog );
+
+			
 		}
 
 		//For Kerbals that we're creating.
 		public Kerbal( List<KeyValuePair<string, string>> stats ) {
 			Stats = stats;
+
+			Logger.LogEvent( "Read New Kerbal Created With Stats: " );
+			LogStats( Stats );
 			CareerLog = new List<KeyValuePair<string, string>>( );
 			FlightLog = new List<KeyValuePair<string, string>>( );
+			CareerLog.Add( new KeyValuePair<string, string>( "flight", "0" ) );
+			FlightLog.Add( new KeyValuePair<string, string>( "flight", "0" ) );
 		}
 
 		//Fucking Stupid, But I'll do it.
@@ -46,6 +61,12 @@ namespace KerbalGenerator {
 				}
 			}
 			return null;
+		}
+
+		private void LogStats(List<KeyValuePair<string, string>> stats ) {
+			foreach ( KeyValuePair<string, string> kvp in stats ) {
+				Logger.LogNewLine( kvp.Key + ":" + kvp.Value );
+			}
 		}
 	}
 }

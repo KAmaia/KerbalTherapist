@@ -63,7 +63,12 @@ namespace KerbalGenerator.Kerbals {
 				newKerbalNode.AddConfigNode( newFlightLogNode );
 				newRoster.AddConfigNode( newKerbalNode );
 			}
-			persistent.SetNode( "ROSTER", newRoster );
+			ConfigNode oldRoster = persistent.GetNode( "ROSTER" );
+
+			oldRoster.ClearData( );
+			foreach(ConfigNode kerbalNode in newRoster.GetNodes("KERBAL") ) {
+				oldRoster.AddConfigNode( kerbalNode );
+			}
 		}
 
 	}

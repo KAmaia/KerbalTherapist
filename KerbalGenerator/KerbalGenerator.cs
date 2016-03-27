@@ -15,7 +15,6 @@ using KerbalGenerator.Logging;
 namespace KerbalGenerator {
 	class KerbalGenerator {
 		#region class variables
-		private string appData;
 		private readonly string configPath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BadWater"),"KerbalGen"),"Config");
 		private readonly string logPath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BadWater"),"KerbalGen"), "Logs");
 
@@ -27,7 +26,9 @@ namespace KerbalGenerator {
 		private Configurator cfgr;
 		private KerbalMaker km;
 		private frm_Krb_Gen MainForm;
+
 		private ConfigNode persistent;
+		private ConfigNode currentGame;
 		private string currentSavePath;
 
 
@@ -140,7 +141,7 @@ namespace KerbalGenerator {
 		/// Parses the Roster Node Into A Roster Object
 		/// </summary>
 		private void ParseRoster( ) {
-			ConfigNode currentGame = persistent.GetNode("GAME");
+			currentGame = persistent.GetNode("GAME");
 			roster = RosterParser.GetRoster( currentGame );
 		}
 
@@ -149,10 +150,15 @@ namespace KerbalGenerator {
 		/// </summary>
 		/// <param name="saveFile">No longer used.  There because I'm afraid Removing It Will break Something.</param>
 		public void Save( string saveFile ) {
-			RosterParser.InsertRoster( roster, persistent );
+			RosterParser.InsertRoster( roster, currentGame );
+			
 			persistent.Save( currentSavePath );
+			
 		}
-
+		/// <summary>
+		/// Create a New Kerbal, and Add to the Temporary Roster
+		/// </summary>
+		/// <param name="sa">The Specific Accumulator To Use.</param>
 		public void KreateKerbal(SpecificAccumulator sa ) {
 			Kerbal k = KerbalMaker.KreateKerbal(sa);
 			switch ( PreviewKerbal( k ) ) {
@@ -182,7 +188,6 @@ namespace KerbalGenerator {
 		/// <returns></returns>
 		private DialogResult PreviewKerbal( Kerbal k ) {
 			return new KerbalPreviewWindow( k ).ShowDialog( );
-
 		}
 
 		private DialogResult PreviewRoster(Roster r ) {
