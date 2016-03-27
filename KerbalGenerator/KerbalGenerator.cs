@@ -10,11 +10,15 @@ using System.Windows.Forms;
 using ConfigNodeParser;
 using KerbalGenerator.Kerbals;
 using KerbalGenerator.Accumulators;
+using KerbalGenerator.Logging;
 
 namespace KerbalGenerator {
 	class KerbalGenerator {
 		#region class variables
-		private readonly string configPath = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BadWater"),"KerbalGen");
+		private string appData;
+		private readonly string configPath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BadWater"),"KerbalGen"),"Config");
+		private readonly string logPath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BadWater"),"KerbalGen"), "Logs");
+
 
 		private Config config;
 		private Kerbal currentKerbal;
@@ -50,6 +54,7 @@ namespace KerbalGenerator {
 		/// </summary>
 		private void Initialize( ) {
 			if ( FirstRun( ) ) {
+				Logger.LogEvent( "First Run At: " + DateTime.Now.ToString( ) );
 				MainForm.SetAllControls( false );
 				cfgr.FirstRun( );
 			}
@@ -66,7 +71,7 @@ namespace KerbalGenerator {
 		/// </summary>
 		/// <param name="index">Should Always be 0</param>
 		private void selectSave( int index ) {
-			currentSavePath = Cfg.SavePaths.Values.ElementAt( 0 );
+			currentSavePath = config.SavePaths.Values.ElementAt( 0 );
 			persistent = ConfigNode.Load( currentSavePath );
 			ParseRoster( );
 		}
@@ -128,6 +133,7 @@ namespace KerbalGenerator {
 		/// </summary>
 		internal void UpdateSaveStats( ) {
 			MainForm.UpdateSaveStats( currentSavePath, new KerbalKounter( ).KountKerbals( roster ) );
+			MainForm.UpdateKerbalList( );
 		}
 		
 		/// <summary>

@@ -40,9 +40,6 @@ namespace KerbalGenerator {
 				ShowPathError( validPath ? "Valid Saves Found.  Click Create Config to Continue" : "Sorry, no Valid Saves in that directory", validPath );
 			}
 		}
-
-		private void txt_kspPath_TextChanged_1( object sender, EventArgs e ) {
-
-		}
+		
 	}
 }

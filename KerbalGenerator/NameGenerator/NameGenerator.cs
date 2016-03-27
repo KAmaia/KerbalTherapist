@@ -5512,15 +5512,17 @@ namespace KerbalGenerator.NameGenerator {
 		#endregion
 		#endregion
 		public static string GenerateName( string name, bool rndName, bool female, bool isKerman ) {
+			string tmpName = "";
 			if ( rndName ) {
-				return GenerateName( female, isKerman );
+				tmpName = CamelCaseMe( GenerateName( female, isKerman ) );
 			}
 			else {
 				if ( isKerman ) {
-					name = name + " Kerman";
+					tmpName = name + " Kerman";
 				}
-				return name;
+				tmpName = CamelCaseMe( tmpName );
 			}
+			return tmpName;
 		}
 		public static string GenerateName( bool female, bool isKerman ) {
 			int maxNameLength = 18;
@@ -5543,6 +5545,19 @@ namespace KerbalGenerator.NameGenerator {
 				return GenerateName( female, isKerman );
 			}
 			return name;
+		}
+
+		private static string CamelCaseMe( string name ) {
+			string result = name;
+			string[ ] tmpName = name.Split(' ');
+			for ( int i = 0; i < tmpName.Length; i++ ) {
+				string s = tmpName[i];
+				if ( s.Length > 0 ) {
+					tmpName[i] = s[0].ToString( ).ToUpper( ) + s.Substring( 1 ).ToLower();
+				}
+			}
+			result = string.Join( " ", tmpName );
+			return result;
 		}
 
 		private static string PickLastName( bool female ) {

@@ -20,6 +20,7 @@ namespace KerbalGenerator {
 			InitializeComponent( );
 			generator = new KerbalGenerator( this );
 			specAccum = new SpecificAccumulator( );
+			btn_spe_generate.Enabled = false;
 		}
 
 		/// <summary>
@@ -277,6 +278,11 @@ namespace KerbalGenerator {
 			if ( rd_spe_genderfemale.Checked ) {
 				specAccum.Female= true;
 			}
+		}
+		internal void UpdateKerbalList(  ) {
+			cmb_kerb_list.Items.Clear( );
+			cmb_kerb_list.Items.AddRange( generator.GetRosterNames());
+			cmb_kerb_list.SelectedIndex = 0;
 		}
 		private void DetermineTrait( ) {
 			if ( rd_spe_pilot.Checked ) {

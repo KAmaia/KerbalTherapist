@@ -76,6 +76,7 @@
       <DependentUpon>KerbalPreviewWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Kerbals\RosterParser.cs" />
+    <Compile Include="Logging\Logger.cs" />
     <Compile Include="NameGenerator\NameGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
