@@ -148,7 +148,17 @@ namespace KerbalGenerator {
 		}
 
 		public void KreateKerbal(SpecificAccumulator sa ) {
-
+			Kerbal k = KerbalMaker.KreateKerbal(sa);
+			switch ( PreviewKerbal( k ) ) {
+				case DialogResult.Yes:
+					roster.AddKerbal( k );
+					break;
+				default:
+					break;
+			}
+			UpdateKerbalStats( );
+			UpdateSaveStats( );
+			
 		}
 
 		/// <summary>

@@ -207,6 +207,7 @@ namespace KerbalGenerator {
 		}
 
 		private void btn_spe_generate_Click( object sender, EventArgs e ) {
+			DetermineTrait( );
 			generator.KreateKerbal( specAccum );
 		}
 
@@ -274,7 +275,18 @@ namespace KerbalGenerator {
 
 		private void rd_spe_genderfemale_CheckedChanged( object sender, EventArgs e ) {
 			if ( rd_spe_genderfemale.Checked ) {
-				specAccum = true;
+				specAccum.Female= true;
+			}
+		}
+		private void DetermineTrait( ) {
+			if ( rd_spe_pilot.Checked ) {
+				specAccum.Trait = "Pilot";
+			}
+			if ( rd_spe_sci.Checked ) {
+				specAccum.Trait = "Scientist";
+			}
+			if ( rd_spe_engi.Checked ) {
+				specAccum.Trait = "Engineer";
 			}
 		}
 	}
