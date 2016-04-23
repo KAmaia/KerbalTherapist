@@ -10,9 +10,8 @@ namespace KerbalGenerator.Logging{
 
 		private static readonly string logPath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BadWater"),"KerbalGen"), "Logs");
 		private static readonly string logFile = Path.Combine(Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BadWater"),"KerbalGen"), "Logs"), "log.txt");
+
 		private static List<string> log = new List<string>();
-
-
 
 		public static void LogEvent( string str ) {
 			ValidateDirectory( );
@@ -50,6 +49,7 @@ namespace KerbalGenerator.Logging{
 
 			}
 		}
+
 		//ReadLog
 		private static void ReadLog( ) {
 			if ( File.Exists( logFile ) ) {

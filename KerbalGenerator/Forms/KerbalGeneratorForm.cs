@@ -15,12 +15,25 @@ namespace KerbalGenerator {
 		private KerbalGenerator generator;
 
 		private SpecificAccumulator specAccum;
+		private RandomAccumulator randAccum;
+
+		private Dictionary<string, int> weights;
 
 		public frm_Krb_Gen( ) {
 			InitializeComponent( );
 			generator = new KerbalGenerator( this );
 			specAccum = new SpecificAccumulator( );
-			btn_spe_generate.Enabled = false;
+			randAccum = new RandomAccumulator( );
+			weights = new Dictionary<string, int>( );
+			weights.Add( "tbar_rnd_maxpilots", 60 );
+			weights.Add( "tbar_rnd_maxengi", 30 );
+			weights.Add( "tbar_rnd_maxsci", 10 );
+		}
+
+		private void LockOutRandom( ) {
+			foreach ( Control c in pnl_rnd_gen.Controls ) {
+				c.Enabled = false;
+			}
 		}
 
 		/// <summary>
@@ -36,17 +49,22 @@ namespace KerbalGenerator {
 					c.Enabled = active;
 				}
 			}
-		}
 
+
+			//LockOutRandom( );
+		}
 
 		private void frm_Krb_Gen_Load( object sender, EventArgs e ) {
 			Text = "Kerbal Generator -- " + generator.Cfg.Name;
 			cmb_AvailSaves.Items.AddRange( generator.GetSaves( ) );
 			cmb_AvailSaves.SelectedIndex = 0;
+			tbar_rnd_maxpilots.Value = weights["tbar_rnd_maxpilots"];
+			tbar_rnd_maxengi.Value = weights["tbar_rnd_maxengi"];
+			tbar_rnd_maxsci.Value = weights["tbar_rnd_maxsci"];
+			btn_spe_generate.Enabled = false;
 		}
 
 		#region Stats Panel
-
 		internal void UpdateSaveStats( string currentSavePath, Dictionary<string, int> countedKerbals ) {
 			//Update Our Current Save Path
 			lbl_currentSaveLocation.Text = currentSavePath;
@@ -67,10 +85,12 @@ namespace KerbalGenerator {
 			lbl_si_availdisp.Text = countedKerbals["Available"].ToString( );
 		}
 
-
-
+		internal void UpdateKerbalList( ) {
+			cmb_kerb_list.Items.Clear( );
+			cmb_kerb_list.Items.AddRange( generator.GetRosterNames( ) );
+			cmb_kerb_list.SelectedIndex = 0;
+		}
 		#endregion
-
 		#region Available Saves Panel
 		private void cmb_AvailSaves_SelectedIndexChanged( object sender, EventArgs e ) {
 			string saveName = cmb_AvailSaves.SelectedItem.ToString();
@@ -82,21 +102,21 @@ namespace KerbalGenerator {
 			generator.SelectKerbal( cmb_kerb_list.SelectedItem.ToString( ) );
 			generator.UpdateKerbalStats( );
 		}
-
 		#endregion
-
 		#region program options panel
-
 		private void btn_po_OpenCfgr_Click( object sender, EventArgs e ) {
 			Form cfgrform = generator.GetCfgrForm();
 			cfgrform.Show( );
+		}
+
+		private void btn_po_Save_Click( object sender, EventArgs e ) {
+			generator.Save( cmb_AvailSaves.SelectedItem.ToString( ) );
 		}
 
 		private void btn_po_exit_Click( object sender, EventArgs e ) {
 			Application.Exit( );
 		}
 		#endregion
-
 		#region kerbalinfopanel
 		internal void UpdateKerbalStats( Kerbal currentKerbal ) {
 
@@ -138,21 +158,26 @@ namespace KerbalGenerator {
 
 			}
 		}
+
 		private void cmb_kerb_list_SelectedIndexChanged( object sender, EventArgs e ) {
 			generator.SelectKerbal( cmb_kerb_list.SelectedItem.ToString( ) );
-
 		}
-
 		#endregion
-
 		#region Random Kerbal Generation
 		private void btn_gen_List_Kerb_Click( object sender, EventArgs e ) {
 
+
 		}
+
+		private void chk_rnd_allFemale_CheckedChanged( object sender, EventArgs e ) {
+
+		}
+
+		private void chk_rnd_allMale_CheckedChanged( object sender, EventArgs e ) {
+
+		}
+
 		#endregion
-
-
-
 		#region Specific Kerbal Generation
 		private void btn_spe_reset_Click( object sender, EventArgs e ) {
 			txt_spe_kerbname.Text = "";
@@ -196,10 +221,10 @@ namespace KerbalGenerator {
 			//Disable the generate button if our name is blank.
 			if ( !chk_spe_rndName.Checked ) {
 				btn_spe_generate.Enabled = !( txt_spe_kerbname.Text == "" );
-
 			}
 			specAccum.Name = txt_spe_kerbname.Text;
 		}
+
 		private void chk_spe_rndName_CheckedChanged( object sender, EventArgs e ) {
 			txt_spe_kerbname.Text = "";
 			txt_spe_kerbname.Enabled = !chk_spe_rndName.Checked;
@@ -211,8 +236,6 @@ namespace KerbalGenerator {
 			DetermineTrait( );
 			generator.KreateKerbal( specAccum );
 		}
-
-		#endregion
 
 		private void chk_spe_rndBrave_CheckedChanged( object sender, EventArgs e ) {
 			if ( chk_spe_rndBrave.Checked ) {
@@ -232,32 +255,16 @@ namespace KerbalGenerator {
 			tbar_spe_stupid.Enabled = !chk_spe_rndStupid.Checked;
 		}
 
-		private void menuStrip1_ItemClicked( object sender, ToolStripItemClickedEventArgs e ) {
-
-		}
-
-		private void fileToolStripMenuItem_Click( object sender, EventArgs e ) {
-
-		}
-
-		private void exitToolStripMenuItem_Click( object sender, EventArgs e ) {
-			Application.Exit( );
-		}
-
-		private void btn_po_Save_Click( object sender, EventArgs e ) {
-			generator.Save( cmb_AvailSaves.SelectedItem.ToString( ) );
-		}
-
-		private void rd_spe_pilot_CheckedChanged( object sender, EventArgs e ) {
-			specAccum.Trait = "Pilot";
-		}
-
-		private void rd_spe_engi_CheckedChanged( object sender, EventArgs e ) {
-			specAccum.Trait = "Engineer";
-		}
-
-		private void rd_spe_sci_CheckedChanged( object sender, EventArgs e ) {
-			specAccum.Trait = "Scientist";
+		private void DetermineTrait( ) {
+			if ( rd_spe_pilot.Checked ) {
+				specAccum.Trait = "Pilot";
+			}
+			if ( rd_spe_sci.Checked ) {
+				specAccum.Trait = "Scientist";
+			}
+			if ( rd_spe_engi.Checked ) {
+				specAccum.Trait = "Engineer";
+			}
 		}
 
 		private void chk_spe_badass_CheckedChanged( object sender, EventArgs e ) {
@@ -276,24 +283,77 @@ namespace KerbalGenerator {
 
 		private void rd_spe_genderfemale_CheckedChanged( object sender, EventArgs e ) {
 			if ( rd_spe_genderfemale.Checked ) {
-				specAccum.Female= true;
+				specAccum.Female = true;
 			}
 		}
-		internal void UpdateKerbalList(  ) {
-			cmb_kerb_list.Items.Clear( );
-			cmb_kerb_list.Items.AddRange( generator.GetRosterNames());
-			cmb_kerb_list.SelectedIndex = 0;
+
+
+		#endregion
+
+		private void groupBox4_Enter( object sender, EventArgs e ) {
+
 		}
-		private void DetermineTrait( ) {
-			if ( rd_spe_pilot.Checked ) {
-				specAccum.Trait = "Pilot";
+
+		private void tbar_rnd_FemaleToMale_Scroll( object sender, EventArgs e ) {
+			decimal disp = 1 - Math.Abs((decimal) tbar_rnd_FemaleToMale.Value /(decimal) 100 );
+
+			if ( tbar_rnd_FemaleToMale.Value == 0 ) {
+				lbl_rnd_mfRatio.Text = "1:1";
+				//if the value == 0, stop the slider to give it a snappy feeling.
+				//it's hacky, but it works.
+				//TODO: find a better way to do this.
+				tbar_rnd_FemaleToMale.Enabled = false;
+				tbar_rnd_FemaleToMale.Enabled = true;
+				tbar_rnd_FemaleToMale.Select( );
 			}
-			if ( rd_spe_sci.Checked ) {
-				specAccum.Trait = "Scientist";
+			else if ( disp.Equals( .50 ) || disp.Equals( .25 ) ) {
+				tbar_rnd_FemaleToMale.Enabled = false;
+				tbar_rnd_FemaleToMale.Enabled = true;
+				tbar_rnd_FemaleToMale.Select( );
 			}
-			if ( rd_spe_engi.Checked ) {
-				specAccum.Trait = "Engineer";
+
+			if ( tbar_rnd_FemaleToMale.Value > 0 ) {
+				lbl_rnd_mfRatio.Text = disp + ":1";
 			}
+			else if ( tbar_rnd_FemaleToMale.Value < 0 ) {
+				lbl_rnd_mfRatio.Text = "1:" + Math.Abs( disp );
+			}
+		}
+
+		private void checkBox1_CheckedChanged( object sender, EventArgs e ) {
+			tbar_rnd_FemaleToMale.Enabled = checkBox1.Checked ? false : true;
+		}
+
+		private void tbar_PES_scroll( object sender, EventArgs e ) {
+			TrackBar tb = sender as TrackBar;
+			UpdateWeights( tb );
+		}
+
+		private void UpdateWeights( TrackBar tb ) {
+			decimal accum =  nud_rnd_howMany.Value;
+			Dictionary<string, int> oldWeights = weights;
+			tbar_rnd_maxpilots.Value = tb.Value;
+
+			//figure out how much it moved
+			int moved = 0;
+			switch ( tb.Name ) {
+				case "tbar_rnd_maxpilots":
+					break;
+				case "tbar_rnd_maxengi":
+					break;
+				case "tbar_rnd_maxsci":
+					break;
+				default:
+					break;
+			}
+			
+			weights[tb.Name] = tb.Value;
+			
+		}
+
+
+		private void tbar_rnd_maxpilots_Scroll( object sender, EventArgs e ) {
+
 		}
 	}
 

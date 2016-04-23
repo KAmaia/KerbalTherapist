@@ -5529,10 +5529,10 @@ namespace KerbalGenerator.NameGenerator {
 			string firstName = "";
 			string middleName = "";
 			string lastName = "";
-			float useMiddle = Util.GetRandFloat();
-			firstName = female ? femaleFirstNames[Util.GetRandomInt( 0, femaleFirstNames.Length - 1 )] : MaleFirstNames[Util.GetRandomInt( 0, MaleFirstNames.Length - 1 )];
+			float useMiddle = Util.GetRandomFloat();
+			firstName = female ? femaleFirstNames[Util.GetRandomIntInRange( 0, femaleFirstNames.Length - 1 )] : MaleFirstNames[Util.GetRandomIntInRange( 0, MaleFirstNames.Length - 1 )];
 			if ( useMiddle > .5f ) {
-				middleName = female ? femaleFirstNames[Util.GetRandomInt( 0, femaleFirstNames.Length - 1 )] : MaleFirstNames[Util.GetRandomInt( 0, MaleFirstNames.Length - 1 )];
+				middleName = female ? femaleFirstNames[Util.GetRandomIntInRange( 0, femaleFirstNames.Length - 1 )] : MaleFirstNames[Util.GetRandomIntInRange( 0, MaleFirstNames.Length - 1 )];
 			}
 			if ( isKerman ) {
 				lastName = "Kerman";
@@ -5561,16 +5561,16 @@ namespace KerbalGenerator.NameGenerator {
 		}
 
 		private static string PickLastName( bool female ) {
-			float pickFemale = Util.GetRandFloat();
+			float pickFemale = Util.GetRandomFloat();
 			//take a first name;
-			string lastName = pickFemale < .5f ? femaleFirstNames[Util.GetRandomInt(0, femaleFirstNames.Length - 1)] : MaleFirstNames[Util.GetRandomInt(0, MaleFirstNames.Length - 1)];
+			string lastName = pickFemale < .5f ? femaleFirstNames[Util.GetRandomIntInRange(0, femaleFirstNames.Length - 1)] : MaleFirstNames[Util.GetRandomIntInRange(0, MaleFirstNames.Length - 1)];
 			//tack on an s
 			if ( !lastName.EndsWith( "s" ) ) {
 				lastName += "s";
 			}
 			//append a suffix?
-			float useSuffix = Util.GetRandFloat();
-			string suffix = useSuffix > .5f? suffixes[Util.GetRandomInt( 0, suffixes.Length - 1 )] : "";
+			float useSuffix = Util.GetRandomFloat();
+			string suffix = useSuffix > .5f? suffixes[Util.GetRandomIntInRange( 0, suffixes.Length - 1 )] : "";
 			if ( suffix == "ov" && female ) {
 				suffix = "ova";
 			}

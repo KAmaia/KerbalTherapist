@@ -98,21 +98,20 @@ namespace KerbalGenerator {
 			this.label57 = new System.Windows.Forms.Label();
 			this.lbl_currentSaveLocation = new System.Windows.Forms.Label();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.groupBox10 = new System.Windows.Forms.GroupBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.chk_rnd_isKerman = new System.Windows.Forms.CheckBox();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
-			this.dmn_rnd_MaxKerbals = new System.Windows.Forms.DomainUpDown();
 			this.lbl_rnd_MaxKerbs = new System.Windows.Forms.Label();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
 			this.lbl_rnd_maxpilots = new System.Windows.Forms.Label();
 			this.lbl_rnd_engi = new System.Windows.Forms.Label();
-			this.chk_rnd_locktour = new System.Windows.Forms.CheckBox();
-			this.lbl_rnd_maxtour = new System.Windows.Forms.Label();
 			this.chk_rnd_lockpilots = new System.Windows.Forms.CheckBox();
 			this.lbl_rnd_maxsci = new System.Windows.Forms.Label();
 			this.chk_rnd_lockengi = new System.Windows.Forms.CheckBox();
 			this.chk_rnd_locksci = new System.Windows.Forms.CheckBox();
-			this.tbar_rnd_maxtour = new System.Windows.Forms.TrackBar();
-			this.lbl_rnd_maxtourdisp = new System.Windows.Forms.Label();
 			this.tbar_rnd_maxsci = new System.Windows.Forms.TrackBar();
 			this.tbar_rnd_maxengi = new System.Windows.Forms.TrackBar();
 			this.tbar_rnd_maxpilots = new System.Windows.Forms.TrackBar();
@@ -139,12 +138,11 @@ namespace KerbalGenerator {
 			this.lbl_rnd_minbrave = new System.Windows.Forms.Label();
 			this.tbr_rnd_minbrave = new System.Windows.Forms.TrackBar();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.lbl_rnd_mfRatio = new System.Windows.Forms.Label();
-			this.chk_rnd_allFemale = new System.Windows.Forms.CheckBox();
-			this.chk_rnd_allMale = new System.Windows.Forms.CheckBox();
-			this.tbar_rnd_MaleToFemale = new System.Windows.Forms.TrackBar();
-			this.lbl_rnd_genderSettings = new System.Windows.Forms.Label();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.tbar_rnd_FemaleToMale = new System.Windows.Forms.TrackBar();
+			this.pnl_rnd_gen = new System.Windows.Forms.Panel();
 			this.btn_rnd_reset = new System.Windows.Forms.Button();
 			this.pnl_spe_gen = new System.Windows.Forms.Panel();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -178,10 +176,7 @@ namespace KerbalGenerator {
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.grp_save_flag = new System.Windows.Forms.GroupBox();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.nud_rnd_howMany = new System.Windows.Forms.NumericUpDown();
 			gb_po_options = new System.Windows.Forms.GroupBox();
 			panel3 = new System.Windows.Forms.Panel();
 			gb_po_options.SuspendLayout();
@@ -197,10 +192,11 @@ namespace KerbalGenerator {
 			this.gb_ki_stats.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
+			this.groupBox10.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.groupBox7.SuspendLayout();
 			this.groupBox6.SuspendLayout();
 			this.groupBox8.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxtour)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxsci)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxengi)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxpilots)).BeginInit();
@@ -212,8 +208,8 @@ namespace KerbalGenerator {
 			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxstupid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbr_rnd_minbrave)).BeginInit();
 			this.groupBox4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_MaleToFemale)).BeginInit();
-			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_FemaleToMale)).BeginInit();
+			this.pnl_rnd_gen.SuspendLayout();
 			this.pnl_spe_gen.SuspendLayout();
 			this.groupBox9.SuspendLayout();
 			this.gb_spe_gen.SuspendLayout();
@@ -226,7 +222,7 @@ namespace KerbalGenerator {
 			this.pnl_po_options.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel6.SuspendLayout();
-			this.menuStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.nud_rnd_howMany)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gb_po_options
@@ -930,20 +926,63 @@ namespace KerbalGenerator {
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.groupBox10);
+			this.groupBox3.Controls.Add(this.groupBox1);
 			this.groupBox3.Controls.Add(this.groupBox7);
 			this.groupBox3.Controls.Add(this.groupBox6);
 			this.groupBox3.Controls.Add(this.groupBox5);
 			this.groupBox3.Controls.Add(this.groupBox4);
 			this.groupBox3.Location = new System.Drawing.Point(3, 3);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(317, 697);
+			this.groupBox3.Size = new System.Drawing.Size(317, 662);
 			this.groupBox3.TabIndex = 6;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Generate Multiple Random Kerbals";
 			// 
+			// groupBox10
+			// 
+			this.groupBox10.Controls.Add(this.checkBox1);
+			this.groupBox10.Location = new System.Drawing.Point(7, 145);
+			this.groupBox10.Name = "groupBox10";
+			this.groupBox10.Size = new System.Drawing.Size(96, 40);
+			this.groupBox10.TabIndex = 5;
+			this.groupBox10.TabStop = false;
+			this.groupBox10.Text = "Ratio";
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Location = new System.Drawing.Point(6, 14);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(76, 17);
+			this.checkBox1.TabIndex = 0;
+			this.checkBox1.Text = "Don\'t Care";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.chk_rnd_isKerman);
+			this.groupBox1.Location = new System.Drawing.Point(179, 145);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(122, 40);
+			this.groupBox1.TabIndex = 4;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Names";
+			// 
+			// chk_rnd_isKerman
+			// 
+			this.chk_rnd_isKerman.AutoSize = true;
+			this.chk_rnd_isKerman.Location = new System.Drawing.Point(6, 14);
+			this.chk_rnd_isKerman.Name = "chk_rnd_isKerman";
+			this.chk_rnd_isKerman.Size = new System.Drawing.Size(116, 17);
+			this.chk_rnd_isKerman.TabIndex = 0;
+			this.chk_rnd_isKerman.Text = "Use Kerman For All";
+			this.chk_rnd_isKerman.UseVisualStyleBackColor = true;
+			// 
 			// groupBox7
 			// 
-			this.groupBox7.Controls.Add(this.dmn_rnd_MaxKerbals);
+			this.groupBox7.Controls.Add(this.nud_rnd_howMany);
 			this.groupBox7.Controls.Add(this.lbl_rnd_MaxKerbs);
 			this.groupBox7.Location = new System.Drawing.Point(7, 23);
 			this.groupBox7.Name = "groupBox7";
@@ -951,15 +990,6 @@ namespace KerbalGenerator {
 			this.groupBox7.TabIndex = 3;
 			this.groupBox7.TabStop = false;
 			this.groupBox7.Text = "Number Of Kerbals to Generate";
-			// 
-			// dmn_rnd_MaxKerbals
-			// 
-			this.dmn_rnd_MaxKerbals.Location = new System.Drawing.Point(240, 19);
-			this.dmn_rnd_MaxKerbals.Name = "dmn_rnd_MaxKerbals";
-			this.dmn_rnd_MaxKerbals.Size = new System.Drawing.Size(49, 20);
-			this.dmn_rnd_MaxKerbals.TabIndex = 2;
-			this.dmn_rnd_MaxKerbals.Text = "1";
-			this.dmn_rnd_MaxKerbals.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// lbl_rnd_MaxKerbs
 			// 
@@ -973,17 +1003,15 @@ namespace KerbalGenerator {
 			// groupBox6
 			// 
 			this.groupBox6.Controls.Add(this.groupBox8);
-			this.groupBox6.Controls.Add(this.tbar_rnd_maxtour);
-			this.groupBox6.Controls.Add(this.lbl_rnd_maxtourdisp);
 			this.groupBox6.Controls.Add(this.tbar_rnd_maxsci);
 			this.groupBox6.Controls.Add(this.tbar_rnd_maxengi);
 			this.groupBox6.Controls.Add(this.tbar_rnd_maxpilots);
 			this.groupBox6.Controls.Add(this.tbar_rnd_maxpilotsdisp);
 			this.groupBox6.Controls.Add(this.tbar_rnd_maxscidisp);
 			this.groupBox6.Controls.Add(this.lbl_rnd_maxengidisp);
-			this.groupBox6.Location = new System.Drawing.Point(7, 465);
+			this.groupBox6.Location = new System.Drawing.Point(7, 498);
 			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(295, 217);
+			this.groupBox6.Size = new System.Drawing.Size(295, 161);
 			this.groupBox6.TabIndex = 2;
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Professions";
@@ -992,18 +1020,15 @@ namespace KerbalGenerator {
 			// 
 			this.groupBox8.Controls.Add(this.lbl_rnd_maxpilots);
 			this.groupBox8.Controls.Add(this.lbl_rnd_engi);
-			this.groupBox8.Controls.Add(this.chk_rnd_locktour);
-			this.groupBox8.Controls.Add(this.lbl_rnd_maxtour);
 			this.groupBox8.Controls.Add(this.chk_rnd_lockpilots);
 			this.groupBox8.Controls.Add(this.lbl_rnd_maxsci);
 			this.groupBox8.Controls.Add(this.chk_rnd_lockengi);
 			this.groupBox8.Controls.Add(this.chk_rnd_locksci);
-			this.groupBox8.Location = new System.Drawing.Point(6, 15);
+			this.groupBox8.Location = new System.Drawing.Point(6, 19);
 			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(111, 192);
+			this.groupBox8.Size = new System.Drawing.Size(111, 136);
 			this.groupBox8.TabIndex = 20;
 			this.groupBox8.TabStop = false;
-			this.groupBox8.Text = "Lock";
 			// 
 			// lbl_rnd_maxpilots
 			// 
@@ -1024,26 +1049,6 @@ namespace KerbalGenerator {
 			this.lbl_rnd_engi.TabIndex = 10;
 			this.lbl_rnd_engi.Text = "Engineers";
 			this.lbl_rnd_engi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// chk_rnd_locktour
-			// 
-			this.chk_rnd_locktour.AutoSize = true;
-			this.chk_rnd_locktour.Location = new System.Drawing.Point(60, 150);
-			this.chk_rnd_locktour.Name = "chk_rnd_locktour";
-			this.chk_rnd_locktour.Size = new System.Drawing.Size(50, 17);
-			this.chk_rnd_locktour.TabIndex = 23;
-			this.chk_rnd_locktour.Text = "Lock";
-			this.chk_rnd_locktour.UseVisualStyleBackColor = true;
-			// 
-			// lbl_rnd_maxtour
-			// 
-			this.lbl_rnd_maxtour.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.lbl_rnd_maxtour.Location = new System.Drawing.Point(9, 150);
-			this.lbl_rnd_maxtour.Name = "lbl_rnd_maxtour";
-			this.lbl_rnd_maxtour.Size = new System.Drawing.Size(45, 22);
-			this.lbl_rnd_maxtour.TabIndex = 18;
-			this.lbl_rnd_maxtour.Text = "Tourist";
-			this.lbl_rnd_maxtour.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// chk_rnd_lockpilots
 			// 
@@ -1085,41 +1090,32 @@ namespace KerbalGenerator {
 			this.chk_rnd_locksci.Text = "Lock";
 			this.chk_rnd_locksci.UseVisualStyleBackColor = true;
 			// 
-			// tbar_rnd_maxtour
-			// 
-			this.tbar_rnd_maxtour.Location = new System.Drawing.Point(123, 162);
-			this.tbar_rnd_maxtour.Name = "tbar_rnd_maxtour";
-			this.tbar_rnd_maxtour.Size = new System.Drawing.Size(104, 45);
-			this.tbar_rnd_maxtour.TabIndex = 17;
-			// 
-			// lbl_rnd_maxtourdisp
-			// 
-			this.lbl_rnd_maxtourdisp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lbl_rnd_maxtourdisp.Location = new System.Drawing.Point(237, 162);
-			this.lbl_rnd_maxtourdisp.Name = "lbl_rnd_maxtourdisp";
-			this.lbl_rnd_maxtourdisp.Size = new System.Drawing.Size(52, 30);
-			this.lbl_rnd_maxtourdisp.TabIndex = 19;
-			// 
 			// tbar_rnd_maxsci
 			// 
 			this.tbar_rnd_maxsci.Location = new System.Drawing.Point(123, 120);
+			this.tbar_rnd_maxsci.Maximum = 100;
 			this.tbar_rnd_maxsci.Name = "tbar_rnd_maxsci";
 			this.tbar_rnd_maxsci.Size = new System.Drawing.Size(104, 45);
 			this.tbar_rnd_maxsci.TabIndex = 11;
+			this.tbar_rnd_maxsci.Scroll += new System.EventHandler(this.tbar_PES_scroll);
 			// 
 			// tbar_rnd_maxengi
 			// 
 			this.tbar_rnd_maxengi.Location = new System.Drawing.Point(123, 73);
+			this.tbar_rnd_maxengi.Maximum = 100;
 			this.tbar_rnd_maxengi.Name = "tbar_rnd_maxengi";
 			this.tbar_rnd_maxengi.Size = new System.Drawing.Size(104, 45);
 			this.tbar_rnd_maxengi.TabIndex = 8;
+			this.tbar_rnd_maxengi.Scroll += new System.EventHandler(this.tbar_PES_scroll);
 			// 
 			// tbar_rnd_maxpilots
 			// 
 			this.tbar_rnd_maxpilots.Location = new System.Drawing.Point(123, 26);
+			this.tbar_rnd_maxpilots.Maximum = 100;
 			this.tbar_rnd_maxpilots.Name = "tbar_rnd_maxpilots";
 			this.tbar_rnd_maxpilots.Size = new System.Drawing.Size(104, 45);
 			this.tbar_rnd_maxpilots.TabIndex = 8;
+			this.tbar_rnd_maxpilots.Scroll += new System.EventHandler(this.tbar_PES_scroll);
 			// 
 			// tbar_rnd_maxpilotsdisp
 			// 
@@ -1165,7 +1161,7 @@ namespace KerbalGenerator {
 			this.groupBox5.Controls.Add(this.tbar_rnd_maxstupid);
 			this.groupBox5.Controls.Add(this.lbl_rnd_minbrave);
 			this.groupBox5.Controls.Add(this.tbr_rnd_minbrave);
-			this.groupBox5.Location = new System.Drawing.Point(7, 152);
+			this.groupBox5.Location = new System.Drawing.Point(6, 191);
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.Size = new System.Drawing.Size(295, 301);
 			this.groupBox5.TabIndex = 1;
@@ -1186,14 +1182,15 @@ namespace KerbalGenerator {
 			this.lbl_rnd_maxbads.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.lbl_rnd_maxbads.Location = new System.Drawing.Point(6, 253);
 			this.lbl_rnd_maxbads.Name = "lbl_rnd_maxbads";
-			this.lbl_rnd_maxbads.Size = new System.Drawing.Size(100, 13);
+			this.lbl_rnd_maxbads.Size = new System.Drawing.Size(91, 13);
 			this.lbl_rnd_maxbads.TabIndex = 22;
-			this.lbl_rnd_maxbads.Text = "Maximum Badasses";
+			this.lbl_rnd_maxbads.Text = "Maximum Tourists";
 			this.lbl_rnd_maxbads.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// tbar_rnd_maxbads
 			// 
 			this.tbar_rnd_maxbads.Location = new System.Drawing.Point(123, 253);
+			this.tbar_rnd_maxbads.Maximum = 100;
 			this.tbar_rnd_maxbads.Name = "tbar_rnd_maxbads";
 			this.tbar_rnd_maxbads.Size = new System.Drawing.Size(104, 45);
 			this.tbar_rnd_maxbads.TabIndex = 21;
@@ -1220,6 +1217,7 @@ namespace KerbalGenerator {
 			// tbar_rnd_minbads
 			// 
 			this.tbar_rnd_minbads.Location = new System.Drawing.Point(123, 207);
+			this.tbar_rnd_minbads.Maximum = 100;
 			this.tbar_rnd_minbads.Name = "tbar_rnd_minbads";
 			this.tbar_rnd_minbads.Size = new System.Drawing.Size(104, 45);
 			this.tbar_rnd_minbads.TabIndex = 18;
@@ -1281,6 +1279,7 @@ namespace KerbalGenerator {
 			// tbar_rnd_maxbrave
 			// 
 			this.tbar_rnd_maxbrave.Location = new System.Drawing.Point(123, 160);
+			this.tbar_rnd_maxbrave.Maximum = 100;
 			this.tbar_rnd_maxbrave.Name = "tbar_rnd_maxbrave";
 			this.tbar_rnd_maxbrave.Size = new System.Drawing.Size(104, 45);
 			this.tbar_rnd_maxbrave.TabIndex = 13;
@@ -1288,6 +1287,7 @@ namespace KerbalGenerator {
 			// tbar_rnd_minStupidity
 			// 
 			this.tbar_rnd_minStupidity.Location = new System.Drawing.Point(123, 19);
+			this.tbar_rnd_minStupidity.Maximum = 100;
 			this.tbar_rnd_minStupidity.Name = "tbar_rnd_minStupidity";
 			this.tbar_rnd_minStupidity.Size = new System.Drawing.Size(104, 45);
 			this.tbar_rnd_minStupidity.TabIndex = 8;
@@ -1306,6 +1306,7 @@ namespace KerbalGenerator {
 			// tbar_rnd_maxstupid
 			// 
 			this.tbar_rnd_maxstupid.Location = new System.Drawing.Point(123, 66);
+			this.tbar_rnd_maxstupid.Maximum = 100;
 			this.tbar_rnd_maxstupid.Name = "tbar_rnd_maxstupid";
 			this.tbar_rnd_maxstupid.Size = new System.Drawing.Size(104, 45);
 			this.tbar_rnd_maxstupid.TabIndex = 8;
@@ -1324,23 +1325,42 @@ namespace KerbalGenerator {
 			// tbr_rnd_minbrave
 			// 
 			this.tbr_rnd_minbrave.Location = new System.Drawing.Point(123, 113);
+			this.tbr_rnd_minbrave.Maximum = 100;
 			this.tbr_rnd_minbrave.Name = "tbr_rnd_minbrave";
 			this.tbr_rnd_minbrave.Size = new System.Drawing.Size(104, 45);
 			this.tbr_rnd_minbrave.TabIndex = 11;
 			// 
 			// groupBox4
 			// 
+			this.groupBox4.Controls.Add(this.label2);
+			this.groupBox4.Controls.Add(this.label1);
 			this.groupBox4.Controls.Add(this.lbl_rnd_mfRatio);
-			this.groupBox4.Controls.Add(this.chk_rnd_allFemale);
-			this.groupBox4.Controls.Add(this.chk_rnd_allMale);
-			this.groupBox4.Controls.Add(this.tbar_rnd_MaleToFemale);
-			this.groupBox4.Controls.Add(this.lbl_rnd_genderSettings);
+			this.groupBox4.Controls.Add(this.tbar_rnd_FemaleToMale);
 			this.groupBox4.Location = new System.Drawing.Point(7, 78);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(295, 67);
 			this.groupBox4.TabIndex = 0;
 			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Gender Settings";
+			this.groupBox4.Text = "Female To Male Ratio";
+			this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(189, 48);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(44, 13);
+			this.label2.TabIndex = 12;
+			this.label2.Text = "All Male";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(3, 48);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(55, 13);
+			this.label1.TabIndex = 11;
+			this.label1.Text = "All Female";
 			// 
 			// lbl_rnd_mfRatio
 			// 
@@ -1350,52 +1370,27 @@ namespace KerbalGenerator {
 			this.lbl_rnd_mfRatio.Size = new System.Drawing.Size(52, 30);
 			this.lbl_rnd_mfRatio.TabIndex = 10;
 			// 
-			// chk_rnd_allFemale
+			// tbar_rnd_FemaleToMale
 			// 
-			this.chk_rnd_allFemale.AutoSize = true;
-			this.chk_rnd_allFemale.Location = new System.Drawing.Point(159, 44);
-			this.chk_rnd_allFemale.Name = "chk_rnd_allFemale";
-			this.chk_rnd_allFemale.Size = new System.Drawing.Size(74, 17);
-			this.chk_rnd_allFemale.TabIndex = 9;
-			this.chk_rnd_allFemale.Text = "All Female";
-			this.chk_rnd_allFemale.UseVisualStyleBackColor = true;
+			this.tbar_rnd_FemaleToMale.Location = new System.Drawing.Point(6, 16);
+			this.tbar_rnd_FemaleToMale.Maximum = 100;
+			this.tbar_rnd_FemaleToMale.Minimum = -100;
+			this.tbar_rnd_FemaleToMale.Name = "tbar_rnd_FemaleToMale";
+			this.tbar_rnd_FemaleToMale.Size = new System.Drawing.Size(227, 45);
+			this.tbar_rnd_FemaleToMale.TabIndex = 6;
+			this.tbar_rnd_FemaleToMale.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+			this.tbar_rnd_FemaleToMale.Scroll += new System.EventHandler(this.tbar_rnd_FemaleToMale_Scroll);
 			// 
-			// chk_rnd_allMale
+			// pnl_rnd_gen
 			// 
-			this.chk_rnd_allMale.AutoSize = true;
-			this.chk_rnd_allMale.Location = new System.Drawing.Point(6, 44);
-			this.chk_rnd_allMale.Name = "chk_rnd_allMale";
-			this.chk_rnd_allMale.Size = new System.Drawing.Size(63, 17);
-			this.chk_rnd_allMale.TabIndex = 8;
-			this.chk_rnd_allMale.Text = "All Male";
-			this.chk_rnd_allMale.UseVisualStyleBackColor = true;
-			// 
-			// tbar_rnd_MaleToFemale
-			// 
-			this.tbar_rnd_MaleToFemale.Location = new System.Drawing.Point(123, 16);
-			this.tbar_rnd_MaleToFemale.Name = "tbar_rnd_MaleToFemale";
-			this.tbar_rnd_MaleToFemale.Size = new System.Drawing.Size(110, 45);
-			this.tbar_rnd_MaleToFemale.TabIndex = 6;
-			// 
-			// lbl_rnd_genderSettings
-			// 
-			this.lbl_rnd_genderSettings.AutoSize = true;
-			this.lbl_rnd_genderSettings.Location = new System.Drawing.Point(6, 16);
-			this.lbl_rnd_genderSettings.Name = "lbl_rnd_genderSettings";
-			this.lbl_rnd_genderSettings.Size = new System.Drawing.Size(111, 13);
-			this.lbl_rnd_genderSettings.TabIndex = 7;
-			this.lbl_rnd_genderSettings.Text = "Male To Female Ratio";
-			// 
-			// panel1
-			// 
-			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel1.Controls.Add(this.btn_rnd_reset);
-			this.panel1.Controls.Add(this.btn_rnd_gen_Kerb);
-			this.panel1.Controls.Add(this.groupBox3);
-			this.panel1.Location = new System.Drawing.Point(6, 120);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(330, 740);
-			this.panel1.TabIndex = 7;
+			this.pnl_rnd_gen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.pnl_rnd_gen.Controls.Add(this.btn_rnd_reset);
+			this.pnl_rnd_gen.Controls.Add(this.btn_rnd_gen_Kerb);
+			this.pnl_rnd_gen.Controls.Add(this.groupBox3);
+			this.pnl_rnd_gen.Location = new System.Drawing.Point(6, 120);
+			this.pnl_rnd_gen.Name = "pnl_rnd_gen";
+			this.pnl_rnd_gen.Size = new System.Drawing.Size(330, 740);
+			this.pnl_rnd_gen.TabIndex = 7;
 			// 
 			// btn_rnd_reset
 			// 
@@ -1639,7 +1634,6 @@ namespace KerbalGenerator {
 			this.rd_spe_sci.TabIndex = 2;
 			this.rd_spe_sci.Text = "Scientist";
 			this.rd_spe_sci.UseVisualStyleBackColor = true;
-			this.rd_spe_sci.CheckedChanged += new System.EventHandler(this.rd_spe_sci_CheckedChanged);
 			// 
 			// rd_spe_engi
 			// 
@@ -1650,7 +1644,6 @@ namespace KerbalGenerator {
 			this.rd_spe_engi.TabIndex = 1;
 			this.rd_spe_engi.Text = "Engineer";
 			this.rd_spe_engi.UseVisualStyleBackColor = true;
-			this.rd_spe_engi.CheckedChanged += new System.EventHandler(this.rd_spe_engi_CheckedChanged);
 			// 
 			// rd_spe_pilot
 			// 
@@ -1663,7 +1656,6 @@ namespace KerbalGenerator {
 			this.rd_spe_pilot.TabStop = true;
 			this.rd_spe_pilot.Text = "Pilot";
 			this.rd_spe_pilot.UseVisualStyleBackColor = true;
-			this.rd_spe_pilot.CheckedChanged += new System.EventHandler(this.rd_spe_pilot_CheckedChanged);
 			// 
 			// groupBox11
 			// 
@@ -1755,39 +1747,28 @@ namespace KerbalGenerator {
 			this.panel6.Size = new System.Drawing.Size(1036, 87);
 			this.panel6.TabIndex = 12;
 			// 
-			// menuStrip1
+			// nud_rnd_howMany
 			// 
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-			this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(1054, 23);
-			this.menuStrip1.TabIndex = 13;
-			this.menuStrip1.Text = "menuStrip1";
-			this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-			// 
-			// fileToolStripMenuItem
-			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
-			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
-			this.fileToolStripMenuItem.Text = "File";
-			this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(89, 6);
-			// 
-			// exitToolStripMenuItem
-			// 
-			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-			this.exitToolStripMenuItem.Text = "Exit";
-			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+			this.nud_rnd_howMany.Location = new System.Drawing.Point(224, 19);
+			this.nud_rnd_howMany.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+			this.nud_rnd_howMany.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.nud_rnd_howMany.Name = "nud_rnd_howMany";
+			this.nud_rnd_howMany.Size = new System.Drawing.Size(63, 20);
+			this.nud_rnd_howMany.TabIndex = 2;
+			this.nud_rnd_howMany.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.nud_rnd_howMany.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			// 
 			// frm_Krb_Gen
 			// 
@@ -1799,10 +1780,8 @@ namespace KerbalGenerator {
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(panel3);
 			this.Controls.Add(this.pnl_spe_gen);
-			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.menuStrip1);
+			this.Controls.Add(this.pnl_rnd_gen);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			this.MainMenuStrip = this.menuStrip1;
 			this.MaximizeBox = false;
 			this.Name = "frm_Krb_Gen";
 			this.Text = "Kerbal Generator";
@@ -1823,13 +1802,16 @@ namespace KerbalGenerator {
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
+			this.groupBox10.ResumeLayout(false);
+			this.groupBox10.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.groupBox7.ResumeLayout(false);
 			this.groupBox7.PerformLayout();
 			this.groupBox6.ResumeLayout(false);
 			this.groupBox6.PerformLayout();
 			this.groupBox8.ResumeLayout(false);
 			this.groupBox8.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxtour)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxsci)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxengi)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_maxpilots)).EndInit();
@@ -1843,9 +1825,9 @@ namespace KerbalGenerator {
 			((System.ComponentModel.ISupportInitialize)(this.tbr_rnd_minbrave)).EndInit();
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_MaleToFemale)).EndInit();
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tbar_rnd_FemaleToMale)).EndInit();
+			this.pnl_rnd_gen.ResumeLayout(false);
+			this.pnl_rnd_gen.PerformLayout();
 			this.pnl_spe_gen.ResumeLayout(false);
 			this.groupBox9.ResumeLayout(false);
 			this.groupBox9.PerformLayout();
@@ -1865,10 +1847,8 @@ namespace KerbalGenerator {
 			this.pnl_po_options.PerformLayout();
 			this.panel5.ResumeLayout(false);
 			this.panel6.ResumeLayout(false);
-			this.menuStrip1.ResumeLayout(false);
-			this.menuStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.nud_rnd_howMany)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -1889,8 +1869,7 @@ namespace KerbalGenerator {
 		private System.Windows.Forms.Label lbl_rnd_minstupid;
 		private System.Windows.Forms.TrackBar tbar_rnd_maxstupid;
 		private System.Windows.Forms.TrackBar tbar_rnd_minStupidity;
-		private System.Windows.Forms.Label lbl_rnd_genderSettings;
-		private System.Windows.Forms.TrackBar tbar_rnd_MaleToFemale;
+		private System.Windows.Forms.TrackBar tbar_rnd_FemaleToMale;
 		private System.Windows.Forms.GroupBox groupBox7;
 		private System.Windows.Forms.Label lbl_rnd_MaxKerbs;
 		private System.Windows.Forms.GroupBox groupBox6;
@@ -1920,17 +1899,10 @@ namespace KerbalGenerator {
 		private System.Windows.Forms.TrackBar tbr_rnd_minbrave;
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.Label lbl_rnd_mfRatio;
-		private System.Windows.Forms.CheckBox chk_rnd_allFemale;
-		private System.Windows.Forms.CheckBox chk_rnd_allMale;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.DomainUpDown dmn_rnd_MaxKerbals;
-		private System.Windows.Forms.CheckBox chk_rnd_locktour;
+		private System.Windows.Forms.Panel pnl_rnd_gen;
 		private System.Windows.Forms.CheckBox chk_rnd_locksci;
 		private System.Windows.Forms.CheckBox chk_rnd_lockengi;
 		private System.Windows.Forms.CheckBox chk_rnd_lockpilots;
-		private System.Windows.Forms.TrackBar tbar_rnd_maxtour;
-		private System.Windows.Forms.Label lbl_rnd_maxtour;
-		private System.Windows.Forms.Label lbl_rnd_maxtourdisp;
 		private System.Windows.Forms.GroupBox groupBox8;
 		private System.Windows.Forms.Button btn_rnd_reset;
 		private System.Windows.Forms.Panel pnl_spe_gen;
@@ -2018,10 +1990,6 @@ namespace KerbalGenerator {
 		private System.Windows.Forms.CheckBox chk_spe_rndStupid;
 		private System.Windows.Forms.CheckBox chk_spe_rndBrave;
 		private System.Windows.Forms.TrackBar tbar_spe_brave;
-		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.Button btn_po_Save;
 		private System.Windows.Forms.GroupBox gb_si_statusBkdwn;
 		private System.Windows.Forms.Label lbl_si_assigned;
@@ -2033,6 +2001,13 @@ namespace KerbalGenerator {
 		private System.Windows.Forms.Label lbl_si_applcntdisp;
 		private System.Windows.Forms.Label lbl_si_hireddisp;
 		private System.Windows.Forms.Label lbl_si_applicants;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.GroupBox groupBox10;
+		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.CheckBox chk_rnd_isKerman;
+		private System.Windows.Forms.NumericUpDown nud_rnd_howMany;
 	}
 }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace KerbalGenerator {
 	class Util {
 		private static Random rnd = new Random();
-		public static float GetRandFloat() {
+		public static float GetRandomFloat() {
 			return (float) rnd.NextDouble( );
 			
 		} 
@@ -23,7 +23,15 @@ namespace KerbalGenerator {
 			return retVal.Trim( );
 		}
 
-		public static int GetRandomInt( int min, int max ) {
+		public static float GetRandomFloatInRange(float min, float max ) {
+			float ret = (float) rnd.NextDouble();
+			while(!(ret < max) && !(ret > min ) ) {
+				ret = (float) rnd.NextDouble( );
+			}
+			return ret;
+		}
+
+		public static int GetRandomIntInRange( int min, int max ) {
 			return rnd.Next( min, max );
 		}
 	}
