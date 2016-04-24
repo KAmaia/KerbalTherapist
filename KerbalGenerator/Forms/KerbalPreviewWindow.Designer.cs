@@ -58,6 +58,7 @@ namespace KerbalGenerator {
 			this.txt_preview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.txt_preview.Size = new System.Drawing.Size(265, 224);
 			this.txt_preview.TabIndex = 0;
+			this.txt_preview.TextChanged += new System.EventHandler(this.txt_preview_TextChanged);
 			// 
 			// btn_no
 			// 

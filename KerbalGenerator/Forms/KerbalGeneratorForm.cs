@@ -17,17 +17,13 @@ namespace KerbalGenerator {
 		private SpecificAccumulator specAccum;
 		private RandomAccumulator randAccum;
 
-		private Dictionary<string, int> weights;
 
 		public frm_Krb_Gen( ) {
 			InitializeComponent( );
 			generator = new KerbalGenerator( this );
 			specAccum = new SpecificAccumulator( );
 			randAccum = new RandomAccumulator( );
-			weights = new Dictionary<string, int>( );
-			weights.Add( "tbar_rnd_maxpilots", 60 );
-			weights.Add( "tbar_rnd_maxengi", 30 );
-			weights.Add( "tbar_rnd_maxsci", 10 );
+
 		}
 
 		private void LockOutRandom( ) {
@@ -58,9 +54,7 @@ namespace KerbalGenerator {
 			Text = "Kerbal Generator -- " + generator.Cfg.Name;
 			cmb_AvailSaves.Items.AddRange( generator.GetSaves( ) );
 			cmb_AvailSaves.SelectedIndex = 0;
-			tbar_rnd_maxpilots.Value = weights["tbar_rnd_maxpilots"];
-			tbar_rnd_maxengi.Value = weights["tbar_rnd_maxengi"];
-			tbar_rnd_maxsci.Value = weights["tbar_rnd_maxsci"];
+			UpdateRandomDisplay( );
 			btn_spe_generate.Enabled = false;
 		}
 
@@ -165,20 +159,131 @@ namespace KerbalGenerator {
 		#endregion
 		#region Random Kerbal Generation
 		private void btn_gen_List_Kerb_Click( object sender, EventArgs e ) {
+			
+		}
+		private void updateRatioDisplay( decimal disp ) {
+			disp = 1 - Math.Abs( disp );
+			if ( tbar_rnd_FtMRatio.Value == 0 && !chk_rnd_useRatio.Checked ) {
+				lbl_rnd_mfRatio.Text = "1:1";
+				//if the value == 0, stop the slider to give it a snappy feeling.
+				//it's hacky, but it works.
+				//TODO: find a better way to do this.
+				tbar_rnd_FtMRatio.Enabled = false;
+				tbar_rnd_FtMRatio.Enabled = true;
+				tbar_rnd_FtMRatio.Select( );
+			}
+			else if ( disp.Equals( .50 ) || disp.Equals( .25 ) ) {
+				//Same As Above except for .25 and .5 and without setting our text to 1:1
+				tbar_rnd_FtMRatio.Enabled = false;
+				tbar_rnd_FtMRatio.Enabled = true;
+				tbar_rnd_FtMRatio.Select( );
+			}
 
-
+			if ( tbar_rnd_FtMRatio.Value > 0 ) {
+				lbl_rnd_mfRatio.Text = disp + ":1";
+			}
+			else if ( tbar_rnd_FtMRatio.Value < 0 ) {
+				lbl_rnd_mfRatio.Text = "1:" + Math.Abs( disp );
+			}
 		}
 
-		private void chk_rnd_allFemale_CheckedChanged( object sender, EventArgs e ) {
+		/// <summary>
+		/// Updates the random accumulator.  One method to rule *ALL* The random controls!
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void UpdateRandomAccumulator( object sender, EventArgs e ) {
+			//Dear Future Me: You are a genius.  You made this work.  Despite overwhelming odds, you are victorious!
+			//Be proud future me, when you look upon this method in total confusion, since you probably forgot 
+			//*exactly how* it works 10 minutes after closing this class.
 
+			Control control = sender as Control;
+			if ( control is TrackBar ) {
+				TrackBar tbar = control as TrackBar;
+				string controlName = control.Name.Remove(0,9);
+				//okay limiting our MinBads/MaxTourists here.
+				if ( controlName.Equals( "MinNumberOfBadasses" ) || controlName.Equals( "MaxNumberOfTourists" ) ) {
+					if ( tbar.Value >= randAccum.NumberToCreate ) {
+						tbar.Value = randAccum.NumberToCreate;
+					}
+				}
+				foreach ( var prop in randAccum.GetType( ).GetProperties( ) ) {
+					if ( controlName == prop.Name ) {
+						if ( prop.PropertyType == typeof( float ) ) {
+							prop.SetValue( randAccum, (float) tbar.Value / 100 );
+						}
+						else if ( prop.PropertyType == typeof( int ) ) {
+							prop.SetValue( randAccum, tbar.Value );
+						}
+						else if ( prop.PropertyType == typeof( decimal ) ) {
+							prop.SetValue( randAccum, (decimal) tbar.Value / 100 );
+						}
+						else {
+							Debug.WriteLine( prop.PropertyType );
+						}
+					}
+				}
+			}
+
+			if ( control is CheckBox ) {
+				CheckBox cbox = control as CheckBox;
+				string controlName = cbox.Name.Remove(0,8);
+				//because use Ratio is notted, we have to set it by hand.  
+				//The For loop is left incase we add any more checkboxes.
+				if ( controlName.Equals( "useRatio" ) ) {
+					tbar_rnd_FtMRatio.Enabled = !cbox.Checked;
+					randAccum.useRatio = !cbox.Checked;
+				}
+				else {
+					foreach ( var prop in randAccum.GetType( ).GetProperties( ) ) {
+						if ( controlName == prop.Name ) {
+							if ( prop.PropertyType == typeof( bool ) ) {
+								prop.SetValue( randAccum, cbox.Checked );
+							}
+						}
+					}
+				}
+			}
+			randAccum.NumberToCreate = randAccum.Pilots + randAccum.Engineers + randAccum.Scientists;
+			UpdateRandomDisplay( );
 		}
 
-		private void chk_rnd_allMale_CheckedChanged( object sender, EventArgs e ) {
-
+		private void UpdateRandomDisplay( ) {
+			randAccum.NumberToCreate = randAccum.Pilots + randAccum.Engineers + randAccum.Scientists;
+			lbl_rnd_maxpilotsdisp.Text = randAccum.Pilots.ToString( );
+			lbl_rnd_maxengidisp.Text = randAccum.Engineers.ToString( );
+			lbl_rnd_maxscidisp.Text = randAccum.Scientists.ToString( );
+			lbl_rnd_TotalKerbs.Text = randAccum.NumberToCreate.ToString( );
+			lbl_rnd_minStupidDisp.Text = randAccum.MinStupid.ToString( );
+			lbl_rnd_maxstupiddisp.Text = randAccum.MaxStupid.ToString( );
+			lbl_rnd_maxbravedisp.Text = randAccum.MaxBrave.ToString( );
+			lbl_rnd_minbravedisp.Text = randAccum.MinBrave.ToString( );
+			lbl_rnd_minbadsdisp.Text = randAccum.MinNumberOfBadasses.ToString( );
+			lbl_rnd_maxtourdisp.Text = randAccum.MaxNumberOfTourists.ToString( );
+			updateRatioDisplay( randAccum.FtMRatio );
 		}
 
+		private void btn_rnd_reset_Click( object sender, EventArgs e ) {
+			randAccum = randAccum.Reset( );
+
+			tbar_rnd_Pilots.Value = 0;
+			tbar_rnd_Scientists.Value = 0;
+			tbar_rnd_Engineers.Value = 0;
+			chk_rnd_isKerman.Checked = false;
+			tbar_rnd_FtMRatio.Value = 0;
+			chk_rnd_useRatio.Checked = false;
+			tbar_rnd_MaxBrave.Value = 0;
+			tbar_rnd_MaxStupid.Value = 0;
+			tbar_rnd_MinBrave.Value = 0;
+			tbar_rnd_MinStupid.Value = 0;
+			tbar_rnd_MinNumberOfBadasses.Value = 0;
+			tbar_rnd_MaxNumberOfTourists.Value = 0;
+
+			UpdateRandomDisplay( );
+		}
 		#endregion
 		#region Specific Kerbal Generation
+		//todo: create an UpdateSpecificAccumulator method.
 		private void btn_spe_reset_Click( object sender, EventArgs e ) {
 			txt_spe_kerbname.Text = "";
 
@@ -286,74 +391,10 @@ namespace KerbalGenerator {
 				specAccum.Female = true;
 			}
 		}
-
-
 		#endregion
 
-		private void groupBox4_Enter( object sender, EventArgs e ) {
-
-		}
-
-		private void tbar_rnd_FemaleToMale_Scroll( object sender, EventArgs e ) {
-			decimal disp = 1 - Math.Abs((decimal) tbar_rnd_FemaleToMale.Value /(decimal) 100 );
-
-			if ( tbar_rnd_FemaleToMale.Value == 0 ) {
-				lbl_rnd_mfRatio.Text = "1:1";
-				//if the value == 0, stop the slider to give it a snappy feeling.
-				//it's hacky, but it works.
-				//TODO: find a better way to do this.
-				tbar_rnd_FemaleToMale.Enabled = false;
-				tbar_rnd_FemaleToMale.Enabled = true;
-				tbar_rnd_FemaleToMale.Select( );
-			}
-			else if ( disp.Equals( .50 ) || disp.Equals( .25 ) ) {
-				tbar_rnd_FemaleToMale.Enabled = false;
-				tbar_rnd_FemaleToMale.Enabled = true;
-				tbar_rnd_FemaleToMale.Select( );
-			}
-
-			if ( tbar_rnd_FemaleToMale.Value > 0 ) {
-				lbl_rnd_mfRatio.Text = disp + ":1";
-			}
-			else if ( tbar_rnd_FemaleToMale.Value < 0 ) {
-				lbl_rnd_mfRatio.Text = "1:" + Math.Abs( disp );
-			}
-		}
-
-		private void checkBox1_CheckedChanged( object sender, EventArgs e ) {
-			tbar_rnd_FemaleToMale.Enabled = checkBox1.Checked ? false : true;
-		}
-
-		private void tbar_PES_scroll( object sender, EventArgs e ) {
-			TrackBar tb = sender as TrackBar;
-			UpdateWeights( tb );
-		}
-
-		private void UpdateWeights( TrackBar tb ) {
-			decimal accum =  nud_rnd_howMany.Value;
-			Dictionary<string, int> oldWeights = weights;
-			tbar_rnd_maxpilots.Value = tb.Value;
-
-			//figure out how much it moved
-			int moved = 0;
-			switch ( tb.Name ) {
-				case "tbar_rnd_maxpilots":
-					break;
-				case "tbar_rnd_maxengi":
-					break;
-				case "tbar_rnd_maxsci":
-					break;
-				default:
-					break;
-			}
-			
-			weights[tb.Name] = tb.Value;
-			
-		}
-
-
-		private void tbar_rnd_maxpilots_Scroll( object sender, EventArgs e ) {
-
+		private void btn_rnd_gen_Kerb_Click( object sender, EventArgs e ) {
+			generator.KreateRoster( randAccum );
 		}
 	}
 

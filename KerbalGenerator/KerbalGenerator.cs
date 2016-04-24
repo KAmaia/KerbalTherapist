@@ -65,8 +65,8 @@ namespace KerbalGenerator {
 			}
 			cfgr.LoadConfig ( );
 			config = cfgr.Configuration;
-			selectSave ( 0 );
-			selectKerbal ( 0 );
+			SelectSave ( 0 );
+			SelectKerbal ( 0 );
 			MainForm.SetAllControls ( true );
 		}
 
@@ -75,7 +75,7 @@ namespace KerbalGenerator {
 		/// Should only ever be needed in initialize.
 		/// </summary>
 		/// <param name="index">Should Always be 0</param>
-		private void selectSave ( int index ) {
+		private void SelectSave ( int index ) {
 			currentSavePath = config.SavePaths.Values.ElementAt ( 0 );
 			persistent = ConfigNode.Load ( currentSavePath );
 			ParseRoster ( );
@@ -95,7 +95,7 @@ namespace KerbalGenerator {
 		/// Selects Kerbal By Index.  Should only ever be used on initialization.
 		/// </summary>
 		/// <param name="index"></param>
-		private void selectKerbal ( int index ) {
+		private void SelectKerbal ( int index ) {
 			currentKerbal = roster.GetKerbal ( 0 );
 			UpdateKerbalStats ( );
 		}
@@ -155,7 +155,6 @@ namespace KerbalGenerator {
 		/// <param name="saveFile">No longer used.  There because I'm afraid Removing It Will break Something.</param>
 		public void Save ( string saveFile ) {
 			RosterParser.InsertRoster ( roster, currentGame );
-			
 			persistent.Save ( currentSavePath );
 			
 		}
@@ -175,7 +174,17 @@ namespace KerbalGenerator {
 			}
 			UpdateKerbalStats ( );
 			UpdateSaveStats ( );
-			
+		}
+
+		public void KreateRoster(RandomAccumulator ra ) {
+			Roster r = KerbalMaker.KreateRoster(ra, roster);
+			switch ( PreviewRoster( r ) ) {
+				case ( DialogResult.Yes ):
+					roster.AddRoster( r );
+					break;
+				default:
+					break;
+			}
 		}
 
 		/// <summary>

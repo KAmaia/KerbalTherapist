@@ -19,8 +19,10 @@ namespace KerbalGenerator {
 		public KerbalPreviewWindow( Roster r ) {
 			
 			InitializeComponent( );
+			label1.Text = "Accept This Roster?";
 			foreach(Kerbal k in r.getKerbals() ) {
 				txt_preview.Text += FormatKerbalText( k );
+				txt_preview.Text += Environment.NewLine;
 			}
 		}
 		
@@ -42,6 +44,10 @@ namespace KerbalGenerator {
 
 		private void btn_yes_Click( object sender, EventArgs e ) {
 			this.Close( );
+		}
+
+		private void txt_preview_TextChanged( object sender, EventArgs e ) {
+
 		}
 	}
 }

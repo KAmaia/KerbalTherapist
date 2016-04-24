@@ -58,5 +58,11 @@ namespace KerbalGenerator {
 		public Kerbal GetKerbal( string selectedKerbal ) {
 			return kerbals[selectedKerbal];
 		}
+
+		internal void AddRoster( Roster r ) {
+			foreach(Kerbal k in r.getKerbals() ) {
+				kerbals.Add( k.GetName( ), k );
+			}
+		}
 	}
 }
