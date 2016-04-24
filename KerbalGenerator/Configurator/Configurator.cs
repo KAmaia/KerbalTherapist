@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml;
+using ConfigNodeParser;
+using KerbalTherapist.Logging;
 
-using KerbalGenerator.Logging;
-
-namespace KerbalGenerator {
+namespace KerbalTherapist {
 	public class Configurator {
 		private string configPath;
 		private string configurationFilePath;
@@ -20,7 +20,8 @@ namespace KerbalGenerator {
 
 		public Configurator ( string configPath ) {
 			this.configPath = configPath;
-			configurationFilePath = Path.Combine ( configPath, "config.xml" );
+			configuration = new Config ( );
+			configurationFilePath = Path.Combine ( configPath, "config.cfg" );
 			Logger.LogEvent ( "Configurator Initialized." );
 			Logger.LogNewLine ( "Config Path: " + configPath );
 			Logger.LogNewLine ( "ConfigFile: " + configurationFilePath );
@@ -31,29 +32,15 @@ namespace KerbalGenerator {
 			try {
 				Logger.LogNewLine ( "Creating new Config Object" );
 				Config cfg = new Config ( );
-
-				XmlDocument doc = new XmlDocument ( );
-				XmlTextReader rdr = new XmlTextReader ( configurationFilePath );
-
-				Dictionary<string, string> confDict = new Dictionary<string, string> ( );
-				while ( ( rdr.Read ( ) ) ) {
-					if ( rdr.NodeType.Equals ( XmlNodeType.Element ) ) {
-					}
-					string configName = rdr.Name;
-					if ( rdr.Name.ToLower ( ).Equals ( "ksp" ) ) {
-						configName = rdr.GetAttribute ( "name" );
-
-					}
-					cfg.Name = configName;
-					if ( rdr.Name.ToLower ( ).Equals ( "save" ) ) {
-						if ( !confDict.ContainsKey ( rdr.GetAttribute ( "name" ) ) ) {
-							confDict.Add ( rdr.GetAttribute ( "name" ), rdr.GetAttribute ( "path" ) );
-							string kspPath = rdr.GetAttribute ( "path" );
-							cfg.KSPPath = rdr.GetAttribute ( "path" ).Remove ( rdr.GetAttribute ( "path" ).LastIndexOf ( Path.DirectorySeparatorChar + "saves" ) );
-							cfg.SavePaths = confDict;
-						}
-					}
+				ConfigNode cnConfig = ConfigNode.Load ( configurationFilePath ).GetNode ( "Kerbal_Therapist_Configuration" );
+				cnConfig = cnConfig.GetNode ( "KSP_Install" );
+				Logger.LogEvent ( cnConfig.name );
+				cfg.Name = cnConfig.GetValue ( "name" );
+				cfg.KSPPath = cnConfig.GetValue ( "kspPath" );
+				foreach ( ConfigNode cNode in cnConfig.GetNodes("ksp_save") ) {
+					cfg.SavePaths.Add ( cNode.GetValue ( "name" ), cNode.GetValue ( "path" ) );
 				}
+
 				configuration = cfg;
 				Logger.LogNewLine ( "Configuration Loaded Successfully!" );
 			}
@@ -72,17 +59,6 @@ namespace KerbalGenerator {
 			cfgrForm.Show ( );
 		}
 
-		/// <summary>
-		/// Creates an XML Formatted configuration file.
-		/// </summary>
-		/// <param name="_configName">
-		/// This text is passed in from ConfiguratorForm.lbl_configName.Text.
-		/// it is not the name of the configuration file, but of the config within it.  
-		/// this is to allow for multiple configurations to be managed in the future.
-		/// </param>
-		/// <param name="_kspPath">
-		/// This is the path to your Kerbal Space Program Install.  It is passed in from ConfiguratorForm.
-		/// </param>
 		public void CreateConfig ( string _configName, string _kspPath ) {
 			string configName = _configName;
 			string kspPath = _kspPath;
@@ -109,61 +85,59 @@ namespace KerbalGenerator {
 			Logger.LogEvent ( "ConfigPath successfully Validated or Created." );
 			Logger.LogNewLine ( "Creating New Config From Scratch" );
 			//get our save directory and enumerate it.
-			kspPath = Path.Combine ( kspPath, "saves" );
-			saves = EnumerateDirectory ( kspPath );
+			string savePath = Path.Combine ( kspPath, "saves" );
+			saves = EnumerateDirectory ( savePath );
 			Logger.LogNewLine ( "Created Saves from: " + kspPath );
 
+			foreach ( string s in saves ) {
+				Logger.LogEvent ( "Save: " + s + " found" );
+			}
 
 			//Remove Scenarios && Training from Saves;
-			saves.Remove ( "scenarios" );
-			saves.Remove ( "training" );
+			saves.Remove ( Path.Combine ( savePath, "scenarios" ) );
+			saves.Remove ( Path.Combine ( savePath, "training" ) );
 			Logger.LogNewLine ( "Removed Scenarios and Training" );
 
 			SaveCount = saves.Count;
 			Logger.LogNewLine ( saves.Count.ToString ( ) + " Saves Loaded" );
 
-			//declare the XML document.
-			XmlDocument xmlConfiguration = new XmlDocument ( );
-			XmlDeclaration xmlDec = xmlConfiguration.CreateXmlDeclaration ( "1.0", "", "" );
 
-			//Root node - Program configuration.
-			XmlNode root = xmlConfiguration.CreateElement ( "configuration" );
-			//Child Node - Ksp Install
-			XmlNode xmlNodeKSP = xmlConfiguration.CreateElement ( "ksp" );
-			XmlAttribute xmlAttrConfigName = xmlConfiguration.CreateAttribute ( "name" );
+			//Declare the confignode document
+			ConfigNode cnConfig = new ConfigNode ( );
+			//declare the root node
+			ConfigNode rootNode = new ConfigNode ( );
+			//Root Node - Kerbal Therapist Configuration.
+			rootNode.name = "Kerbal_Therapist_Configuration";
 
-			//assign the name of our config to the attribute for ksp;
-			//should be blah or hurdydurr for testing.
-			xmlAttrConfigName.Value = configName;
-			xmlNodeKSP.Attributes.Append ( xmlAttrConfigName );
+			//ChildNode - Ksp Install
+			ConfigNode installNode = new ConfigNode ( "KSP_Install" );
+			installNode.AddValue ( "name", configName );
+			installNode.AddValue ( "kspPath", kspPath );
 
 			//child nodes saves
 			foreach ( string s in saves ) {
 				//generate a save node to track where our ksp saves are.
-				XmlNode xmlNodeKspSaveLocation = xmlConfiguration.CreateElement ( "save" );
-				//create an attribute to track our ksp save name.
-				XmlAttribute xmlKspSaveName = xmlConfiguration.CreateAttribute ( "name" );
-				xmlKspSaveName.Value = s;
-
-				//Combine s & persistent.sfs to append later on.
+				ConfigNode saveNode = new ConfigNode ( "ksp_save" );
+				string saveName = s.Remove ( 0, s.LastIndexOf ( Path.DirectorySeparatorChar ) + 1 );
+				Logger.LogEvent ( "Save Name = " + saveName );
+				saveNode.AddValue ( "name", saveName );
 				string gutName = Path.Combine ( s, "persistent.sfs" );
+				saveNode.AddValue ( "path", Path.Combine ( kspPath, gutName ) );
 
-				//create an attribute to track our save path.
-				XmlAttribute savePath = xmlConfiguration.CreateAttribute ( "path" );
-				savePath.Value = Path.Combine ( kspPath, gutName );
-
-				xmlNodeKspSaveLocation.Attributes.Append ( xmlKspSaveName );
-				xmlNodeKspSaveLocation.Attributes.Append ( savePath );
-				xmlNodeKSP.AppendChild ( xmlNodeKspSaveLocation );
+				installNode.AddConfigNode ( saveNode );
 				Logger.LogNewLine ( "Created New Save: " + s );
 				Logger.LogNewLine ( "From File: " + gutName );
 			}
+			rootNode.AddConfigNode ( installNode );
+			cnConfig.AddConfigNode ( rootNode );
+			cnConfig.Save ( configurationFilePath );
+			/*
 			//append our nodes.  KspNode to root, root to config.
 			root.AppendChild ( xmlNodeKSP );
 			xmlConfiguration.AppendChild ( root );
 			xmlConfiguration.InsertBefore ( xmlDec, root );
 			xmlConfiguration.Save ( configurationFilePath );
-
+			*/
 			Logger.LogEvent ( "Configuration Creation Complete!" );
 		}
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KerbalGenerator.Accumulators {
+namespace KerbalTherapist.Accumulators {
 	public class SpecificAccumulator {
 		public string Name { get; set; }
 		public bool IsKerman { get; set; }

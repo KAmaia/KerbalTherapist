@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ConfigNodeParser;
-using KerbalGenerator.Kerbals;
-using KerbalGenerator.Accumulators;
-using KerbalGenerator.Logging;
+using KerbalTherapist.Kerbals;
+using KerbalTherapist.Accumulators;
+using KerbalTherapist.Logging;
 
-namespace KerbalGenerator {
-	class KerbalGenerator {
+namespace KerbalTherapist {
+	class KerbalTherapist {
 		#region class variables
 
-		private readonly string configPath = Path.Combine ( Path.Combine ( Path.Combine ( Environment.GetFolderPath ( Environment.SpecialFolder.ApplicationData ), "BadWater" ), "KerbalGen" ), "Config" );
-		private readonly string logPath = Path.Combine ( Path.Combine ( Path.Combine ( Environment.GetFolderPath ( Environment.SpecialFolder.ApplicationData ), "BadWater" ), "KerbalGen" ), "Logs" );
+		private readonly string configPath = Path.Combine ( Path.Combine ( Path.Combine ( Environment.GetFolderPath ( Environment.SpecialFolder.ApplicationData ), "AmaiaSystems" ), "KerbalTherapist" ), "Config" );
+		private readonly string logPath = Path.Combine ( Path.Combine ( Path.Combine ( Environment.GetFolderPath ( Environment.SpecialFolder.ApplicationData ), "AmaiaSystems" ), "KerbalTherapist" ), "Logs" );
 
 
 		private Config config;
@@ -39,7 +39,7 @@ namespace KerbalGenerator {
 
 		#endregion
 
-		public KerbalGenerator ( frm_Krb_Gen mainForm ) {
+		public KerbalTherapist ( frm_Krb_Gen mainForm ) {
 			cfgr = new Configurator ( configPath );
 			MainForm = mainForm;
 			Initialize ( );
@@ -50,7 +50,7 @@ namespace KerbalGenerator {
 		/// </summary>
 		/// <returns><c>true</c>, If the program has never run before, <c>false</c> otherwise.</returns>
 		private bool FirstRun ( ) {
-			string path = Path.Combine ( configPath, "config.xml" );
+			string path = Path.Combine ( configPath, "config.cfg" );
 			return !File.Exists ( path );
 		}
 
@@ -63,6 +63,7 @@ namespace KerbalGenerator {
 				MainForm.SetAllControls ( false );
 				cfgr.FirstRun ( );
 			}
+			config = new Config ( );
 			cfgr.LoadConfig ( );
 			config = cfgr.Configuration;
 			SelectSave ( 0 );
@@ -75,7 +76,8 @@ namespace KerbalGenerator {
 		/// Should only ever be needed in initialize.
 		/// </summary>
 		/// <param name="index">Should Always be 0</param>
-		private void SelectSave ( int index ) {
+		public void SelectSave ( int index ) {
+			Logger.LogEvent ( "Selecting Save at index: " + index + " With Name: " + config.SavePaths.Values.ElementAt ( 0 ) );
 			currentSavePath = config.SavePaths.Values.ElementAt ( 0 );
 			persistent = ConfigNode.Load ( currentSavePath );
 			ParseRoster ( );
@@ -86,6 +88,7 @@ namespace KerbalGenerator {
 		/// </summary>
 		/// <param name="name">The Name Of The Save To Select</param>
 		internal void SelectSave ( string name ) {
+			Logger.LogEvent ( "Selecting Save: " + name );
 			currentSavePath = Cfg.SavePaths [ name ];
 			persistent = ConfigNode.Load ( currentSavePath );
 			ParseRoster ( );

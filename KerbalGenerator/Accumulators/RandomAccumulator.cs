@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KerbalGenerator.Accumulators {
+namespace KerbalTherapist.Accumulators {
 	public class RandomAccumulator {
 		//number of kerbals to create
 		public int NumberToCreate { get; set; }

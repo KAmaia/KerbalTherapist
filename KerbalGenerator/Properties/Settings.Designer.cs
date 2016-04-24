@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KerbalGenerator.Properties {
+namespace KerbalTherapist.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

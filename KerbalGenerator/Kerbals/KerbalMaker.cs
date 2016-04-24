@@ -1,11 +1,11 @@
-﻿using KerbalGenerator.Accumulators;
+﻿using KerbalTherapist.Accumulators;
 using System.Collections.Generic;
-using KerbalGenerator.Names;
-using KerbalGenerator.Logging;
+using KerbalTherapist.Names;
+using KerbalTherapist.Logging;
 using System;
 using System.Diagnostics;
 
-namespace KerbalGenerator {
+namespace KerbalTherapist.Kerbals {
 	public class KerbalMaker {
 
 		//we defualt to female, but since we have to toggle it before our first return, it starts as false.

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using ConfigNodeParser;
 
-namespace KerbalGenerator.Kerbals {
+namespace KerbalTherapist.Kerbals {
 	class RosterParser {
 		
 		public RosterParser( ) {

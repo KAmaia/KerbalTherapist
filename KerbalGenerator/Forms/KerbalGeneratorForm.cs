@@ -6,13 +6,18 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+
 using System.Windows.Forms;
 using System.Diagnostics;
-using KerbalGenerator.Accumulators;
 
-namespace KerbalGenerator {
+using KerbalTherapist.Kerbals;
+using KerbalTherapist.Accumulators;
+using KerbalTherapist.Logging;
+
+
+namespace KerbalTherapist {
 	public partial class frm_Krb_Gen : Form {
-		private KerbalGenerator generator;
+		private KerbalTherapist generator;
 
 		private SpecificAccumulator specAccum;
 		private RandomAccumulator randAccum;
@@ -20,13 +25,14 @@ namespace KerbalGenerator {
 
 		public frm_Krb_Gen ( ) {
 			InitializeComponent ( );
-			generator = new KerbalGenerator ( this );
+			generator = new KerbalTherapist ( this );
 			specAccum = new SpecificAccumulator ( );
 			randAccum = new RandomAccumulator ( );
 
 		}
 
 		private void LockOutRandom ( ) {
+			Logger.LogEvent ( "Locking Out Controls" );
 			foreach ( Control c in pnl_rnd_gen.Controls ) {
 				c.Enabled = false;
 			}
@@ -51,7 +57,7 @@ namespace KerbalGenerator {
 		}
 
 		private void frm_Krb_Gen_Load ( object sender, EventArgs e ) {
-			Text = "Kerbal Generator -- " + generator.Cfg.Name;
+			Text = "Kerbal Therapist-- "; //+ generator.Cfg.Name;
 			cmb_AvailSaves.Items.AddRange ( generator.GetSaves ( ) );
 			cmb_AvailSaves.SelectedIndex = 0;
 			UpdateRandomDisplay ( );

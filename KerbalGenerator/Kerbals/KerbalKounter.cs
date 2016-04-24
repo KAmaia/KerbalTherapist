@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KerbalGenerator.Kerbals {
+namespace KerbalTherapist.Kerbals {
 	class KerbalKounter {
 		static Dictionary<string, int> counted;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KerbalGenerator.Names {
+namespace KerbalTherapist.Names {
 	public class NameGenerator {
 		#region REALLY BIG ARRAYS
 

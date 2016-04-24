@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KerbalGenerator {
+namespace KerbalTherapist {
 	partial class frm_Krb_Gen {
 		/// <summary>
 		/// Required designer variable.
@@ -1718,7 +1718,7 @@ namespace KerbalGenerator {
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.Name = "frm_Krb_Gen";
-			this.Text = "Kerbal Generator";
+			this.Text = "Kerbal Therapist";
 			this.Load += new System.EventHandler(this.frm_Krb_Gen_Load);
 			gb_po_options.ResumeLayout(false);
 			panel3.ResumeLayout(false);

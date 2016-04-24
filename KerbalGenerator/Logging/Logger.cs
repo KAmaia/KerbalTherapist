@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KerbalGenerator.Logging {
+namespace KerbalTherapist.Logging {
 	public class Logger {
 
 		private static readonly string logPath = Path.Combine ( Path.Combine ( Path.Combine ( Environment.GetFolderPath ( Environment.SpecialFolder.ApplicationData ), "BadWater" ), "KerbalGen" ), "Logs" );
