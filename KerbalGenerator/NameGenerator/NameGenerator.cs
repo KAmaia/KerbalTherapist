@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KerbalGenerator.NameGenerator {
+namespace KerbalGenerator.Names {
 	public class NameGenerator {
 		#region REALLY BIG ARRAYS
 
 		#region maleNames
 
-		private static string[] MaleFirstNames = {
+		private  string[] MaleFirstNames = {
 			"AARON",
 			"ABDUL",
 			"ABE",
@@ -1236,7 +1236,7 @@ namespace KerbalGenerator.NameGenerator {
 
 		#region FemaleNames
 
-		private static string[] femaleFirstNames = {"AARON",
+		private  string[] femaleFirstNames = {"AARON",
 			"ABBEY",
 			"ABBIE",
 			"ABBY",
@@ -5517,14 +5517,14 @@ namespace KerbalGenerator.NameGenerator {
 
 		#region Suffixes
 
-		private static string[] suffixes = {
+		private  string[] suffixes = {
 			"berg",
 			"stein",
 			"son",
 			"field",
 			"beck",
 			"bert",
-			"ov" ,
+			"ov",
 			"brook",
 			"court",
 			"ford",
@@ -5535,7 +5535,7 @@ namespace KerbalGenerator.NameGenerator {
 
 		#endregion
 
-		public static string GenerateName ( string name, bool rndName, bool female, bool isKerman ) {
+		public  string GenerateName ( string name, bool rndName, bool female, bool isKerman ) {
 			string tmpName = "";
 			if ( rndName ) {
 				tmpName = CamelCaseMe ( GenerateName ( female, isKerman ) );
@@ -5549,7 +5549,7 @@ namespace KerbalGenerator.NameGenerator {
 			return tmpName;
 		}
 
-		public static string GenerateName ( bool female, bool isKerman ) {
+		public  string GenerateName ( bool female, bool isKerman ) {
 			int maxNameLength = 18;
 			string firstName = "";
 			string middleName = "";
@@ -5579,7 +5579,7 @@ namespace KerbalGenerator.NameGenerator {
 			return name;
 		}
 
-		private static string CamelCaseMe ( string name ) {
+		private  string CamelCaseMe ( string name ) {
 			string result = name;
 			string[ ] tmpName = name.Split ( ' ' );
 			for ( int i = 0; i < tmpName.Length; i++ ) {
@@ -5592,7 +5592,7 @@ namespace KerbalGenerator.NameGenerator {
 			return result;
 		}
 
-		private static string PickLastName ( bool female ) {
+		private  string PickLastName ( bool female ) {
 			float pickFemale = Util.GetRandomFloat ( );
 			//take a first name;
 			string lastName = pickFemale < .5f ? femaleFirstNames [ Util.GetRandomIntInRange ( 0, femaleFirstNames.Length - 1 ) ] : MaleFirstNames [ Util.GetRandomIntInRange ( 0, MaleFirstNames.Length - 1 ) ];

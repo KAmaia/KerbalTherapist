@@ -1,6 +1,6 @@
 ﻿using KerbalGenerator.Accumulators;
 using System.Collections.Generic;
-using KerbalGenerator.NameGenerator;
+using KerbalGenerator.Names;
 using KerbalGenerator.Logging;
 using System;
 using System.Diagnostics;
@@ -17,6 +17,8 @@ namespace KerbalGenerator {
 		private int pilotsCreated = 0;
 		private int engineersCreated = 0;
 		private int scientistsCreated = 0;
+
+		private NameGenerator ng = new NameGenerator ( );
 
 		#region KreateSpecificKerbal
 
@@ -64,11 +66,7 @@ namespace KerbalGenerator {
 				}
 			}
 			//reset our temp values below.
-			nextIsFemale = false;
-			malesCreated = 0;
-			femalesCreated = 0;
-			badassCreated = 0;
-			touristCreated = 0;
+
 			return returnRoster;
 		}
 
@@ -79,6 +77,17 @@ namespace KerbalGenerator {
 				break;
 			case false:
 				malesCreated++;
+				break;
+			}
+			switch ( sa.Trait ) {
+			case "Pilot":
+				pilotsCreated++;
+				break;
+			case "Engineer":
+				engineersCreated++;
+				break;
+			case "Scientist":
+				scientistsCreated++;
 				break;
 			}
 			if ( sa.Badass ) {
@@ -177,11 +186,9 @@ namespace KerbalGenerator {
 
 		string assignTrait ( RandomAccumulator ra ) {
 			if ( pilotsCreated < ra.Pilots ) {
-				pilotsCreated++;
 				return "Pilot";
 			}
 			if ( engineersCreated < ra.Engineers ) {
-				engineersCreated++;
 				return "Engineer";
 			}
 			if ( scientistsCreated < ra.Scientists ) {
@@ -207,7 +214,7 @@ namespace KerbalGenerator {
 		}
 
 		private KeyValuePair<string, string> GenerateNamePair ( SpecificAccumulator sa ) {
-			return new KeyValuePair<string, string> ( "name", NameGenerator.NameGenerator.GenerateName ( sa.Name, sa.RndName, sa.Female, sa.IsKerman ) );
+			return new KeyValuePair<string, string> ( "name", ng.GenerateName ( sa.Name, sa.RndName, sa.Female, sa.IsKerman ) );
 		}
 
 		private KeyValuePair<string, string> GenerateGenderPair ( SpecificAccumulator sa ) {
