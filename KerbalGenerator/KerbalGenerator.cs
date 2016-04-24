@@ -31,13 +31,9 @@ namespace KerbalGenerator {
 		private ConfigNode currentGame;
 		private string currentSavePath;
 
-
-
 		public Roster Rstr { get { return roster; } }
 
 		public Config Cfg { get { return config; } }
-
-
 
 		public string CurrentSavePath { get { return currentSavePath; } }
 
@@ -49,6 +45,10 @@ namespace KerbalGenerator {
 			Initialize ( );
 		}
 
+		/// <summary>
+		/// Checks to see if this is the first time the program has run.
+		/// </summary>
+		/// <returns><c>true</c>, If the program has never run before, <c>false</c> otherwise.</returns>
 		private bool FirstRun ( ) {
 			string path = Path.Combine ( configPath, "config.xml" );
 			return !File.Exists ( path );
@@ -176,6 +176,10 @@ namespace KerbalGenerator {
 			UpdateSaveStats ( );
 		}
 
+		/// <summary>
+		/// Kreates the roster.
+		/// </summary>
+		/// <param name="ra">Ra is a RandomAccumulator which holds the values for creating a roster</param>
 		public void KreateRoster ( RandomAccumulator ra ) {
 			Roster r = new KerbalMaker ( ).KreateRoster ( ra, roster );
 			switch ( PreviewRoster ( r ) ) {

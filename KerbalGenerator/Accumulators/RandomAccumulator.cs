@@ -9,26 +9,35 @@ namespace KerbalGenerator.Accumulators {
 		//number of kerbals to create
 		public int NumberToCreate { get; set; }
 
-		//gendersettings;
-		public decimal FtMRatio { get; set; }
+
 
 		public bool useRatio { get; set; }
+
 		public bool isKerman { get; set; }
 
+		//gendersettings;
+		public float FtMRatio { get; set; }
 		//ability scores
 		public float MinStupid { get; set; }
+
 		public float MaxStupid { get; set; }
+
 		public float MinBrave { get; set; }
+
 		public float MaxBrave { get; set; }
+
 		public int MinNumberOfBadasses { get; set; }
+
 		public int MaxNumberOfTourists { get; set; }
 
 		//Profession Ratios
-		public int Pilots{ get; set; }
-		public int Engineers { get; set; }
-		public int Scientists{ get; set; }
+		public int Pilots { get; set; }
 
-		public RandomAccumulator( ) {
+		public int Engineers { get; set; }
+
+		public int Scientists { get; set; }
+
+		public RandomAccumulator ( ) {
 			NumberToCreate = 1;
 			FtMRatio = 0;
 			useRatio = true; //needs to be true by default.
@@ -44,8 +53,8 @@ namespace KerbalGenerator.Accumulators {
 			Scientists = 0;
 		}
 
-		public RandomAccumulator Reset( ) {
-			return new RandomAccumulator( );
+		public RandomAccumulator Reset ( ) {
+			return new RandomAccumulator ( );
 		}
 	}
 }
