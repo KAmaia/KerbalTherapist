@@ -164,7 +164,7 @@ namespace KerbalGenerator {
 		/// </summary>
 		/// <param name="sa">The Specific Accumulator To Use.</param>
 		public void KreateKerbal ( SpecificAccumulator sa ) {
-			Kerbal k =new KerbalMaker().KreateKerbal ( sa );
+			Kerbal k = new KerbalMaker ( ).KreateKerbal ( sa );
 			switch ( PreviewKerbal ( k ) ) {
 			case DialogResult.Yes:
 				roster.AddKerbal ( k );
@@ -176,14 +176,14 @@ namespace KerbalGenerator {
 			UpdateSaveStats ( );
 		}
 
-		public void KreateRoster(RandomAccumulator ra ) {
-			Roster r = new KerbalMaker().KreateRoster(ra, roster);
-			switch ( PreviewRoster( r ) ) {
-				case ( DialogResult.Yes ):
-					roster.AddRoster( r );
-					break;
-				default:
-					break;
+		public void KreateRoster ( RandomAccumulator ra ) {
+			Roster r = new KerbalMaker ( ).KreateRoster ( ra, roster );
+			switch ( PreviewRoster ( r ) ) {
+			case ( DialogResult.Yes ):
+				roster.AddRoster ( r );
+				break;
+			default:
+				break;
 			}
 		}
 
@@ -204,10 +204,20 @@ namespace KerbalGenerator {
 			return new KerbalPreviewWindow ( k ).ShowDialog ( );
 		}
 
+		/// <summary>
+		/// Previews the roster.
+		/// </summary>
+		/// <returns>The roster.</returns>
+		/// <param name="r">The Roster To Preview</param>
 		private DialogResult PreviewRoster ( Roster r ) {
 			return new KerbalPreviewWindow ( r ).ShowDialog ( );
 		}
 
+		/// <summary>
+		/// Validates the name of the kerbal.
+		/// </summary>
+		/// <returns><c>true</c>, if kerbal name was validated, <c>false</c> otherwise.</returns>
+		/// <param name="name">Name.</param>
 		public bool ValidateKerbalName ( string name ) {
 			return ( roster.ValidateKerbal ( name ) );
 		}

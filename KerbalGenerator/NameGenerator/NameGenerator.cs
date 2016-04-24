@@ -8,7 +8,8 @@ namespace KerbalGenerator.NameGenerator {
 	public class NameGenerator {
 		#region REALLY BIG ARRAYS
 		#region maleNames
-		private static string[] MaleFirstNames = {"AARON",
+		private static string[] MaleFirstNames = {
+"AARON",
 "ABDUL",
 "ABE",
 "ABEL",
@@ -2120,7 +2121,7 @@ namespace KerbalGenerator.NameGenerator {
 "DAPHNE",
 "DARA",
 "DARBY",
-"DARCEL",
+			"DARCEL",https://gist.github.com/KAmaia/24ee8716d44f4c0db5235230bd6d56cd
 "DARCEY",
 "DARCI",
 "DARCIE",
@@ -3262,7 +3263,7 @@ namespace KerbalGenerator.NameGenerator {
 "KATHARYN",
 "KATHE",
 "KATHELEEN",
-"KATHERIN",
+			"KATHERIN",https://gist.github.com/KAmaia/24ee8716d44f4c0db5235230bd6d56cd
 "KATHERINA",
 "KATHERINE",
 "KATHERN",
@@ -4930,7 +4931,7 @@ namespace KerbalGenerator.NameGenerator {
 "SILVA",
 "SILVANA",
 "SILVIA",
-"SIMA",
+			"SIMA",https://gist.github.com/KAmaia/24ee8716d44f4c0db5235230bd6d56cd
 "SIMONA",
 "SIMONE",
 "SIMONNE",
@@ -5540,7 +5541,14 @@ namespace KerbalGenerator.NameGenerator {
 			else {
 				lastName = PickLastName( female );
 			}
-			string name = firstName + " " + middleName + " " + lastName;
+			//to fix firstname  last name bug.
+			string name;
+			if ( useMiddle > .5f ) {
+				name = firstName + " " + middleName + " " + lastName;
+			}
+			else{
+				name = firstName + " " + lastName;
+			}
 			if ( name.Length > maxNameLength ) {
 				return GenerateName( female, isKerman );
 			}
@@ -5564,13 +5572,14 @@ namespace KerbalGenerator.NameGenerator {
 			float pickFemale = Util.GetRandomFloat();
 			//take a first name;
 			string lastName = pickFemale < .5f ? femaleFirstNames[Util.GetRandomIntInRange(0, femaleFirstNames.Length - 1)] : MaleFirstNames[Util.GetRandomIntInRange(0, MaleFirstNames.Length - 1)];
-			//tack on an s
-			if ( !lastName.EndsWith( "s" ) ) {
-				lastName += "s";
-			}
+
 			//append a suffix?
 			float useSuffix = Util.GetRandomFloat();
-			string suffix = useSuffix > .5f? suffixes[Util.GetRandomIntInRange( 0, suffixes.Length - 1 )] : "";
+			if(useSuffix > .5f && !lastName.EndsWith("s")){
+				//tack on an s
+				lastName += "s";
+			}
+			string suffix = useSuffix > .5f ? suffixes[Util.GetRandomIntInRange( 0, suffixes.Length - 1 )] : "";
 			if ( suffix == "ov" && female ) {
 				suffix = "ova";
 			}
