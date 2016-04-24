@@ -32,15 +32,12 @@ namespace KerbalGenerator {
 
 		public void AddKerbal( Kerbal k ) {
 			//make sure K doesn't exist in roster
-			if ( !( kerbals.ContainsKey( k.GetName( ) ) )){
-				kerbals.Add( k.GetName(), k );
-			}
-			//if it does, delete it, then add it again.
-			else {
-				kerbals.Remove( k.GetName( ) );
+			if ( !( kerbals.ContainsKey( k.GetName( ) ) ) ) {
 				kerbals.Add( k.GetName( ), k );
 			}
+			//it used to erase and add here.
 		}
+	
 		
 
 		public List<string> GetNames( ) {

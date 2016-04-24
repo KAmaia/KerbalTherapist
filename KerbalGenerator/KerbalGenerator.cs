@@ -164,7 +164,7 @@ namespace KerbalGenerator {
 		/// </summary>
 		/// <param name="sa">The Specific Accumulator To Use.</param>
 		public void KreateKerbal ( SpecificAccumulator sa ) {
-			Kerbal k = KerbalMaker.KreateKerbal ( sa );
+			Kerbal k =new KerbalMaker().KreateKerbal ( sa );
 			switch ( PreviewKerbal ( k ) ) {
 			case DialogResult.Yes:
 				roster.AddKerbal ( k );
@@ -177,7 +177,7 @@ namespace KerbalGenerator {
 		}
 
 		public void KreateRoster(RandomAccumulator ra ) {
-			Roster r = KerbalMaker.KreateRoster(ra, roster);
+			Roster r = new KerbalMaker().KreateRoster(ra, roster);
 			switch ( PreviewRoster( r ) ) {
 				case ( DialogResult.Yes ):
 					roster.AddRoster( r );
