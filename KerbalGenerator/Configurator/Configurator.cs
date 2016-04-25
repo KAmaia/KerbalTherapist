@@ -37,10 +37,9 @@ namespace KerbalTherapist {
 				Logger.LogEvent ( cnConfig.name );
 				cfg.Name = cnConfig.GetValue ( "name" );
 				cfg.KSPPath = cnConfig.GetValue ( "kspPath" );
-				foreach ( ConfigNode cNode in cnConfig.GetNodes("ksp_save") ) {
+				foreach ( ConfigNode cNode in cnConfig.GetNodes( "ksp_save" ) ) {
 					cfg.SavePaths.Add ( cNode.GetValue ( "name" ), cNode.GetValue ( "path" ) );
 				}
-
 				configuration = cfg;
 				Logger.LogNewLine ( "Configuration Loaded Successfully!" );
 			}
@@ -85,18 +84,23 @@ namespace KerbalTherapist {
 			Logger.LogEvent ( "ConfigPath successfully Validated or Created." );
 			Logger.LogNewLine ( "Creating New Config From Scratch" );
 			//get our save directory and enumerate it.
+
 			string savePath = Path.Combine ( kspPath, "saves" );
 			saves = EnumerateDirectory ( savePath );
-			Logger.LogNewLine ( "Created Saves from: " + kspPath );
+			Logger.LogNewLine ( "Created Saves from: " + savePath );
 
 			foreach ( string s in saves ) {
 				Logger.LogEvent ( "Save: " + s + " found" );
 			}
 
 			//Remove Scenarios && Training from Saves;
-			saves.Remove ( Path.Combine ( savePath, "scenarios" ) );
-			saves.Remove ( Path.Combine ( savePath, "training" ) );
-			Logger.LogNewLine ( "Removed Scenarios and Training" );
+			saves.Remove ( "scenarios" );
+			saves.Remove ( "training" );
+
+			Logger.LogEvent ( "Removing Scenarios And Training" );
+			foreach ( string s in saves ) {
+				Logger.LogNewLine ( "======" + s + "Removed!" );
+			}
 
 			SaveCount = saves.Count;
 			Logger.LogNewLine ( saves.Count.ToString ( ) + " Saves Loaded" );
@@ -122,7 +126,7 @@ namespace KerbalTherapist {
 				Logger.LogEvent ( "Save Name = " + saveName );
 				saveNode.AddValue ( "name", saveName );
 				string gutName = Path.Combine ( s, "persistent.sfs" );
-				saveNode.AddValue ( "path", Path.Combine ( kspPath, gutName ) );
+				saveNode.AddValue ( "path", Path.Combine ( savePath, gutName ) );
 
 				installNode.AddConfigNode ( saveNode );
 				Logger.LogNewLine ( "Created New Save: " + s );
