@@ -35,8 +35,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ConfigNodeParser;
-using KerbalTherapist.Kerbals;
 using KerbalTherapist.Accumulators;
+using KerbalTherapist.Kerbals;
 using KerbalTherapist.Logging;
 
 namespace KerbalTherapist {

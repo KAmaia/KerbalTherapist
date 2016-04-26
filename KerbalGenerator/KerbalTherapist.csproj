@@ -61,7 +61,6 @@
     <Compile Include="Forms\ConfiguratorForm.Designer.cs">
       <DependentUpon>ConfiguratorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KerbalGenerator.cs" />
     <Compile Include="Forms\KerbalGeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +111,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="KerbalTherapist.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
