@@ -236,9 +236,17 @@ namespace KerbalTherapist {
 							prop.SetValue ( randAccum, tbar.Value );
 						}
 						else {
-							Debug.WriteLine ( prop.PropertyType );
+							Logger.LogEvent ( prop.PropertyType.ToString ( ) );
 						}
 					}
+				}
+				tbar_rnd_MaxNumberOfTourists.Maximum = randAccum.NumberToCreate;
+				tbar_rnd_MinNumberOfBadasses.Maximum = randAccum.NumberToCreate;
+				if ( tbar_rnd_MaxNumberOfTourists.Value > randAccum.NumberToCreate ) {
+					tbar_rnd_MaxNumberOfTourists.Value = randAccum.NumberToCreate;
+				}
+				if ( tbar_rnd_MinNumberOfBadasses.Value > randAccum.NumberToCreate ) {
+					tbar_rnd_MinNumberOfBadasses.Value = randAccum.NumberToCreate;
 				}
 			}
 

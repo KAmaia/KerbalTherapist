@@ -191,6 +191,8 @@ namespace KerbalTherapist {
 			default:
 				break;
 			}
+			UpdateSaveStats ( );
+			UpdateKerbalStats ( );
 		}
 
 		/// <summary>
