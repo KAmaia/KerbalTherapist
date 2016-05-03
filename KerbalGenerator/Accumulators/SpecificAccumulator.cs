@@ -37,7 +37,7 @@ namespace KerbalTherapist.Accumulators {
 
 		public bool IsKerman { get; set; }
 
-		public bool RndName { get; set; }
+		public bool RandName { get; set; }
 
 		public bool Female { get; set; }
 
@@ -49,28 +49,28 @@ namespace KerbalTherapist.Accumulators {
 
 		public bool Tourist { get; set; }
 
-		public float brave { get; set; }
+		public float Brave { get; set; }
 
-		public float dumb { get; set; }
+		public float Dumb { get; set; }
 
-		public bool RndBrave { get; set; }
+		public bool RandBrave { get; set; }
 
-		public bool RndDumb { get; set; }
+		public bool RandDumb { get; set; }
 
 		public SpecificAccumulator ( ) {
 			//set default values.
 			Name = "";
 			IsKerman = false;
-			RndName = false;
+			RandName = false;
 			Female = true;
 			Type = "";
 			Trait = "";
 			Badass = false;
 			Tourist = false;
-			brave = 0f;
-			dumb = 0f;
-			RndBrave = false;
-			RndDumb = false;
+			Brave = 0f;
+			Dumb = 0f;
+			RandBrave = false;
+			RandDumb = false;
 
 		}
 

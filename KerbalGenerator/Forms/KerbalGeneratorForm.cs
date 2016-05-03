@@ -40,7 +40,7 @@ using System.Diagnostics;
 using KerbalTherapist.Kerbals;
 using KerbalTherapist.Accumulators;
 using KerbalTherapist.Logging;
-
+using KerbalTherapist.Forms;
 
 namespace KerbalTherapist {
 	public partial class frm_Krb_Gen : Form {
@@ -111,6 +111,7 @@ namespace KerbalTherapist {
 			lbl_si_applcntdisp.Text = countedKerbals [ "Applicant" ].ToString ( );
 			lbl_si_assigneddisp.Text = countedKerbals [ "Assigned" ].ToString ( );
 			lbl_si_availdisp.Text = countedKerbals [ "Available" ].ToString ( );
+			grp_save_flag.BackgroundImage =  generator.GetFlag( );
 		}
 
 		internal void UpdateKerbalList ( ) {
@@ -364,12 +365,12 @@ namespace KerbalTherapist {
 
 		private void tbar_spe_stupid_Scroll ( object sender, EventArgs e ) {
 			lbl_spe_stupiddisp.Text = tbar_spe_stupid.Value.ToString ( );
-			specAccum.dumb = tbar_spe_stupid.Value;
+			specAccum.Dumb = tbar_spe_stupid.Value;
 		}
 
 		private void tbar_spe_brave_Scroll ( object sender, EventArgs e ) {
 			lbl_spe_bravedisp.Text = tbar_spe_brave.Value.ToString ( );
-			specAccum.brave = tbar_spe_brave.Value;
+			specAccum.Brave = tbar_spe_brave.Value;
 		}
 
 		private void chk_spe_lastNameKerman_CheckedChanged ( object sender, EventArgs e ) {
@@ -388,7 +389,7 @@ namespace KerbalTherapist {
 		private void chk_spe_rndName_CheckedChanged ( object sender, EventArgs e ) {
 			txt_spe_kerbname.Text = "";
 			txt_spe_kerbname.Enabled = !chk_spe_rndName.Checked;
-			specAccum.RndName = chk_spe_rndName.Checked;
+			specAccum.RandName = chk_spe_rndName.Checked;
 			btn_spe_generate.Enabled = true;
 		}
 
@@ -401,7 +402,7 @@ namespace KerbalTherapist {
 			if ( chk_spe_rndBrave.Checked ) {
 				tbar_spe_brave.Value = 0;
 				lbl_spe_bravedisp.Text = "";
-				specAccum.RndBrave = chk_spe_rndBrave.Checked;
+				specAccum.RandBrave = chk_spe_rndBrave.Checked;
 			}
 			tbar_spe_brave.Enabled = !chk_spe_rndBrave.Checked;
 		}
@@ -410,7 +411,7 @@ namespace KerbalTherapist {
 			if ( chk_spe_rndStupid.Checked ) {
 				tbar_spe_stupid.Value = 0;
 				lbl_spe_stupiddisp.Text = "";
-				specAccum.RndDumb = chk_spe_rndStupid.Checked;
+				specAccum.RandDumb = chk_spe_rndStupid.Checked;
 			}
 			tbar_spe_stupid.Enabled = !chk_spe_rndStupid.Checked;
 		}
@@ -451,6 +452,11 @@ namespace KerbalTherapist {
 
 		private void btn_rnd_gen_Kerb_Click ( object sender, EventArgs e ) {
 			generator.KreateRoster ( randAccum );
+		}
+
+		private void button1_Click( object sender, EventArgs e ) {
+			Form mainForm = new MainForm();
+			mainForm.Show( );
 		}
 	}
 

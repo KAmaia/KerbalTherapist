@@ -226,7 +226,7 @@ namespace KerbalTherapist {
 			gb_po_options.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			gb_po_options.Location = new System.Drawing.Point(3, 3);
 			gb_po_options.Name = "gb_po_options";
-			gb_po_options.Size = new System.Drawing.Size(685, 88);
+			gb_po_options.Size = new System.Drawing.Size(685, 101);
 			gb_po_options.TabIndex = 5;
 			gb_po_options.TabStop = false;
 			gb_po_options.Text = "Program Options";

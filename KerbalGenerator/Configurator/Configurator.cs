@@ -144,7 +144,7 @@ namespace KerbalTherapist {
 			ConfigNode installNode = new ConfigNode ( "KSP_Install" );
 			installNode.AddValue ( "name", configName );
 			installNode.AddValue ( "kspPath", kspPath );
-
+			
 			//child nodes saves
 			foreach ( string s in saves ) {
 				//generate a save node to track where our ksp saves are.
@@ -154,7 +154,6 @@ namespace KerbalTherapist {
 				saveNode.AddValue ( "name", saveName );
 				string gutName = Path.Combine ( s, "persistent.sfs" );
 				saveNode.AddValue ( "path", Path.Combine ( savePath, gutName ) );
-
 				installNode.AddConfigNode ( saveNode );
 				Logger.LogNewLine ( "Created New Save: " + s );
 				Logger.LogNewLine ( "From File: " + gutName );

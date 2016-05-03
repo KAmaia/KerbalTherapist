@@ -130,14 +130,14 @@ namespace KerbalTherapist.Kerbals {
 			//get our gender first, so that we can generate a gender appropriate name;
 			sa.Female = PickRandomAccumGender ( ra );
 			//always true.  I forgot, we pick our names during Kerbal Generation.
-			sa.RndName = true;
+			sa.RandName = true;
 			//just copy isKerman from RA to SA.
 			sa.IsKerman = ra.isKerman;
 			//assign our traits;
 			sa.Trait = assignTrait ( ra );
 			//generate our stupid and brave values;
-			sa.brave = Util.GetRandomFloatInRange ( ra.MinBrave, ra.MaxBrave );
-			sa.dumb = Util.GetRandomFloatInRange ( ra.MinStupid, ra.MaxStupid );
+			sa.Brave = Util.GetRandomFloatInRange ( ra.MinBrave, ra.MaxBrave );
+			sa.Dumb = Util.GetRandomFloatInRange ( ra.MinStupid, ra.MaxStupid );
 			//just some counting variables.
 
 			//TODO: Move This
@@ -241,7 +241,7 @@ namespace KerbalTherapist.Kerbals {
 		}
 
 		private KeyValuePair<string, string> GenerateNamePair ( SpecificAccumulator sa ) {
-			return new KeyValuePair<string, string> ( "name", ng.GenerateName ( sa.Name, sa.RndName, sa.Female, sa.IsKerman ) );
+			return new KeyValuePair<string, string> ( "name", ng.GenerateName ( sa.Name, sa.RandName, sa.Female, sa.IsKerman ) );
 		}
 
 		private KeyValuePair<string, string> GenerateGenderPair ( SpecificAccumulator sa ) {
@@ -263,11 +263,11 @@ namespace KerbalTherapist.Kerbals {
 		}
 
 		private KeyValuePair<string, string> GenerateBravePair ( SpecificAccumulator sa ) {
-			return CreateFloatPair ( "brave", sa.RndBrave, sa.brave );
+			return CreateFloatPair ( "brave", sa.RandBrave, sa.Brave );
 		}
 
 		private KeyValuePair<string, string> GenerateDumbPair ( SpecificAccumulator sa ) {
-			return CreateFloatPair ( "dumb", sa.RndDumb, sa.dumb );
+			return CreateFloatPair ( "dumb", sa.RandDumb, sa.Dumb );
 		}
 
 		private KeyValuePair<string, string> GenerateBadsPair ( SpecificAccumulator sa ) {

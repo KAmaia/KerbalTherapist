@@ -61,11 +61,29 @@
     <Compile Include="Forms\ConfiguratorForm.Designer.cs">
       <DependentUpon>ConfiguratorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\KerbalEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KerbalEditorForm.Designer.cs">
+      <DependentUpon>KerbalEditorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\KerbalGeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\KerbalGeneratorForm.Designer.cs">
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KerbalKreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KerbalKreationForm.Designer.cs">
+      <DependentUpon>KerbalKreationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Kerbals\Kerbal.cs" />
     <Compile Include="Kerbals\KerbalKounter.cs" />
@@ -86,11 +104,20 @@
     <EmbeddedResource Include="Forms\ConfiguratorForm.resx">
       <DependentUpon>ConfiguratorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KerbalEditorForm.resx">
+      <DependentUpon>KerbalEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KerbalGeneratorForm.resx">
       <DependentUpon>KerbalGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KerbalKreationForm.resx">
+      <DependentUpon>KerbalKreationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KerbalPreviewWindow.resx">
       <DependentUpon>KerbalPreviewWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

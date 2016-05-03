@@ -38,6 +38,7 @@ using ConfigNodeParser;
 using KerbalTherapist.Accumulators;
 using KerbalTherapist.Kerbals;
 using KerbalTherapist.Logging;
+using System.Drawing;
 
 namespace KerbalTherapist {
 	class KerbalTherapist {
@@ -118,6 +119,12 @@ namespace KerbalTherapist {
 			currentSavePath = Cfg.SavePaths [ name ];
 			persistent = ConfigNode.Load ( currentSavePath );
 			ParseRoster ( );
+		}
+
+		internal Bitmap GetFlag( ) {
+			string bmploader = Path.Combine(Cfg.KSPPath, Path.Combine("GameData", ( currentGame.GetValue( "flag" )))+".png" );
+			bmploader = bmploader.Replace( '/', Path.DirectorySeparatorChar );
+			return new Bitmap( bmploader );
 		}
 
 		/// <summary>
