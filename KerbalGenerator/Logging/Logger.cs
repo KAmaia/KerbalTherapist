@@ -37,7 +37,7 @@ namespace KerbalTherapist.Logging {
 
 		private static readonly string logPath = Path.Combine ( Path.Combine ( Path.Combine ( Environment.GetFolderPath ( Environment.SpecialFolder.ApplicationData ), "AmaiaSystems" ), "KerbalTherapist" ), "Logs" );
 		private static readonly string logFile = Path.Combine ( logPath, ( DateTime.Now.ToString ( ).Replace ( ' ', '-' ).Replace ( '/', '-' ).Replace ( ':', '-' ) + ".txt" ) );
-
+		//comment to test new repo
 		private static List<string> log = new List<string> ( );
 
 		public static void LogEvent ( string str ) {
