@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
-    <ReleaseVersion>0.1.3-beta</ReleaseVersion>
+    <ReleaseVersion>0.1.5-beta</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
     <Description>An External Program For Adding Kerbals to you KSP Roster.
 </Description>

@@ -121,8 +121,8 @@ namespace KerbalTherapist {
 			}
 
 			//Remove Scenarios && Training from Saves;
-			saves.Remove ( "scenarios" );
-			saves.Remove ( "training" );
+			saves.Remove ( Path.Combine ( savePath, "scenarios" ) );
+			saves.Remove ( Path.Combine ( savePath, "training" ) );
 
 			Logger.LogEvent ( "Removing Scenarios And Training" );
 			foreach ( string s in saves ) {
