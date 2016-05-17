@@ -133,8 +133,6 @@ namespace KerbalTherapist.Forms {
 
 		private void chk_RandDumb_CheckedChanged( object sender, EventArgs e ) {
 			tbar_Dumb.Enabled = !chk_RandDumb.Checked;
-		}
-
-		
+		}		
 	}
 }

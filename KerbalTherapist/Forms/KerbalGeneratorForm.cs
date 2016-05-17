@@ -42,7 +42,7 @@ using KerbalTherapist.Accumulators;
 using KerbalTherapist.Logging;
 using KerbalTherapist.Forms;
 
-namespace KerbalTherapist {
+namespace KerbalTherapist.Forms {
 	public partial class frm_Krb_Gen : Form {
 		private KerbalTherapist generator;
 
@@ -458,6 +458,8 @@ namespace KerbalTherapist {
 			Form mainForm = new MainForm();
 			mainForm.Show( );
 		}
+
+		
 	}
 
 }

@@ -40,7 +40,7 @@ using KerbalTherapist.Kerbals;
 using KerbalTherapist.Logging;
 using System.Drawing;
 
-namespace KerbalTherapist {
+namespace KerbalTherapist.Forms {
 	class KerbalTherapist {
 		#region class variables
 

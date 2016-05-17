@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerbalTherapist", "KerbalGenerator\KerbalTherapist.csproj", "{E4243CF4-7820-45A6-9302-2DE543852A67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerbalTherapist", "KerbalTherapist\KerbalTherapist.csproj", "{E4243CF4-7820-45A6-9302-2DE543852A67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +16,10 @@ Global
 		{E4243CF4-7820-45A6-9302-2DE543852A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4243CF4-7820-45A6-9302-2DE543852A67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = KerbalGenerator\KerbalTherapist.csproj
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = KerbalGenerator\KerbalTherapist.csproj
 	EndGlobalSection
 EndGlobal

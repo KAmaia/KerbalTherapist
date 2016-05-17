@@ -32,6 +32,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 using KerbalTherapist.Logging;
+using KerbalTherapist.Forms;
 
 namespace KerbalTherapist {
 	static class Program {

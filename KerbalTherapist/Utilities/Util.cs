@@ -31,13 +31,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KerbalTherapist {
+namespace KerbalTherapist.Utilities {
 	class Util {
 		private static Random rnd = new Random ( );
 
 		public static float GetRandomFloat ( ) {
 			return (float) rnd.NextDouble ( );
-			
 		}
 
 		public static string CapitalizeString ( string str ) {

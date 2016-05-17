@@ -34,7 +34,7 @@ using System.Xml;
 using ConfigNodeParser;
 using KerbalTherapist.Logging;
 
-namespace KerbalTherapist {
+namespace KerbalTherapist.Forms {
 	public class Configurator {
 		private string configPath;
 		private string configurationFilePath;

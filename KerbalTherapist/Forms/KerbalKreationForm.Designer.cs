@@ -59,9 +59,9 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
 			this.label8 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.rd_female = new System.Windows.Forms.RadioButton();
 			this.rd_male = new System.Windows.Forms.RadioButton();
+			this.rd_female = new System.Windows.Forms.RadioButton();
+			this.label9 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
 			this.btn_close = new System.Windows.Forms.Button();
 			this.btn_reset = new System.Windows.Forms.Button();
@@ -546,9 +546,9 @@
 			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
 			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
 			this.tableLayoutPanel6.Controls.Add(this.label8, 1, 0);
-			this.tableLayoutPanel6.Controls.Add(this.label9, 1, 1);
-			this.tableLayoutPanel6.Controls.Add(this.rd_female, 2, 0);
 			this.tableLayoutPanel6.Controls.Add(this.rd_male, 2, 1);
+			this.tableLayoutPanel6.Controls.Add(this.rd_female, 1, 1);
+			this.tableLayoutPanel6.Controls.Add(this.label9, 2, 0);
 			this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 22);
 			this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -560,48 +560,54 @@
 			// 
 			// label8
 			// 
-			this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(88, 5);
+			this.label8.Location = new System.Drawing.Point(29, 5);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(41, 13);
+			this.label8.Size = new System.Drawing.Size(100, 13);
 			this.label8.TabIndex = 0;
 			this.label8.Text = "Female";
-			// 
-			// label9
-			// 
-			this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(94, 28);
-			this.label9.Name = "label9";
-			this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-			this.label9.Size = new System.Drawing.Size(35, 13);
-			this.label9.TabIndex = 1;
-			this.label9.Text = "Male";
-			// 
-			// rd_female
-			// 
-			this.rd_female.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.rd_female.AutoSize = true;
-			this.rd_female.Checked = true;
-			this.rd_female.Location = new System.Drawing.Point(135, 5);
-			this.rd_female.Name = "rd_female";
-			this.rd_female.Size = new System.Drawing.Size(14, 13);
-			this.rd_female.TabIndex = 2;
-			this.rd_female.TabStop = true;
-			this.rd_female.UseVisualStyleBackColor = true;
-			this.rd_female.CheckedChanged += new System.EventHandler(this.AccumulateValues);
+			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// rd_male
 			// 
-			this.rd_male.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.rd_male.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.rd_male.AutoSize = true;
+			this.rd_male.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.rd_male.Location = new System.Drawing.Point(135, 28);
 			this.rd_male.Name = "rd_male";
-			this.rd_male.Size = new System.Drawing.Size(14, 13);
+			this.rd_male.Size = new System.Drawing.Size(100, 13);
 			this.rd_male.TabIndex = 3;
+			this.rd_male.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.rd_male.UseVisualStyleBackColor = true;
 			this.rd_male.CheckedChanged += new System.EventHandler(this.AccumulateValues);
+			// 
+			// rd_female
+			// 
+			this.rd_female.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.rd_female.AutoSize = true;
+			this.rd_female.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.rd_female.Checked = true;
+			this.rd_female.Location = new System.Drawing.Point(29, 28);
+			this.rd_female.Name = "rd_female";
+			this.rd_female.Size = new System.Drawing.Size(100, 13);
+			this.rd_female.TabIndex = 2;
+			this.rd_female.TabStop = true;
+			this.rd_female.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.rd_female.UseVisualStyleBackColor = true;
+			this.rd_female.CheckedChanged += new System.EventHandler(this.AccumulateValues);
+			// 
+			// label9
+			// 
+			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(135, 5);
+			this.label9.Name = "label9";
+			this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+			this.label9.Size = new System.Drawing.Size(100, 13);
+			this.label9.TabIndex = 1;
+			this.label9.Text = "Male";
+			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// tableLayoutPanel11
 			// 

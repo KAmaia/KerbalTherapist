@@ -31,6 +31,7 @@ using KerbalTherapist.Names;
 using KerbalTherapist.Logging;
 using System;
 using System.Diagnostics;
+using KerbalTherapist.Utilities;
 
 namespace KerbalTherapist.Kerbals {
 	public class KerbalMaker {

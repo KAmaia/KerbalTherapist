@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KerbalTherapist {
+namespace KerbalTherapist.Forms {
 	partial class frm_Krb_Gen {
 		/// <summary>
 		/// Required designer variable.
@@ -28,6 +28,7 @@ namespace KerbalTherapist {
 		private void InitializeComponent( ) {
 			System.Windows.Forms.GroupBox gb_po_options;
 			System.Windows.Forms.Panel panel3;
+			this.button1 = new System.Windows.Forms.Button();
 			this.btn_po_exit = new System.Windows.Forms.Button();
 			this.btn_po_Save = new System.Windows.Forms.Button();
 			this.btn_po_OpenCfgr = new System.Windows.Forms.Button();
@@ -220,6 +221,7 @@ namespace KerbalTherapist {
 			// gb_po_options
 			// 
 			gb_po_options.AutoSize = true;
+			gb_po_options.Controls.Add(this.button1);
 			gb_po_options.Controls.Add(this.btn_po_exit);
 			gb_po_options.Controls.Add(this.btn_po_Save);
 			gb_po_options.Controls.Add(this.btn_po_OpenCfgr);
@@ -230,6 +232,16 @@ namespace KerbalTherapist {
 			gb_po_options.TabIndex = 5;
 			gb_po_options.TabStop = false;
 			gb_po_options.Text = "Program Options";
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(90, 58);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(161, 23);
+			this.button1.TabIndex = 9;
+			this.button1.Text = "New UI";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// btn_po_exit
 			// 
@@ -1932,6 +1944,7 @@ namespace KerbalTherapist {
 		private System.Windows.Forms.Label lbl_rnd_maxpilots;
 		private System.Windows.Forms.Label lbl_rnd_engi;
 		private System.Windows.Forms.Label lbl_rnd_maxsci;
+		private System.Windows.Forms.Button button1;
 	}
 }
 

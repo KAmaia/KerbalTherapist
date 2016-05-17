@@ -36,7 +36,7 @@ using System.Windows.Forms;
 
 using KerbalTherapist.Logging;
 
-namespace KerbalTherapist {
+namespace KerbalTherapist.Forms{
 	public partial class ConfiguratorForm : Form {
 		Configurator cfgr;
 		private string KSPPath;
@@ -97,6 +97,10 @@ namespace KerbalTherapist {
 				KSPPath = fbd_SelectSavePath.SelectedPath;
 				txt_kspPath.Text = KSPPath;
 			}
+		}
+
+		private void ConfiguratorForm_Load( object sender, EventArgs e ) {
+
 		}
 	}
 }
