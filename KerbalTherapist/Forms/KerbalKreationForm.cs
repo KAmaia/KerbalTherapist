@@ -38,16 +38,19 @@ using System.Windows.Forms;
 using KerbalTherapist.Accumulators;
 using System.Diagnostics;
 using KerbalTherapist.Logging;
+using KerbalTherapist.Kerbals;
 
 namespace KerbalTherapist.Forms {
 
-	public partial class KerbalKreationForm : Form {
+	internal partial class KerbalKreationForm : Form {
 
 		private SpecificAccumulator specAccum;
+		private Roster roster;
 
-		public KerbalKreationForm( ) {
+		internal KerbalKreationForm( Roster roster ) {
 			InitializeComponent( );
 			specAccum = new SpecificAccumulator( );
+			this.roster = roster;
 			UpdateDisplay( );
 		}
 
@@ -107,13 +110,10 @@ namespace KerbalTherapist.Forms {
 			specAccum = specAccum.Reset( );
 		}
 
-
-
 		private void button3_Click( object sender, EventArgs e ) {
 			Logger.LogEvent( "Closing KerbalKreation" );
 			this.Close( );
 		}
-
 
 		private void chk_RandName_CheckedChanged( object sender, EventArgs e ) {
 			txt_Name.Text = "";
@@ -133,6 +133,6 @@ namespace KerbalTherapist.Forms {
 
 		private void chk_RandDumb_CheckedChanged( object sender, EventArgs e ) {
 			tbar_Dumb.Enabled = !chk_RandDumb.Checked;
-		}		
+		}
 	}
 }

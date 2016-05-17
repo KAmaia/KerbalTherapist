@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KerbalTherapist;
+using KerbalTherapist.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,68 +10,73 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using KerbalGenerator.Forms;
-using KerbalTherapist.Kerbals;
-
 namespace KerbalTherapist.Forms {
-	public partial class MainForm : Form {
-		Form childForm;
-		public MainForm( ) {
+	internal partial class MainForm : Form {
+		private Form currentChild;
+		private Therapist therapist;
+		
+		internal MainForm( Therapist therapist ) {
 			InitializeComponent( );
+			this.therapist = therapist;
 		}
-
-		private void MainForm_Load( object sender, EventArgs e ) {
-
-		}
-
-		private void CloseChildForm( ) {
-			if ( !( childForm == null ) ) {
-				childForm.Close( );
-				childForm = null;
-			}
-		}
-
-		private void button1_Click( object sender, EventArgs e ) {
-			CreateAndDisplayChild( TherapistForm.KerbalKreator );
-		}
-
-		private void button6_Click( object sender, EventArgs e ) {
-			CreateAndDisplayChild( TherapistForm.KerbalEditor );
-		}
-
-		private void btn_createroster_Click( object sender, EventArgs e ) {
-			CreateAndDisplayChild( TherapistForm.RosterKreator );
-		}
-
-		private void CreateAndDisplayChild( TherapistForm chosenForm ) {
-			CloseChildForm( );
+		
+		private void CreateAndDisplayChild( TherapistFormType chosenForm ) {
+			ClosecurrentChild( );
 			switch ( chosenForm ) {
-				case TherapistForm.KerbalKreator:
-					childForm = new KerbalKreationForm( );
+				case TherapistFormType.KerbalKreator:
+					currentChild = new KerbalKreationForm(therapist.Rstr );
 					break;
-				case TherapistForm.KerbalEditor:
-					childForm = new KerbalEditorForm( new Roster( ) );
+				case TherapistFormType.KerbalEditor:
+					currentChild = new KerbalEditorForm( therapist.Rstr );
 					break;
-				case TherapistForm.RosterKreator:
-					childForm = new RosterKreatorForm( new Roster( ) );
+				case TherapistFormType.RosterKreator:
+					currentChild = new RosterKreatorForm( therapist.Rstr );
+					break;
+				case TherapistFormType.SaveStatForm:
+					currentChild = new SaveStatForm( );
 					break;
 				default:
 					break;
 			}
-			childForm.MdiParent = this;
-			childForm.ControlBox = false;
-			childForm.MinimizeBox = false;
-			childForm.MaximizeBox = false;
-			childForm.ShowIcon = false;
-			childForm.Text = "";
-			childForm.Dock = DockStyle.Fill;
-			childForm.WindowState = FormWindowState.Normal;
-			childForm.Show( );
+			currentChild.MdiParent = this;
+			currentChild.ControlBox = false;
+			currentChild.MinimizeBox = false;
+			currentChild.MaximizeBox = false;
+			currentChild.ShowIcon = false;
+			currentChild.Text = "";
+			currentChild.Dock = DockStyle.Fill;
+			currentChild.WindowState = FormWindowState.Normal;
+			currentChild.Show( );
 		}
 
+		private void ClosecurrentChild( ) {
+			if ( !( currentChild == null ) ) {
+				currentChild.Close( );
+				currentChild = null;
+			}
+		}
 
+		private void btn_viewedit_Click( object sender, EventArgs e ) {
+			CreateAndDisplayChild( TherapistFormType.KerbalEditor );
+		}
 
-		private void btn_close_Click( object sender, EventArgs e ) {
+		private void btn_createKerb_Click( object sender, EventArgs e ) {
+			CreateAndDisplayChild( TherapistFormType.KerbalKreator );
+		}
+
+		private void btn_createroster_Click( object sender, EventArgs e ) {
+			CreateAndDisplayChild( TherapistFormType.RosterKreator );
+		}
+
+		private void btn_stats_Click( object sender, EventArgs e ) {
+			CreateAndDisplayChild( TherapistFormType.SaveStatForm );
+		}
+
+		private void btn_cfgmgr_Click( object sender, EventArgs e ) {
+			CreateAndDisplayChild( TherapistFormType.Configurator );
+		}
+
+		private void btn_exit_Click( object sender, EventArgs e ) {
 			this.Close( );
 		}
 	}

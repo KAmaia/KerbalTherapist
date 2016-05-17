@@ -41,6 +41,24 @@ namespace KerbalTherapist {
 		/// </summary>
 		///
 		[STAThread]
+		static void Main( ) {
+			AppDomain.CurrentDomain.UnhandledException += ( sender, e ) => Logger.LogError( (Exception) e.ExceptionObject, sender );
+			Logger.LogEvent( "New Run" );
+			Application.EnableVisualStyles( );
+			Application.SetCompatibleTextRenderingDefault( false );
+			Therapist kt = new Therapist( );
+			kt.Start( );
+			Logger.LogEvent( "Program Exited Gracefully" );
+			Application.Exit( );
+		}
+		
+		
+		
+		
+		/*
+		 * Commented out to begin testing the new UI.
+		 * New UI Launches successfully.  Leaving this here
+		 * In case I ever go back to the OLD UI.
 		static void Main ( ) {
 			AppDomain.CurrentDomain.UnhandledException += ( sender, e ) => Logger.LogError ( (Exception) e.ExceptionObject, sender );
 			Logger.LogEvent ( "New Run" );
@@ -50,5 +68,6 @@ namespace KerbalTherapist {
 			Logger.LogEvent ( "Program Exited Gracefully!" );
 			Application.Exit ( );
 		}
+		*/
 	}
 }

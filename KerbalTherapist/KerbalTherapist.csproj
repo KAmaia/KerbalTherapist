@@ -91,7 +91,13 @@
     <Compile Include="Forms\RosterKreatorForm.Designer.cs">
       <DependentUpon>RosterKreatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TherapistForm.cs" />
+    <Compile Include="Forms\RosterStatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RosterStatForm.Designer.cs">
+      <DependentUpon>RosterStatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TherapistFormType.cs" />
     <Compile Include="Kerbals\Kerbal.cs" />
     <Compile Include="Kerbals\KerbalKounter.cs" />
     <Compile Include="Kerbals\KerbalMaker.cs" />
@@ -129,6 +135,9 @@
     <EmbeddedResource Include="Forms\RosterKreatorForm.resx">
       <DependentUpon>RosterKreatorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RosterStatForm.resx">
+      <DependentUpon>RosterStatForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -148,7 +157,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="KerbalTherapist.cs" />
+    <Compile Include="Therapist.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

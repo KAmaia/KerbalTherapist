@@ -44,7 +44,7 @@ using KerbalTherapist.Forms;
 
 namespace KerbalTherapist.Forms {
 	public partial class frm_Krb_Gen : Form {
-		private KerbalTherapist generator;
+		private Therapist generator;
 
 		private SpecificAccumulator specAccum;
 		private RandomAccumulator randAccum;
@@ -52,7 +52,7 @@ namespace KerbalTherapist.Forms {
 
 		public frm_Krb_Gen ( ) {
 			InitializeComponent ( );
-			generator = new KerbalTherapist ( this );
+			generator = new Therapist (  );
 			specAccum = new SpecificAccumulator ( );
 			randAccum = new RandomAccumulator ( );
 
@@ -78,8 +78,6 @@ namespace KerbalTherapist.Forms {
 					c.Enabled = active;
 				}
 			}
-
-
 			//LockOutRandom( );
 		}
 
@@ -116,7 +114,7 @@ namespace KerbalTherapist.Forms {
 
 		internal void UpdateKerbalList ( ) {
 			cmb_kerb_list.Items.Clear ( );
-			cmb_kerb_list.Items.AddRange ( generator.GetRosterNames ( ) );
+			cmb_kerb_list.Items.AddRange ( generator.GetNamesFromRoster ( ) );
 			cmb_kerb_list.SelectedIndex = 0;
 		}
 
@@ -129,7 +127,7 @@ namespace KerbalTherapist.Forms {
 			generator.SelectSave ( saveName );
 			generator.UpdateSaveStats ( );
 			cmb_kerb_list.Items.Clear ( );
-			cmb_kerb_list.Items.AddRange ( generator.GetRosterNames ( ) );
+			cmb_kerb_list.Items.AddRange ( generator.GetNamesFromRoster ( ) );
 			cmb_kerb_list.SelectedIndex = 0;
 			generator.SelectKerbal ( cmb_kerb_list.SelectedItem.ToString ( ) );
 			generator.UpdateKerbalStats ( );
@@ -454,10 +452,7 @@ namespace KerbalTherapist.Forms {
 			generator.KreateRoster ( randAccum );
 		}
 
-		private void button1_Click( object sender, EventArgs e ) {
-			Form mainForm = new MainForm();
-			mainForm.Show( );
-		}
+
 
 		
 	}

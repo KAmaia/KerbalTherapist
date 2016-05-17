@@ -7,19 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using KerbalTherapist.Kerbals;
 
 namespace KerbalTherapist.Forms {
-	internal partial class RosterKreatorForm : Form {
-		private Roster roster;
-				
-		internal RosterKreatorForm( Roster roster ) {
+	public partial class SaveStatForm : Form {
+		public SaveStatForm( ) {
 			InitializeComponent( );
-			this.roster = roster;
 		}
 		
-		private void btn_close_Click( object sender, EventArgs e ) {
-			this.Close( );
-		}
 	}
 }

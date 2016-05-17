@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KerbalGenerator.Forms{
-	enum TherapistForm {
+namespace KerbalTherapist.Forms{
+	enum TherapistFormType {
 		KerbalKreator,
 		KerbalEditor,
 		RosterKreator,
+		SaveStatForm,
 		Configurator
 	};
 }

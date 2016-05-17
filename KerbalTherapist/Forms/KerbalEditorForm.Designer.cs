@@ -672,7 +672,7 @@ namespace KerbalTherapist.Forms {
 			this.btn_closeCancel.Name = "btn_closeCancel";
 			this.btn_closeCancel.Size = new System.Drawing.Size(140, 38);
 			this.btn_closeCancel.TabIndex = 2;
-			this.btn_closeCancel.Text = "Close";
+			this.btn_closeCancel.Text = "E&xit";
 			this.btn_closeCancel.UseVisualStyleBackColor = true;
 			this.btn_closeCancel.Click += new System.EventHandler(this.btn_edit_click);
 			// 

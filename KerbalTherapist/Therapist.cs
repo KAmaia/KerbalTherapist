@@ -39,37 +39,41 @@ using KerbalTherapist.Accumulators;
 using KerbalTherapist.Kerbals;
 using KerbalTherapist.Logging;
 using System.Drawing;
+using KerbalTherapist.Forms;
 
-namespace KerbalTherapist.Forms {
-	class KerbalTherapist {
+namespace KerbalTherapist{
+	class Therapist {
 		#region class variables
 
 		private readonly string configPath = Path.Combine ( Path.Combine ( Path.Combine ( Environment.GetFolderPath ( Environment.SpecialFolder.ApplicationData ), "AmaiaSystems" ), "KerbalTherapist" ), "Config" );
-
-
+		
 		private Config config;
 		private Kerbal currentKerbal;
 
 		private Roster roster;
 		private Configurator cfgr;
-		private frm_Krb_Gen MainForm;
-
+		private MainForm newMainForm;
+		
 		private ConfigNode persistent;
 		private ConfigNode currentGame;
 		private string currentSavePath;
 
-		public Roster Rstr { get { return roster; } }
+		internal Roster Rstr { get { return roster; } }
 
-		public Config Cfg { get { return config; } }
+		internal Config Cfg { get { return config; } }
 
-		public string CurrentSavePath { get { return currentSavePath; } }
+		internal string CurrentSavePath { get { return currentSavePath; } }
 
 		#endregion
 
-		public KerbalTherapist ( frm_Krb_Gen mainForm ) {
+		internal Therapist () {
 			cfgr = new Configurator ( configPath );
-			MainForm = mainForm;
 			Initialize ( );
+		}
+
+		internal void Start( ) {
+			newMainForm = new MainForm(this );
+			Application.Run( newMainForm );
 		}
 
 		/// <summary>
@@ -87,7 +91,6 @@ namespace KerbalTherapist.Forms {
 		private void Initialize ( ) {
 			if ( FirstRun ( ) ) {
 				Logger.LogEvent ( "First Run At: " + DateTime.Now.ToString ( ) );
-				MainForm.SetAllControls ( false );
 				cfgr.FirstRun ( );
 			}
 			config = new Config ( );
@@ -95,7 +98,6 @@ namespace KerbalTherapist.Forms {
 			config = cfgr.Configuration;
 			SelectSave ( 0 );
 			SelectKerbal ( 0 );
-			MainForm.SetAllControls ( true );
 		}
 
 		/// <summary>
@@ -103,7 +105,7 @@ namespace KerbalTherapist.Forms {
 		/// Should only ever be needed in initialize.
 		/// </summary>
 		/// <param name="index">Should Always be 0</param>
-		public void SelectSave ( int index ) {
+		internal void SelectSave ( int index ) {
 			Logger.LogEvent ( "Selecting Save at index: " + index + " With Name: " + config.SavePaths.Values.ElementAt ( 0 ) );
 			currentSavePath = config.SavePaths.Values.ElementAt ( 0 );
 			persistent = ConfigNode.Load ( currentSavePath );
@@ -140,7 +142,7 @@ namespace KerbalTherapist.Forms {
 		/// Selects Kerbal based on a String Value.
 		/// </summary>
 		/// <param name="kerbalName"></param>
-		public void SelectKerbal ( string kerbalName ) {
+		internal void SelectKerbal ( string kerbalName ) {
 			currentKerbal = roster.GetKerbal ( kerbalName );
 			UpdateKerbalStats ( );
 		}
@@ -149,7 +151,7 @@ namespace KerbalTherapist.Forms {
 		/// Return A String Array Of All Save Keys.
 		/// </summary>
 		/// <returns></returns>
-		public String[ ] GetSaves ( ) {
+		internal String[ ] GetSaves ( ) {
 			return config.SavePaths.Keys.ToArray ( );
 		}
 
@@ -157,7 +159,7 @@ namespace KerbalTherapist.Forms {
 		/// Returns A String Array With The Name Of Each Kerbal In The Roster.
 		/// </summary>
 		/// <returns></returns>
-		public string[ ] GetRosterNames ( ) {
+		internal string[ ] GetNamesFromRoster ( ) {
 			return roster.GetNames ( ).ToArray ( );
 		}
 
@@ -165,7 +167,7 @@ namespace KerbalTherapist.Forms {
 		/// Send stats back to mainform to be displayed.
 		/// </summary>
 		internal void UpdateKerbalStats ( ) {
-			MainForm.UpdateKerbalStats ( currentKerbal );
+			//MainForm.UpdateKerbalStats ( currentKerbal );
 			
 		}
 
@@ -173,8 +175,8 @@ namespace KerbalTherapist.Forms {
 		/// Updates The MainForm's Save Path Label and Kerbal Count.
 		/// </summary>
 		internal void UpdateSaveStats ( ) {
-			MainForm.UpdateSaveStats ( currentSavePath, new KerbalKounter ( ).KountKerbals ( roster ) );
-			MainForm.UpdateKerbalList ( );
+			//MainForm.UpdateSaveStats ( currentSavePath, new KerbalKounter ( ).KountKerbals ( roster ) );
+			//MainForm.UpdateKerbalList ( );
 		}
 
 		/// <summary>
@@ -189,7 +191,7 @@ namespace KerbalTherapist.Forms {
 		/// Save Our Updated Roster To File
 		/// </summary>
 		/// <param name="saveFile">No longer used.  There because I'm afraid Removing It Will break Something.</param>
-		public void Save ( string saveFile ) {
+		internal void Save ( string saveFile ) {
 			RosterParser.InsertRoster ( roster, currentGame );
 			persistent.Save ( currentSavePath );
 			
@@ -199,7 +201,7 @@ namespace KerbalTherapist.Forms {
 		/// Create a New Kerbal, and Add to the Temporary Roster
 		/// </summary>
 		/// <param name="sa">The Specific Accumulator To Use.</param>
-		public void KreateKerbal ( SpecificAccumulator sa ) {
+		internal void KreateKerbal ( SpecificAccumulator sa ) {
 			Kerbal k = new KerbalMaker ( ).KreateKerbal ( sa );
 			switch ( PreviewKerbal ( k ) ) {
 			case DialogResult.Yes:
@@ -216,7 +218,7 @@ namespace KerbalTherapist.Forms {
 		/// Kreates the roster.
 		/// </summary>
 		/// <param name="ra">Ra is a RandomAccumulator which holds the values for creating a roster</param>
-		public void KreateRoster ( RandomAccumulator ra ) {
+		internal void KreateRoster ( RandomAccumulator ra ) {
 			Roster r = new KerbalMaker ( ).KreateRoster ( ra, roster );
 			switch ( PreviewRoster ( r ) ) {
 			case ( DialogResult.Yes ):
@@ -233,7 +235,7 @@ namespace KerbalTherapist.Forms {
 		/// Return the Configurator Form/
 		/// </summary>
 		/// <returns></returns>
-		public Form GetCfgrForm ( ) {
+		internal Form GetCfgrForm ( ) {
 			return new ConfiguratorForm ( cfgr, false );
 		}
 
@@ -260,7 +262,7 @@ namespace KerbalTherapist.Forms {
 		/// </summary>
 		/// <returns><c>true</c>, if kerbal name was validated, <c>false</c> otherwise.</returns>
 		/// <param name="name">Name.</param>
-		public bool ValidateKerbalName ( string name ) {
+		internal bool ValidateKerbalName ( string name ) {
 			return ( roster.ValidateKerbal ( name ) );
 		}
 
