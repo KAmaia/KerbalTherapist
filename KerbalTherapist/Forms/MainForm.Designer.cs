@@ -185,6 +185,7 @@
 			this.IsMdiContainer = true;
 			this.Name = "MainForm";
 			this.Text = "MainForm";
+			this.Load += new System.EventHandler(this.OnFormLoad);
 			this.panel1.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel2.ResumeLayout(false);

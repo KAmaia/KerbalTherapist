@@ -20,6 +20,13 @@ namespace KerbalTherapist.Forms {
 			this.therapist = therapist;
 		}
 		
+		private void OnFormLoad( object sender, EventArgs e ) {
+			//Clear cmb_saveselector.  Just in case.
+			cmb_SaveSelector.Items.Clear( );
+			//Add the saves from therapist.
+			cmb_SaveSelector.Items.AddRange( therapist.GetSaves() );
+		}
+
 		private void CreateAndDisplayChild( TherapistFormType chosenForm ) {
 			ClosecurrentChild( );
 			switch ( chosenForm ) {
@@ -33,7 +40,7 @@ namespace KerbalTherapist.Forms {
 					currentChild = new RosterKreatorForm( therapist.Rstr );
 					break;
 				case TherapistFormType.SaveStatForm:
-					currentChild = new SaveStatForm( );
+					currentChild = new RosterStatForm(therapist.Rstr, therapist.GetFlag() );
 					break;
 				default:
 					break;
