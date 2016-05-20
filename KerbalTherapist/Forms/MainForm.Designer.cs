@@ -131,6 +131,7 @@
 			this.cmb_SaveSelector.Name = "cmb_SaveSelector";
 			this.cmb_SaveSelector.Size = new System.Drawing.Size(188, 21);
 			this.cmb_SaveSelector.TabIndex = 0;
+			this.cmb_SaveSelector.SelectedIndexChanged += new System.EventHandler(this.cmb_SaveSelector_SelectedIndexChanged);
 			// 
 			// label1
 			// 

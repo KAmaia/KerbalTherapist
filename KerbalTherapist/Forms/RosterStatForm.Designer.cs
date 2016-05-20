@@ -78,9 +78,9 @@
 			this.lbl_rostCountdisp = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-			this.img_saveFlag = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
 			this.btn_close = new System.Windows.Forms.Button();
+			this.img_saveFlag = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.tableLayoutPanel11.SuspendLayout();
@@ -101,8 +101,8 @@
 			this.tableLayoutPanel6.SuspendLayout();
 			this.tableLayoutPanel7.SuspendLayout();
 			this.tableLayoutPanel20.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.img_saveFlag)).BeginInit();
 			this.tableLayoutPanel21.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.img_saveFlag)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -855,8 +855,8 @@
 			this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
 			this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel20.Controls.Add(this.img_saveFlag, 1, 0);
 			this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 2, 0);
+			this.tableLayoutPanel20.Controls.Add(this.img_saveFlag, 1, 0);
 			this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel20.Location = new System.Drawing.Point(3, 591);
 			this.tableLayoutPanel20.Name = "tableLayoutPanel20";
@@ -864,15 +864,6 @@
 			this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel20.Size = new System.Drawing.Size(650, 99);
 			this.tableLayoutPanel20.TabIndex = 4;
-			// 
-			// img_saveFlag
-			// 
-			this.img_saveFlag.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.img_saveFlag.Location = new System.Drawing.Point(165, 3);
-			this.img_saveFlag.Name = "img_saveFlag";
-			this.img_saveFlag.Size = new System.Drawing.Size(319, 93);
-			this.img_saveFlag.TabIndex = 0;
-			this.img_saveFlag.TabStop = false;
 			// 
 			// tableLayoutPanel21
 			// 
@@ -898,6 +889,17 @@
 			this.btn_close.Text = "E&xit";
 			this.btn_close.UseVisualStyleBackColor = true;
 			this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+			// 
+			// img_saveFlag
+			// 
+			this.img_saveFlag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.img_saveFlag.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.img_saveFlag.Location = new System.Drawing.Point(165, 3);
+			this.img_saveFlag.Name = "img_saveFlag";
+			this.img_saveFlag.Size = new System.Drawing.Size(319, 93);
+			this.img_saveFlag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.img_saveFlag.TabIndex = 2;
+			this.img_saveFlag.TabStop = false;
 			// 
 			// RosterStatForm
 			// 
@@ -944,8 +946,8 @@
 			this.tableLayoutPanel7.ResumeLayout(false);
 			this.tableLayoutPanel7.PerformLayout();
 			this.tableLayoutPanel20.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.img_saveFlag)).EndInit();
 			this.tableLayoutPanel21.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.img_saveFlag)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -1007,8 +1009,8 @@
 		private System.Windows.Forms.Label lbl_FemaleDisp;
 		private System.Windows.Forms.Label lbl_MaleDisp;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-		private System.Windows.Forms.PictureBox img_saveFlag;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
 		private System.Windows.Forms.Button btn_close;
+		private System.Windows.Forms.PictureBox img_saveFlag;
 	}
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,24 +15,24 @@ namespace KerbalTherapist.Forms {
 	internal partial class MainForm : Form {
 		private Form currentChild;
 		private Therapist therapist;
-		
+
 		internal MainForm( Therapist therapist ) {
 			InitializeComponent( );
 			this.therapist = therapist;
 		}
-		
+
 		private void OnFormLoad( object sender, EventArgs e ) {
 			//Clear cmb_saveselector.  Just in case.
 			cmb_SaveSelector.Items.Clear( );
 			//Add the saves from therapist.
-			cmb_SaveSelector.Items.AddRange( therapist.GetSaves() );
+			cmb_SaveSelector.Items.AddRange( therapist.GetSaves( ) );
 		}
 
 		private void CreateAndDisplayChild( TherapistFormType chosenForm ) {
-			ClosecurrentChild( );
+			CloseCurrentChild( );
 			switch ( chosenForm ) {
 				case TherapistFormType.KerbalKreator:
-					currentChild = new KerbalKreationForm(therapist.Rstr );
+					currentChild = new KerbalKreationForm( therapist.Rstr );
 					break;
 				case TherapistFormType.KerbalEditor:
 					currentChild = new KerbalEditorForm( therapist.Rstr );
@@ -40,7 +41,7 @@ namespace KerbalTherapist.Forms {
 					currentChild = new RosterKreatorForm( therapist.Rstr );
 					break;
 				case TherapistFormType.SaveStatForm:
-					currentChild = new RosterStatForm(therapist.Rstr, therapist.GetFlag() );
+					currentChild = new RosterStatForm( therapist.Rstr, therapist.GetFlag( ) );
 					break;
 				default:
 					break;
@@ -56,7 +57,7 @@ namespace KerbalTherapist.Forms {
 			currentChild.Show( );
 		}
 
-		private void ClosecurrentChild( ) {
+		private void CloseCurrentChild( ) {
 			if ( !( currentChild == null ) ) {
 				currentChild.Close( );
 				currentChild = null;
@@ -86,5 +87,14 @@ namespace KerbalTherapist.Forms {
 		private void btn_exit_Click( object sender, EventArgs e ) {
 			this.Close( );
 		}
+
+		private void cmb_SaveSelector_SelectedIndexChanged( object sender, EventArgs e ) {
+			//we'll fix this in a minute
+			if ( currentChild is RosterStatForm ) {
+
+			}
+			therapist.SelectSave( cmb_SaveSelector.SelectedItem.ToString() );
+		}
 	}
 }
+
