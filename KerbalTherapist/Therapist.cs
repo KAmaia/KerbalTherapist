@@ -123,17 +123,33 @@ namespace KerbalTherapist{
 			ParseRoster ( );
 		}
 
-		internal Bitmap GetFlag( ) {
-			string bmploader = Path.Combine(Cfg.KSPPath, Path.Combine("GameData", ( currentGame.GetValue( "flag" )))+".png" );
-			bmploader = bmploader.Replace( '/', Path.DirectorySeparatorChar );
-			return new Bitmap( bmploader );
-		}
+        internal Bitmap GetFlag( ) {
+            Bitmap flagbmp;
+            string bmploader = Path.Combine(Cfg.KSPPath, Path.Combine("GameData", (currentGame.GetValue("flag"))) + ".png");
 
-		/// <summary>
-		/// Selects Kerbal By Index.  Should only ever be used on initialization.
-		/// </summary>
-		/// <param name="index"></param>
-		private void SelectKerbal ( int index ) {
+            bmploader = bmploader.Replace('/', Path.DirectorySeparatorChar);
+
+            // Tries to laod the flag specified in the save data
+            // If it cannot load the flag, it creates an empty bitmap 
+            // with the same dimensions.
+            try
+            {
+                flagbmp = new Bitmap( bmploader );
+            }
+            catch ( ArgumentException e )
+            {
+                Console.WriteLine( e.ParamName );
+                flagbmp = new Bitmap( 256, 160 );
+            }
+
+            return flagbmp;
+        }
+
+        /// <summary>
+        /// Selects Kerbal By Index.  Should only ever be used on initialization.
+        /// </summary>
+        /// <param name="index"></param>
+        private void SelectKerbal ( int index ) {
 			currentKerbal = roster.GetKerbal ( 0 );
 			UpdateKerbalStats ( );
 		}
