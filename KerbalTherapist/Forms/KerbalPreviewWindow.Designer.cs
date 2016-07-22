@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 using KerbalTherapist.Kerbals;
 
-namespace KerbalTherapist {
+namespace KerbalTherapist.Forms {
 	partial class KerbalPreviewWindow {
 		/// <summary>
 		/// Required designer variable.
@@ -117,8 +117,5 @@ namespace KerbalTherapist {
 		private System.Windows.Forms.Button btn_no;
 		private System.Windows.Forms.Button btn_yes;
 		private Label label1;
-		private Roster r;
-
-
 	}
 }

@@ -42,10 +42,10 @@ using KerbalTherapist.Kerbals;
 
 namespace KerbalTherapist.Forms {
 
-	internal partial class KerbalKreationForm : Form {
+	internal partial class KerbalKreationForm : ChildForm {
 
 		private SpecificAccumulator specAccum;
-		private Roster roster;
+		
 
 		internal KerbalKreationForm( Roster roster ) {
 			InitializeComponent( );

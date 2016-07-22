@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace KerbalTherapist.Forms {
 	internal partial class MainForm : Form {
-		private Form currentChild;
+		private ChildForm currentChild;
 		private Therapist therapist;
 
 		internal MainForm( Therapist therapist ) {
@@ -27,6 +27,7 @@ namespace KerbalTherapist.Forms {
 			cmb_SaveSelector.Items.Clear( );
 			//Add the saves from therapist.
 			cmb_SaveSelector.Items.AddRange( therapist.GetSaves( ) );
+			cmb_SaveSelector.SelectedIndex = 0;
 		}
 
 		private void CreateAndDisplayChild( TherapistFormType chosenForm ) {
@@ -36,18 +37,19 @@ namespace KerbalTherapist.Forms {
 					currentChild = new KerbalKreationForm( therapist.Rstr );
 					break;
 				case TherapistFormType.KerbalEditor:
-					currentChild = new KerbalEditorForm( therapist.Rstr );
+					currentChild = new KerbalEditorForm( );
 					break;
 				case TherapistFormType.RosterKreator:
-					currentChild = new RosterKreatorForm( therapist.Rstr );
+					currentChild = new RosterKreatorForm( );
 					break;
 				case TherapistFormType.SaveStatForm:
-					currentChild = new RosterStatForm( therapist.Rstr, therapist.GetFlag( ) );
+					currentChild = new RosterStatForm( therapist.GetFlag( ) );
 					break;
 				default:
 					currentChild = new DefaultForm( );
 					break;
 			}
+			currentChild.Rstr = therapist.Rstr;
 			currentChild.MdiParent = this;
 			currentChild.ControlBox = false;
 			currentChild.MinimizeBox = false;

@@ -39,30 +39,40 @@ using KerbalTherapist.Kerbals;
 using KerbalTherapist.Utilities;
 
 namespace KerbalTherapist.Forms {
-	public partial class KerbalEditorForm : Form {
+	public partial class KerbalEditorForm : ChildForm {
 		private Boolean editing;
-		private Roster roster;
 		Kerbal currentKerbal;
 
 		private String[] Professions = {"Pilot", "Engineer", "Scientist"};
 		private String[] States = {"Available", "Dead", "Crew"};
 
-		public KerbalEditorForm( Roster roster ) {
+		public KerbalEditorForm( ) {
 			InitializeComponent( );
 			this.editing = false;
-			this.roster = roster;
+			cmb_kerbal_select.Items.AddRange( roster.GetNames( ).ToArray( ) );
 			cmb_role.Items.AddRange( Professions );
 			cmb_state.Items.AddRange( States );
+			currentKerbal = roster.GetKerbal( 0 );
 			ToggleControls( );
+			UpdateDisplay( );
 		}
 
-		private void btn_edit_click( object sender, EventArgs e ) {
+		private Kerbal SelectKerbal( string kerbalName ) {
+			return roster.GetKerbal( kerbalName );
+		}
+
+		private void btn_close_click( object sender, EventArgs e ) {
 			if ( editing ) {
 				ToggleEditing( );
 			}
 			else {
 				this.Close( );
 			}
+		}
+
+		private void cmb_kerbal_select_SelectedIndexChanged( object sender, EventArgs e ) {
+			currentKerbal = SelectKerbal( cmb_kerbal_select.SelectedItem.ToString( ) );
+			UpdateDisplay( );
 		}
 
 		private void btn_editsave_Click( object sender, EventArgs e ) {
@@ -84,6 +94,45 @@ namespace KerbalTherapist.Forms {
 			editing = !editing;
 			ToggleControls( );
 		}
+
+		private void UpdateDisplay( ) {
+			SetDisplayGender( );
+			SetDisplayCheckBoxes( );
+			SetDisplayComboBoxes( );
+			SetDisplayBraveAndDumb( );
+		}
+
+		private void SetDisplayGender( ) {
+			//activate the appropriate gender radio button.
+			if ( currentKerbal.GetStat( "gender" ).ToLower( ) == "female" ) {
+				rd_female.Checked = true;
+			}
+			else {
+				rd_male.Checked = true;
+			}
+		}
+
+		private void SetDisplayCheckBoxes( ) {
+			//Badass
+			chk_bad.Checked = currentKerbal.GetStat( "badS" ).ToLower( ) == "true";
+			//Tourist
+			chk_tourist.Checked = currentKerbal.GetStat( "tour" ).ToLower( ) == "true";
+		}
+
+		private void SetDisplayComboBoxes( ) {
+			if ( cmb_state.Items.Contains( currentKerbal.GetStat( "state" ) ) ) {
+				cmb_state.SelectedItem = currentKerbal.GetStat( "state" );
+			}
+			if ( cmb_role.Items.Contains( currentKerbal.GetStat( "trait" ) ) ) {
+				cmb_role.SelectedItem = currentKerbal.GetStat( "trait" );
+			}
+		}
+
+		private void SetDisplayBraveAndDumb( ) {
+			nmc_brave.Value = decimal.Parse( currentKerbal.GetStat( "brave" ) );
+			nmc_dumb.Value = decimal.Parse( currentKerbal.GetStat( "dumb" ) );
+		}
+
 		/// <summary>
 		/// Toggles the controls on and off for editing.
 		/// </summary>
@@ -92,7 +141,6 @@ namespace KerbalTherapist.Forms {
 			rd_female.Enabled = editing;
 			rd_male.Enabled = editing;
 			//Toggle checkboxes
-			chk_alive.Enabled = editing;
 			chk_bad.Enabled = editing;
 			chk_tourist.Enabled = editing;
 			//Toggle Combos
@@ -105,7 +153,7 @@ namespace KerbalTherapist.Forms {
 			nmc_dumb.Enabled = editing;
 		}
 
-		
+
 	}
 }
 

@@ -37,8 +37,8 @@ using System.Windows.Forms;
 
 using KerbalTherapist.Kerbals;
 
-namespace KerbalTherapist {
-	public partial class KerbalPreviewWindow : Form {
+namespace KerbalTherapist.Forms {
+	public partial class KerbalPreviewWindow : ChildForm {
 
 		public KerbalPreviewWindow ( Kerbal k ) {
 			InitializeComponent ( );

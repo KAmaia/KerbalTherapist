@@ -10,12 +10,11 @@ using System.Windows.Forms;
 using KerbalTherapist.Kerbals;
 
 namespace KerbalTherapist.Forms {
-	internal partial class RosterKreatorForm : Form {
-		private Roster roster;
+	internal partial class RosterKreatorForm : ChildForm {
+		
 				
-		internal RosterKreatorForm( Roster roster ) {
+		internal RosterKreatorForm( ) {
 			InitializeComponent( );
-			this.roster = roster;
 		}
 		
 		private void btn_close_Click( object sender, EventArgs e ) {

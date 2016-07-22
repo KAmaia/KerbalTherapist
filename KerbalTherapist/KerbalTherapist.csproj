@@ -71,6 +71,9 @@
     <Compile Include="ConfigNode\ConfigNodeReader.cs" />
     <Compile Include="ConfigNode\ConfigNodeWriter.cs" />
     <Compile Include="Configurator\Configurator.cs" />
+    <Compile Include="Forms\ChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ConfiguratorForm.cs">
       <SubType>Form</SubType>
     </Compile>

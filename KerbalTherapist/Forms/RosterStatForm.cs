@@ -37,14 +37,12 @@ using System.Windows.Forms;
 using KerbalTherapist.Kerbals;
 
 namespace KerbalTherapist.Forms {
-	public partial class RosterStatForm : Form {
+	public partial class RosterStatForm : ChildForm {
 		private Bitmap flag;
-		private Roster rstr;
 		private KerbalKounter kounter;
 
-		public RosterStatForm( Roster rstr, Bitmap flag ) {
+		public RosterStatForm(Bitmap flag ) {
 			InitializeComponent( );
-			this.rstr = rstr;
 			this.flag = flag;
 			UpdateDisplay( );
 		}
@@ -53,18 +51,13 @@ namespace KerbalTherapist.Forms {
 			this.Close( );
 		}
 
-		internal void UpdateRoster(Roster rstr ) {
-			this.rstr = rstr;
-			UpdateDisplay( );
-		}
-
 		private void OnFormLoad( ) {
 			UpdateDisplay( );
 		}
 
 		internal void UpdateDisplay( ) {
 			kounter = new KerbalKounter( );
-			Dictionary<string, int> counts = kounter.KountKerbals(rstr);
+			Dictionary<string, int> counts = kounter.KountKerbals(roster);
 			//Total, Living, Dead.
 			lbl_rostCountdisp.Text = counts["Total"].ToString( );
 			lbl_livingdisp.Text = counts["Living"].ToString( );

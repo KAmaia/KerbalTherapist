@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace KerbalTherapist.Forms {
-	partial class KerbalEditorForm {
+	partial class KerbalEditorForm : ChildForm {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -49,8 +49,6 @@ namespace KerbalTherapist.Forms {
 			this.cmb_state = new System.Windows.Forms.ComboBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-			this.chk_alive = new System.Windows.Forms.CheckBox();
-			this.label7 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
 			this.label6 = new System.Windows.Forms.Label();
 			this.nmc_dumb = new System.Windows.Forms.NumericUpDown();
@@ -76,7 +74,6 @@ namespace KerbalTherapist.Forms {
 			this.tableLayoutPanel4.SuspendLayout();
 			this.tableLayoutPanel5.SuspendLayout();
 			this.tableLayoutPanel17.SuspendLayout();
-			this.tableLayoutPanel14.SuspendLayout();
 			this.tableLayoutPanel13.SuspendLayout();
 			this.tableLayoutPanel12.SuspendLayout();
 			this.tableLayoutPanel11.SuspendLayout();
@@ -159,6 +156,7 @@ namespace KerbalTherapist.Forms {
 			this.cmb_kerbal_select.Name = "cmb_kerbal_select";
 			this.cmb_kerbal_select.Size = new System.Drawing.Size(212, 21);
 			this.cmb_kerbal_select.TabIndex = 0;
+			this.cmb_kerbal_select.SelectedIndexChanged += new System.EventHandler(this.cmb_kerbal_select_SelectedIndexChanged);
 			// 
 			// tableLayoutPanel4
 			// 
@@ -257,8 +255,6 @@ namespace KerbalTherapist.Forms {
 			this.tableLayoutPanel14.ColumnCount = 2;
 			this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel14.Controls.Add(this.cmb_flight, 1, 0);
-			this.tableLayoutPanel14.Controls.Add(this.label14, 0, 0);
 			this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel14.Location = new System.Drawing.Point(218, 224);
 			this.tableLayoutPanel14.Name = "tableLayoutPanel14";
@@ -293,8 +289,8 @@ namespace KerbalTherapist.Forms {
 			this.tableLayoutPanel13.ColumnCount = 2;
 			this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel13.Controls.Add(this.cmb_career, 0, 0);
-			this.tableLayoutPanel13.Controls.Add(this.label10, 0, 0);
+			this.tableLayoutPanel13.Controls.Add(this.cmb_flight, 1, 0);
+			this.tableLayoutPanel13.Controls.Add(this.label14, 0, 0);
 			this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel13.Location = new System.Drawing.Point(218, 169);
 			this.tableLayoutPanel13.Name = "tableLayoutPanel13";
@@ -365,8 +361,8 @@ namespace KerbalTherapist.Forms {
 			this.tableLayoutPanel11.ColumnCount = 2;
 			this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel11.Controls.Add(this.cmb_state, 0, 0);
-			this.tableLayoutPanel11.Controls.Add(this.label8, 0, 0);
+			this.tableLayoutPanel11.Controls.Add(this.cmb_career, 1, 0);
+			this.tableLayoutPanel11.Controls.Add(this.label10, 0, 0);
 			this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel11.Location = new System.Drawing.Point(218, 114);
 			this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -380,7 +376,7 @@ namespace KerbalTherapist.Forms {
 			this.cmb_state.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.cmb_state.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cmb_state.FormattingEnabled = true;
-			this.cmb_state.Location = new System.Drawing.Point(107, 13);
+			this.cmb_state.Location = new System.Drawing.Point(106, 13);
 			this.cmb_state.Name = "cmb_state";
 			this.cmb_state.Size = new System.Drawing.Size(98, 21);
 			this.cmb_state.TabIndex = 2;
@@ -391,7 +387,7 @@ namespace KerbalTherapist.Forms {
 			this.label8.AutoSize = true;
 			this.label8.Location = new System.Drawing.Point(3, 17);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(98, 13);
+			this.label8.Size = new System.Drawing.Size(97, 13);
 			this.label8.TabIndex = 0;
 			this.label8.Text = "State";
 			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -401,8 +397,8 @@ namespace KerbalTherapist.Forms {
 			this.tableLayoutPanel10.ColumnCount = 2;
 			this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel10.Controls.Add(this.chk_alive, 0, 0);
-			this.tableLayoutPanel10.Controls.Add(this.label7, 0, 0);
+			this.tableLayoutPanel10.Controls.Add(this.cmb_state, 1, 0);
+			this.tableLayoutPanel10.Controls.Add(this.label8, 0, 0);
 			this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 114);
 			this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -411,27 +407,6 @@ namespace KerbalTherapist.Forms {
 			this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
 			this.tableLayoutPanel10.Size = new System.Drawing.Size(207, 48);
 			this.tableLayoutPanel10.TabIndex = 4;
-			// 
-			// chk_alive
-			// 
-			this.chk_alive.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.chk_alive.AutoSize = true;
-			this.chk_alive.Location = new System.Drawing.Point(147, 17);
-			this.chk_alive.Name = "chk_alive";
-			this.chk_alive.Size = new System.Drawing.Size(15, 14);
-			this.chk_alive.TabIndex = 2;
-			this.chk_alive.UseVisualStyleBackColor = true;
-			// 
-			// label7
-			// 
-			this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(3, 17);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(97, 13);
-			this.label7.TabIndex = 0;
-			this.label7.Text = "Alive";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// tableLayoutPanel9
 			// 
@@ -674,7 +649,7 @@ namespace KerbalTherapist.Forms {
 			this.btn_closeCancel.TabIndex = 2;
 			this.btn_closeCancel.Text = "E&xit";
 			this.btn_closeCancel.UseVisualStyleBackColor = true;
-			this.btn_closeCancel.Click += new System.EventHandler(this.btn_edit_click);
+			this.btn_closeCancel.Click += new System.EventHandler(this.btn_close_click);
 			// 
 			// btn_editsave
 			// 
@@ -710,8 +685,6 @@ namespace KerbalTherapist.Forms {
 			this.tableLayoutPanel5.ResumeLayout(false);
 			this.tableLayoutPanel17.ResumeLayout(false);
 			this.tableLayoutPanel17.PerformLayout();
-			this.tableLayoutPanel14.ResumeLayout(false);
-			this.tableLayoutPanel14.PerformLayout();
 			this.tableLayoutPanel13.ResumeLayout(false);
 			this.tableLayoutPanel13.PerformLayout();
 			this.tableLayoutPanel12.ResumeLayout(false);
@@ -763,7 +736,6 @@ namespace KerbalTherapist.Forms {
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
@@ -779,7 +751,6 @@ namespace KerbalTherapist.Forms {
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.CheckBox chk_bad;
 		private System.Windows.Forms.ComboBox cmb_state;
-		private System.Windows.Forms.CheckBox chk_alive;
 		private System.Windows.Forms.NumericUpDown nmc_dumb;
 		private System.Windows.Forms.ComboBox cmb_role;
 		private System.Windows.Forms.NumericUpDown nmc_brave;

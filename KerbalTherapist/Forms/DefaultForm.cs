@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KerbalTherapist.Forms {
-	public partial class DefaultForm : Form {
+	public partial class DefaultForm : ChildForm {
 		public DefaultForm( ) {
 			InitializeComponent( );
 		}

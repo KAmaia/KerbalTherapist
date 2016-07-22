@@ -139,25 +139,14 @@ namespace KerbalTherapist.Kerbals {
 			//generate our stupid and brave values;
 			sa.Brave = Util.GetRandomFloatInRange( ra.MinBrave, ra.MaxBrave );
 			sa.Dumb = Util.GetRandomFloatInRange( ra.MinStupid, ra.MaxStupid );
-			//just some counting variables.
-
+			//Tourist or Badass? 
 			sa.Badass = PickRandomAccumBadAss( ra );
 			sa.Tourist = PickRandomAccumTourist( ra );
 
-			if ( touristCreated < ra.MaxNumberOfTourists ) {
-				//Each Kerbal has a ~5% chance of being a tourist.
-				if ( Util.GetRandomFloat( ) > .95f ) {
-					sa.Tourist = true;
-				}
-				else {
-					sa.Tourist = false;
-				}
-			}
 			return sa;
 		}
 
 		private bool PickRandomAccumBadAss( RandomAccumulator ra ) {
-
 			if ( badassCreated < ra.MinNumberOfBadasses ) {
 				return true;
 			}
@@ -251,14 +240,12 @@ namespace KerbalTherapist.Kerbals {
 			string female = sa.Female ? "Female" : "Male";
 			return new KeyValuePair<string, string>( "gender", female );
 		}
+		
 		//for right now, all created kerbals are automagically hired.
-		//TODO: allow kerbals to be applicants too!
+		//NOTTODO: allow kerbals to be applicants too!
+		//Fuck that.  That's annoying.  All Kerbals are Automagic.
 		private KeyValuePair<string, string> GenerateTypePair( SpecificAccumulator sa ) {
-			float picker = Util.GetRandomFloat ( );
-			if ( picker > .31f ) {
-				return new KeyValuePair<string, string>( "type", "Crew" );
-			}
-			return new KeyValuePair<string, string>( "type", "Applicant" );
+			return new KeyValuePair<string, string>( "type", "Crew" );
 		}
 
 		private KeyValuePair<string, string> GenerateTraitPair( SpecificAccumulator sa ) {

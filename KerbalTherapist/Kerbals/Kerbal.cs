@@ -60,7 +60,6 @@ namespace KerbalTherapist.Kerbals {
 		//For Kerbals that we're creating.
 		public Kerbal ( List<KeyValuePair<string, string>> stats ) {
 			Stats = stats;
-
 			Logger.LogEvent ( "Read New Kerbal Created With Stats: " );
 			LogStats ( Stats );
 			CareerLog = new List<KeyValuePair<string, string>> ( );
