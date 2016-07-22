@@ -1,4 +1,5 @@
-﻿using KerbalTherapist;
+﻿
+using KerbalTherapist;
 using KerbalTherapist.Forms;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,7 @@ namespace KerbalTherapist.Forms {
 					currentChild = new RosterStatForm( therapist.Rstr, therapist.GetFlag( ) );
 					break;
 				default:
+					currentChild = new DefaultForm( );
 					break;
 			}
 			currentChild.MdiParent = this;

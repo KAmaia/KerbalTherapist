@@ -52,6 +52,7 @@ namespace KerbalTherapist.Forms {
 			this.editing = false;
 			this.roster = roster;
 			cmb_role.Items.AddRange( Professions );
+			cmb_state.Items.AddRange( States );
 			ToggleControls( );
 		}
 
